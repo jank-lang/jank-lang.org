@@ -40,5 +40,6 @@ mkShell
   go install github.com/juliusmh/snippit@latest
   source <(go env)
   export PATH="''${GOPATH}/bin:''${PATH}"
+  tree ~
   '';
 }
