@@ -1,8 +1,14 @@
 (ns org.jank_lang.page.landing.view
   (:require [clojure.string]
+            [hickory.core :as hickory]
+            [org.jank_lang.page.util :refer [merge-attrs] :as page.util]
             [org.jank_lang.page.view :as page.view]))
 
-(defn root [{:keys [session]}]
+(defn code-snippet [props html-path]
+  (->> (map hickory/as-hiccup (hickory/parse-fragment (slurp (str "resources/generated/html/" html-path))))
+       (into [:div (merge-attrs {:class "has-text-left"} props)])))
+
+(defn root []
   (page.view/page-root
     [:div {}
      (page.view/header {})
@@ -65,7 +71,9 @@
         [:h2 {:class "title"}
          "Wide spectrum dynamics"]
         [:h3 {:class "subtitle"}
-         "Enjoy both dynamic typing and static typing gradually. Enjoy both REPL iteration with JIT compilation and static AOT compilation to native executables."]]
+         "Enjoy both dynamic typing and static typing gradually. Enjoy both
+         REPL iteration with JIT compilation and static AOT compilation to
+         native executables."]]
 
        [:div {:class "columns is-vcentered"}
         [:div {:class "column is-6"}
@@ -73,10 +81,11 @@
           "01"]
          [:h3 {:class "title"}
           "Iterate like you would with Clojure"]
-         [:p
-          "As you iterate in the REPL and figure out your data shapes, static typing will not be in your way."]]
+         [:p {:class "has-text-left"}
+          "As you iterate in the REPL and figure out your data shapes, static
+          typing will not be in your way."]]
         [:div {:class "column is-6"}
-         [:img {:src "/generated/img/landing/step-1.svg"}]]]
+         (code-snippet {} "landing/step-1.html")]]
 
        [:div {:class "columns is-vcentered"}
         [:div {:class "column is-6"}
@@ -84,10 +93,12 @@
           "02"]
          [:h3 {:class "title"}
           "Add type annotations to lock down data shapes"]
-         [:p
-          "Rather than using spec or malli to define your contracts, use jank's malli-like type definitions and then gain static type checking for any direct or indirect uses of that data."]]
-        [:div {:class "column is-7"}
-         [:img {:src "/generated/img/landing/step-2.svg"}]]]
+         [:p {:class "has-text-left"}
+          "Rather than using spec or malli to define your contracts, use jank's
+          malli-like type definitions and then gain static type checking for
+          any direct or indirect uses of that data."]]
+        [:div {:class "column is-6"}
+         (code-snippet {} "landing/step-2.html")]]
 
        [:div {:class "columns is-vcentered"}
         [:div {:class "column is-6"}
@@ -95,12 +106,14 @@
           "03"]
          [:h3 {:class "title"}
           "Compile to machine code"]
-         [:p
-          "jank is built on LLVM and has very speedy start times and low memory usage."]]
+         [:p {:class "has-text-left"}
+          "jank is built on an LLVM-based JIT. With AOT enabled, both
+          statically and dynamically linked executables can be generated. The
+          jank compiler itself has very speedy start times and low memory
+          usage."]]
         [:div {:class "column is-6"}
-         [:img {:src "/generated/img/landing/step-3-jank.svg"}]
-         [:img {:src "/generated/img/landing/step-3-clj.svg"
-                :style {:margin-top "-80px"}}]]]]]
+         (code-snippet {} "landing/step-3-jank.html")
+         (code-snippet {:class "mt-4"} "landing/step-3-clj.html")]]]]
 
      [:section {:id "features"
                 :class "section has-background-primary has-text-white"}

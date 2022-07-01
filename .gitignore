@@ -11,8 +11,9 @@ pom.xml.asc
 /.prepl-port
 .hgignore
 .hg/
+/node_modules
 
-/resources/public/generated
+/resources/generated
 /build
 
 /.lsp

@@ -10,7 +10,7 @@ function resource-type
       echo "clojure"
       ;;
     hpp | cpp)
-      echo "c++"
+      echo "cpp"
       ;;
     *)
       echo "sh"
@@ -19,10 +19,10 @@ function resource-type
 
 function main
 {
-  local generated_img_dir
-  generated_img_dir="resources/public/generated/img"
-  /bin/rm -rf "${generated_img_dir}"
-  /bin/mkdir -p "${generated_img_dir}"
+  local generated_dir
+  generated_dir="resources/generated/html"
+  /bin/rm -rf "${generated_dir}"
+  /bin/mkdir -p "${generated_dir}"
 
   local resource_files
   resource_files="$(find resources/src -type f)"
@@ -32,12 +32,9 @@ function main
     base_file="${file##resources/src/}"
     file_sans_ext="${base_file%.*}"
     ext="${base_file##*.}"
-    mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
-    "${GOPATH}/bin/snippit" --syntax "$(resource-type "${ext}")" \
-                            --out "${generated_img_dir}/${file_sans_ext}.svg" \
-                            --theme monokai-dark --decorations \
-                            < "${file}"
-    printf "\r$(tput el)Generating ${base_file} -> ${generated_img_dir}/${file_sans_ext}.svg …"
+    mkdir -p "$(dirname "${generated_dir}/${file_sans_ext}")"
+    ./bin/highlight "${file}" "$(resource-type "${ext}")" > "${generated_dir}/${file_sans_ext}.html"
+    printf "\r$(tput el)Generating ${base_file} …"
   done
   printf "\r"
 }

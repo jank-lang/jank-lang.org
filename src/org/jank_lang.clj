@@ -11,7 +11,8 @@
   (:gen-class))
 
 (defroutes app-handler
-  (GET "/" [] landing.view/root)
+  (GET "/" [] (fn [_]
+                (landing.view/root)))
   (route/not-found "<h1>Page not found</h1>"))
 
 (defonce app-server (atom nil))
@@ -35,7 +36,7 @@
     (fs/delete-dir output-dir)
     (fs/copy-dir "resources/public" output-dir)
     (doseq [[output-file view-fn] pages]
-      (spit (str output-dir "/" output-file) (view-fn {})))))
+      (spit (str output-dir "/" output-file) (view-fn)))))
 
 (defn -main [& [command & _args]]
   (case command

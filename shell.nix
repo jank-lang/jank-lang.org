@@ -14,8 +14,6 @@ mkShell
     optipng
     jpegoptim
     nodejs
-    go
-    tree
   ];
   shellHook =
   ''
@@ -38,9 +36,6 @@ mkShell
   export -f jank-build
 
   # TODO: Get this via nix.
-  go install github.com/juliusmh/snippit@latest
-  source <(go env)
-  export PATH="''${GOPATH}/bin:''${PATH}"
-  tree ~
+  npm install
   '';
 }
