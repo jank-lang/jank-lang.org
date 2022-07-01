@@ -2,4 +2,11 @@
 
 set -euo pipefail
 
-
+jank-build
+git checkout gh-pages
+git clean -fd -e /build
+mv build/* .
+rmdir build
+git add .
+git commit -m "Automated publish"
+git push origin gh-pages

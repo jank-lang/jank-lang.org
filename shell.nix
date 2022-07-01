@@ -22,18 +22,18 @@ mkShell
   {
     ./bin/generate-resources $@
   }
-  export jank-generate-resources
+  export -f jank-generate-resources
   function jank-optimize-resources
   {
     ./bin/optimize-resources $@
   }
-  export jank-optimize-resources
+  export -f jank-optimize-resources
   function jank-build
   {
     jank-generate-resources
     lein run build
     jank-optimize-resources build
   }
-  export jank-build
+  export -f jank-build
   '';
 }
