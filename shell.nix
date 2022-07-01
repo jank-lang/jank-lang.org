@@ -35,6 +35,13 @@ mkShell
   }
   export -f jank-build
 
+  function jank-deploy
+  {
+    jank-build
+    ./bin/deploy
+  }
+  export -f jank-deploy
+
   # TODO: Get this via nix.
   npm install
   '';

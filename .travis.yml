@@ -15,4 +15,4 @@ branches:
     - main
 
 script:
-  - nix-shell --command "./bin/deploy"
+  - nix-shell --command "jank-deploy"
