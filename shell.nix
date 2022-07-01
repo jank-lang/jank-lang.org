@@ -38,5 +38,7 @@ mkShell
 
   # TODO: Get this via nix.
   go install github.com/juliusmh/snippit@latest
+  go env
+  export PATH="~/go:''${PATH}"
   '';
 }
