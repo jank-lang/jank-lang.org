@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+function resource-type
+{
+  case "${1}"
+  in
+    clj | jank)
+      echo "clojure"
+      ;;
+    hpp | cpp)
+      echo "c++"
+      ;;
+    *)
+      echo "sh"
+  esac
+}
+
+function main
+{
+  local generated_img_dir
+  generated_img_dir="resources/public/generated/img"
+  /bin/rm -r "${generated_img_dir}"
+  /bin/mkdir -p "${generated_img_dir}"
+
+  local resource_files
+  resource_files="$(find resources/src -type f)"
+  for file in $resource_files;
+  do
+    local base_file file_sans_ext ext
+    base_file="${file##resources/src/}"
+    file_sans_ext="${base_file%.*}"
+    ext="${base_file##*.}"
+    mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
+    snippit --syntax "$(resource-type "${ext}")" \
+            --out "${generated_img_dir}/${file_sans_ext}.svg" \
+            --theme monokai-dark --decorations \
+            < "${file}"
+    printf "\r$(tput el)Generating ${base_file} -> ${generated_img_dir}/${file_sans_ext}.svg …"
+  done
+  printf "\r"
+}
+main

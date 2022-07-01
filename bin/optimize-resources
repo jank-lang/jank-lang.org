@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# TODO: Clean this up
+npm_dep_dir=$(mktemp -d)
+pushd "$npm_dep_dir" >/dev/null
+  npm install --no-save html-minifier yuicompressor >/dev/null 2>&1
+  export PATH="$npm_dep_dir/node_modules/.bin:$PATH"
+popd >/dev/null
+
+function optimize_html
+{
+  file="$1"
+  output="$(mktemp)"
+  html-minifier --collapse-whitespace \
+                    --remove-comments\
+                    --remove-optional-tags \
+                    --remove-redundant-attributes \
+                    --remove-script-type-attributes \
+                    --remove-tag-whitespace \
+                    --minify-css true \
+                    --minify-js true \
+                    -o "$output" \
+                    "$file" #>/dev/null 2>&1
+  mv -f "$output" "$file" >/dev/null
+}
+
+function optimize_css
+{
+  file="$1"
+  output="$(mktemp)"
+  yuicompressor -o "$output" "$file" >/dev/null 2>&1
+  new_size=$(wc -c < "$output")
+  if [ 0 -ne $new_size ];
+  then
+    mv -f "$output" "$file" >/dev/null
+  else
+    echo "invalid: $file"
+  fi
+}
+
+for file in $(find $@ -type f);
+do
+  printf "\r$(tput el)Optimizing $(basename "$file") …"
+  ext=$(sed 's/.*\.\(\S\+\)$/\1/' <<< $file)
+  case "$ext"
+  in
+    png)
+      optipng -q -o5 "$file"
+      continue
+      ;;
+    jpg|jpeg)
+      jpegoptim -s "$file" >/dev/null 2>&1
+      continue
+      ;;
+    svg)
+      output=$(mktemp)
+      scour -i "$file" -o "$output" \
+            --enable-viewboxing --enable-id-stripping \
+            --enable-comment-stripping --shorten-ids \
+            --indent=none >/dev/null 2>&1
+
+      # SVG optimization often changes files without making them smaller. Only keep
+      # the changes if there's actually an improvement.
+      before_size=$(wc -c < "$file")
+      after_size=$(wc -c < "$output")
+      if [ $after_size -lt $before_size ];
+      then
+        mv -f "$output" "$file" >/dev/null
+      else
+        rm -f "$output" >/dev/null
+      fi
+      continue
+      ;;
+    html)
+      optimize_html "$file"
+      continue
+      ;;
+    css)
+      # TODO: JS
+      optimize_css "$file"
+      continue
+      ;;
+    # TODO: JSON
+    *)
+      ;;
+  esac
+done
+
+printf '\r'
