@@ -10,3 +10,4 @@ rmdir build
 git add .
 git commit -m "Automated publish"
 git push origin gh-pages
+git checkout -
