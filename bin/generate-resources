@@ -21,7 +21,7 @@ function main
 {
   local generated_img_dir
   generated_img_dir="resources/public/generated/img"
-  /bin/rm -r "${generated_img_dir}"
+  /bin/rm -rf "${generated_img_dir}"
   /bin/mkdir -p "${generated_img_dir}"
 
   local resource_files
