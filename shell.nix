@@ -15,6 +15,7 @@ mkShell
     jpegoptim
     nodejs
     go
+    tree
   ];
   shellHook =
   ''
