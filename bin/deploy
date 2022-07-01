@@ -14,7 +14,7 @@ done
 rmdir build
 
 git add .
-git commit -m "Automated publish"
+git commit -m "Automated publish" --allow-empty
 
 # Pushing from CI requires an access token.
 if [[ "${GITHUB_ACCESS_TOKEN}x" != "x" ]];
