@@ -5,8 +5,9 @@ sudo: false
 os:
   - linux
 
-cache:
-  - apt
+branches:
+  only:
+    - main
 
 script:
   - nix-shell --command "./bin/ci/travis"
