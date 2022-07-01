@@ -3,6 +3,7 @@
 set -xeuo pipefail
 
 jank-build
+git fetch
 git checkout gh-pages
 git clean -fd -e /build
 
