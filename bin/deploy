@@ -3,7 +3,6 @@
 set -xeuo pipefail
 
 jank-build
-git fetch
 git checkout gh-pages
 git clean -fd -e /build
 
@@ -17,5 +16,15 @@ rmdir build
 
 git add .
 git commit -m "Automated publish"
-git push origin gh-pages
+
+# Pushing from CI requires an access token.
+if [[ "${GITHUB_ACCESS_TOKEN}x" !="x" ]];
+then
+  git remote remove ci-origin || true
+  git remote add ci-origin "https://${GITHUB_ACCESS_TOKEN}@github.com/jeaye/jank-lang.org.git"
+  git push ci-origin gh-pages
+else
+  git push origin gh-pages
+fi
+
 git checkout -

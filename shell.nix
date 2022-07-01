@@ -30,7 +30,7 @@ mkShell
   function jank-build
   {
     jank-generate-resources
-    lein run build
+    lein trampoline run build
     jank-optimize-resources build
   }
   export -f jank-build
