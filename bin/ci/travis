@@ -5,12 +5,15 @@ set -xeuo pipefail
 jank-build
 git checkout gh-pages
 git clean -fd -e /build
+
+# TODO: Remove everything there except build and .git
 for file in build/*;
 do
   rm -rf "${file##build/}"
   mv "${file}" .
 done
 rmdir build
+
 git add .
 git commit -m "Automated publish"
 git push origin gh-pages
