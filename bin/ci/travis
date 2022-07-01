@@ -5,7 +5,11 @@ set -xeuo pipefail
 jank-build
 git checkout gh-pages
 git clean -fd -e /build
-mv build/* .
+for file in build/*;
+do
+  rm -rf "${file##build/}"
+  mv "${file}" .
+done
 rmdir build
 git add .
 git commit -m "Automated publish"
