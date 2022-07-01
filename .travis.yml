@@ -10,4 +10,4 @@ branches:
     - main
 
 script:
-  - nix-shell --command "./bin/ci/travis"
+  - nix-shell --command "./bin/deploy"
