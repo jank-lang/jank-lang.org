@@ -5,6 +5,10 @@ sudo: false
 os:
   - linux
 
+# Deploying requires checkout out other branches and pushing commits.
+git:
+  depth: false
+
 branches:
   only:
     - main
