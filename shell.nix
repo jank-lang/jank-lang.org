@@ -10,11 +10,11 @@ mkShell
     # Resource handling.
     asciinema
     termtosvg
-    # TODO: snippet
     scour
     optipng
     jpegoptim
     nodejs
+    go
   ];
   shellHook =
   ''
@@ -35,5 +35,8 @@ mkShell
     jank-optimize-resources build
   }
   export -f jank-build
+
+  # TODO: Get this via nix.
+  go install github.com/juliusmh/snippit@latest
   '';
 }
