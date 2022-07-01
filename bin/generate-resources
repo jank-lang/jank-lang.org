@@ -33,10 +33,10 @@ function main
     file_sans_ext="${base_file%.*}"
     ext="${base_file##*.}"
     mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
-    snippit --syntax "$(resource-type "${ext}")" \
-            --out "${generated_img_dir}/${file_sans_ext}.svg" \
-            --theme monokai-dark --decorations \
-            < "${file}"
+    "${GOPATH}/bin/snippit" --syntax "$(resource-type "${ext}")" \
+                            --out "${generated_img_dir}/${file_sans_ext}.svg" \
+                            --theme monokai-dark --decorations \
+                            < "${file}"
     printf "\r$(tput el)Generating ${base_file} -> ${generated_img_dir}/${file_sans_ext}.svg …"
   done
   printf "\r"
