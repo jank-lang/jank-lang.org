@@ -2,7 +2,9 @@
 
 set -xeuo pipefail
 
+git fetch
 git checkout gh-pages
+git merge origin/gh-pages
 git clean -fd -e /build
 
 # TODO: Remove everything there except build and .git
