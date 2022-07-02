@@ -8,8 +8,8 @@ mkShell
     clojure
 
     # Resource handling.
-    asciinema
-    termtosvg
+    #asciinema
+    #termtosvg
     scour
     optipng
     jpegoptim
