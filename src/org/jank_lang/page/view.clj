@@ -19,6 +19,11 @@
 
      [:div {:class "navbar-menu"}
       [:div {:class "navbar-end has-text-weight-semibold"}
+       [:a {:class "navbar-item"
+            :href "https://github.com/jeaye/jank"}
+        [:span {:class "icon mr-1"}
+         [:i {:class "gg-git-fork"}]]
+        [:strong "Github"]]
        #_[:a {:class "navbar-item"
             :href "#"}
         [:span {:class "icon mr-1"}
