@@ -57,7 +57,13 @@
                               **persistent, immutable data structures**. When
                               mutability is needed, jank offers a software
                               transaction memory and reactive Agent system to
-                              ensure **clean and correct multi-threaded designs**.")]]]
+                              ensure **clean and correct multi-threaded designs**.")]]
+          [:div {:class "has-text-centered"}
+           [:a {:class "button mt-6 ml-4"
+                :href "https://github.com/jeaye/jank"}
+            [:span {:class "icon"}
+             [:i {:class "gg-git-fork"}]]
+            [:strong "Github"]]]]
          #_[:div {:class "column is-2"
                 :style {:margin "auto"}}
           [:div [:img {:src "https://img.shields.io/github/stars/jeaye/jank"
