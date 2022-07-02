@@ -14,7 +14,9 @@
 
 (defn markdown->hiccup [md]
   ; TODO: Add custom class to code tags to distinguish from shiki code.
-  (html->hiccup {:style {:line-height "1.7em"}} (markdown/md-to-html-string md)))
+  (->> (clojure.string/replace md #"\s+" " ")
+       (markdown/md-to-html-string)
+       (html->hiccup {:style {:line-height "1.7em"}})))
 
 (defn root []
   (page.view/page-root
@@ -29,37 +31,33 @@
           [:p {:class "title"}
            "The jank programming language"]
           [:p {:class "content is-size-5"}
-           ; TODO: Markdown this
-           "jank is a " [:b "general-purpose programming language"] " which embraces the
-           " [:b "interactive, value-oriented"] " nature of Clojure as well as the desire
-           for " [:b "native compilation and minimal runtimes"] " . jank is " [:b "100% compatible
-           with Clojure"] " without interop."]
-          [:p {:class "content is-size-5"}
-           "Where jank differs from Clojure is that its host is C++ on top of
-           an " [:b "LLVM-based JIT"] ". Furthermore, jank has a built-in
-           " [:b "gradual type system"] " which allows for malli-style type annotations
-           which result in " [:b "static type analysis"] ". This allows jank to offer the
-           same benefits of " [:b "REPL-based development"] " while being able to reach
-           much further into the lands of both " [:b "correctness and performance"] "."]
-          [:p {:class "content is-size-5"}
-           "Still, jank is a Clojure dialect and thus includes its " [:b "code-as-data
-           philosophy and powerful macro system"] ". jank remains a
-           functional-first language which builds upon Clojure's rich set of
-           " [:b "persistent, immutable data structures"] ". When mutability is needed,
-           jank offers a software transaction memory and reactive Agent system
-           to ensure " [:b "clean and correct multi-threaded designs"] "."]
-          [:div {:class "has-text-centered"}
-           #_[:a {:class "button mt-6 ml-4"
-                :href "#"}
-            [:span {:class "icon"}
-             [:i {:class "gg-info"}]]
-            [:strong "User Manual"]]
-           [:a {:class "button mt-6 ml-4"
-                :href "https://github.com/jeaye/jank"}
-            [:span {:class "icon"}
-             [:i {:class "gg-git-fork"}]]
-            [:strong "Github"]]
-           ]]
+           [:p {:class "content is-size-5"}
+            (markdown->hiccup "jank is a **general-purpose programming language**
+                              which embraces the **interactive, value-oriented**
+                              nature of Clojure as well as the desire for **native
+                              compilation and minimal runtimes**. jank is **100%
+                              compatible with Clojure**.")]
+
+           [:p {:class "content is-size-5"}
+            (markdown->hiccup "Where jank differs from Clojure is that its host
+                              is C++ on top of an **LLVM-based JIT**. Furthermore,
+                              jank has a built-in **gradual type system** which
+                              allows for malli-style type annotations which
+                              result in **static type analysis**. This allows jank
+                              to offer the same benefits of **REPL-based
+                              development** while being able to reach much further
+                              into the lands of both **correctness and
+                              performance**.")]
+
+           [:p {:class "content is-size-5"}
+            (markdown->hiccup "Still, jank is a Clojure dialect and thus includes
+                              its **code-as-data philosophy and powerful macro
+                              system**. jank remains a functional-first language
+                              which builds upon Clojure's rich set of
+                              **persistent, immutable data structures**. When
+                              mutability is needed, jank offers a software
+                              transaction memory and reactive Agent system to
+                              ensure **clean and correct multi-threaded designs**.")]]]
          #_[:div {:class "column is-2"
                 :style {:margin "auto"}}
           [:div [:img {:src "https://img.shields.io/github/stars/jeaye/jank"
