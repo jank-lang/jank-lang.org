@@ -19,6 +19,7 @@ mkShell
   ''
   function jank-generate-resources
   {
+    npm install
     ./bin/generate-resources $@
   }
   export -f jank-generate-resources
@@ -41,8 +42,5 @@ mkShell
     ./bin/deploy
   }
   export -f jank-deploy
-
-  # TODO: Get this via nix.
-  npm install
   '';
 }

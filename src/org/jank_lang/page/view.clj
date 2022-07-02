@@ -19,7 +19,7 @@
 
      [:div {:class "navbar-menu"}
       [:div {:class "navbar-end has-text-weight-semibold"}
-       [:a {:class "navbar-item"
+       #_[:a {:class "navbar-item"
             :href "#"}
         [:span {:class "icon mr-1"}
          [:i {:class "gg-info"}]]
@@ -64,7 +64,7 @@
                [:p {:class "menu-label"}
                 "Resources"]
                [:ul {:class "menu-list"}
-                [:li [:a {:href "#"} "User Manual"]]
+                #_[:li [:a {:href "#"} "User Manual"]]
                 [:li [:a {:href "https://web.libera.chat/?channel=#jank"} "Community"]]
                 [:li [:a {:href "https://github.com/jeaye/jank"} "Github"]]]
                ]]]

@@ -2,7 +2,25 @@ pre.shiki
 {
   border-radius: 15px;
   font-size: 1em;
+  line-height: 1.7em;
+  padding: 0.5em 1.5em 0em 1.5em;
 }
+
+code
+{
+  padding: 0.25em !important;
+  border: 1px solid;
+  border-color: lightgrey;
+  border-radius: 7px;
+  background-color: #272822 !important;
+  color: #A6E22E !important;
+}
+
+pre.shiki code
+{
+  border: none;
+}
+
 
 
 
