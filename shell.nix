@@ -5,7 +5,6 @@ mkShell
   [
     # HTML generation.
     leiningen
-    clojure
 
     # Resource handling.
     #asciinema
