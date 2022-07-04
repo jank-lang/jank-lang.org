@@ -49,21 +49,36 @@
     [:link {:rel "stylesheet"
             :href "https://css.gg/css?=sync|bulb|list|link|git-fork|info|comment"}]
     [:title "jank programming language - Clojure/LLVM/Gradual Typing"]
+    "<!-- Matomo -->
+    <script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like 'setCustomDimension' should be called before 'trackPageView' */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+                 var u='//matomo.jeaye.com/';
+                 _paq.push(['setTrackerUrl', u+'matomo.php']);
+                 _paq.push(['setSiteId', '1']);
+                 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                 g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+                 })();
+    </script>
+    <!-- End Matomo Code -->"
     (conj (into [:body] body)
           [:footer {:class "footer"}
            [:div {:class "container"}
             [:div {:class "columns has-text-centered"}
              #_[:div {:class "column is-pulled-right"
-                    :style {:margin "auto"}}
-              [:div [:img {:src "https://img.shields.io/github/stars/jeaye/jank"
-                           :width "100px"}]]
-              [:div [:img {:src "https://app.travis-ci.com/jeaye/jank.svg?branch=main"
-                           :width "150px"}]]
-              [:div [:img {:src "https://codecov.io/gh/jeaye/jank/branch/main/graph/badge.svg"
-                           :width "150px"}]]
-              [:div [:img {:src "https://img.shields.io/badge/libera%20irc-%23jank-blue"
-                           :width "150px"}]]
-              ]
+                      :style {:margin "auto"}}
+                [:div [:img {:src "https://img.shields.io/github/stars/jeaye/jank"
+                             :width "100px"}]]
+                [:div [:img {:src "https://app.travis-ci.com/jeaye/jank.svg?branch=main"
+                             :width "150px"}]]
+                [:div [:img {:src "https://codecov.io/gh/jeaye/jank/branch/main/graph/badge.svg"
+                             :width "150px"}]]
+                [:div [:img {:src "https://img.shields.io/badge/libera%20irc-%23jank-blue"
+                             :width "150px"}]]
+                ]
              [:div {:class "column has-text-centered"}
               [:aside {:class "menu"}
                [:p {:class "menu-label"}
