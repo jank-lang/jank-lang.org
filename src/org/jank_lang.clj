@@ -40,6 +40,7 @@
     (fs/delete-dir output-dir)
     (fs/copy-dir "resources/public" output-dir)
     (doseq [[output-file view-fn] pages]
+      (fs/mkdirs (fs/parent (str output-dir "/" output-file)))
       (spit (str output-dir "/" output-file) (view-fn)))))
 
 (defn -main [& [command & _args]]
