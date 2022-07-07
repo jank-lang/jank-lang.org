@@ -14,7 +14,8 @@
     [:div {:class "container"}
      [:div {:class "navbar-brand"}
       [:a {:class "navbar-item title"
-           :href "/"}
+           :href "/"
+           :style {:font-family "Comfortaa"}}
        "jank"]]
 
      [:div {:class "navbar-menu"}
@@ -49,6 +50,12 @@
     [:link {:rel "stylesheet"
             :href "https://css.gg/css?=sync|bulb|list|link|git-fork|info|comment"}]
     [:title "jank programming language - Clojure/LLVM/Gradual Typing"]
+
+    ; TODO: Include this font myself.
+    "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+    <link href=\"https://fonts.googleapis.com/css2?family=Comfortaa\" rel=\"stylesheet\"> "
+
     "<!-- Matomo -->
     <script>
     var _paq = window._paq = window._paq || [];
@@ -64,6 +71,7 @@
     </script>
     <noscript><p><img src=\"//matomo.jeaye.com/matomo.php?idsite=1&amp;rec=1\" style=\"border:0;\" alt=\"\" /></p></noscript>
     <!-- End Matomo Code -->"
+
     (conj (into [:body] body)
           [:footer {:class "footer"}
            [:div {:class "container"}
