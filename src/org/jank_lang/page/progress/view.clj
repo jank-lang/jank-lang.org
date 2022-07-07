@@ -1,20 +1,14 @@
 (ns org.jank_lang.page.progress.view
   (:require [clojure.string]
-            [hickory.core :as hickory]
-            [markdown.core :as markdown]
-            [org.jank_lang.page.util :refer [merge-attrs] :as page.util]
             [org.jank_lang.page.view :as page.view]))
 
 (def lex-parse-anal-eval [:lex :parse :analyze :eval])
 (def lex-parse-anal-eval-done (into #{} lex-parse-anal-eval))
 (def reader-macro [:lex])
 
-(def progress [{:feature "parens"
+(def progress [{:feature "comments"
                 :tasks [:lex :parse]
-                :done #{:lex :parse}}
-               {:feature "comments"
-                :tasks [:lex :parse]
-                :done #{:lex :parse}}
+                :done #{:lex}}
                {:feature "nil"
                 :tasks lex-parse-anal-eval
                 :done #{}}
