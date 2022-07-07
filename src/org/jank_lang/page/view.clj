@@ -7,9 +7,6 @@
 
 (defn header [_request]
   [:div
-   #_[:div {:class "has-text-white has-background-primary py-4 has-text-centered"}
-    "jank is currently under heavy development. Feedback is welcome!"]
-
    [:nav {:class "navbar is-white"}
     [:div {:class "container"}
      [:div {:class "navbar-brand"}
@@ -20,6 +17,11 @@
 
      [:div {:class "navbar-menu"}
       [:div {:class "navbar-end has-text-weight-semibold"}
+       [:a {:class "navbar-item"
+            :href "/progress"}
+        [:span {:class "icon mr-1"}
+         [:i {:class "gg-list"}]]
+        [:strong "Progress"]]
        [:a {:class "navbar-item"
             :href "https://github.com/jeaye/jank"}
         [:span {:class "icon mr-1"}
@@ -48,7 +50,7 @@
             :href "/css/main.css"}]
     ; TODO: Configure my own bulma css.
     [:link {:rel "stylesheet"
-            :href "https://css.gg/css?=sync|bulb|list|link|git-fork|info|comment"}]
+            :href "https://css.gg/css?=sync|bulb|list|link|git-fork|info|comment|math-minus|check-o"}]
     [:title "jank programming language - Clojure/LLVM/Gradual Typing"]
 
     ; TODO: Include this font myself.

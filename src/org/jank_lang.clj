@@ -6,13 +6,16 @@
             [ring.middleware.content-type :refer [wrap-content-type]]
             [ring.adapter.jetty :as jetty]
             [me.raynes.fs :as fs]
-            [org.jank_lang.page.landing.view :as landing.view])
+            [org.jank_lang.page.landing.view :as landing.view]
+            [org.jank_lang.page.progress.view :as progress.view])
   (:import [org.eclipse.jetty.server Server])
   (:gen-class))
 
 (defroutes app-handler
   (GET "/" [] (fn [_]
                 (landing.view/root)))
+  (GET "/progress" [] (fn [_]
+                        (progress.view/root)))
   (route/not-found "<h1>Page not found</h1>"))
 
 (defonce app-server (atom nil))
@@ -32,7 +35,8 @@
 
 (defn build! []
   (let [output-dir "build"
-        pages {"index.html" landing.view/root}]
+        pages {"index.html" landing.view/root
+               "progress/index.html" progress.view/root}]
     (fs/delete-dir output-dir)
     (fs/copy-dir "resources/public" output-dir)
     (doseq [[output-file view-fn] pages]
