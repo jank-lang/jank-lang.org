@@ -6,139 +6,194 @@
 (def lex-parse-anal-eval-done (into #{} lex-parse-anal-eval))
 (def reader-macro [:lex])
 
-(def progress [{:feature "comments"
-                :tasks [:lex :parse]
-                :done #{:lex}}
-               {:feature "nil"
-                :tasks lex-parse-anal-eval
-                :done #{}}
-               {:feature "integers/positive"
-                :tasks lex-parse-anal-eval
-                :done lex-parse-anal-eval-done}
-               {:feature "integers/negative"
-                :tasks lex-parse-anal-eval
-                :done #{:parse :analyze :eval}}
-               {:feature "floats/positive"
-                :tasks lex-parse-anal-eval
-                :done #{}}
-               {:feature "floats/negative"
-                :tasks lex-parse-anal-eval
-                :done #{}}
-               {:feature "bools"
-                :tasks lex-parse-anal-eval
-                :done #{}}
-               {:feature "chars"
-                :tasks lex-parse-anal-eval
-                :done #{}}
-               {:feature "strings"
-                :tasks lex-parse-anal-eval
-                :done lex-parse-anal-eval-done}
-               {:feature "keywords/unqualified"
-                :tasks lex-parse-anal-eval
-                :done #{:lex :parse}}
-               {:feature "keywords/qualified"
-                :tasks lex-parse-anal-eval
-                :done #{:lex :parse}}
-               {:feature "keywords/aliased"
-                :tasks lex-parse-anal-eval
-                :done #{}}
-               {:feature "maps"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "vectors"
-                :tasks lex-parse-anal-eval
-                :done lex-parse-anal-eval-done}
-               {:feature "sets"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "lists"
-                :tasks lex-parse-anal-eval
-                :done lex-parse-anal-eval-done}
-               {:feature "regexes"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "symbols"
-                :tasks lex-parse-anal-eval
-                :done lex-parse-anal-eval-done}
-               {:feature "specials/def"
-                :tasks lex-parse-anal-eval
-                :done lex-parse-anal-eval-done}
-               {:feature "specials/if"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "specials/do"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "specials/let*"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "specials/quote"
-                :tasks lex-parse-anal-eval
-                :done lex-parse-anal-eval-done}
-               {:feature "specials/var"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "specials/fn*"
-                :tasks lex-parse-anal-eval
-                :done lex-parse-anal-eval-done}
-               {:feature "specials/loop*"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "specials/recur"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "specials/throw"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "specials/try"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "specials/monitor-enter"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "specials/monitor-exit"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "bindings/thread-local"
-                :tasks lex-parse-anal-eval
-                :done #{}}
-               {:feature "bindings/conveyance"
-                :tasks lex-parse-anal-eval
-                :done #{}}
-               {:feature "calls"
-                :tasks lex-parse-anal-eval
-                :done lex-parse-anal-eval-done}
-               {:feature "destructuring"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "macros"
-                :tasks lex-parse-anal-eval
-                :done #{:lex}}
-               {:feature "reader-macros/shorthand-fns"
-                :tasks reader-macro
-                :done #{}}
-               {:feature "reader-macros/regex"
-                :tasks reader-macro
-                :done #{}}
-               {:feature "reader-macros/quote"
-                :tasks reader-macro
-                :done #{:lex}}
-               {:feature "reader-macros/var"
-                :tasks reader-macro
-                :done #{}}
-               {:feature "reader-macros/conditional"
-                :tasks reader-macro
-                :done #{}}])
-(def task-stats (reduce (fn [acc feature-progress]
-                          (-> acc
-                              (update :total #(+ % (-> feature-progress :tasks count)))
-                              (update :done #(+ % (-> feature-progress :done count)))))
-                        {:total 0
-                         :done 0}
-                        progress))
-(def done-percent (int (* 100 (/ (:done task-stats) (:total task-stats)))))
+(def milestones [{:name "Clojure parity"
+                  :features [{:name "comments"
+                              :tasks [:lex :parse]
+                              :done #{:lex}}
+                             {:name "nil"
+                              :tasks lex-parse-anal-eval
+                              :done #{}}
+                             {:name "integers/positive"
+                              :tasks lex-parse-anal-eval
+                              :done lex-parse-anal-eval-done}
+                             {:name "integers/negative"
+                              :tasks lex-parse-anal-eval
+                              :done #{:parse :analyze :eval}}
+                             {:name "floats/positive"
+                              :tasks lex-parse-anal-eval
+                              :done #{}}
+                             {:name "floats/negative"
+                              :tasks lex-parse-anal-eval
+                              :done #{}}
+                             {:name "bools"
+                              :tasks lex-parse-anal-eval
+                              :done #{}}
+                             {:name "chars"
+                              :tasks lex-parse-anal-eval
+                              :done #{}}
+                             {:name "strings"
+                              :tasks lex-parse-anal-eval
+                              :done lex-parse-anal-eval-done}
+                             {:name "keywords/unqualified"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex :parse}}
+                             {:name "keywords/qualified"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex :parse}}
+                             {:name "keywords/aliased"
+                              :tasks lex-parse-anal-eval
+                              :done #{}}
+                             {:name "maps"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "vectors"
+                              :tasks lex-parse-anal-eval
+                              :done lex-parse-anal-eval-done}
+                             {:name "sets"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "lists"
+                              :tasks lex-parse-anal-eval
+                              :done lex-parse-anal-eval-done}
+                             {:name "regexes"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "symbols"
+                              :tasks lex-parse-anal-eval
+                              :done lex-parse-anal-eval-done}
+                             {:name "specials/def"
+                              :tasks lex-parse-anal-eval
+                              :done lex-parse-anal-eval-done}
+                             {:name "specials/if"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "specials/do"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "specials/let*"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "specials/quote"
+                              :tasks lex-parse-anal-eval
+                              :done lex-parse-anal-eval-done}
+                             {:name "specials/var"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "specials/fn*"
+                              :tasks lex-parse-anal-eval
+                              :done lex-parse-anal-eval-done}
+                             {:name "specials/loop*"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "specials/recur"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "specials/throw"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "specials/try"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "specials/monitor-enter"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "specials/monitor-exit"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "bindings/thread-local"
+                              :tasks lex-parse-anal-eval
+                              :done #{}}
+                             {:name "bindings/conveyance"
+                              :tasks lex-parse-anal-eval
+                              :done #{}}
+                             {:name "calls"
+                              :tasks lex-parse-anal-eval
+                              :done lex-parse-anal-eval-done}
+                             {:name "destructuring"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "macros"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "reader macros/shorthand fns"
+                              :tasks reader-macro
+                              :done #{}}
+                             {:name "reader-macros/regex"
+                              :tasks reader-macro
+                              :done #{}}
+                             {:name "reader-macros/quote"
+                              :tasks reader-macro
+                              :done #{:lex}}
+                             {:name "reader-macros/var"
+                              :tasks reader-macro
+                              :done #{}}
+                             {:name "reader-macros/conditional"
+                              :tasks reader-macro
+                              :done #{}}]}
+                 {:name "Native runtime"
+                  :features [{:name "interop/include headers"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "interop/link libraries"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "interop/represent native objects"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "interop/call native functions"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "interop/explicitly box unbox native objects"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "interop/refer to native globals"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "interop/access native members"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "interop/extract native value from jank object"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "interop/convert native value to jank object"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "interop/create native objects"
+                              :tasks [:done]
+                              :done #{}}]}
+                 {:name "Gradual typing"
+                  :features [{:name "type annotations"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "infer left hand type"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "infer right hand type"
+                              :tasks [:done]
+                              :done #{}}]}
+                 {:name "Tooling"
+                  :features [{:name "leiningen support"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "nrepl support"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "lsp support"
+                              :tasks [:done]
+                              :done #{}}]}])
 
-(defn feature-progress->table-row [{:keys [feature tasks done]}]
+(defn milestone-stats [{:keys [name features]}]
+  (let [total+done (reduce (fn [acc feature]
+                             (-> acc
+                                 (update :total #(+ % (-> feature :tasks count)))
+                                 (update :done #(+ % (-> feature :done count)))))
+                           {:total 0
+                            :done 0}
+                           features)]
+    (assoc total+done :percent-done (int (* 100 (/ (:done total+done) (:total total+done)))))))
+(def milestone->stats (zipmap (map :name milestones) (map milestone-stats milestones)))
+
+(defn feature->table-row [{:keys [name tasks done]}]
   (->> tasks
        (map (fn [task]
               (let [done? (contains? done task)]
@@ -150,9 +205,22 @@
                    [:i {:class (if done?
                                  "gg-check-o"
                                  "gg-math-minus")}]]
-                  (name task)]])))
+                  (clojure.core/name task)]])))
        (into [:tr
-              [:th feature]])))
+              [:td name]])))
+
+(defn milestone->table [{:keys [name features]}]
+  [:tr
+   [:th name]
+   [:td
+    [:table {:class "table is-fullwidth is-hoverable"}
+     [:thead {}
+      [:tr
+       [:th {:width "25%"}
+        "Feature"]
+       [:th {:colspan "5"}
+        (str "Status (Total percentage done " (:percent-done (milestone->stats name)) "%)")]]]
+     (into [:tbody] (map feature->table-row features))]]])
 
 (defn root []
   (page.view/page-root
@@ -179,14 +247,13 @@
            [:i {:class "gg-heart"}]]
           [:strong "Sponsor"]]]]]]
 
-     [:section {:id "progress"
+     [:section {:id "milestones"
                 :class "section"}
       [:div {:class "container"}
-       [:table {:class "table is-fullwidth is-hoverable"}
+       [:table {:class "table is-fullwidth"}
         [:thead {}
          [:tr
-          [:th {:width "25%"}
-           "Feature"]
-          [:th {:colspan "5"}
-           (str "Status (Total percentage done " done-percent "%)")]]]
-        (into [:tbody] (map feature-progress->table-row progress))]]]]))
+          [:th {:width "20%"}
+           "Milestone"]
+          [:th]]]
+        (into [:tbody] (map milestone->table milestones))]]]]))
