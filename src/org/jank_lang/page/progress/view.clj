@@ -68,10 +68,10 @@
                 :done #{:lex}}
                {:feature "specials/do"
                 :tasks lex-parse-anal-eval
-                :done #:lex{}}
+                :done #{:lex}}
                {:feature "specials/let*"
                 :tasks lex-parse-anal-eval
-                :done #:lex{}}
+                :done #{:lex}}
                {:feature "specials/quote"
                 :tasks lex-parse-anal-eval
                 :done lex-parse-anal-eval-done}
