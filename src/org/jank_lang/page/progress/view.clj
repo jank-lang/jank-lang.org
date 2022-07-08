@@ -57,10 +57,7 @@
                {:feature "regexes"
                 :tasks lex-parse-anal-eval
                 :done #{:lex}}
-               {:feature "symbols/unqualified"
-                :tasks lex-parse-anal-eval
-                :done lex-parse-anal-eval-done}
-               {:feature "symbols/qualified"
+               {:feature "symbols"
                 :tasks lex-parse-anal-eval
                 :done lex-parse-anal-eval-done}
                {:feature "specials/def"
