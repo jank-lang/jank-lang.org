@@ -46,11 +46,11 @@
     [:link {:rel "icon"
             :type "image/svg+xml"
             :href "/img/favicon.svg"}]
-    [:link {:rel "stylesheet"
-            :href "/css/main.css"}]
     ; TODO: Configure my own bulma css.
     [:link {:rel "stylesheet"
-            :href "https://css.gg/css?=sync|bulb|list|link|git-fork|info|comment|math-minus|check-o"}]
+            :href "/css/main.css"}]
+    [:link {:rel "stylesheet"
+            :href "https://css.gg/css?=sync|bulb|list|link|git-fork|info|comment|math-minus|check-o|heart"}]
     [:title "jank programming language - Clojure/LLVM/Gradual Typing"]
 
     ; TODO: Include this font myself.

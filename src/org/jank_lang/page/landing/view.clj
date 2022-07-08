@@ -63,12 +63,17 @@
                 :href "/progress"}
             [:span {:class "icon"}
              [:i {:class "gg-list"}]]
-            [:strong "View current progress"]]
+            [:strong "Current progress"]]
            [:a {:class "button mt-6 ml-4"
                 :href "https://github.com/jeaye/jank"}
             [:span {:class "icon"}
              [:i {:class "gg-git-fork"}]]
-            [:strong "Github"]]]]
+            [:strong "Github"]]
+           [:a {:class "button mt-6 ml-4"
+                :href "https://github.com/sponsors/jeaye"}
+            [:span {:class "icon"}
+             [:i {:class "gg-heart"}]]
+            [:strong "Sponsor"]]]]
          #_[:div {:class "column is-2"
                 :style {:margin "auto"}}
           [:div [:img {:src "https://img.shields.io/github/stars/jeaye/jank"

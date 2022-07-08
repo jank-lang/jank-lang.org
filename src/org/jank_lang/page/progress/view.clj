@@ -172,7 +172,12 @@
               :href "https://github.com/jeaye/jank"}
           [:span {:class "icon"}
            [:i {:class "gg-git-fork"}]]
-          [:strong "Github"]]]]]]
+          [:strong "Github"]]
+         [:a {:class "button ml-4"
+              :href "https://github.com/sponsors/jeaye"}
+          [:span {:class "icon"}
+           [:i {:class "gg-heart"}]]
+          [:strong "Sponsor"]]]]]]
 
      [:section {:id "progress"
                 :class "section"}
