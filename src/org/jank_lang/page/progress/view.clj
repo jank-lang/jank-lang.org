@@ -113,7 +113,7 @@
                 :done #{:lex}}
                {:feature "macros"
                 :tasks lex-parse-anal-eval
-                :done #{}}
+                :done #{:lex}}
                {:feature "reader-macros/shorthand-fns"
                 :tasks reader-macro
                 :done #{}}
