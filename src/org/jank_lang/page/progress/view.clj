@@ -72,7 +72,7 @@
                               :done #{:lex}}
                              {:name "specials/let*"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
+                              :done #{:lex :parse :analyze}}
                              {:name "specials/quote"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
