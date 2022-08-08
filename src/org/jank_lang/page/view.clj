@@ -33,7 +33,7 @@
          [:i {:class "gg-info"}]]
         "User Manual"]
        [:a {:class "navbar-item"
-            :href "https://web.libera.chat/?channel=#jank"}
+            :href "https://clojurians.slack.com/archives/C03SRH97FDK"}
         [:span {:class "icon mr-1"}
          [:i {:class "gg-comment"}]]
         "Community"]]]]]])
@@ -95,7 +95,7 @@
                 "Resources"]
                [:ul {:class "menu-list"}
                 #_[:li [:a {:href "#"} "User Manual"]]
-                [:li [:a {:href "https://web.libera.chat/?channel=#jank"} "Community"]]
+                [:li [:a {:href "https://clojurians.slack.com/archives/C03SRH97FDK"} "Community"]]
                 [:li [:a {:href "https://github.com/jeaye/jank"} "Github"]]]
                ]]]
             [:div {:class "container has-text-centered"}
