@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const shiki = require('shiki')
-const fs = require('fs')
+const shiki = require('shiki');
+const fs = require('fs');
 
 const file = process.argv[2];
 const file_type = process.argv[3];

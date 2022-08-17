@@ -166,7 +166,7 @@
             [:h3 {:class "title is-4 has-text-white"}
              "REPL and native JIT"]]
            [:p
-            "Use your favority nrepl editor plugin. jank uses an LLVM-based JIT to compile machine code on the fly."]]]
+            "Use your favorite nREPL editor plugin. jank uses an LLVM-based JIT to compile machine code on the fly."]]]
 
          [:div {:class "columns"}
           [:div {:class "column is-6"}
@@ -221,7 +221,7 @@
          [:p {:class "has-text-left"}
           (markdown->hiccup "Beyond the traditional `map`, `filter`, and `reduce`, jank provides
                             a powerful `loop` macro for more imperative-style
-                            loops while still being purely functional. Each meow `loop` has one or more
+                            loops while still being purely functional. Each `loop` has one or more
                             corresponding `recur` usages which must be in tail position.")]]
         [:div {:class "column is-8"}
          (html->hiccup {} (slurp-html! "landing/example/size-human-readable.html"))]]
