@@ -237,7 +237,7 @@
          plans. All development happens on Github, so watch the repo there!"]
         [:div {:class "has-text-centered"}
          [:a {:class "button ml-4"
-              :href "https://github.com/jeaye/jank"}
+              :href "https://github.com/jank-lang/jank"}
           [:span {:class "icon"}
            [:i {:class "gg-git-fork"}]]
           [:strong "Github"]]

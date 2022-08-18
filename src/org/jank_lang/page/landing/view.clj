@@ -65,7 +65,7 @@
              [:i {:class "gg-list"}]]
             [:strong "Current progress"]]
            [:a {:class "button mt-6 ml-4"
-                :href "https://github.com/jeaye/jank"}
+                :href "https://github.com/jank-lang/jank"}
             [:span {:class "icon"}
              [:i {:class "gg-git-fork"}]]
             [:strong "Github"]]
