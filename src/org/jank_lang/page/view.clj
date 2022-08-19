@@ -36,7 +36,12 @@
             :href "https://clojurians.slack.com/archives/C03SRH97FDK"}
         [:span {:class "icon mr-1"}
          [:i {:class "gg-comment"}]]
-        "Community"]]]]]])
+        "Community"]
+       [:a {:class "navbar-item"
+            :href "https://twitter.com/jeayewilkerson"}
+        [:span {:class "icon mr-1"}
+         [:i {:class "gg-twitter"}]]
+        "Twitter"]]]]]])
 
 (defn page-root [& body]
   (page/html5
@@ -50,7 +55,7 @@
     [:link {:rel "stylesheet"
             :href "/css/main.css"}]
     [:link {:rel "stylesheet"
-            :href "https://css.gg/css?=sync|bulb|list|link|git-fork|info|comment|math-minus|check-o|heart"}]
+            :href "https://css.gg/css?=sync|bulb|list|link|git-fork|info|comment|math-minus|check-o|heart|twitter"}]
     [:title "jank programming language - Clojure/LLVM/Gradual Typing"]
 
     ; TODO: Include this font myself.

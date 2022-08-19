@@ -35,8 +35,9 @@
             (markdown->hiccup "jank is a **general-purpose programming language**
                               which embraces the **interactive, value-oriented**
                               nature of Clojure as well as the desire for **native
-                              compilation and minimal runtimes**. jank is **100%
-                              compatible with Clojure**.")]
+                              compilation and minimal runtimes**. jank is **strongly
+                              compatible with Clojure**. Please note that jank is under
+                              heavy development; assume all features are planned or incomplete.")]
 
            [:p {:class "content is-size-5"}
             (markdown->hiccup "Where jank differs from Clojure is that its host
@@ -56,7 +57,7 @@
                               which builds upon Clojure's rich set of
                               **persistent, immutable data structures**. When
                               mutability is needed, jank offers a software
-                              transaction memory and reactive Agent system to
+                              transaction memory and reactive agent system to
                               ensure **clean and correct multi-threaded designs**.")]]
           [:div {:class "has-text-centered"}
            [:a {:class "button mt-6 ml-4"
@@ -155,7 +156,7 @@
             [:span {:class "icon"}
              [:i {:class "gg-bulb"}]]
             [:h3 {:class "title is-4 has-text-white"}
-             "100% compatible with Clojure"]]
+             "Strongly compatible with Clojure"]]
            [:p
             "Any Clojure library without interop will compile into your jank projects."]]
 
