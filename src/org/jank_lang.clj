@@ -49,5 +49,6 @@
     "serve" (start!)))
 
 (comment
+  ; http://localhost:3000
   (start!)
   (stop!))

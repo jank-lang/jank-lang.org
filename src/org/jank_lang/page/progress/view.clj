@@ -13,17 +13,11 @@
                               :done #{:lex}}
                              {:name "nil"
                               :tasks lex-parse-anal-eval
-                              :done #{}}
-                             {:name "integers/positive"
+                              :done lex-parse-anal-eval-done}
+                             {:name "integers"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
-                             {:name "integers/negative"
-                              :tasks lex-parse-anal-eval
-                              :done #{:parse :analyze :eval}}
-                             {:name "floats/positive"
-                              :tasks lex-parse-anal-eval
-                              :done #{}}
-                             {:name "floats/negative"
+                             {:name "floats"
                               :tasks lex-parse-anal-eval
                               :done #{}}
                              {:name "bools"
@@ -37,13 +31,16 @@
                               :done lex-parse-anal-eval-done}
                              {:name "keywords/unqualified"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex :parse}}
+                              :done lex-parse-anal-eval-done}
                              {:name "keywords/qualified"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex :parse}}
-                             {:name "keywords/aliased"
+                              :done lex-parse-anal-eval-done}
+                             {:name "keywords/auto-resolved-unqualified"
                               :tasks lex-parse-anal-eval
-                              :done #{}}
+                              :done lex-parse-anal-eval-done}
+                             {:name "keywords/auto-resolved-qualified"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex :parse}}
                              {:name "maps"
                               :tasks lex-parse-anal-eval
                               :done #{:lex}}
@@ -124,7 +121,7 @@
                               :done #{}}
                              {:name "reader-macros/quote"
                               :tasks reader-macro
-                              :done #{:lex}}
+                              :done lex-parse-anal-eval-done}
                              {:name "reader-macros/var"
                               :tasks reader-macro
                               :done #{}}
