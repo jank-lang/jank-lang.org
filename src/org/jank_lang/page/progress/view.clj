@@ -17,9 +17,9 @@
                              {:name "integers"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
-                             {:name "floats"
+                             {:name "reals"
                               :tasks lex-parse-anal-eval
-                              :done #{}}
+                              :done lex-parse-anal-eval-done}
                              {:name "bools"
                               :tasks lex-parse-anal-eval
                               :done #{}}
