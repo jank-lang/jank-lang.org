@@ -10,7 +10,7 @@
 (def milestones [{:name "Clojure syntax parity"
                   :features [{:name "comments"
                               :tasks [:lex :parse]
-                              :done #{:lex}}
+                              :done #{:lex :parse}}
                              {:name "nil"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
