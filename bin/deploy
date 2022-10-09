@@ -15,6 +15,12 @@ do
 done
 rmdir build
 
+if [[ "${GITHUB_ACCESS_TOKEN}x" != "x" ]];
+then
+  git config --global user.email "github-actions@notadomain"
+  git config --global user.name "Github Actions"
+fi
+
 git add .
 git commit -m "Automated publish" --allow-empty
 
