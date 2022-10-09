@@ -22,7 +22,7 @@
                               :done lex-parse-anal-eval-done}
                              {:name "bools"
                               :tasks lex-parse-anal-eval
-                              :done #{}}
+                              :done lex-parse-anal-eval-done}
                              {:name "chars"
                               :tasks lex-parse-anal-eval
                               :done #{}}
