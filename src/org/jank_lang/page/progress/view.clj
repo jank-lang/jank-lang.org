@@ -43,7 +43,7 @@
                               :done #{:lex :parse}}
                              {:name "maps"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
+                              :done lex-parse-anal-eval-done}
                              {:name "vectors"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
