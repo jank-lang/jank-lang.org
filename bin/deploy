@@ -15,7 +15,7 @@ do
 done
 rmdir build
 
-if [[ "${GITHUB_ACCESS_TOKEN}x" != "x" ]];
+if [[ "${GITHUB_TOKEN}x" != "x" ]];
 then
   git config --global user.email "github-actions@notadomain"
   git config --global user.name "Github Actions"
@@ -25,10 +25,10 @@ git add .
 git commit -m "Automated publish" --allow-empty
 
 # Pushing from CI requires an access token.
-if [[ "${GITHUB_ACCESS_TOKEN}x" != "x" ]];
+if [[ "${GITHUB_TOKEN}x" != "x" ]];
 then
   git remote remove ci-origin || true
-  git remote add ci-origin "https://${GITHUB_ACCESS_TOKEN}@github.com/jank-lang/jank-lang.org.git"
+  git remote add ci-origin "https://${GITHUB_TOKEN}@github.com/jank-lang/jank-lang.org.git"
   git push ci-origin gh-pages
 else
   git push origin gh-pages
