@@ -240,13 +240,7 @@
                              {:name "*unchecked-math*"
                               :tasks [:done :tested]
                               :done #{}}
-                             {:name "*use-context-classloader*"
-                              :tasks [:done :tested]
-                              :done #{}}
                              {:name "*verbose-defrecords*"
-                              :tasks [:done :tested]
-                              :done #{}}
-                             {:name "*warn-on-reflection*"
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "+"
@@ -265,30 +259,6 @@
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "->>"
-                              :tasks [:done :tested]
-                              :done #{}}
-                             {:name "->ArrayChunk"
-                              :tasks [:done :tested]
-                              :done #{}}
-                             {:name "->Eduction"
-                              :tasks [:done :tested]
-                              :done #{}}
-                             {:name "->Vec"
-                              :tasks [:done :tested]
-                              :done #{}}
-                             {:name "->VecNode"
-                              :tasks [:done :tested]
-                              :done #{}}
-                             {:name "->VecSeq"
-                              :tasks [:done :tested]
-                              :done #{}}
-                             {:name "-cache-protocol-fn"
-                              :tasks [:done :tested]
-                              :done #{}}
-                             {:name "-reset-methods"
-                              :tasks [:done :tested]
-                              :done #{}}
-                             {:name ".."
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "/"
@@ -312,22 +282,10 @@
                              {:name ">="
                               :tasks [:done :tested]
                               :done #{}}
-                             {:name "EMPTY-NODE"
-                              :tasks [:done :tested]
-                              :done #{}}
                              {:name "Inst"
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "NaN?"
-                              :tasks [:done :tested]
-                              :done #{}}
-                             {:name "PrintWriter-on"
-                              :tasks [:done :tested]
-                              :done #{}}
-                             {:name "StackTraceElement->vec"
-                              :tasks [:done :tested]
-                              :done #{}}
-                             {:name "Throwable->map"
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "abs"
@@ -887,7 +845,7 @@
                               :done #{}}
                              {:name "false?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "ffirst"
                               :tasks [:done :tested]
                               :done #{}}
@@ -944,7 +902,7 @@
                               :done #{}}
                              {:name "fn?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "fnext"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1052,7 +1010,7 @@
                               :done #{}}
                              {:name "ifn?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "import"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1376,7 +1334,7 @@
                               :done #{}}
                              {:name "number?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "numerator"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1940,7 +1898,7 @@
                               :done #{}}
                              {:name "true?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "type"
                               :tasks [:done :tested]
                               :done #{}}
