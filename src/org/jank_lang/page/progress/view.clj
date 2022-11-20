@@ -2160,16 +2160,16 @@
                               :done #{}}
                              {:name "interop/call native functions"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "interop/explicitly box unbox native objects"
                               :tasks [:done]
                               :done #{}}
                              {:name "interop/refer to native globals"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "interop/access native members"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "interop/extract native value from jank object"
                               :tasks [:done]
                               :done #{}}
