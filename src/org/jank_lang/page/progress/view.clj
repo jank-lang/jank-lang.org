@@ -77,9 +77,15 @@
                              {:name "specials/var"
                               :tasks lex-parse-anal-eval
                               :done #{:lex}}
-                             {:name "specials/fn*"
+                             {:name "specials/fn*/base"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
+                             {:name "specials/fn*/arities"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex}}
+                             {:name "specials/fn*/variadic"
+                              :tasks lex-parse-anal-eval
+                              :done #{}}
                              {:name "specials/loop*"
                               :tasks lex-parse-anal-eval
                               :done #{:lex}}
@@ -112,7 +118,7 @@
                               :done #{:lex}}
                              {:name "macros"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
+                              :done #{:lex :parse}}
                              {:name "reader macros/shorthand fns"
                               :tasks reader-macro
                               :done #{}}
@@ -509,7 +515,7 @@
                               :done #{}}
                              {:name "boolean?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "booleans"
                               :tasks [:done :tested]
                               :done #{}}
@@ -926,7 +932,7 @@
                               :done #{}}
                              {:name "float?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "floats"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1091,7 +1097,7 @@
                               :done #{}}
                              {:name "integer?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "interleave"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1145,7 +1151,7 @@
                               :done #{}}
                              {:name "keyword?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "last"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1514,10 +1520,10 @@
                               :done #{}}
                              {:name "qualified-keyword?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "qualified-symbol?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "quot"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1787,10 +1793,10 @@
                               :done #{}}
                              {:name "simple-keyword?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "simple-symbol?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "slurp"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1847,7 +1853,7 @@
                               :done #{}}
                              {:name "string?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "struct"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1877,7 +1883,7 @@
                               :done #{}}
                              {:name "symbol?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "sync"
                               :tasks [:done :tested]
                               :done #{}}
