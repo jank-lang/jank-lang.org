@@ -2186,17 +2186,22 @@
               [:td name]])))
 
 (defn milestone->table [{:keys [name features]}]
-  [:tr
-   [:th name]
-   [:td
-    [:table {:class "table is-fullwidth is-hoverable"}
-     [:thead {}
-      [:tr
-       [:th {:width "25%"}
-        "Feature"]
-       [:th {:colspan "5"}
-        (str "Status (Total percentage done " (:percent-done (milestone->stats name)) "%)")]]]
-     (into [:tbody] (map feature->table-row features))]]])
+  [:div
+   [:button {:class "collapsible"
+             :type "button"}
+    [:b "Milestone: "]
+    name
+    [:span {:class "vertical-rule"}]
+    [:b "Status: "]
+    (str (:percent-done (milestone->stats name)) "% complete")
+    [:i {:class "arrow arrow-down"
+         :style "float: right;"}]]
+   [:table {:class "table is-fullwidth is-hoverable collapsible-content"}
+    [:thead {}
+     [:tr
+      [:th {:width "25%"}
+       "Feature"]]]
+    (into [:tbody] (map feature->table-row features))]])
 
 (defn root []
   (page.view/page-root
@@ -2226,10 +2231,4 @@
      [:section {:id "milestones"
                 :class "section"}
       [:div {:class "container"}
-       [:table {:class "table is-fullwidth"}
-        [:thead {}
-         [:tr
-          [:th {:width "20%"}
-           "Milestone"]
-          [:th]]]
-        (into [:tbody] (map milestone->table milestones))]]]]))
+       (into [:div] (map milestone->table milestones))]]]))
