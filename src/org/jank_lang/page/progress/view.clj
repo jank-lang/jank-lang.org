@@ -82,10 +82,10 @@
                               :done lex-parse-anal-eval-done}
                              {:name "specials/fn*/arities"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
+                              :done lex-parse-anal-eval-done}
                              {:name "specials/fn*/variadic"
                               :tasks lex-parse-anal-eval
-                              :done #{}}
+                              :done lex-parse-anal-eval-done}
                              {:name "specials/loop*"
                               :tasks lex-parse-anal-eval
                               :done #{:lex}}
