@@ -64,13 +64,13 @@
                               :done lex-parse-anal-eval-done}
                              {:name "specials/if"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
+                              :done lex-parse-anal-eval-done}
                              {:name "specials/do"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
+                              :done #{:lex :parse}}
                              {:name "specials/let*"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex :parse :analyze}}
+                              :done lex-parse-anal-eval-done}
                              {:name "specials/quote"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
@@ -119,6 +119,9 @@
                              {:name "macros"
                               :tasks lex-parse-anal-eval
                               :done #{:lex :parse}}
+                             {:name "syntax-quoting"
+                              :tasks lex-parse-anal-eval
+                              :done #{}}
                              {:name "reader macros/shorthand fns"
                               :tasks reader-macro
                               :done #{}}
@@ -1217,7 +1220,7 @@
                               :done #{}}
                              {:name "meta"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done :tested}}
                              {:name "method-sig"
                               :tasks [:done :tested]
                               :done #{}}
@@ -2081,7 +2084,7 @@
                               :done #{}}
                              {:name "with-meta"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done :tested}}
                              {:name "with-open"
                               :tasks [:done :tested]
                               :done #{}}
