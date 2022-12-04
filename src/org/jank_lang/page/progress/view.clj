@@ -76,7 +76,7 @@
                               :done lex-parse-anal-eval-done}
                              {:name "specials/var"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
+                              :done lex-parse-anal-eval-done}
                              {:name "specials/fn*/base"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
@@ -119,6 +119,9 @@
                              {:name "macros"
                               :tasks lex-parse-anal-eval
                               :done #{:lex :parse}}
+                             {:name "var-quoting"
+                              :tasks lex-parse-anal-eval
+                              :done #{}}
                              {:name "syntax-quoting"
                               :tasks lex-parse-anal-eval
                               :done #{}}
