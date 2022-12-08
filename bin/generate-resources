@@ -27,7 +27,7 @@ function resource-type
 # $3 = file sans extension
 function render
 {
-  local file, resource_type, file_sans_ext
+  local file resource_type file_sans_ext
   file="$1"
   resource_type="$2"
   file_sans_ext="$3"
