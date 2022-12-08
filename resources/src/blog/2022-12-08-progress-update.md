@@ -121,7 +121,10 @@ else
 println->call(if_result);
 ```
 
-I have more detailed [design notes](https://github.com/jank-lang/jank/blob/main/DESIGN.md#codegen)
+The way this manifests in the compiler is really clean, since every jank
+expression resolves to a single C++ symbol, which is its temporary. Could be a
+`let*`, `if`, fn call, or anything else, but it's all boiled down to a symbol
+for that value. I have more detailed [design notes](https://github.com/jank-lang/jank/blob/main/DESIGN.md#codegen)
 on my approach, and Clojure's approach, in case you're interested.
 
 ## What's next
