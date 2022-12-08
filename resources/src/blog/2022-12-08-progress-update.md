@@ -13,7 +13,12 @@ report! Let's get into the details.
 Over the past couple of months, jank has gained initial C++ interop, an upgrade
 of Cling to resolve Linux crashes, support for multiple fn arities, including
 variadic arities, support for `if` and `let*`, which involved a rework of the
-C++ codegen, and initial metadata support, among many smaller changes.
+C++ codegen, and initial metadata support, and many smaller changes.
+
+Before I get into the details, I'd like to point out that
+**feedback is welcome on all of this**.
+Very little of jank's design is set in stone right now, so that means your
+feedback can matter a lot.
 
 ## Initial C++ interop
 When digging deep enough into `clojure.core` implementations, most things
@@ -47,7 +52,8 @@ C++ code. Within that code can be interpolated jank code, escaped using the `#{}
     ; the to_string fn on the object.
     ([o]
      (native/raw "__value = make_box(#{ o }->to_string());"))
-    ; Variadic case could recurse, but it just iterates instead.
+    ; Variadic case could recurse, but we can iterate
+    ; and avoid extra boxing of each intermediate.
     ([o & args]
      (native/raw "std::string ret(#{ o }->to_string().data);
                   auto const * const l(#{ args }->as_list());
@@ -67,8 +73,8 @@ we can build on it. For now, it unlocks all the bits
 ## Cling upgrade to 0.9
 A crash on Linux was requiring jank to use Cling 0.7, which meant using
 Clang/LLVM 5. After dozens of hours of compiling Cling/Clang/LLVM different
-ways, to troubleshoot, I found the issue! Now jank's build system has been
-updated to build Cling 0.9 for both macOS and Linux.
+ways, to troubleshoot, I found the [issue](https://github.com/root-project/cling/issues/470)!
+Now jank's build system has been updated to build Cling 0.9 for both macOS and Linux.
 
 What came out of this, as well, is that jank can now use a pre-compiled header
 (PCH) for improving Cling startup times. That PCH is packaged with jank.
