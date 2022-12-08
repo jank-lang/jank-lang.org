@@ -1,4 +1,9 @@
-(ns org.jank_lang.page.util)
+(ns org.jank-lang.util
+  (:require [clojure.string]
+            [hickory.core :as hickory]
+            [markdown.core :as markdown]))
+
+(def ^:dynamic *building?* false)
 
 (defn deep-merge* [& maps]
   (let [f (fn [old new]
@@ -25,10 +30,14 @@
             (deep-merge s1 s2))
           ss)))
 
-(comment
-  (merge-attrs {} nil)
-  (merge-attrs {:class "foo"
-                :style {:foo :bar}}
-               {:class "bar"
-                :style {:spam :meow}})
-  )
+(defn slurp-html! [html-path]
+  (slurp (str "resources/generated/html/" html-path)))
+
+(defn html->hiccup [html]
+  (map hickory/as-hiccup (hickory/parse-fragment html)))
+
+(defn markdown->hiccup [md]
+  ; TODO: Add custom class to code tags to distinguish from shiki code.
+  (->> (clojure.string/replace md #"\s+" " ")
+       (markdown/md-to-html-string)
+       html->hiccup))

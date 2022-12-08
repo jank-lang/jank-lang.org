@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+generated_dir="resources/generated/html"
+
 function resource-type
 {
   case "${1}"
@@ -12,15 +14,35 @@ function resource-type
     hpp | cpp)
       echo "cpp"
       ;;
+    md)
+      echo "markdown"
+      ;;
     *)
       echo "sh"
   esac
 }
 
+# $1 = file
+# $2 = resource type
+# $3 = file sans extension
+function render
+{
+  local file, resource_type, file_sans_ext
+  file="$1"
+  resource_type="$2"
+  file_sans_ext="$3"
+  case "${1}"
+  in
+    markdown)
+      ;;
+    *)
+      ./bin/highlight "${file}" "${resource_type}" > "${generated_dir}/${file_sans_ext}.html"
+      ;;
+  esac
+}
+
 function main
 {
-  local generated_dir
-  generated_dir="resources/generated/html"
   /bin/rm -rf "${generated_dir}"
   /bin/mkdir -p "${generated_dir}"
 
@@ -33,8 +55,9 @@ function main
     file_sans_ext="${base_file%.*}"
     ext="${base_file##*.}"
     mkdir -p "$(dirname "${generated_dir}/${file_sans_ext}")"
-    ./bin/highlight "${file}" "$(resource-type "${ext}")" > "${generated_dir}/${file_sans_ext}.html"
-    printf "\r$(tput el)Generating ${base_file} …"
+    render "${file}" "$(resource-type "${ext}")" "${file_sans_ext}"
+
+    printf "\r$(tput el)Generating %s …" "${base_file}"
   done
   printf "\r"
 }

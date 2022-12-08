@@ -2210,7 +2210,7 @@
     (into [:tbody] (map feature->table-row features))]])
 
 (defn root []
-  (page.view/page-root
+  (page.view/page-root {:title "jank programming language - Clojure/LLVM/Gradual Typing"}
     [:div {}
      (page.view/header {})
 
@@ -2230,7 +2230,8 @@
           [:strong "Github"]]
          [:a {:class "button ml-4"
               :href "https://github.com/sponsors/jeaye"}
-          [:span {:class "icon"}
+          [:span {:class "icon"
+                  :style "color: rgb(201, 97, 152);"}
            [:i {:class "gg-heart"}]]
           [:strong "Sponsor"]]]]]]
 

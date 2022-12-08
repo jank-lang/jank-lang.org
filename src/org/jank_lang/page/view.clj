@@ -2,48 +2,70 @@
   (:require [clojure.string]
             [hiccup.page :as page]
             [stringer.core :refer [strcat]]
-            [taoensso.timbre :as timbre]
-            [org.jank_lang.page.util :as page.util]))
+            [taoensso.timbre :as timbre]))
 
-(defn header [_request]
-  [:div
-   [:nav {:class "navbar is-white"}
-    [:div {:class "container"}
-     [:div {:class "navbar-brand"}
-      [:a {:class "navbar-item title"
-           :href "/"
-           :style {:font-family "Comfortaa"}}
-       "jank"]]
+(defn header [props]
+  (let [text-color (when (:primary? props)
+                     "has-text-black")]
+    [:div
+     [:nav {:class (str "navbar " (when (:primary? props)
+                                    "is-primary"))}
+      [:div {:class "container"}
+       [:div {:class "navbar-brand"}
+        [:a {:class (str "navbar-item title " text-color)
+             :href (:title-url props "/")
+             :style {:font-family "Comfortaa"}}
+         (:title props "jank")]]
 
-     [:div {:class "navbar-menu"}
-      [:div {:class "navbar-end has-text-weight-semibold"}
-       [:a {:class "navbar-item"
-            :href "/progress"}
-        [:span {:class "icon mr-1"}
-         [:i {:class "gg-list"}]]
-        [:strong "Progress"]]
-       [:a {:class "navbar-item"
-            :href "https://github.com/jank-lang/jank"}
-        [:span {:class "icon mr-1"}
-         [:i {:class "gg-git-fork"}]]
-        [:strong "Github"]]
-       #_[:a {:class "navbar-item"
-            :href "#"}
-        [:span {:class "icon mr-1"}
-         [:i {:class "gg-info"}]]
-        "User Manual"]
-       [:a {:class "navbar-item"
-            :href "https://clojurians.slack.com/archives/C03SRH97FDK"}
-        [:span {:class "icon mr-1"}
-         [:i {:class "gg-comment"}]]
-        "Community"]
-       [:a {:class "navbar-item"
-            :href "https://twitter.com/jeayewilkerson"}
-        [:span {:class "icon mr-1"}
-         [:i {:class "gg-twitter"}]]
-        "Twitter"]]]]]])
+       [:div {:class "navbar-menu is-active"}
+        [:div {:class "navbar-end has-text-weight-semibold"}
+         (when (:home? props true)
+           [:a {:class (str "navbar-item " text-color)
+                :href "/"}
+            [:span {:class "icon mr-1"}
+             [:i {:class "gg-home"}]]
+            [:strong "Home"]])
+         (when (:blog? props true)
+           [:a {:class (str "navbar-item " text-color)
+                :href "/blog"}
+            [:span {:class "icon mr-1"}
+             [:i {:class "gg-comment"}]]
+            [:strong "Blog"]])
+         (when (:sponsor? props false)
+           [:a {:class (str "navbar-item " text-color)
+                :href "https://github.com/sponsors/jeaye"}
+            [:span {:class "icon mr-1"
+                    :style "color: rgb(201, 97, 152);"}
+             [:i {:class "gg-heart"}]]
+            [:strong "Sponsor"]])
+         (when (:progress? props true)
+           [:a {:class (str "navbar-item " text-color)
+                :href "/progress"}
+            [:span {:class "icon mr-1"}
+             [:i {:class "gg-list"}]]
+            [:strong "Progress"]])
+         [:a {:class (str "navbar-item " text-color)
+              :href "https://github.com/jank-lang/jank"}
+          [:span {:class "icon mr-1"}
+           [:i {:class "gg-git-fork"}]]
+          [:strong "Github"]]
+         #_[:a {:class (str "navbar-item " text-color)
+                :href "#"}
+            [:span {:class "icon mr-1"}
+             [:i {:class "gg-info"}]]
+            "User Manual"]
+         [:a {:class (str "navbar-item " text-color)
+              :href "https://clojurians.slack.com/archives/C03SRH97FDK"}
+          [:span {:class "icon mr-1"}
+           [:i {:class "gg-slack"}]]
+          "Slack"]
+         [:a {:class (str "navbar-item " text-color)
+              :href "https://twitter.com/jeayewilkerson"}
+          [:span {:class "icon mr-1"}
+           [:i {:class "gg-twitter"}]]
+          "Twitter"]]]]]]))
 
-(defn page-root [& body]
+(defn page-root [props & body]
   (page/html5
     [:meta {:charset "utf-8"}]
     [:meta {:name "viewport"
@@ -54,9 +76,10 @@
     ; TODO: Configure my own bulma css.
     [:link {:rel "stylesheet"
             :href "/css/main.css"}]
+    ; TODO: Fetch this statically
     [:link {:rel "stylesheet"
-            :href "https://css.gg/css?=sync|bulb|list|link|git-fork|info|comment|math-minus|check-o|heart|twitter"}]
-    [:title "jank programming language - Clojure/LLVM/Gradual Typing"]
+            :href "https://css.gg/css?=home|sync|bulb|list|link|git-fork|info|slack|math-minus|check-o|heart|twitter|comment"}]
+    [:title (:title props)]
 
     ; TODO: Include this font myself.
     "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
@@ -76,7 +99,6 @@
                  g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
                  })();
     </script>
-    <noscript><p><img src=\"//matomo.jeaye.com/matomo.php?idsite=1&amp;rec=1\" style=\"border:0;\" alt=\"\" /></p></noscript>
     <!-- End Matomo Code -->"
 
     (conj (into [:body] body)
@@ -100,7 +122,7 @@
                 "Resources"]
                [:ul {:class "menu-list"}
                 #_[:li [:a {:href "#"} "User Manual"]]
-                [:li [:a {:href "https://clojurians.slack.com/archives/C03SRH97FDK"} "Community"]]
+                [:li [:a {:href "https://clojurians.slack.com/archives/C03SRH97FDK"} "Slack"]]
                 [:li [:a {:href "https://github.com/jank-lang/jank"} "Github"]]]
                ]]]
             [:div {:class "container has-text-centered"}
@@ -108,6 +130,10 @@
               [:p
                "© 2022 Jeaye Wilkerson | All rights reserved."]]]
             ]])
+
+    "<!-- Matomo noscript -->
+    <noscript><p><img src=\"//matomo.jeaye.com/matomo.php?idsite=1&amp;rec=1\" style=\"border:0;\" alt=\"\" /></p></noscript>
+    <!-- End matomo noscript -->"
 
     "<!-- Collapsible tables -->
     <script>

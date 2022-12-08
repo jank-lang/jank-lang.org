@@ -1,25 +1,15 @@
 (ns org.jank_lang.page.landing.view
   (:require [clojure.string]
-            [hickory.core :as hickory]
-            [markdown.core :as markdown]
-            [org.jank_lang.page.util :refer [merge-attrs] :as page.util]
-            [org.jank_lang.page.view :as page.view]))
-
-(defn slurp-html! [html-path]
-  (slurp (str "resources/generated/html/" html-path)))
+            [org.jank_lang.page.view :as page.view]
+            [org.jank-lang.util :as util]))
 
 (defn html->hiccup [props html]
-  (->> (map hickory/as-hiccup (hickory/parse-fragment html))
-       (into [:div (merge-attrs {:class "has-text-left"} props)])))
-
-(defn markdown->hiccup [md]
-  ; TODO: Add custom class to code tags to distinguish from shiki code.
-  (->> (clojure.string/replace md #"\s+" " ")
-       (markdown/md-to-html-string)
-       (html->hiccup {:style {:line-height "1.7em"}})))
+  (->> (util/html->hiccup html)
+       (into [:div (util/merge-attrs {:class "content has-text-left"} props)])))
 
 (defn root []
   (page.view/page-root
+    {:title "jank programming language - Clojure/LLVM/Gradual Typing"}
     [:div {}
      (page.view/header {})
 
@@ -32,33 +22,33 @@
            "The jank programming language"]
           [:p {:class "content is-size-5"}
            [:p {:class "content is-size-5"}
-            (markdown->hiccup "jank is a **general-purpose programming language**
-                              which embraces the **interactive, value-oriented**
-                              nature of Clojure as well as the desire for **native
-                              compilation and minimal runtimes**. jank is **strongly
-                              compatible with Clojure**. Please note that jank is under
-                              heavy development; assume all features are planned or incomplete.")]
+            (util/markdown->hiccup "jank is a **general-purpose programming language**
+                                   which embraces the **interactive, value-oriented**
+                                   nature of Clojure as well as the desire for **native
+                                   compilation and minimal runtimes**. jank is **strongly
+                                   compatible with Clojure**. Please note that jank is under
+                                   heavy development; assume all features are planned or incomplete.")]
 
            [:p {:class "content is-size-5"}
-            (markdown->hiccup "Where jank differs from Clojure is that its host
-                              is C++ on top of an **LLVM-based JIT**. Furthermore,
-                              jank has a built-in **gradual type system** which
-                              allows for malli-style type annotations which
-                              result in **static type analysis**. This allows jank
-                              to offer the same benefits of **REPL-based
-                              development** while being able to reach much further
-                              into the lands of both **correctness and
-                              performance**.")]
+            (util/markdown->hiccup "Where jank differs from Clojure is that its host
+                                   is C++ on top of an **LLVM-based JIT**. Furthermore,
+                                   jank has a built-in **gradual type system** which
+                                   allows for malli-style type annotations which
+                                   result in **static type analysis**. This allows jank
+                                   to offer the same benefits of **REPL-based
+                                   development** while being able to reach much further
+                                   into the lands of both **correctness and
+                                   performance**.")]
 
            [:p {:class "content is-size-5"}
-            (markdown->hiccup "Still, jank is a Clojure dialect and thus includes
-                              its **code-as-data philosophy and powerful macro
-                              system**. jank remains a functional-first language
-                              which builds upon Clojure's rich set of
-                              **persistent, immutable data structures**. When
-                              mutability is needed, jank offers a software
-                              transaction memory and reactive agent system to
-                              ensure **clean and correct multi-threaded designs**.")]]
+            (util/markdown->hiccup "Still, jank is a Clojure dialect and thus includes
+                                   its **code-as-data philosophy and powerful macro
+                                   system**. jank remains a functional-first language
+                                   which builds upon Clojure's rich set of
+                                   **persistent, immutable data structures**. When
+                                   mutability is needed, jank offers a software
+                                   transaction memory and reactive agent system to
+                                   ensure **clean and correct multi-threaded designs**.")]]
           [:div {:class "has-text-centered"}
            [:a {:class "button mt-6 ml-4"
                 :href "/progress"}
@@ -72,20 +62,21 @@
             [:strong "Github"]]
            [:a {:class "button mt-6 ml-4"
                 :href "https://github.com/sponsors/jeaye"}
-            [:span {:class "icon"}
+            [:span {:class "icon"
+                    :style "color: rgb(201, 97, 152);"}
              [:i {:class "gg-heart"}]]
             [:strong "Sponsor"]]]]
          #_[:div {:class "column is-2"
-                :style {:margin "auto"}}
-          [:div [:img {:src "https://img.shields.io/github/stars/jeaye/jank"
-                 :width "100px"}]]
-          [:div [:img {:src "https://app.travis-ci.com/jeaye/jank.svg?branch=main"
-                 :width "150px"}]]
-          [:div [:img {:src "https://codecov.io/gh/jeaye/jank/branch/main/graph/badge.svg"
-                 :width "150px"}]]
-          [:div [:img {:src "https://img.shields.io/badge/libera%20irc-%23jank-blue"
-                 :width "150px"}]]
-          ]
+                  :style {:margin "auto"}}
+            [:div [:img {:src "https://img.shields.io/github/stars/jeaye/jank"
+                         :width "100px"}]]
+            [:div [:img {:src "https://app.travis-ci.com/jeaye/jank.svg?branch=main"
+                         :width "150px"}]]
+            [:div [:img {:src "https://codecov.io/gh/jeaye/jank/branch/main/graph/badge.svg"
+                         :width "150px"}]]
+            [:div [:img {:src "https://img.shields.io/badge/libera%20irc-%23jank-blue"
+                         :width "150px"}]]
+            ]
          ]]]]
 
      [:section {:id "how-it-works"
@@ -109,7 +100,7 @@
           "As you iterate in the REPL and figure out your data shapes, static
           typing will not be in your way."]]
         [:div {:class "column is-6"}
-         (html->hiccup {} (slurp-html! "landing/step-1.html"))]]
+         (html->hiccup {} (util/slurp-html! "landing/step-1.html"))]]
 
        [:div {:class "columns is-vcentered"}
         [:div {:class "column is-6"}
@@ -122,7 +113,7 @@
           malli-like type definitions and then gain static type checking for
           any direct or indirect uses of that data."]]
         [:div {:class "column is-6"}
-         (html->hiccup {} (slurp-html! "landing/step-2.html"))]]
+         (html->hiccup {} (util/slurp-html! "landing/step-2.html"))]]
 
        [:div {:class "columns is-vcentered"}
         [:div {:class "column is-6"}
@@ -136,8 +127,8 @@
           jank compiler itself has very speedy start times and low memory
           usage."]]
         [:div {:class "column is-6"}
-         (html->hiccup {} (slurp-html! "landing/step-3-jank.html"))
-         (html->hiccup {:class "mt-4"} (slurp-html! "landing/step-3-clj.html"))]]]]
+         (html->hiccup {} (util/slurp-html! "landing/step-3-jank.html"))
+         (html->hiccup {:class "mt-4"} (util/slurp-html! "landing/step-3-clj.html"))]]]]
 
      [:section {:id "features"
                 :class "section has-background-primary has-text-white"}
@@ -206,48 +197,48 @@
          [:h3 {:class "title"}
           "Generate a movie index"]
          [:p {:class "has-text-left"}
-          (markdown->hiccup "jank has very powerful capabilities for
-                            representing and transforming arbitrary data. Here,
-                            idiomatic usages of `reduce`, `zipmap`, `repeat`,
-                            and `merge-with` help create an index from genre to
-                            movie id with ease. No lenses are required for
-                            working with nested data.")]]
+          (util/markdown->hiccup "jank has very powerful capabilities for
+                                 representing and transforming arbitrary data. Here,
+                                 idiomatic usages of `reduce`, `zipmap`, `repeat`,
+                                 and `merge-with` help create an index from genre to
+                                 movie id with ease. No lenses are required for
+                                 working with nested data.")]]
         [:div {:class "column is-8"}
-         (html->hiccup {} (slurp-html! "landing/example/movies.html"))]]
+         (html->hiccup {} (util/slurp-html! "landing/example/movies.html"))]]
 
        [:div {:class "columns is-vcentered"}
         [:div {:class "column is-6"}
          [:h3 {:class "title"}
           "Convert bytes to human readable format"]
          [:p {:class "has-text-left"}
-          (markdown->hiccup "Beyond the traditional `map`, `filter`, and `reduce`, jank provides
-                            a powerful `loop` macro for more imperative-style
-                            loops while still being purely functional. Each `loop` has one or more
-                            corresponding `recur` usages which must be in tail position.")]]
+          (util/markdown->hiccup "Beyond the traditional `map`, `filter`, and `reduce`, jank provides
+                                 a powerful `loop` macro for more imperative-style
+                                 loops while still being purely functional. Each `loop` has one or more
+                                 corresponding `recur` usages which must be in tail position.")]]
         [:div {:class "column is-8"}
-         (html->hiccup {} (slurp-html! "landing/example/size-human-readable.html"))]]
+         (html->hiccup {} (util/slurp-html! "landing/example/size-human-readable.html"))]]
 
        [:div {:class "columns is-vcentered"}
         [:div {:class "column is-6"}
          [:h3 {:class "title"}
           "Truncate a string to a max length"]
          [:p {:class "has-text-left"}
-          (markdown->hiccup "jank's strings, as well as most of its other data structures, are
-                            immutable. However, jank provides such powerful tools for working
-                            with data that mutability is very rarely a concern.")]]
+          (util/markdown->hiccup "jank's strings, as well as most of its other data structures, are
+                                 immutable. However, jank provides such powerful tools for working
+                                 with data that mutability is very rarely a concern.")]]
         [:div {:class "column is-8"}
-         (html->hiccup {} (slurp-html! "landing/example/truncate-string.html"))]]
+         (html->hiccup {} (util/slurp-html! "landing/example/truncate-string.html"))]]
 
        [:div {:class "columns is-vcentered"}
         [:div {:class "column is-6"}
          [:h3 {:class "title"}
           "Redefine any var"]
          [:p {:class "has-text-left"}
-          (markdown->hiccup "Every `def` or `defn` exists within a var, which is a stable,
-                            namespace-level container for values. Vars can be redefined to
-                            contain different values. `with-redefs` redefines a var within its
-                            body's scope, which is very useful for removing side effects from
-                            test cases or forcing functions to return specific values.")]]
+          (util/markdown->hiccup "Every `def` or `defn` exists within a var, which is a stable,
+                                 namespace-level container for values. Vars can be redefined to
+                                 contain different values. `with-redefs` redefines a var within its
+                                 body's scope, which is very useful for removing side effects from
+                                 test cases or forcing functions to return specific values.")]]
         [:div {:class "column is-8"}
-         (html->hiccup {} (slurp-html! "landing/example/with-redefs.html"))]]]]
+         (html->hiccup {} (util/slurp-html! "landing/example/with-redefs.html"))]]]]
      ]))
