@@ -1,7 +1,7 @@
 (ns org.jank_lang.page.progress.view
   (:require [clojure.string]
+            [hiccup2.core :as hiccup.core]
             [hiccup.util]
-            [hiccup.page :as page]
             [org.jank_lang.page.view :as page.view])
   (:import org.apache.commons.text.StringEscapeUtils))
 
@@ -2193,7 +2193,7 @@
                                  "gg-math-minus")}]]
                   (clojure.core/name task)]])))
        (into [:tr
-              [:td (hiccup.util/raw-string (StringEscapeUtils/escapeHtml3 name))]])))
+              [:td (hiccup.core/raw (StringEscapeUtils/escapeHtml3 name))]])))
 
 (defn milestone->table [{:keys [name features]}]
   [:div

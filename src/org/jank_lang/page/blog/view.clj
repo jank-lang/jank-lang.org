@@ -2,6 +2,8 @@
   (:require [clojure.string]
             [clojure.walk :refer [postwalk]]
             [clojure.java.shell :refer [sh]]
+            [hiccup2.core :as hiccup.core]
+            [java-time.api :as java-time]
             [markdown.core :as markdown]
             [me.raynes.fs :as fs]
             [org.jank_lang.page.view :as page.view]
@@ -104,3 +106,41 @@
                        [:div
                         (-> md :hiccup (nth 2))]]))
                   post-mds))])))
+
+(defn post-date->instant [date]
+  (java-time/format "yyyy-MM-dd'T'HH:mm:'00Z'" (java-time/local-date-time "MMM dd, yyyy" date 0)))
+
+(defn feed-root []
+  (let [[_root _dirs files] (first (fs/iterate-dir "resources/src/blog"))
+        post-ids (map #(clojure.string/replace-first % #"\.md$" "") files)
+        post-mds (map #(-> (parse-markdown (slurp (str "resources/src/blog/" % ".md")))
+                           (assoc :id %))
+                      post-ids)]
+    {:status 200
+     :header {"Content-Type" "application/atom+xml"}
+     :body (->> (into [:feed
+                [:link {:href "https://jank-lang.org/blog/feed.xml"
+                        :rel "self"
+                        :type "application/atom+xml"}]
+                [:link {:href "https://jank-lang.org/blog/"
+                        :rel "alternate"
+                        :type "text/html"}]
+                [:updated (str (java-time/instant))]
+                [:id "https://jank-lang.org/blog/"]]
+               (map (fn [md]
+                      [:entry
+                       [:title {:type "html"}
+                        (metadata->str md :title)]
+                       [:link {:href (str "https://jank-lang.org/blog/" (:id md))
+                               :rel "alternate"
+                               :type "text/html"
+                               :title (metadata->str md :title)}]
+                       [:published (post-date->instant (metadata->str md :date))]
+                       [:updated (post-date->instant (metadata->str md :date))]
+                       [:id (str "https://jank-lang.org/blog/" (:id md))]
+                       [:author (metadata->str md :author)]
+                       [:summary {:type "html"}
+                        (str (hiccup.core/html (-> md :hiccup (nth 2))))]])
+                    post-mds))
+         (hiccup.core/html {:mode :xml})
+         str)}))

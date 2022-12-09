@@ -21,6 +21,7 @@
                  [com.taoensso/timbre "5.2.1"]
                  [com.fzakaria/slf4j-timbre "0.3.21-6-9f1d565-SNAPSHOT"]
                  [clj-commons/fs "1.6.310"]
+                 [clojure.java-time "1.1.0"]
                  [org.apache.commons/commons-text "1.10.0"]]
   :main ^:skip-aot org.jank-lang
   :target-path "target/%s"

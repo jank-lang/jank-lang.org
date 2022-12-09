@@ -127,7 +127,9 @@
                [:ul {:class "menu-list"}
                 #_[:li [:a {:href "#"} "User Manual"]]
                 [:li [:a {:href "https://clojurians.slack.com/archives/C03SRH97FDK"} "Slack"]]
-                [:li [:a {:href "https://github.com/jank-lang/jank"} "Github"]]]
+                [:li [:a {:href "https://github.com/jank-lang/jank"} "Github"]]
+                [:li [:a {:href "https://jank-lang.org/blog/feed.xml"} "RSS"]]
+                ]
                ]]]
             [:div {:class "container has-text-centered"}
              [:div {:class "content is-small"}

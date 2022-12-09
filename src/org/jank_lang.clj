@@ -21,6 +21,8 @@
                         (progress.view/root)))
   (GET "/blog" [] (fn [_]
                     (blog.view/root)))
+  (GET "/blog/feed.xml" [] (fn [_]
+                             (blog.view/feed-root)))
   (GET "/blog/:post-id" [post-id] (fn [_]
                                     (blog.view/post-root post-id)))
   (route/not-found "<h1>Page not found</h1>"))
@@ -54,7 +56,8 @@
     (let [output-dir "build"
           pages {"index.html" landing.view/root
                  "progress/index.html" progress.view/root
-                 "blog/index.html" blog.view/root}]
+                 "blog/index.html" blog.view/root
+                 "blog/feed.xml" blog.view/feed-root}]
       (fs/delete-dir output-dir)
       (fs/copy-dir "resources/public" output-dir)
       (doseq [[output-file view-fn] pages]
