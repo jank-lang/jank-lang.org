@@ -57,7 +57,7 @@
           pages {"index.html" landing.view/root
                  "progress/index.html" progress.view/root
                  "blog/index.html" blog.view/root
-                 "blog/feed.xml" blog.view/feed-root}]
+                 "blog/feed.xml" (comp :body blog.view/feed-root)}]
       (fs/delete-dir output-dir)
       (fs/copy-dir "resources/public" output-dir)
       (doseq [[output-file view-fn] pages]
