@@ -79,6 +79,10 @@
     ; TODO: Fetch this statically
     [:link {:rel "stylesheet"
             :href "https://css.gg/css?=home|sync|bulb|list|link|git-fork|info|slack|math-minus|check-o|heart|twitter|comment"}]
+    [:link {:rel "alternate"
+            :type "application/atom+xml"
+            :href "/blog/feed.xml"
+            :title "RSS Feed"}]
     [:title (:title props)]
     [:meta {:property "og:title"
             :content (:title props)}]
