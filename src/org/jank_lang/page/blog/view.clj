@@ -138,7 +138,8 @@
                        [:published (post-date->instant (metadata->str md :date))]
                        [:updated (post-date->instant (metadata->str md :date))]
                        [:id (str "https://jank-lang.org/blog/" (:id md))]
-                       [:author (metadata->str md :author)]
+                       [:author
+                        [:name (metadata->str md :author)]]
                        [:summary {:type "html"}
                         (str (hiccup.core/html (-> md :hiccup (nth 2))))]])
                     post-mds))
