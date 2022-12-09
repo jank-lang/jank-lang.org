@@ -65,6 +65,8 @@
            [:i {:class "gg-twitter"}]]
           "Twitter"]]]]]]))
 
+(def css-icons (slurp "https://css.gg/css?=home|sync|bulb|list|link|git-fork|info|slack|math-minus|check-o|heart|twitter|comment"))
+
 (defn page-root [props & body]
   (page/html5
     [:meta {:charset "utf-8"}]
@@ -86,7 +88,7 @@
     [:meta {:property "og:description"
             :content (clojure.string/replace (:description props "") #"\s*\n\s*" " ")}]
 
-    [:style (slurp "https://css.gg/css?=home|sync|bulb|list|link|git-fork|info|slack|math-minus|check-o|heart|twitter|comment")]
+    [:style css-icons]
 
     ; TODO: Include this font myself.
     "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
