@@ -9,8 +9,7 @@
 
 (defn root []
   (page.view/page-root
-    {:title "jank programming language - Clojure/LLVM/Gradual Typing"
-     :description "jank is a Clojure dialect on LLVM with gradual typing, a native runtime, and C++ interop."}
+    {:title "jank programming language - Clojure/LLVM/Gradual Typing"}
     [:div {}
      (page.view/header {})
 
