@@ -1,6 +1,10 @@
 (ns org.jank_lang.page.progress.view
   (:require [clojure.string]
-            [org.jank_lang.page.view :as page.view]))
+            [hiccup.util]
+            [hiccup.page :as page]
+            [org.jank_lang.page.view :as page.view])
+  (:import org.apache.commons.text.StringEscapeUtils))
+
 
 (def lex-parse-anal-eval [:lex :parse :analyze :eval])
 (def lex-parse-anal-eval-done (into #{} lex-parse-anal-eval))
@@ -2189,7 +2193,7 @@
                                  "gg-math-minus")}]]
                   (clojure.core/name task)]])))
        (into [:tr
-              [:td name]])))
+              [:td (hiccup.util/raw-string (StringEscapeUtils/escapeHtml3 name))]])))
 
 (defn milestone->table [{:keys [name features]}]
   [:div

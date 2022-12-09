@@ -37,9 +37,10 @@ mkShell
 
   function jank-deploy
   {
-    set -euo pipefail
-    jank-build
-    ./bin/deploy
+    set -e
+      jank-build
+      ./bin/deploy
+    set +e
   }
   export -f jank-deploy
   '';
