@@ -2210,7 +2210,13 @@
     (into [:tbody] (map feature->table-row features))]])
 
 (defn root []
-  (page.view/page-root {:title "jank programming language - Clojure/LLVM/Gradual Typing"}
+  (let [description "jank is under heavy development. It's safest to assume that any
+        feature advertised is partially developed or in the planning stages.
+        There is no sales pitch here; just a lot of work and some big
+        plans. All development happens on Github, so watch the repo there!"]
+    (page.view/page-root
+    {:title "jank programming language - Clojure/LLVM/Gradual Typing"
+     :description description}
     [:div {}
      (page.view/header {})
 
@@ -2218,10 +2224,7 @@
       [:div {:class "hero-body"}
        [:div {:class "container"}
         [:div {:class "content"}
-         "jank is under heavy development. It's safest to assume that any
-         feature advertised is partially developed or in the planning stages.
-         There is no sales pitch here; just a lot of work and some big
-         plans. All development happens on Github, so watch the repo there!"]
+         description]
         [:div {:class "has-text-centered"}
          [:a {:class "button ml-4"
               :href "https://github.com/jank-lang/jank"}
@@ -2238,4 +2241,4 @@
      [:section {:id "milestones"
                 :class "section"}
       [:div {:class "container"}
-       (into [:div] (map milestone->table milestones))]]]))
+       (into [:div] (map milestone->table milestones))]]])))
