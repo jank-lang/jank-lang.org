@@ -83,7 +83,7 @@
     [:meta {:property "og:title"
             :content (:title props)}]
     [:meta {:property "og:description"
-            :content (clojure.string/replace (:description props) #"\s*\n\s*" " ")}]
+            :content (clojure.string/replace (:description props "") #"\s*\n\s*" " ")}]
 
     ; TODO: Include this font myself.
     "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">

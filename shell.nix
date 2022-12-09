@@ -37,6 +37,7 @@ mkShell
 
   function jank-deploy
   {
+    set -euo pipefail
     jank-build
     ./bin/deploy
   }
