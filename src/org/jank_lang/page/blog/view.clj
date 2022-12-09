@@ -118,30 +118,31 @@
                       post-ids)]
     {:status 200
      :header {"Content-Type" "application/atom+xml"}
-     :body (->> (into [:feed
-                [:link {:href "https://jank-lang.org/blog/feed.xml"
-                        :rel "self"
-                        :type "application/atom+xml"}]
-                [:link {:href "https://jank-lang.org/blog/"
-                        :rel "alternate"
-                        :type "text/html"}]
-                [:updated (str (java-time/instant))]
-                [:id "https://jank-lang.org/blog/"]]
-               (map (fn [md]
-                      [:entry
-                       [:title {:type "html"}
-                        (metadata->str md :title)]
-                       [:link {:href (str "https://jank-lang.org/blog/" (:id md))
+     :body (->> (into [:feed {:xmlns "http://www.w3.org/2005/Atom"}
+                       [:link {:href "https://jank-lang.org/blog/feed.xml"
+                               :rel "self"
+                               :type "application/atom+xml"}]
+                       [:link {:href "https://jank-lang.org/blog/"
                                :rel "alternate"
-                               :type "text/html"
-                               :title (metadata->str md :title)}]
-                       [:published (post-date->instant (metadata->str md :date))]
-                       [:updated (post-date->instant (metadata->str md :date))]
-                       [:id (str "https://jank-lang.org/blog/" (:id md))]
-                       [:author
-                        [:name (metadata->str md :author)]]
-                       [:summary {:type "html"}
-                        (str (hiccup.core/html (-> md :hiccup (nth 2))))]])
-                    post-mds))
-         (hiccup.core/html {:mode :xml})
-         str)}))
+                               :type "text/html"}]
+                       [:updated (str (java-time/instant))]
+                       [:title "jank blog"]
+                       [:id "https://jank-lang.org/blog/"]]
+                      (map (fn [md]
+                             [:entry
+                              [:title {:type "html"}
+                               (metadata->str md :title)]
+                              [:link {:href (str "https://jank-lang.org/blog/" (:id md))
+                                      :rel "alternate"
+                                      :type "text/html"
+                                      :title (metadata->str md :title)}]
+                              [:published (post-date->instant (metadata->str md :date))]
+                              [:updated (post-date->instant (metadata->str md :date))]
+                              [:id (str "https://jank-lang.org/blog/" (:id md))]
+                              [:author
+                               [:name (metadata->str md :author)]]
+                              [:summary {:type "html"}
+                               (str (hiccup.core/html (-> md :hiccup (nth 2))))]])
+                           post-mds))
+                (hiccup.core/html {:mode :xml})
+                str)}))
