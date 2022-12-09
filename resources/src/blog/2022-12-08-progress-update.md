@@ -2,6 +2,7 @@ Title: Development update - lots of new changes
 Date: December 8, 2022
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
+Description: A new development update for the jank programming language.
 
 
 I was previously giving updates only in the
