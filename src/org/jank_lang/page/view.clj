@@ -76,9 +76,6 @@
     ; TODO: Configure my own bulma css.
     [:link {:rel "stylesheet"
             :href "/css/main.css"}]
-    ; TODO: Fetch this statically
-    [:link {:rel "stylesheet"
-            :href "https://css.gg/css?=home|sync|bulb|list|link|git-fork|info|slack|math-minus|check-o|heart|twitter|comment"}]
     [:link {:rel "alternate"
             :type "application/atom+xml"
             :href "/blog/feed.xml"
@@ -88,6 +85,8 @@
             :content (:title props)}]
     [:meta {:property "og:description"
             :content (clojure.string/replace (:description props "") #"\s*\n\s*" " ")}]
+
+    [:style (slurp "https://css.gg/css?=home|sync|bulb|list|link|git-fork|info|slack|math-minus|check-o|heart|twitter|comment")]
 
     ; TODO: Include this font myself.
     "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
