@@ -254,7 +254,7 @@ constructor. Then we have a `call` function which does our work. But, looking at
 our `call` function, we can see it's creating our vector, too; jank only lifted the
 numbers, not the whole vector! Let's change that.
 
-The change:
+The changes:
 [2a8014dfae6e57273983cee8f2c7f78a2be7fe73](https://github.com/jank-lang/jank/commit/2a8014dfae6e57273983cee8f2c7f78a2be7fe73)
 
 |               ns/op |                op/s |    err% |          ins/op |         branch/op |   miss% |     total | benchmark |
@@ -369,7 +369,7 @@ The change:
 |--------------------:|--------------------:|--------:|----------------:|---------------:|--------:|----------:|:---------- |
 |            2,533.89 |          394,649.35 |    0.3% |       12,233.02 |       3,471.00 |    0.1% |      0.01 | `apply` |
 
-Yeah! From 4,320 ns down to 2,533 ns. Building that list was slow.
+Yeah! From 4,320 ns down to 2,533 ns. **Building that list was slow!**
 
 ## String formatting
 If we look at the new implementation of `str`, we're looping over our args and
@@ -411,7 +411,7 @@ void integer::to_string(fmt::memory_buffer &buff) const
 { fmt::format_to(std::back_inserter(buff), FMT_COMPILE("{}"), data); }
 ```
 
-The change:
+The changes:
 [819e1a178c3be549c894e9386e9dc54513800fe8](https://github.com/jank-lang/jank/commit/819e1a178c3be549c894e9386e9dc54513800fe8)
 
 |               ns/op |                op/s |    err% |          ins/op |         branch/op |   miss% |     total | benchmark |
@@ -553,7 +553,7 @@ The changes: [995bec7377fec04ddc5744eed5f1d1149ccc3019](https://github.com/jank-
 |              966.15 |        1,035,032.47 |    3.2% |        5,250.10 |       1,353.26 |    0.2% |      0.09 | `apply` |
 
 Ok, **that's a huge win**. Clojure was at 939 ns and we're now at 966 ns. I had
-said in [#jank](https://clojurians.slack.com/archives/C03SRH97FDK/p1671038588821099?thread_ts=1671030141.013459&cid=C03SRH97FDK), when someone asked if jank was going to use a GC, that I'd rather have determinism, if it means jank is marginally slower. However, the difference here is not marginal.
+said in [#jank](https://clojurians.slack.com/archives/C03SRH97FDK/p1671038588821099?thread_ts=1671030141.013459&cid=C03SRH97FDK), when someone asked if jank was going to use a GC, that I'd rather have determinism, if it means jank is marginally slower. However, the difference here is not marginal. To make matters worse, the current reference counting approach isn't even thread-safe; I'd need to use an atomic size_t for that, which would slow things down even more. This GC is thread-safe.
 
 But we're so close to actually *beating* Clojure, why not try?
 
