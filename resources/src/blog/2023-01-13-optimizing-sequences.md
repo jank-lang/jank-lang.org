@@ -599,7 +599,7 @@ than Clojure for anything but this micro benchmark.
 
 That is, until I make larger benchmarks and spend weeks optimizing those.
 
-## How can others join in?
+## How can we join in?
 Glad you asked!
 
 1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
