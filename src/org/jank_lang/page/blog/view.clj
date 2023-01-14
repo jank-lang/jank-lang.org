@@ -50,7 +50,7 @@
   (let [md (parse-markdown (slurp (str "resources/src/blog/" post-id ".md")))
         post-title (metadata->str md :title)]
     (page.view/page-root
-      {:title (str "jank: " post-title)
+      {:title post-title
        :description (metadata->str md :description)}
       [:div {}
        (page.view/header {:title "jank blog"
