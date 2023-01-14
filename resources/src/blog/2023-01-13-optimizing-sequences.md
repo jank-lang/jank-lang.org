@@ -129,7 +129,7 @@ user=> (quick-bench (apply str [1 2 3 4 5 6 7 8 9 10]))
 ;                    Overhead used : 14.193132 ns
 ```
 
-**Oh no**. Clojure takes about 939 ns, while jank, even with the optimize interface,
+**Oh no**. Clojure takes about 939 ns, while jank, even with the optimized interface,
 takes 6,191 ns. We're not even close!
 
 ## Profile, change, benchmark, repeat
