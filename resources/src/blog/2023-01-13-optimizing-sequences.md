@@ -93,7 +93,7 @@ numbers to `str`? How much did I save?
 
 ### jank
 Note, this benchmark fn in jank is using
-[nanobench](https://nanobench.ankerl.com/). Since Clojure doesn't have working
+[nanobench](https://nanobench.ankerl.com/). Since jank doesn't have working
 macros yet, the benchmark also includes invoking the function, which is not the
 case for Clojure.
 ```clojure
