@@ -284,7 +284,7 @@ We know the generated code is good, so let's dig deeper into what's going on
 when we call these functions.
 
 ### Sequence lengths
-If we follow how `apply` works, it looks like this:
+If we follow how `apply` works on the C++ side, it looks like this:
 
 ```cpp
 object_ptr apply_to(object_ptr const &source, object_ptr const &args)
@@ -325,7 +325,7 @@ size_t sequence_length(behavior::sequence_ptr const &s, size_t const max)
 }
 ```
 
-The change:
+The changes:
 [0ec065d8ed6a986690c1055ab29d91cc50680921](https://github.com/jank-lang/jank/commit/0ec065d8ed6a986690c1055ab29d91cc50680921)
 
 |               ns/op |                op/s |    err% |          ins/op |         branch/op |   miss% |     total | benchmark |
@@ -362,7 +362,7 @@ those 9 numbers requires 9 allocations. However, we can see that Clojure uses an
 `ArraySeq` for packed arguments instead,
 [here](https://github.com/clojure/clojure/blob/9e362e2ee4bf1feb942d31dac821e9d2917789b6/src/jvm/clojure/lang/RestFn.java#L816). Let's do that.
 
-The change:
+The changes:
 [6e8a63ebc98c041ba86e7a1ad6839902d1ead939](https://github.com/jank-lang/jank/commit/6e8a63ebc98c041ba86e7a1ad6839902d1ead939)
 
 |               ns/op |                op/s |    err% |          ins/op |         branch/op |   miss% |     total | benchmark |
@@ -493,7 +493,7 @@ using [libguarded](https://github.com/copperspice/cs_libguarded), but I gave
 [folly's synchronization](https://github.com/facebook/folly/blob/main/folly/docs/Synchronized.md)
 a shot and it was a big win.
 
-The change: [059e828c789b7782595007dcb5a389fe1db442ac](https://github.com/jank-lang/jank/commit/059e828c789b7782595007dcb5a389fe1db442ac)
+The changes: [059e828c789b7782595007dcb5a389fe1db442ac](https://github.com/jank-lang/jank/commit/059e828c789b7782595007dcb5a389fe1db442ac)
 
 |               ns/op |                op/s |    err% |          ins/op |         branch/op |   miss% |     total | benchmark |
 |--------------------:|--------------------:|--------:|----------------:|---------------:|--------:|----------:|:---------- |
