@@ -136,9 +136,7 @@ analogous abstractions for functionality like `clojure.lang.Associative`, as wel
 `clojure.lang.Seqable` support within jank itself would mean I can start
 implementing fns like `assoc`, `map`, `filter`, `reduce`, etc.
 
-## How can we join in?
-Glad you asked!
-
+## Would you like to join in?
 1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
 2. Join the design discussions on [Github](https://github.com/jank-lang/jank/discussions)
 3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye)
