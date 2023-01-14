@@ -73,7 +73,9 @@
 
 (defn root []
   (let [[_root _dirs files] (first (fs/iterate-dir "resources/src/blog"))
-        post-ids (map #(clojure.string/replace-first % #"\.md$" "") files)
+        post-ids (->> (sort files)
+                      reverse
+                      (map #(clojure.string/replace-first % #"\.md$" "")))
         post-mds (map #(-> (parse-markdown (slurp (str "resources/src/blog/" % ".md")))
                            (assoc :id %))
                       post-ids)]

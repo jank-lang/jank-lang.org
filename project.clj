@@ -6,7 +6,7 @@
                  [garden "1.3.10"]
                  [hiccup "2.0.0-alpha2"]
                  [hickory "0.7.1"]
-                 [markdown-clj "1.11.2"]
+                 [markdown-clj "1.11.4"]
 
                  ; Optimized alternatives.
                  [stringer "0.4.1"]

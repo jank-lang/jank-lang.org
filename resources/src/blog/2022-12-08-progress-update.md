@@ -1,4 +1,4 @@
-Title: Development update - lots of new changes
+Title: jank development update - Lots of new changes
 Date: Dec 08, 2022
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
