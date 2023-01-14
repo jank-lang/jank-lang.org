@@ -83,7 +83,7 @@ struct sequence : virtual object, seqable
 
 The usage of `next_in_place` for all sequence traversals in jank meant that, **at most, one allocation was needed for an iteration of any length**.
 In jank's case, that meant the same `(apply str [1 2 3 4 5 6 7 8 9 10])` went
-from 32 allocations to only 3.
+from 32 sequence allocations to only 3.
 
 That's a huge win. Right?
 
@@ -114,7 +114,7 @@ After the `next_in_place` change:
 |--------------------:|--------------------:|--------:|----------------:|---------------:|--------:|----------:|:---------- |
 |            6,191.03 |          161,523.93 |    0.2% |       25,375.02 |       7,220.00 |    0.4% |      0.04 | `apply` |
 
-Nice! That's about 1100 ns we trimmed off there, by removing the extra
+Nice! That's about 1,100 ns we trimmed off there, by removing the extra
 allocations. I'm curious, though, how long does Clojure take to do the same
 thing?
 
