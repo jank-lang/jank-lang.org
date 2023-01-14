@@ -521,7 +521,7 @@ But, as I thought about the benefits of RAII in Clojure, they became harder to
 justify. Here are some of the things I considered.
 
 1. Constructors and destructors make sense for allocating and deallocating
-   resources, specifally mutable resources like a DB connection or file handle
+   resources, specifically mutable resources like a DB connection or file handle
 2. Deterministic object lifetimes especially matter when objects contain these
    resources, since we can't have them lingering beyond when we need them
 3. Clojure handles resource management in an entirely different way and its
