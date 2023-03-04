@@ -2164,7 +2164,10 @@
                              {:name "nrepl support"
                               :tasks [:done]
                               :done #{}}
-                             {:name "lsp support"
+                             {:name "lsp server"
+                              :tasks [:done]
+                              :done #{}}
+                             {:name "dap server"
                               :tasks [:done]
                               :done #{}}]}])
 
