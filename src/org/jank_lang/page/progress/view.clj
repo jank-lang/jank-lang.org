@@ -301,9 +301,6 @@
                              {:name "NaN?"
                               :tasks [:done :tested]
                               :done #{}}
-                             {:name "abs"
-                              :tasks [:done :tested]
-                              :done #{}}
                              {:name "accessor"
                               :tasks [:done :tested]
                               :done #{}}
