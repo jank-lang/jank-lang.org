@@ -122,7 +122,10 @@
                               :done #{:lex}}
                              {:name "macros"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex :parse}}
+                              :done lex-parse-anal-eval-done}
+                             {:name "macros/&env param"
+                              :tasks #{:pass :set}
+                              :done #{:pass}}
                              {:name "var-quoting"
                               :tasks lex-parse-anal-eval
                               :done #{}}
