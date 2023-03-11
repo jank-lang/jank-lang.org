@@ -147,7 +147,7 @@
                  {:name "Clojure library parity"
                   :features [{:name "*"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "*'"
                               :tasks [:done :tested]
                               :done #{}}
@@ -255,13 +255,13 @@
                               :done #{}}
                              {:name "+"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "+'"
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "-"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "-'"
                               :tasks [:done :tested]
                               :done #{}}
@@ -273,25 +273,25 @@
                               :done #{}}
                              {:name "/"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "<"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "<="
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "="
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "=="
                               :tasks [:done :tested]
                               :done #{}}
                              {:name ">"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name ">="
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "Inst"
                               :tasks [:done :tested]
                               :done #{}}
@@ -360,7 +360,7 @@
                               :done #{}}
                              {:name "apply"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "areduce"
                               :tasks [:done :tested]
                               :done #{}}
@@ -402,7 +402,7 @@
                               :done #{}}
                              {:name "assoc"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "assoc!"
                               :tasks [:done :tested]
                               :done #{}}
@@ -630,7 +630,7 @@
                               :done #{}}
                              {:name "cons"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "constantly"
                               :tasks [:done :tested]
                               :done #{}}
@@ -657,7 +657,7 @@
                               :done #{}}
                              {:name "dec"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "dec'"
                               :tasks [:done :tested]
                               :done #{}}
@@ -798,7 +798,7 @@
                               :done #{}}
                              {:name "empty?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "ensure"
                               :tasks [:done :tested]
                               :done #{}}
@@ -888,13 +888,13 @@
                               :done #{}}
                              {:name "first"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "flatten"
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "float"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "float-array"
                               :tasks [:done :tested]
                               :done #{}}
@@ -960,7 +960,7 @@
                               :done #{}}
                              {:name "get"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "get-in"
                               :tasks [:done :tested]
                               :done #{}}
@@ -984,7 +984,7 @@
                               :done #{}}
                              {:name "hash"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "hash-combine"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1029,7 +1029,7 @@
                               :done #{:done}}
                              {:name "inc"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "inc'"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1056,7 +1056,7 @@
                               :done #{}}
                              {:name "int"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "int-array"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1140,7 +1140,7 @@
                               :done #{}}
                              {:name "list"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "list*"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1209,7 +1209,7 @@
                               :done #{}}
                              {:name "max"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "max-key"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1236,7 +1236,7 @@
                               :done #{}}
                              {:name "min"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "min-key"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1245,7 +1245,7 @@
                               :done #{}}
                              {:name "mod"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "munge"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1266,25 +1266,25 @@
                               :done #{}}
                              {:name "neg?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "newline"
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "next"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "nfirst"
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "nil?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "nnext"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "not"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "not-any?"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1410,7 +1410,7 @@
                               :done #{}}
                              {:name "pos?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "pr"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1428,7 +1428,7 @@
                               :done #{}}
                              {:name "print"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "print-ctor"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1449,7 +1449,7 @@
                               :done #{}}
                              {:name "println"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "println-str"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1497,7 +1497,7 @@
                               :done #{}}
                              {:name "rand"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "rand-int"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1608,7 +1608,7 @@
                               :done #{}}
                              {:name "rem"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "remove"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1659,7 +1659,7 @@
                               :done #{}}
                              {:name "rest"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "restart-agent"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1686,7 +1686,7 @@
                               :done #{}}
                              {:name "second"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "select-keys"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1818,7 +1818,7 @@
                               :done #{}}
                              {:name "str"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "string?"
                               :tasks [:done :tested]
                               :done #{:done}}
@@ -2034,7 +2034,7 @@
                               :done #{}}
                              {:name "vec"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "vector"
                               :tasks [:done :tested]
                               :done #{}}
@@ -2058,7 +2058,7 @@
                               :done #{}}
                              {:name "when"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "when-first"
                               :tasks [:done :tested]
                               :done #{}}
@@ -2112,7 +2112,7 @@
                               :done #{}}
                              {:name "zero?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "zipmap"
                               :tasks [:done :tested]
                               :done #{}}]}
