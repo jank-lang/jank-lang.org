@@ -624,7 +624,7 @@
                               :done #{}}
                              {:name "conj"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "conj!"
                               :tasks [:done :tested]
                               :done #{}}
@@ -642,7 +642,7 @@
                               :done #{}}
                              {:name "count"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "counted?"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1092,7 +1092,7 @@
                               :done #{}}
                              {:name "iterate"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "iteration"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1512,7 +1512,7 @@
                               :done #{}}
                              {:name "range"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "ratio?"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1668,7 +1668,7 @@
                               :done #{}}
                              {:name "reverse"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "reversible?"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1782,7 +1782,7 @@
                               :done #{}}
                              {:name "some?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "sort"
                               :tasks [:done :tested]
                               :done #{}}
