@@ -6,10 +6,11 @@ Description: A deep dive into the internals of Clojure and jank to optimize
              a ray tracer.
 Image: /img/2023-04-07-big.png
 
-After the last post, which focused on optimizing jank's sequences, I wanted to
-get jank running a ray tracer I had previously written in Clojure. In this post,
-I document what was required to start ray tracing in jank and, more importantly,
-how I chased down the run time in a fierce battle with Clojure's performance.
+After the [last post](/blog/2023-01-13-optimizing-sequences), which focused on
+optimizing jank's sequences, I wanted to get jank running a ray tracer I had
+previously written in Clojure. In this post, I document what was required to
+start ray tracing in jank and, more importantly, how I chased down the run time
+in a fierce battle with Clojure's performance.
 
 ## Missing Clojure functions
 Coming out of the last blog post, there were quite a few functions which the ray
