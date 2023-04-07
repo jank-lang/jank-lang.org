@@ -69,6 +69,12 @@ This ray tracer is a partial port of the very fun
 [Ray tracing in one weekend](https://raytracing.github.io/books/RayTracingInOneWeekend.html)
 project. It's not meant to be fast; it's a learning tool. However, it was a pure
 Clojure project I had laying around and seemed like a goal next goal for jank.
+The scene is mostly random, but generally look like this:
+
+<figure>
+  <img src="/img/2023-04-07-big.png" width="800px"></img>
+</figure>
+
 The source code for both the jank and the Clojure versions are in this
 [gist](https://gist.github.com/jeaye/77e1d8874c8e76e7335ccf71ef53785c). They
 vary only in the math functions used; each one uses its host interop for them.
@@ -665,7 +671,3 @@ make that happen. But I also realize that speed is only one metric; jank needs
 to be easily usable, be as simple as possible, have great tooling, and embrace
 the culture of stability which Clojure has. Future posts will also be focusing
 on these metrics.
-
-<figure>
-  <img src="/img/2023-04-07-big.png" width="800px"></img>
-</figure>
