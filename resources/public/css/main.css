@@ -39,6 +39,32 @@ pre.shiki code
   max-width: 64rem !important;
 }
 
+figure
+{
+  text-align: center;
+  margin: 0 auto;
+}
+figure img
+{
+  border: 1px solid rgba(50, 50, 50, 0.5);
+  border-radius: 2px;
+  padding: 5px;
+  background: #fff;
+}
+.figure-2-3
+{
+  width: 66%;
+}
+figcaption
+{
+  padding: 1em 1em 2em 1em;
+  word-wrap: normal;
+  text-align: center;
+  display: inline-block !important;
+  width: 66%;
+}
+
+
 
 /* Collapsible sections. */
 .collapsible

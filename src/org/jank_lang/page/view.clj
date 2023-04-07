@@ -88,7 +88,7 @@
     [:meta {:property "og:description"
             :content (clojure.string/replace (:description props "") #"\s*\n\s*" " ")}]
     [:meta {:property "og:image"
-            :content "https://avatars.githubusercontent.com/u/1057635"}]
+            :content (:image props "https://avatars.githubusercontent.com/u/1057635")}]
 
     [:style css-icons]
 
