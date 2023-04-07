@@ -138,7 +138,6 @@ step was to just take a look at the generated code from both jank and Clojure
 and try to spot some differences. For decompiling Clojure code, I'll use the
 excellent [clj-java-decompiler](https://github.com/clojure-goes-fast/clj-java-decompiler).
 
-##### `vec3-scale`
 Given the three expected time sinks I listed above, I chose a function which had
 map creation, map lookups, and arithmetic. Should be the exact sort of thing we
 need to optimize. Here's the function:
