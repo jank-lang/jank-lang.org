@@ -4,7 +4,7 @@ Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: A deep dive into the internals of Clojure and jank to optimize
              a ray tracer.
-Image: /img/2023-04-07-big.png
+Image: https://jank-lang.org/img/2023-04-07-big.png
 
 After the [last post](/blog/2023-01-13-optimizing-sequences), which focused on
 optimizing jank's sequences, I wanted to get jank running a ray tracer I had
