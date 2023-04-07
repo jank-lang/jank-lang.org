@@ -51,7 +51,8 @@
         post-title (metadata->str md :title)]
     (page.view/page-root
       {:title post-title
-       :description (metadata->str md :description)}
+       :description (metadata->str md :description)
+       :image (metadata->str md :image)}
       [:div {}
        (page.view/header {:title "jank blog"
                           :title-url "/blog"
