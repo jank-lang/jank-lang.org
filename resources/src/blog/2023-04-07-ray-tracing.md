@@ -1,5 +1,5 @@
 Title: jank development update - Optimizing a ray tracer
-Date: April 07, 2023
+Date: Apr 07, 2023
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: A deep dive into the internals of Clojure and jank to optimize
