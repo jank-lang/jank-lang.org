@@ -671,3 +671,8 @@ make that happen. But I also realize that speed is only one metric; jank needs
 to be easily usable, be as simple as possible, have great tooling, and embrace
 the culture of stability which Clojure has. Future posts will also be focusing
 on these metrics.
+
+## Would you like to join in?
+1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
+2. Join the design discussions on [Github](https://github.com/jank-lang/jank/discussions)
+3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye)
