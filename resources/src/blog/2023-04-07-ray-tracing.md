@@ -87,8 +87,7 @@ After giving that code a tolerant scan, let's take a look at the initial numbers
 
 ### First timing results
 I'm ray tracing a tiny image. It's only 10x6 pixels. However, in order to create
-this tiny image, we need to cast 265 rays. Here's the image (there's a larger
-one at the end of the post):
+this tiny image, we need to cast 265 rays. Here's the image:
 
 <figure>
   <img src="/img/2023-04-07-small.png"></img>
