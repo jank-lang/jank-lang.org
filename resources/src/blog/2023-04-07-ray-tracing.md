@@ -49,7 +49,7 @@ and `real_ops`. The trick here is to use the correct "ops" for the combination o
 left and right. By left and right, I mean, when looking at the expression
 `(+ a b)`, we see the left side, `a`, and the right side, `b`. So if they're both
 integers, we can use the `integer_ops`, which returns more integers. But if one
-is an integer and the other is a real, we need need to return a real. You can
+is an integer and the other is a real, we need to return a real. You can
 see this in Clojure, since `(+ 1 2)` is `3`, but `(+ 1 2.0)` is `3.0`.
 
 The way this comes together is something like this:
@@ -68,7 +68,7 @@ and the jank source for this
 This ray tracer is a partial port of the very fun
 [Ray tracing in one weekend](https://raytracing.github.io/books/RayTracingInOneWeekend.html)
 project. It's not meant to be fast; it's a learning tool. However, it was a pure
-Clojure project I had laying around and seemed like a good next goal for jank.
+Clojure project I had lying around and seemed like a good next goal for jank.
 The scene is mostly random, but generally look like this:
 
 <figure>
@@ -102,7 +102,7 @@ Now, the initial timing for this (using
 
 Just shy of 800 milliseconds. It's less than a second, yes, but it's also a
 trivially tiny image. Let's see how Clojure does with the same code (using
-[criterium](https://github.com/hugoduncan/criterium/).
+[criterium](https://github.com/hugoduncan/criterium/)).
 
 ```clojure
 ; (out) Evaluation count : 12 in 6 samples of 2 calls.
@@ -234,7 +234,7 @@ generates for the same function.
 /* Just like in jank, a class was generated for this function. */
 public final class core$vec3_scale extends AFunction
 {
-    /* Just like in jank, the constants were lifted up to be members. */
+    /* Just like in jank, the constants were lifted to be members. */
     public static final Keyword const__0;
     public static final Keyword const__3;
     public static final Keyword const__4;
@@ -384,7 +384,7 @@ specialization for short maps (i.e. few keys) which don't have the overhead of
 trees. Rather than `O(log32 n)` access with some constant overhead, they have `O(n)`
 access with very little overhead. When `n` is small enough, it ends up being
 faster. Once array maps get too big, they convert automatically into hash maps.
-For this ray tracer, all of the maps are very small, so we're only looking at
+For this ray tracer, all the maps are very small, so we're only looking at
 the array map implementation. jank's array map looked like this:
 
 ```cpp
@@ -541,7 +541,7 @@ the JIT compiler? We had `-O1` for both, due to some
 [Cling](https://github.com/root-project/cling) issues which
 prevented me from going higher. I spent some time working around those and was
 able to get jank compiling with `-O3`. This alone was a huge win, but I was able
-to tweak Cling's flags as well, to balance the trade off between run time and compile
+to tweak Cling's flags as well, to balance the trade-off between run time and compile
 time. We can't go to `-O3` for Cling, but we can do better than just `-O1`. That
 can mean `-ffast-math`, `-march=native`, etc. More importantly, we can make this
 configurable with a command line flag.
@@ -658,7 +658,7 @@ them. For this exercise, I was only focused on how Clojure and jank ran the same
 code out of the box.
 
 There's a lot more which jank could do in order to drop this time further. We
-already mentioned tracking `let` bindings so we could unbox them. Each
+already mentioned tracking `let` bindings, so we could unbox them. Each
 jank-defined function, right now, is limited to accepting `object_ptr` inputs and
 returning one `object_ptr` output. Also, my benchmarking has shown that trying
 to mimic Clojure's Java hierarchy in C++ is just not going to pan out well, so a
@@ -673,5 +673,5 @@ on these metrics.
 
 ## Would you like to join in?
 1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
-2. Join the design discussions on [Github](https://github.com/jank-lang/jank/discussions)
+2. Join the design discussions on [GitHub](https://github.com/jank-lang/jank/discussions)
 3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye)
