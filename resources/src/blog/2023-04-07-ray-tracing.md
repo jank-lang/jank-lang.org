@@ -68,7 +68,7 @@ and the jank source for this
 This ray tracer is a partial port of the very fun
 [Ray tracing in one weekend](https://raytracing.github.io/books/RayTracingInOneWeekend.html)
 project. It's not meant to be fast; it's a learning tool. However, it was a pure
-Clojure project I had laying around and seemed like a goal next goal for jank.
+Clojure project I had laying around and seemed like a good next goal for jank.
 The scene is mostly random, but generally look like this:
 
 <figure>
