@@ -61,7 +61,7 @@ details. The output of that is long and confusing, though, so I've turned them
 into simpler diagrams. Let's take a look at `jank_string`.
 
 <figure>
-  <img src="/img/blog/2023-07-08-object-model/class-1.svg" width="200px"></img>
+  <img src="/img/blog/2023-07-08-object-model/class-1.svg" width="300px"></img>
 </figure>
 
 So, `jank_string` is 40 bytes (8 for the `jank_object` vtable pointer + 32 for the `std::string`).
@@ -94,7 +94,7 @@ So now we add `jank_countable` into the mix and implement that for
 its own vtable and `jank_string` is going to need a pointer to it.
 
 <figure>
-  <img src="/img/blog/2023-07-08-object-model/class-2.svg" width="200px"></img>
+  <img src="/img/blog/2023-07-08-object-model/class-2.svg" width="300px"></img>
 </figure>
 
 Notice that `jank_string` was 40 bytes, but now it's 48 bytes, due to the additional
