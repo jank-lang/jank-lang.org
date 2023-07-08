@@ -2,11 +2,11 @@
   "Converts a size, in bytes, to a human readable format, such as 0 B, 1.5 kB,
    10 GB, etc."
   [size-in-bytes]
-  (if (and (< -1000 size-in-bytes) (< size-in-bytes 1000))
+  (if (< -1000 size-in-bytes 1000)
     (str size-in-bytes " B")
     (let [res (loop [acc size-in-bytes
                      suffixes "kMGTPE"]
-                (if-not (or (<= acc -999950) (<= 999950 acc))
+                (if (< -999950 acc 999950)
                   {:size acc
                    :suffix (first suffixes)}
                   (recur (/ acc 1000) (drop 1 suffixes))))]
