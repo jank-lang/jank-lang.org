@@ -1,0 +1,134 @@
+#!/bin/sh
+
+#! The below incantation must be left as-is, including the formatting.
+#_(
+   DEPS='
+    {:deps {dali/dali {:mvn/version "1.0.2"}}}
+    '
+
+    OPTS='
+    -J-client
+    '
+    exec clojure $OPTS -Sdeps "$DEPS" "$0" "$@"
+)
+
+; Clojure starts here.
+(ns org.jank-lang.plot
+  (:require [clojure.pprint :refer [pprint]]
+            [dali.io :as io]
+            [dali.layout.align]
+            [dali.layout.connect]
+            [dali.layout.distribute]
+            [dali.layout.matrix]
+            [dali.layout.place]
+            [dali.layout.stack]
+            [dali.layout.surround]
+            [dali.layout.utils]
+            [dali.syntax]))
+
+(def color-order (cycle [; Primary
+                         "hsl(204, 86%, 53%)"
+                         ; Info
+                         "hsl(171, 100%, 41%)"
+                         ; Danger
+                         "hsl(348, 100%, 61%)"
+                         ; Warning
+                         "hsl(48, 100%, 67%)"
+                         ; Success
+                         "hsl(141, 53%, 53%)"]))
+
+(defn text [{:keys [text font-size font-family fill]
+             :or {font-size 20
+                  font-family "Comfortaa"
+                  fill "hsl(0, 0%, 21%)"}}]
+  [:text {:font-size font-size
+          :font-family font-family
+          :fill fill}
+   text])
+
+(defn bar-chart [{:keys [groups height min]
+                  :or {min 0}}]
+  (let [bar-width 40
+        bar-max (apply max (map :value (mapcat :values groups)))
+        y-axis-guides [{:value (int (Math/ceil bar-max))
+                        :axis :top}
+                       {:value (int (+ min (/ (- bar-max min) 2)))
+                        :axis :center}
+                       {:value min
+                        :axis :bottom}]
+        colors (zipmap (distinct (map :label (mapcat :values groups)))
+                       color-order)]
+    (list (let [guide-gap (float (/ height (count y-axis-guides)))]
+            [:dali/distribute {:position [10 10]
+                               :direction :down}
+             (map (fn [guide]
+                    [:dali/align {:axis (:axis guide)}
+                     [:rect {:fill :none} :_ [20 (float (/ height 3))]]
+                     (text {:text (str (:value guide))})])
+                  y-axis-guides)])
+
+          [:dali/stack {:id :bars
+                        :position [50 10]
+                        :anchor :bottom-left
+                        :direction :right
+                        :gap (* 2 bar-width)}
+           (map (fn [group]
+                  [:dali/stack {:direction :up
+                                :anchor :bottom-left
+                                :gap 10}
+                   [:dali/align {:axis :center}
+                    [:rect {:fill :none} :_ [(* (-> group :values count) bar-width) 20]]
+                    (text {:text (:label group)})]
+                   [:dali/stack {:direction :right
+                                 :anchor :bottom-left
+                                 :gap 0}
+                    (map (fn [{:keys [value label]}]
+                           [:rect {:class :bar
+                                   :stroke :none
+                                   :fill (get colors label)}
+                            :_ [bar-width (* height (float (/ value bar-max)))]])
+                         (:values group))]])
+                groups)]
+
+          ; Legend.
+          [:dali/place {:relative-to [:bars :right]
+                        :anchor :left
+                        :offset [(* 2 bar-width) 0]}
+           [:dali/stack {:direction :right}
+            [:dali/stack {:position [0 0]
+                          :direction :down
+                          :anchor :top-left
+                          :gap 20}
+             (map (fn [[label color]]
+                    [:dali/stack {:direction :right
+                                  :gap 5}
+                     [:rect {:fill color} :_ [bar-width bar-width]]
+                     (text {:text label})])
+                  colors)]
+            ; Extra padding to the right of the legend; for some reason, with this,
+            ; the last character of the legend text can be cut off. Maybe due to the different
+            ; font used.
+            [:dali/ghost {} :_ [10 1]]]])))
+
+(defn with-page [props & body]
+  (into [:dali/page {:stroke :none
+                     :preserve-aspect-ratio "xMinYMin meet"}
+         [:defs
+          (dali.syntax/css (str "@font-face{ font-family: 'Comfortaa'; font-style: normal; font-weight: 400; src: url('https://fonts.gstatic.com/s/comfortaa/v40/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMDrMfJQ.ttf') format('truetype'); }\n"
+                                "rect { stroke: none; }\n"
+                                ".bar:hover { filter: brightness(115%); }\n"))]]
+        body))
+
+(def plot-clj (first *command-line-args*))
+(assert (some? plot-clj))
+
+(def output-svg (second *command-line-args*))
+(assert (some? output-svg))
+
+(def document (eval (read-string (slurp plot-clj))))
+;(pprint document)
+(assert (vector? document))
+
+; This assumes that each plot.clj file returns a dali document, as described here:
+; https://github.com/stathissideris/dali
+(io/render-svg document output-svg)

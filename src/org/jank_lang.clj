@@ -33,6 +33,7 @@
   (reset! app-server (jetty/run-jetty (-> #'app-handler
                                           wrap-reload
                                           (wrap-resource "public")
+                                          (wrap-resource "generated")
                                           wrap-content-type)
                                       {:port 3000
                                        :join? false})))

@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
-generated_dir="resources/generated/html"
+generated_dir="resources/generated"
+generated_img_dir="${generated_dir}/img"
+generated_html_dir="${generated_dir}/html"
 
 function resource-type
 {
@@ -11,11 +13,17 @@ function resource-type
     clj | jank)
       echo "clojure"
       ;;
+    plot.clj)
+      echo "clojure-plot"
+      ;;
     hpp | cpp)
       echo "cpp"
       ;;
     md)
       echo "markdown"
+      ;;
+    svg)
+      echo "svg"
       ;;
     *)
       echo "sh"
@@ -31,34 +39,47 @@ function render
   file="$1"
   resource_type="$2"
   file_sans_ext="$3"
-  case "${1}"
+  case "${resource_type}"
   in
     markdown)
       ;;
+    clojure-plot)
+      mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
+      ./bin/plot "${file}" "${generated_img_dir}/${file_sans_ext}.svg" 2>/dev/null
+      # Optimizing generated SVGs readies them for viewing. Without this step,
+      # they won't render properly.
+      ./bin/optimize-resources "${generated_img_dir}/${file_sans_ext}.svg"
+      ;;
+    # TODO: Keep this? Or put the images elsewhere?
+    svg)
+      mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
+      cp -f "${file}" "${generated_img_dir}/${file_sans_ext}.svg"
+      ;;
     *)
-      ./bin/highlight "${file}" "${resource_type}" > "${generated_dir}/${file_sans_ext}.html"
+      mkdir -p "$(dirname "${generated_html_dir}/${file_sans_ext}")"
+      ./bin/highlight "${file}" "${resource_type}" > "${generated_html_dir}/${file_sans_ext}.html"
       ;;
   esac
 }
 
 function main
 {
-  /bin/rm -rf "${generated_dir}"
-  /bin/mkdir -p "${generated_dir}"
+  rm -rf "${generated_dir}"
+  mkdir -p "${generated_dir}" "${generated_img_dir}" "${generated_html_dir}"
 
   local resource_files
-  resource_files="$(find resources/src -type f)"
-  for file in $resource_files;
+  resource_files="$(find $@ -type f)"
+  for file in ${resource_files};
   do
-    local base_file file_sans_ext ext
+    local base_file file_sans_ext ext resource_type
     base_file="${file##resources/src/}"
     file_sans_ext="${base_file%.*}"
-    ext="${base_file##*.}"
-    mkdir -p "$(dirname "${generated_dir}/${file_sans_ext}")"
-    render "${file}" "$(resource-type "${ext}")" "${file_sans_ext}"
+    ext="${base_file#*.}"
+    resource_type="$(resource-type "${ext}")"
+    render "${file}" "${resource_type}" "${file_sans_ext}"
 
-    printf "\r$(tput el)Generating %s …" "${base_file}"
+    printf "\r$(tput el || true)Generating %s …" "${base_file}"
   done
   printf "\r"
 }
-main
+main $@

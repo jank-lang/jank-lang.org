@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "shiki": "^0.10.1"
+    "jsdom": "^22.1.0",
+    "node-fetch": "^2.6.12",
+    "plotly": "^1.0.6",
+    "shiki": "^0.10.1",
+    "uuid": "^9.0.0",
+    "whatwg-url": "^13.0.0"
   }
 }

@@ -29,8 +29,9 @@ mkShell
   export -f jank-optimize-resources
   function jank-build
   {
-    jank-generate-resources
+    jank-generate-resources resources/src
     lein trampoline run build
+    rsync -ra resources/generated/img/ build/img/
     jank-optimize-resources build
   }
   export -f jank-build
