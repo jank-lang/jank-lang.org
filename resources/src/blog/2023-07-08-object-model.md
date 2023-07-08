@@ -269,7 +269,7 @@ its own strong, static type. However, to achieve Clojure's polymorphism, we need
 [type erasure](https://en.wikipedia.org/wiki/Type_erasure). For example, we need
 to be able to store any type of object in a vector, or as a key in a map. When
 using inheritance, we have a base `object` type for that. When using the union
-based approach, every object fit inside of a single `object` type. However, in
+based approach, every object fits inside of a single `object` type. However, in
 our type-rich object model, each object type is discrete. We need a common way
 to refer to them, while still being able to get back to the static object. On
 top of that, we need a way to *unerase* the type, allowing us to get back to the
