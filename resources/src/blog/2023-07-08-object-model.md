@@ -15,7 +15,7 @@ excited to share my results!
 Before getting into any solutions, or celebrating any wins, we need to talk
 about why this work is being done at all. As you can see in my previous
 development updates, jank is fast. It can beat Clojure in each benchmark I've
-published so far. However, some parts of jank's runtime are still very slow and,
+published so far. However, some parts of jank's runtime are still quite slow and,
 unfortunately, the problem is systemic.
 
 Generally speaking, the problem can be boiled down to this: the JVM is
@@ -64,12 +64,11 @@ into simpler diagrams. Let's take a look at `jank_string`.
   <img src="/img/blog/2023-07-08-object-model/class-1.svg" width="200px"></img>
 </figure>
 
-So, `jank_string` is 40 bytes (32 for the `std::string` + 8 for the
-`jank_string` vtable pointer). It has its own static vtable and a `vptr` to it,
-since it inherits from `jank_object` and overrides a function. Whenever a
-`jank_string` is allocated, these vtable pointers need to be initialized. All of
-this is handled by the C++ compiler, and is implementation-defined, so we don't
-have much control over it. This is generally easier to see visually:
+So, `jank_string` is 40 bytes (8 for the `jank_object` vtable pointer + 32 for the `std::string`).
+It has its own static vtable and a `vptr` to it, since it inherits from
+`jank_object` and overrides a function. Whenever a `jank_string` is allocated,
+these vtable pointers need to be initialized. All of this is handled by the C++
+compiler, and is implementation-defined, so we don't have much control over it.
 
 Let's take this a step further and add another behavior, since I need to
 be able to get the size of a `jank_string`.
@@ -132,8 +131,8 @@ has a lot of room to grow in terms of allocation speed by using a more tailored
 GC integration.
 
 ## Initial numbers
-By benchmarking the creation of non-empty hash maps, we can paint a pretty clear
-picture of the issue I've been describing.
+By benchmarking the creation of non-empty hash maps (`{:a :b}` specifically), we
+can paint a pretty clear picture of the issue I've been describing.
 
 <figure>
   <object type="image/svg+xml" data="/img/blog/2023-07-08-object-model/allocations-initial.plot.svg" width="33%">
@@ -141,7 +140,7 @@ picture of the issue I've been describing.
   </object>
 </figure>
 
-For Clojure, it takes about 16ns. For jank, that number is nearly doubled to
+For Clojure, it takes about 16ns to allocate. For jank, that number is nearly doubled to
 31ns. So what can be done? Clojure depends on this level of polymorphism, and
 virtual functions are how you accomplish this in C++, so what else *can* we even
 do?
@@ -151,7 +150,7 @@ Let's consider how a completely static runtime might be implemented. For
 example, let's assume I had a simple language which only supported a few object
 types, with no syntax for defining new types or protocols or even extending
 existing ones. This would often be implemented using something like a
-[tagged union](https://en.wikipedia.org/wiki/Tagged_union). Here's a quick example:
+[tagged union](https://en.wikipedia.org/wiki/Tagged_union) in C-like languages. Here's a quick example:
 
 ```cpp
 enum class object_type
@@ -200,33 +199,32 @@ So, if you're not familiar how unions work, they just store all of the possible
 fields listed in the union in the same memory space. The union is as big as
 its largest field. The tag accompanies the union and informs you how to treat
 that memory (i.e. as a `integer`, `string`, etc). In order to access data from
-the union, we generally just use a `switch` statement.
+the union, we generally just use a `switch` statement on the tag.
 
 The main drawback with this approach is that all possible types need to be known
 at compile-time, since they're part of the enum, the union, and each switch
 statement. However, the main benefit of this approach is the same. All types are
 known at compile-time, so compilers have everything they need to optimize
 access. There are no vtables, object allocations are all the same size, each
-function call can potentially be inlined, and all of this could even be
-`constexpr`, meaning it runs at compile-time.
+function call can potentially be inlined, and so on.
 
 ## A hybrid runtime
-Clojure demands polymorphism, but it also has a fixed set of static types. In
+Clojure demands polymorphism, but it also has a well known set of static types. In
 fact, we model most of our programs just using Clojure's built-in data
 structures, so why not optimize for that case? The entirely open, polymorphic
 case doesn't need to negatively impact the average case.
 
 This reasoning lead me to prototyping and benchmarking a tagged object model for
 jank. However, since jank is not a trivial language, the tagged implementation
-couldn't quite be as simple as my example above. There are a couple key
+couldn't quite be as simple as my example above. There are a few key
 concerns.
 
 ### Concern 1: Unions
 Unions are very limiting. Even with jank's static objects, there is a large
-variety on object size. Requiring every integer, for example, to be as big as a
+variety in object size. Requiring every integer, for example, to be as big as a
 hash map is not ideal. Numbers need to be fast to allocate and use.
 
-Fortunately, C++ offers a great deal more power when it comes to compile-time
+Fortunately, C++ offers a great deal more power than C when it comes to compile-time
 polymorphism, in the form of templates, so we can take advantage of that. Let's
 see what that looks like:
 
@@ -251,12 +249,13 @@ struct static_object<object_type::integer> : gc
 
 Ok, let me break this down. We start with the same enum as with the static
 runtime example. Here I'm just showing `nil` and `integer`. Then, we have a new
-`static_object` struct template. It's parameterized on the object type. We can
-*specialize* this template for each value of `object_type` and each one can be a
-completely distinct struct, with its own fields. However, they're all tied
-together by the combination of `static_object` and some enum value. This usage
-of templates is kind of like Clojure's multi-methods, but for compile-time
-types.
+`static_object` struct template. It's parameterized on the object type. Note
+that templates can be parameterized on types as well as certain values. Here
+we're parameterizing on the enum value itself. We can *specialize* this template
+for each value of `object_type` and each one can be a completely distinct
+struct, with its own fields. However, they're all tied together by the
+combination of `static_object` and some enum value. This usage of templates is
+kind of like Clojure's multi-methods, but for compile-time types.
 
 This is much more flexible than the union approach, since each object type has
 its own definition and size. The size of the integer specialization will be far
@@ -334,7 +333,7 @@ void print(object const &o)
 }
 ```
 
-This is the class composition versus inheritance change. The previous version of
+This is the classic composition versus inheritance change. The previous version of
 jank's object model followed Clojure JVM's design of using inheritance. This new
 design uses composition, by having each static object have the base `object` as
 its first member.
@@ -343,7 +342,7 @@ its first member.
 Imagine if we had to write a switch statement everywhere we wanted polymorphism.
 In a simpler language that uses the classic tagged union approach, especially
 when written in C, this would typically just be the way things work. However,
-surely modern C++ has some more robust features for us to use instead. Indeed it
+surely modern C++ has some more robust features for us to use instead? Indeed it
 does.
 
 We can get around this duplication by having the switch in only one place and
@@ -385,8 +384,8 @@ void print(object const &o)
 }
 ```
 
-The vistor pattern here allows us to specify a generic lambda, which is
-basically short hand for a function template which accepts any input. The
+The vistor pattern here allows us to specify a *generic lambda*, which is
+basically shorthand for a function template which accepts any input. The
 anonymous function will be called with the fully typed `static_object` and we
 can use compile-time branching based on the type of the parameter to do the
 things we want. This means the most optimal code is generated and there's static
@@ -408,7 +407,7 @@ behaviors for objects. In typical OOP terms, they're interfaces which these
 objects implement. In a world with static objects and compile-time branching to
 visit them, how do we handle these behaviors?
 
-Well, C++20 introduces an improved take on the concept of compile-time behaviors
+Well, C++20 introduces an improved take on the idea of compile-time behaviors
 in what it calls concepts. So, let's define a concept for getting a string from
 an object. I like to end all of these behaviors with `able`, even when it
 doesn't grammatically work at all, as a cheeky jab at OOP.
@@ -445,7 +444,8 @@ void print(object const &o)
     [](auto const typed_o)
     {
       using T = std::decay_t<std::remove_pointer_t<decltype(typed_o)>>;
-      /* Alternatively, I could `if constexpr` check here and throw otherwise. */
+      /* Alternatively, I could `if constexpr` check here and
+         do something else otherwise. */
       static_assert(stringable<T>, "Object must be stringable");
 
       fmt::print("{}", typed_o->to_string());
@@ -507,7 +507,7 @@ size_t sequence_length(object_ptr const s)
 This has been a lot of theory, but my aim here is to shed light on how these
 things work. Your feedback on whether or not this is a good level of detail is
 very welcome, so please reach out to me any way you can to let me know your
-thoughts. Now let's celebrate some wins.
+thoughts. Now let's celebrate some wins!
 
 <figure>
   <object type="image/svg+xml" data="/img/blog/2023-07-08-object-model/allocations-tagged.plot.svg" width="50%">
@@ -530,16 +530,17 @@ these changes, so this is going to set it well ahead.
 Map operations such as `get` and `count` were already very fast, compared to
 Clojure. This is one area which allowed jank to make up for its slower
 allocations. However, with the static objects, visitors, and concepts, these
-benchmarks also dropped significantly. I'm very excited to benchmark more once
-I've finished this work.
+benchmarks also dropped significantly.
+
+I'm very excited to benchmark more once I've finished this work, but there's
+still more to do. This is only a half-way report!
 
 ## Status
-I'm half-way through the quarter now. Initial prototyping and benchmarking is
-finished and I'm ripping apart jank's inheritance object model to replace it
-with the tagged object model. This is a large effort, which is why I wanted to
-get this done while jank was still early; it changes how every jank object
-works. At the end of the quarter, I'll be presenting more final numbers, as well
-as outlining future plans.
+Initial prototyping and benchmarking is finished and I'm ripping apart jank's
+inheritance object model to replace it with the tagged object model. This is a
+large effort, which is why I wanted to get this done while jank was still young;
+it changes how every jank object works. At the end of the quarter, I'll be
+presenting more final numbers, as well as outlining future plans.
 
 ## Wrapping up
 You may be wondering how jank will handle dynamic objects now. For those, there
@@ -572,7 +573,7 @@ the primary focus here, so I had to roll my own.
 As a reminder, my work on jank this quarter is sponsored by [Clojurists Together](https://www.clojuriststogether.org/).
 Thank you to all of the members there who chose jank for this quarter. Thanks,
 also, to all of my [Github sponsors](https://github.com/sponsors/jeaye). Your
-continued support fuels jank's continued development.
+continued support fuels jank's continued development!
 
 I've already submitted a proposal for next quarter, to build out jank's
 namespace loading, class file generating, compilation cache, and class path

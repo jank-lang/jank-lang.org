@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -xeuo pipefail
+set -euo pipefail
 
 generated_dir="resources/generated"
 generated_img_dir="${generated_dir}/img"
