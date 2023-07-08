@@ -271,8 +271,9 @@ to be able to store any type of object in a vector, or as a key in a map. When
 using inheritance, we have a base `object` type for that. When using the union
 based approach, every object fit inside of a single `object` type. However, in
 our type-rich object model, each object type is discrete. We need a common way
-to refer to them, while still being able to get back to the static object. This
-is Concern 2.
+to refer to them, while still being able to get back to the static object. On
+top of that, we need a way to *unerase* the type, allowing us to get back to the
+original static object. This is Concern 2.
 
 Also, Concern 3 is that the pointers we use to hang onto these objects need to
 be stable and they need to correspond with the pointers the GC gave us when we
