@@ -64,6 +64,14 @@ figcaption
   width: 66%;
 }
 
+@media only screen and (max-width: 480px)
+{
+  figure object
+  {
+    width: 100% !important;
+    height: auto;
+  }
+}
 
 
 /* Collapsible sections. */
