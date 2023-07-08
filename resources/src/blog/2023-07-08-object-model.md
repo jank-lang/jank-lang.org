@@ -53,7 +53,7 @@ struct jank_string : jank_object
 };
 ```
 
-This is how each object is modeled in jank, currently, and it's the mostly same as how
+This is how each object is modeled in jank, currently, and it's mostly the same as how
 they are in Java. Each boxed string, hash map, vector, integer, etc inherits
 from a base object and overrides some functionality. We can use `g++ -fdump-lang-class foo.cpp`
 to put these sample types into a file and see the generated class hierarchy
