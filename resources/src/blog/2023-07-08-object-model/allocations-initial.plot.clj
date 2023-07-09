@@ -5,4 +5,5 @@
                          :value 30.86}]}]]
   (with-page {}
     (bar-chart {:groups groups
-                :height 400})))
+                :height 400
+                :unit "ns"})))

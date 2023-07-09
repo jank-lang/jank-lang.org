@@ -38,15 +38,14 @@
                          "hsl(141, 53%, 53%)"]))
 
 (defn text [{:keys [text font-size font-family fill]
-             :or {font-size 20
-                  font-family "Comfortaa"
-                  fill "hsl(0, 0%, 21%)"}}]
-  [:text {:font-size font-size
-          :font-family font-family
-          :fill fill}
+             :as props}]
+  [:text (merge {:font-size 20
+                 :font-family "Comfortaa"
+                 :fill "hsl(0, 0%, 21%)"}
+                (dissoc props :text))
    text])
 
-(defn bar-chart [{:keys [groups height min]
+(defn bar-chart [{:keys [groups height min unit]
                   :or {min 0}}]
   (let [bar-width 40
         bar-max (apply max (map :value (mapcat :values groups)))
@@ -66,6 +65,13 @@
                      [:rect {:fill :none} :_ [20 (float (/ height 3))]]
                      (text {:text (str (:value guide))})])
                   y-axis-guides)])
+
+          (when (some? unit)
+            [:dali/align {:axis :center}
+             [:rect {:fill :none} [10 (+ height 20)] [20 20]]
+             (text {:text unit
+                    :font-style :italic
+                    :fill "rgba(0, 0, 0, 0.7)"})])
 
           [:dali/stack {:id :bars
                         :position [50 10]
