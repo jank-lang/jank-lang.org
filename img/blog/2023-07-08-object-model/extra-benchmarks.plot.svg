@@ -20,6 +20,10 @@ rect { stroke: none; }
 <text transform="translate(0 133.05)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">0</text>
 </g>
 </g>
+<g data-dali-layout-tag="align">
+<rect x="10" y="420" width="20" height="20" fill="none"/>
+<text transform="translate(8.3105 435.46)" fill="rgba(0, 0, 0, 0.7)" font-family="Comfortaa" font-size="20" font-style="italic">ns</text>
+</g>
 <g transform="translate(50 420)" data-dali-layout-tag="stack">
 <g data-dali-layout-tag="stack">
 <g data-dali-layout-tag="align">
