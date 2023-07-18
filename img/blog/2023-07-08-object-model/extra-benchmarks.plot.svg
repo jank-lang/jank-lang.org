@@ -6,14 +6,14 @@ rect { stroke: none; }
 .bar:hover { filter: brightness(115%); }
 ]]></style>
 </defs>
-<g transform="translate(10.962 10)" data-dali-layout-tag="distribute">
+<g transform="translate(10 10)" data-dali-layout-tag="distribute">
 <g data-dali-layout-tag="align">
 <rect width="20" height="133.33" fill="none"/>
-<text transform="translate(0 14.844)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">21</text>
+<text transform="translate(0 14.583)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">14</text>
 </g>
 <g transform="translate(0 133.33)" data-dali-layout-tag="align">
 <rect width="20" height="133.33" fill="none"/>
-<text transform="translate(-3.1624 73.945)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">10</text>
+<text transform="translate(3.5677 73.945)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">6</text>
 </g>
 <g transform="translate(0 266.67)" data-dali-layout-tag="align">
 <rect width="20" height="133.33" fill="none"/>
@@ -30,10 +30,10 @@ rect { stroke: none; }
 <rect width="120" height="20" fill="none"/>
 <text transform="translate(17.152 15.342)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Map Get</text>
 </g>
-<g transform="translate(0 -410)" data-dali-layout-tag="stack">
-<rect class="bar" width="40" height="400" fill="hsl(204, 86%, 53%)"/>
-<rect class="bar" transform="translate(40 311.09)" width="40" height="88.91" fill="hsl(171, 100%, 41%)"/>
-<rect class="bar" transform="translate(80 366.25)" width="40" height="33.751" fill="hsl(348, 100%, 61%)"/>
+<g transform="translate(0 -348.12)" data-dali-layout-tag="stack">
+<rect class="bar" width="40" height="338.12" fill="hsl(204, 86%, 53%)"/>
+<rect class="bar" transform="translate(40 200.3)" width="40" height="137.82" fill="hsl(171, 100%, 41%)"/>
+<rect class="bar" transform="translate(80 285.8)" width="40" height="52.317" fill="hsl(348, 100%, 61%)"/>
 </g>
 </g>
 <g transform="translate(200)" data-dali-layout-tag="stack">
@@ -41,10 +41,10 @@ rect { stroke: none; }
 <rect width="120" height="20" fill="none"/>
 <text transform="translate(5.2767 15.342)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Map Count</text>
 </g>
-<g transform="translate(0 -400.36)" data-dali-layout-tag="stack">
-<rect class="bar" width="40" height="390.36" fill="hsl(204, 86%, 53%)"/>
-<rect class="bar" transform="translate(40 341.76)" width="40" height="48.602" fill="hsl(171, 100%, 41%)"/>
-<rect class="bar" transform="translate(80 375.89)" width="40" height="14.465" fill="hsl(348, 100%, 61%)"/>
+<g transform="translate(0 -410)" data-dali-layout-tag="stack">
+<rect class="bar" width="40" height="400" fill="hsl(204, 86%, 53%)"/>
+<rect class="bar" transform="translate(40 324.66)" width="40" height="75.336" fill="hsl(171, 100%, 41%)"/>
+<rect class="bar" transform="translate(80 377.58)" width="40" height="22.422" fill="hsl(348, 100%, 61%)"/>
 </g>
 </g>
 </g>
