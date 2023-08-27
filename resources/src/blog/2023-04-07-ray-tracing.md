@@ -583,7 +583,7 @@ Starting at 73.07 ms, I ran through some optimizations I could see:
 4. Unboxed `integer_range` instead of polymorphic `range` (didn't commit): no change
 5. Remove excess `option<T>` use, showing up in profiler ([changes](https://github.com/jank-lang/jank/commit/5b34e9dd57229efe9959f332602c57f0614fddd0)): no change
 
-Finally, a noticed through more careful profiling that `reduce*` was showing up.
+Finally, I noticed through more careful profiling that `reduce*` was showing up.
 Let's see how it was written.
 
 ```clojure
