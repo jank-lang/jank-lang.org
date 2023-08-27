@@ -50,13 +50,7 @@ in the past quarter have been nearly 2x overall.
 This is the primary celebration and is the culmination of a handful of months
 worth of work, spanning back before I started this object model redesign.
 When I could first run the ray tracer, [two blog posts ago](/blog/2023-04-07-ray-tracing) (5 months ago),
-jank took 797.49ms to run the exact same code! Let me help you visualize that.
-
-<figure>
-  <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/ray-tracing-historical.plot.svg" width="50%">
-    <img src="/img/blog/2023-08-26-object-model/ray-tracing-historical.plot.svg" width="50%"></img>
-  </object>
-</figure>
+**jank took 797.49ms to run the exact same code**! 
 
 A lot has changed in the past 5 months. Before I get to where jank will be in
 the next 5 months, though, let's dig deeper into some of the

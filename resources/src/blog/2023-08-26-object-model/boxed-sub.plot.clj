@@ -11,7 +11,14 @@
                         {:label "jank before"
                          :value 14.63}
                         {:label "jank after"
-                         :value 2.06}]}]]
+                         :value 2.06}]}
+              {:label "Unboxed sub"
+               :values [{:label "Clojure"
+                         :value 6.76}
+                        {:label "jank before"
+                         :value 7.34}
+                        {:label "jank after"
+                         :value 0.24}]}]]
   (with-page {}
     (bar-chart {:groups groups
                 :height 300
