@@ -9,8 +9,8 @@
 
 (defn root []
   (page.view/page-root
-    {:title "jank programming language - Clojure/LLVM/Gradual Typing"
-     :description "jank is a Clojure dialect on LLVM with gradual typing, a native runtime, and C++ interop."}
+    {:title "jank programming language - Clojure/LLVM/C++"
+     :description "jank is a Clojure dialect on LLVM with a native runtime and C++ interop."}
     [:div {}
      (page.view/header {})
 
@@ -27,19 +27,16 @@
                                    which embraces the **interactive, value-oriented**
                                    nature of Clojure as well as the desire for **native
                                    compilation and minimal runtimes**. jank is **strongly
-                                   compatible with Clojure**. Please note that jank is under
-                                   heavy development; assume all features are planned or incomplete.")]
+                                   compatible with Clojure** and considers itself a dialect
+                                   of Clojure. Please note that jank is under heavy development;
+                                   assume all features are planned or incomplete.")]
 
            [:p {:class "content is-size-5"}
-            (util/markdown->hiccup "Where jank differs from Clojure is that its host
-                                   is C++ on top of an **LLVM-based JIT**. Furthermore,
-                                   jank has a built-in **gradual type system** which
-                                   allows for malli-style type annotations which
-                                   result in **static type analysis**. This allows jank
+            (util/markdown->hiccup "Where jank differs from Clojure JVM is that its host
+                                   is C++ on top of an **LLVM-based JIT**. This allows jank
                                    to offer the same benefits of **REPL-based
-                                   development** while being able to reach much further
-                                   into the lands of both **correctness and
-                                   performance**.")]
+                                   development** while being able to **seamlessly reach into
+                                   the native world** and compete seriously with JVM's performance.")]
 
            [:p {:class "content is-size-5"}
             (util/markdown->hiccup "Still, jank is a Clojure dialect and thus includes
@@ -87,9 +84,8 @@
         [:h2 {:class "title"}
          "Wide spectrum dynamics"]
         [:h3 {:class "subtitle"}
-         "Enjoy both dynamic typing and static typing gradually. Enjoy both
-         REPL iteration with JIT compilation and static AOT compilation to
-         native executables."]]
+         "Enjoy both REPL iteration with JIT compilation and static AOT
+         compilation to native executables."]]
 
        [:div {:class "columns is-vcentered"}
         [:div {:class "column is-6"}
@@ -98,8 +94,7 @@
          [:h3 {:class "title"}
           "Iterate like you would with Clojure"]
          [:p {:class "has-text-left"}
-          "As you iterate in the REPL and figure out your data shapes, static
-          typing will not be in your way."]]
+          "Iterate in the REPL and build your program from the ground up without leaving your editor."]]
         [:div {:class "column is-6"}
          (html->hiccup {} (util/slurp-html! "landing/step-1.html"))]]
 
@@ -108,11 +103,10 @@
          [:span {:class "is-size-1"}
           "02"]
          [:h3 {:class "title"}
-          "Add type annotations to lock down data shapes"]
+          "Reach into the native world"]
          [:p {:class "has-text-left"}
-          "Rather than using spec or malli to define your contracts, use jank's
-          malli-like type definitions and then gain static type checking for
-          any direct or indirect uses of that data."]]
+          "Seamlessly switch to inline C++ within your Clojure source, while still having access
+          to your Clojure code using interpolation."]]
         [:div {:class "column is-6"}
          (html->hiccup {} (util/slurp-html! "landing/step-2.html"))]]
 
@@ -167,9 +161,9 @@
             [:span {:class "icon"}
              [:i {:class "gg-list"}]]
             [:h3 {:class "title is-4 has-text-white"}
-             "Be gradual"]]
+             "Go native"]]
            [:p
-            "Add types where you want them or disable static typing altogether. Generate dynamic binaries or static binaries, both using AOT compilation. Your choice."]]
+            "Reach into native libraries or interact directly with your native code base. Seamlessly write both C++ and Clojure in the same file."]]
 
           [:div {:class "column is-6"}
            [:div {:class "icon-text mb-4"}
