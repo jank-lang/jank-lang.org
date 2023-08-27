@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg preserveAspectRatio="xMinYMin meet" version="1.2" viewBox="0 0 695.89 350" xmlns="http://www.w3.org/2000/svg">
+<svg preserveAspectRatio="xMinYMin meet" version="1.2" viewBox="0 0 904.29 350" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <style type="text/css"><![CDATA[@font-face{ font-family: 'Comfortaa'; font-style: normal; font-weight: 400; src: url('https://fonts.gstatic.com/s/comfortaa/v40/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMDrMfJQ.ttf') format('truetype'); }
 rect { stroke: none; }
@@ -47,9 +47,20 @@ rect { stroke: none; }
 <rect class="bar" transform="translate(80 49.781)" width="40" height="12.281" fill="hsl(348, 100%, 61%)"/>
 </g>
 </g>
+<g transform="translate(472.56 3.8147e-6)" data-dali-layout-tag="stack">
+<g data-dali-layout-tag="align">
+<rect width="120" height="20" fill="none"/>
+<text transform="translate(-5.9375 17.454)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Unboxed sub</text>
+</g>
+<g transform="translate(-4.1992 -50.302)" data-dali-layout-tag="stack">
+<rect class="bar" width="40" height="40.302" fill="hsl(204, 86%, 53%)"/>
+<rect class="bar" transform="translate(40 -3.4579)" width="40" height="43.76" fill="hsl(171, 100%, 41%)"/>
+<rect class="bar" transform="translate(80 38.871)" width="40" height="1.4308" fill="hsl(348, 100%, 61%)"/>
+</g>
+</g>
 </g>
 <g data-dali-layout-tag="place">
-<g transform="translate(518.36 95)" data-dali-layout-tag="stack">
+<g transform="translate(726.75 95)" data-dali-layout-tag="stack">
 <g transform="translate(0)" data-dali-layout-tag="stack">
 <g data-dali-layout-tag="stack">
 <rect width="40" height="40" fill="hsl(204, 86%, 53%)"/>
