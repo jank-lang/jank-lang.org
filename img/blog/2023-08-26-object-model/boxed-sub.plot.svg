@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg preserveAspectRatio="xMinYMin meet" version="1.2" viewBox="0 0 639.2 350" xmlns="http://www.w3.org/2000/svg">
+<svg preserveAspectRatio="xMinYMin meet" version="1.2" viewBox="0 0 695.89 350" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <style type="text/css"><![CDATA[@font-face{ font-family: 'Comfortaa'; font-style: normal; font-weight: 400; src: url('https://fonts.gstatic.com/s/comfortaa/v40/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMDrMfJQ.ttf') format('truetype'); }
 rect { stroke: none; }
 .bar:hover { filter: brightness(115%); }
 ]]></style>
 </defs>
-<g transform="translate(10 10)" data-dali-layout-tag="distribute">
+<g transform="translate(11.118 10)" data-dali-layout-tag="distribute">
 <g data-dali-layout-tag="align">
 <rect width="20" height="100" fill="none"/>
-<text transform="translate(0 14.583)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">14</text>
+<text transform="translate(0 14.583)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">51</text>
 </g>
 <g transform="translate(0 100)" data-dali-layout-tag="align">
 <rect width="20" height="100" fill="none"/>
-<text transform="translate(3.5677 57.279)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">6</text>
+<text transform="translate(-2.583 57.279)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">25</text>
 </g>
 <g transform="translate(0 200)" data-dali-layout-tag="align">
 <rect width="20" height="100" fill="none"/>
@@ -28,28 +28,28 @@ rect { stroke: none; }
 <g data-dali-layout-tag="stack">
 <g data-dali-layout-tag="align">
 <rect width="120" height="20" fill="none"/>
-<text transform="translate(17.152 15.342)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Map Get</text>
-</g>
-<g transform="translate(0 -263.59)" data-dali-layout-tag="stack">
-<rect class="bar" width="40" height="253.59" fill="hsl(204, 86%, 53%)"/>
-<rect class="bar" transform="translate(40 150.22)" width="40" height="103.36" fill="hsl(171, 100%, 41%)"/>
-<rect class="bar" transform="translate(80 214.35)" width="40" height="39.238" fill="hsl(348, 100%, 61%)"/>
-</g>
-</g>
-<g transform="translate(200)" data-dali-layout-tag="stack">
-<g data-dali-layout-tag="align">
-<rect width="120" height="20" fill="none"/>
-<text transform="translate(5.2767 15.342)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Map Count</text>
+<text transform="translate(7.0931 17.454)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Boxed sub</text>
 </g>
 <g transform="translate(0 -310)" data-dali-layout-tag="stack">
 <rect class="bar" width="40" height="300" fill="hsl(204, 86%, 53%)"/>
-<rect class="bar" transform="translate(40 243.5)" width="40" height="56.502" fill="hsl(171, 100%, 41%)"/>
-<rect class="bar" transform="translate(80 283.18)" width="40" height="16.816" fill="hsl(348, 100%, 61%)"/>
+<rect class="bar" transform="translate(40 71.244)" width="40" height="228.76" fill="hsl(171, 100%, 41%)"/>
+<rect class="bar" transform="translate(80 201.51)" width="40" height="98.49" fill="hsl(348, 100%, 61%)"/>
+</g>
+</g>
+<g transform="translate(234.18)" data-dali-layout-tag="stack">
+<g data-dali-layout-tag="align">
+<rect width="120" height="20" fill="none"/>
+<text transform="translate(-36.144 15.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Partially boxed sub</text>
+</g>
+<g transform="translate(-34.178 -72.063)" data-dali-layout-tag="stack">
+<rect class="bar" width="40" height="62.063" fill="hsl(204, 86%, 53%)"/>
+<rect class="bar" transform="translate(40 -25.159)" width="40" height="87.222" fill="hsl(171, 100%, 41%)"/>
+<rect class="bar" transform="translate(80 49.781)" width="40" height="12.281" fill="hsl(348, 100%, 61%)"/>
 </g>
 </g>
 </g>
 <g data-dali-layout-tag="place">
-<g transform="translate(450 95)" data-dali-layout-tag="stack">
+<g transform="translate(518.36 95)" data-dali-layout-tag="stack">
 <g transform="translate(0)" data-dali-layout-tag="stack">
 <g data-dali-layout-tag="stack">
 <rect width="40" height="40" fill="hsl(204, 86%, 53%)"/>
@@ -57,11 +57,11 @@ rect { stroke: none; }
 </g>
 <g transform="translate(0 60)" data-dali-layout-tag="stack">
 <rect width="40" height="40" fill="hsl(171, 100%, 41%)"/>
-<text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank: initial</text>
+<text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank before</text>
 </g>
 <g transform="translate(0 120)" data-dali-layout-tag="stack">
 <rect width="40" height="40" fill="hsl(348, 100%, 61%)"/>
-<text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank: tagged</text>
+<text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank after</text>
 </g>
 </g>
 </g>
