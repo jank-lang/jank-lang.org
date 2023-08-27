@@ -38,8 +38,8 @@ for the overall performance of the new object model, since it relies heavily on
 maps, numbers, sequence traversal and strings (for output). I'm very pleased to
 report that **jank is now nearly twice as fast at running the same ray tracing code as Clojure JVM**,
 with jank clocking in at 36.96ms versus Clojure's 69.44ms. Since jank was only
-marginally faster at the end of the last post, this also means the improvements
-in the past quarter have been nearly 2x overall.
+marginally faster than Clojure at the end of the last post, this also means the
+improvements in the past quarter have been nearly 2x overall.
 
 <figure>
   <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/ray-tracing.plot.svg" width="50%">
@@ -118,9 +118,10 @@ it's much slower than Clojure JVM. JVM strings may be magic, but we'll see when 
 ## Fast math
 Math has sped up the most out of anything, which bodes very well for our ray
 tracing numbers. Here are the results for fully boxed subtraction, where no
-type info is known, as well as subtraction between an unknown box and an unboxed
-double. In both cases, jank is now significantly faster than Clojure JVM. These
-wins apply across the board for all binary math operations.
+type info is known, subtraction between an unknown box and an unboxed
+double, and fully unboxed subtraction. In all cases, jank is now significantly
+faster than Clojure JVM. These wins apply across the board for all binary math
+operations.
 
 <figure>
   <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/boxed-sub.plot.svg" width="50%">
