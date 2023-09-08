@@ -7,11 +7,12 @@
 <span class="line"><span style="color:#f8f8f2">  (</span><span style="color:#a6e22e">native/raw</span><span style="color:#f8f8f2"> </span><span style="color:#e6db74">&quot;__value = make_box(glCreateShader(GL_VERTEX_SHADER));&quot;</span><span style="color:#f8f8f2">))</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#f8f8f2">(</span><span style="color:#f92672">defn</span><span style="color:#f8f8f2"> set-shader-source! [shader source]</span></span>
-<span class="line"><span style="color:#f8f8f2">  (</span><span style="color:#a6e22e">native/raw</span><span style="color:#f8f8f2"> </span><span style="color:#e6db74">&quot;auto const s(detail::to_string(~{ source }));</span></span>
-<span class="line"><span style="color:#e6db74">               glShaderSource(detail::to_int(~{ shader }), 1, &amp;s.data, nullptr);&quot;</span><span style="color:#f8f8f2">))</span></span>
+<span class="line"><span style="color:#f8f8f2">  (</span><span style="color:#a6e22e">native/raw</span><span style="color:#f8f8f2"> </span><span style="color:#e6db74">&quot;auto const shader(detail::to_int(~{ shader }));</span></span>
+<span class="line"><span style="color:#e6db74">               auto const &amp;source(detail::to_string(~{ source }));</span></span>
+<span class="line"><span style="color:#e6db74">               __value = make_box(glShaderSource(shader, 1, &amp;source.data, nullptr));&quot;</span><span style="color:#f8f8f2">))</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#f8f8f2">(</span><span style="color:#f92672">defn</span><span style="color:#f8f8f2"> compile-shader! [shader]</span></span>
-<span class="line"><span style="color:#f8f8f2">  (</span><span style="color:#a6e22e">native/raw</span><span style="color:#f8f8f2"> </span><span style="color:#e6db74">&quot;glCompileShader(detail::to_int(~{ shader }));&quot;</span><span style="color:#f8f8f2">))</span></span>
+<span class="line"><span style="color:#f8f8f2">  (</span><span style="color:#a6e22e">native/raw</span><span style="color:#f8f8f2"> </span><span style="color:#e6db74">&quot;__value = make_box(glCompileShader(detail::to_int(~{ shader })));&quot;</span><span style="color:#f8f8f2">))</span></span>
 <span class="line"></span></code></pre></div></div></div><div class="columns is-vcentered"><div class="column is-6"><span class="is-size-1">03</span><h3 class="title">Compile to machine code</h3><p class="has-text-left">jank is built on an LLVM-based JIT. With AOT enabled, both statically and dynamically linked executables can be generated. The jank compiler itself has very speedy start times and low memory usage.</div><div class="column is-6"><div class="content has-text-left"><pre class="shiki"style="background-color:#272822"><code><span class="line"><span style="color:#f8f8f2">$ </span><span style="color:#f92672">time</span><span style="color:#f8f8f2"> jank hello-world.clj</span></span>
 <span class="line"><span style="color:#f8f8f2">hello world</span></span>
 <span class="line"></span>
