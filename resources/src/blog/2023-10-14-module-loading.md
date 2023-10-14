@@ -15,7 +15,7 @@ by [Clojurists Together](https://www.clojuriststogether.org/).
 ## High level requirements
 ### Class paths
 Clojure JVM benefits a great deal from being built upon an existing VM. In the
-native world, we don't have things like class paths. Maybe the closes things
+native world, we don't have things like class paths. Maybe the closest things
 would be include paths at compile-time and `LD_LIBRARY_PATH` at run-time, but
 neither of those capture the flexibility of JVM's class paths, which work at both
 compile-time and run-time.
