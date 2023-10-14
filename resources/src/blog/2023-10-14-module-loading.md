@@ -126,11 +126,15 @@ implemented, but I want to call out a couple of things.
 1. We've already cut 5 seconds down, which is great!
 2. Everyone knows that compiling C++ is *not fast* and we are set up to be able
    to start loading LLVM IR instead, after some more work
-3. The creator of Cling told me that LLVM tends to spend around 50% of its
+3. The creator of Cling informed me that LLVM tends to spend around 50% of its
    time in the front-end for C++, which means that by using LLVM IR we'll be
    cutting down our compilation time by around 50%
 4. I haven't done any startup time benchmarking or profiling for jank yet, but if
    there's time this quarter, you can bet that I'll be digging deep into this
+
+I have some exciting plans for visualizing jank's performance, both the compiler
+and your application code, in a way which will ship with the compiler itself.
+More info on this in a later post.
 
 ## Thanks again
 As a reminder, my work on jank this quarter is sponsored by [Clojurists Together](https://www.clojuriststogether.org/).
