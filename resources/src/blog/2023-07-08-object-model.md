@@ -493,7 +493,7 @@ size_t sequence_length(object_ptr const s)
     s,
     [](auto const typed_s)
     {
-      using T = std::decay_t<std::remove_pointer_t<decltype(typed_o)>>;
+      using T = std::decay_t<std::remove_pointer_t<decltype(typed_s)>>;
 
       if constexpr(countable<T>)
       { return c->count(); }
