@@ -8,6 +8,9 @@
                  [hickory "0.7.1"]
                  [markdown-clj "1.11.4"]
 
+                 [org.clojure/data.json "2.4.0"]
+                 [dali/dali "1.0.2"]
+
                  ; Optimized alternatives.
                  [stringer "0.4.1"]
 
