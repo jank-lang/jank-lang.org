@@ -208,8 +208,8 @@ function object was the required fixed args prior to variadic arg packing.
 The equivalent function in Clojure JVM is `RestFn.getRequiredArity`, which
 returns the required fixed position arguments prior to the packed args. However,
 where Clojure JVM differs from jank is that Clojure uses dynamic dispatch to
-solve this ambiguity whereas jank does its own overload matching, for
-performance reasons.
+solve this ambiguity whereas jank does its own fixed vs variadic overload
+matching, for performance reasons.
 
 To actually solve this problem, we need to know three things:
 
@@ -223,11 +223,12 @@ Also, function calls in a functional programming language like Clojure are on
 the hottest of hot code paths, so I can't exactly add two more virtual functions
 to jank's `callable` interface to get this data. In truth, even keeping one
 function but putting all of this data in a struct proved too much of an impact
-on the performance. Thus, we encode the data more compactly.
+on the performance. Thus, we need to encode the data more compactly.
 
 jank now packs all of this into a single byte. Questions 1 and 2 each get a high bit
-and question 3 gets the 6 remaining bits (it only uses 4) to store the fixed arg count. So,
-this byte for our `ambiguous` function above would look like this:
+and question 3 gets the 6 remaining bits (of which it uses 4) to store the fixed
+arg count. So, this byte for our `ambiguous` function above would look like
+this:
 
 ```cpp
 1  1  0  0  0  0  0  1
@@ -239,7 +240,7 @@ this byte for our `ambiguous` function above would look like this:
 ```
 
 From there, when we use it, we disable the bit for question 2 and we
-`switch` on the rest. This allows us to do a O(1) jump on the combination of
+`switch` on the rest. This allows us to do a `O(1)` jump on the combination of
 whether it's variadic and the required fixed args. Finally, we only need the
 question 2 bit to disambiguate one branch of each switch, which is the branch
 equal to however many arguments we received.
@@ -270,6 +271,7 @@ object_ptr dynamic_call(object_ptr const source, object_ptr const a1)
                check the extra bit in the flags. */
             if(!callable::is_variadic_ambiguous(arity_flags))
             { return typed_source->call(a1, obj::nil::nil_const()); }
+            /* We're falling through! */
           default:
             /* The default case is not variadic. */
             return typed_source->call(a1);
