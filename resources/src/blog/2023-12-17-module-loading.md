@@ -207,7 +207,9 @@ function object was the required fixed args prior to variadic arg packing.
 
 The equivalent function in Clojure JVM is `RestFn.getRequiredArity`, which
 returns the required fixed position arguments prior to the packed args. However,
-where Clojure JVM differs from jank is that TODO.
+where Clojure JVM differs from jank is that Clojure uses dynamic dispatch to
+solve this ambiguity whereas jank does its own overload matching, for
+performance reasons.
 
 To actually solve this problem, we need to know three things:
 
