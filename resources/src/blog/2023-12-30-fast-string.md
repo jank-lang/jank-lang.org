@@ -141,12 +141,11 @@ well.
 So folly's capacity (on a 32bit machine) would be outlined like this.
 
 ```cpp
-00000000 00000000 00000000 ??000000
-                           ^^^-----
-                           |||
-                           ||/* Actual capacity data. */
-                           |/* Is it large? */
-                           /* Is it medium? */
+00000000 00000000 00000000 000000??
+---------------------------------^^
+    /* Actual capacity data. */ |||
+              /* Is it large? */ ||
+              /* Is it medium? */ |
 ```
 
 For a small string, both of those flag bits are 0. This is important and it's
@@ -245,12 +244,11 @@ was a bit, laying around, which we could use... oh wait, folly was using two
 bits for medium/large and we're only using one. So we can repurpose that second
 bit like so:
 ```cpp
-00000000 00000000 00000000 ??000000
-                           ^^^-----
-                           |||
-                           ||/* Actual capacity data. */
-                           |/* Is it owned? */
-                           /* Is it large? */
+00000000 00000000 00000000 000000??
+---------------------------------^^
+    /* Actual capacity data. */ |||
+              /* Is it owned? */ ||
+               /* Is it large? */ |
 ```
 
 Now this allows us to do some very nice optimizations:
