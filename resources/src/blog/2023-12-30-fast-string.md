@@ -25,10 +25,10 @@ should be able to do substring operations and string copies by sharing memory,
 rather than doing deep copies. To summarize these goals shortly:
 
 ## Goals
-* As fast, or faster, than `std::string` and `folly::fbstring`
-* Hashing, with cached value
-* Immutable (i.e. no copy on substrings, writes only done in ctors, no mutators)
-* I don't care about complete standard compliance (which allows me to cheat)
+* Be as fast, or faster, than `std::string` and `folly::fbstring`
+* Support hashing, with cached value
+* Be immutable (i.e. no copy on substrings, writes only done in constructors, no mutators)
+* Not a goal: Complete standard compliance (which allows me to cheat)
 
 There are three noteworthy C++ string implementations:
 
@@ -346,7 +346,7 @@ The benchmark source, which uses nanobench, can be found
 [here](https://gist.github.com/jeaye/306d6aefd7ed6c29fdec6eef2cafbb1f).
 
 ## Is sharing large strings a big deal?
-This is easy to quantify. When compiling `clojure.core`, with jank, we end up
+This is easy to quantify. When simply compiling `clojure.core`, with jank, we end up
 sharing 3,112 large strings. That's 3,112 large string deep copies, and just as
 many allocations, which we can completely elide. In the span of a larger
 application, we'll be talking about millions of allocations and deep string
