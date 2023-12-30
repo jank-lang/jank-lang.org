@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg preserveAspectRatio="xMinYMin meet" version="1.2" viewBox="0 0 780.19 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style type="text/css"><![CDATA[@font-face{ font-family: 'Comfortaa'; font-style: normal; font-weight: 400; src: url('https://fonts.gstatic.com/s/comfortaa/v40/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMDrMfJQ.ttf') format('truetype'); }
+rect { stroke: none; }
+.bar:hover { filter: brightness(115%); }
+]]></style>
+</defs>
+<g transform="translate(10.962 10)" data-dali-layout-tag="distribute">
+<g data-dali-layout-tag="align">
+<rect width="20" height="100" fill="none"/>
+<text transform="translate(0 14.844)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">22</text>
+</g>
+<g transform="translate(0 100)" data-dali-layout-tag="align">
+<rect width="20" height="100" fill="none"/>
+<text transform="translate(-3.1624 57.279)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">10</text>
+</g>
+<g transform="translate(0 200)" data-dali-layout-tag="align">
+<rect width="20" height="100" fill="none"/>
+<text transform="translate(0 99.714)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">0</text>
+</g>
+</g>
+<g data-dali-layout-tag="align">
+<rect x="10" y="320" width="20" height="20" fill="none"/>
+<text transform="translate(8.3105 335.46)" fill="rgba(0, 0, 0, 0.7)" font-family="Comfortaa" font-size="20" font-style="italic">ns</text>
+</g>
+<g transform="translate(92.371 320)" data-dali-layout-tag="stack">
+<g data-dali-layout-tag="stack">
+<g data-dali-layout-tag="align">
+<rect width="120" height="20" fill="none"/>
+<text transform="translate(-43.693 15.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Small string creation</text>
+</g>
+<g transform="translate(-42.371 -56.978)" data-dali-layout-tag="stack">
+<rect class="bar" width="40" height="46.978" fill="hsl(204, 86%, 53%)"/>
+<rect class="bar" transform="translate(40 -23.417)" width="40" height="70.395" fill="hsl(171, 100%, 41%)"/>
+<rect class="bar" transform="translate(80 -10.281)" width="40" height="57.258" fill="hsl(348, 100%, 61%)"/>
+</g>
+</g>
+<g transform="translate(284.96)" data-dali-layout-tag="stack">
+<g data-dali-layout-tag="align">
+<rect width="120" height="20" fill="none"/>
+<text transform="translate(-44.552 15.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Large string creation</text>
+</g>
+<g transform="translate(-42.586 -265.88)" data-dali-layout-tag="stack">
+<rect class="bar" width="40" height="255.88" fill="hsl(204, 86%, 53%)"/>
+<rect class="bar" transform="translate(40 2.9986)" width="40" height="252.88" fill="hsl(171, 100%, 41%)"/>
+<rect class="bar" transform="translate(80 -44.122)" width="40" height="300" fill="hsl(348, 100%, 61%)"/>
+</g>
+</g>
+</g>
+<g data-dali-layout-tag="place">
+<g transform="translate(619.92 95)" data-dali-layout-tag="stack">
+<g transform="translate(0)" data-dali-layout-tag="stack">
+<g data-dali-layout-tag="stack">
+<rect width="40" height="40" fill="hsl(204, 86%, 53%)"/>
+<text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank</text>
+</g>
+<g transform="translate(0 60)" data-dali-layout-tag="stack">
+<rect width="40" height="40" fill="hsl(171, 100%, 41%)"/>
+<text transform="translate(43.112 27.454)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">libstdc++</text>
+</g>
+<g transform="translate(0 120)" data-dali-layout-tag="stack">
+<rect width="40" height="40" fill="hsl(348, 100%, 61%)"/>
+<text transform="translate(44.538 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">folly</text>
+</g>
+</g>
+</g>
+</g>
+</svg>

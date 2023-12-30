@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg preserveAspectRatio="xMinYMin meet" version="1.2" viewBox="0 0 743.96 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style type="text/css"><![CDATA[@font-face{ font-family: 'Comfortaa'; font-style: normal; font-weight: 400; src: url('https://fonts.gstatic.com/s/comfortaa/v40/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMDrMfJQ.ttf') format('truetype'); }
+rect { stroke: none; }
+.bar:hover { filter: brightness(115%); }
+]]></style>
+</defs>
+<g transform="translate(10 10)" data-dali-layout-tag="distribute">
+<g data-dali-layout-tag="align">
+<rect width="20" height="100" fill="none"/>
+<text transform="translate(0 14.844)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">16</text>
+</g>
+<g transform="translate(0 100)" data-dali-layout-tag="align">
+<rect width="20" height="100" fill="none"/>
+<text transform="translate(3.6719 57.292)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">7</text>
+</g>
+<g transform="translate(0 200)" data-dali-layout-tag="align">
+<rect width="20" height="100" fill="none"/>
+<text transform="translate(0 99.714)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">0</text>
+</g>
+</g>
+<g data-dali-layout-tag="align">
+<rect x="10" y="320" width="20" height="20" fill="none"/>
+<text transform="translate(8.3105 335.46)" fill="rgba(0, 0, 0, 0.7)" font-family="Comfortaa" font-size="20" font-style="italic">ns</text>
+</g>
+<g transform="translate(83.314 320)" data-dali-layout-tag="stack">
+<g data-dali-layout-tag="stack">
+<g data-dali-layout-tag="align">
+<rect width="120" height="20" fill="none"/>
+<text transform="translate(-34.635 15.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Small string substr</text>
+</g>
+<g transform="translate(-33.314 -78.468)" data-dali-layout-tag="stack">
+<rect class="bar" width="40" height="68.468" fill="hsl(204, 86%, 53%)"/>
+<rect class="bar" transform="translate(40)" width="40" height="68.468" fill="hsl(171, 100%, 41%)"/>
+<rect class="bar" transform="translate(80 -22.886)" width="40" height="91.354" fill="hsl(348, 100%, 61%)"/>
+</g>
+</g>
+<g transform="translate(266.84)" data-dali-layout-tag="stack">
+<g data-dali-layout-tag="align">
+<rect width="120" height="20" fill="none"/>
+<text transform="translate(-35.495 15.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Large string substr</text>
+</g>
+<g transform="translate(-33.529 -42.041)" data-dali-layout-tag="stack">
+<rect class="bar" width="40" height="32.041" fill="hsl(204, 86%, 53%)"/>
+<rect class="bar" transform="translate(40 -248.32)" width="40" height="280.36" fill="hsl(171, 100%, 41%)"/>
+<rect class="bar" transform="translate(80 -267.96)" width="40" height="300" fill="hsl(348, 100%, 61%)"/>
+</g>
+</g>
+</g>
+<g data-dali-layout-tag="place">
+<g transform="translate(583.68 95)" data-dali-layout-tag="stack">
+<g transform="translate(0)" data-dali-layout-tag="stack">
+<g data-dali-layout-tag="stack">
+<rect width="40" height="40" fill="hsl(204, 86%, 53%)"/>
+<text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank</text>
+</g>
+<g transform="translate(0 60)" data-dali-layout-tag="stack">
+<rect width="40" height="40" fill="hsl(171, 100%, 41%)"/>
+<text transform="translate(43.112 27.454)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">libstdc++</text>
+</g>
+<g transform="translate(0 120)" data-dali-layout-tag="stack">
+<rect width="40" height="40" fill="hsl(348, 100%, 61%)"/>
+<text transform="translate(44.538 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">folly</text>
+</g>
+</g>
+</g>
+</g>
+</svg>
