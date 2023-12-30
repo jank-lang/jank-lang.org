@@ -157,7 +157,7 @@ string is full, since the two flag bits will be 0 and the remaining capacity
 will be 0, thus the byte will be 0.
 
 This means folly's string allows for 23 bytes of small string data in a 24 byte
-string. That's `23:34 = 0.958`, compared to the previous `15:32 = 0.469`. Our
+string. That's `23:24 = 0.958`, compared to the previous `15:32 = 0.469`. Our
 string is 24 bytes, compared to previous 32 bytes, too! A very impressive design.
 
 ## Empty member optimization
