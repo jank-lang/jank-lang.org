@@ -1,4 +1,4 @@
-Title: jank's new persistent string, faster than the rest
+Title: jank's new persistent string is fast
 Date: Dec 30, 2023
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
@@ -6,8 +6,7 @@ Description: jank has a new C++ string class which is smaller and faster than
              std::string and folly::fbstring in benchmarks. How can that be?
 Image: https://jank-lang.org/img/logo-dark.png
 
-One thing I've been meaning to do is build a custom string class for jank. It's
-not that I want to, but that C++ isn't flexible enough to allow me not to. I
+One thing I've been meaning to do is build a custom string class for jank. I
 had some time, during the holidays, between wrapping up this quarter's work and
 starting on next quarter's, so I decided to see if I could beat both `std::string`
 and `folly::fbstring`, in terms of performance. After all, if we're gonna make a
@@ -15,15 +14,15 @@ string class, it'll need to be fast. :)
 
 The back story here is that jank needs to be able to get a hash from a string,
 and that hash should be cached along with the string. This means I can't use
-existing string classes, since C++ doesn't the [duck typing](https://en.wikipedia.org/wiki/Duck_typing)
+existing string classes, since C++ doesn't have the [duck typing](https://en.wikipedia.org/wiki/Duck_typing)
 mechanisms needed to add this behavior without completely wrapping the class.
 
-Now, I could just wrap `std::string` or `folly::fbstring`, but I had a couple
-other goals in mind, too. In particular, I want jank's string to be persistent,
-as the rest of its data structures are. Also, since I know jank is garbage
-collected, and the string is persistent, I should be able to do substring
-operations and string copies by sharing memory, rather than doing deep copies.
-To summarize these goals shortly:
+Now, I could just wrap `std::string` or `folly::fbstring`, and all their
+member functions but I had a couple other goals in mind, too. In particular, I
+want jank's string to be persistent, as the rest of its data structures are.
+Also, since I know jank is garbage collected, and the string is persistent, I
+should be able to do substring operations and string copies by sharing memory,
+rather than doing deep copies. To summarize these goals shortly:
 
 ## Goals
 * As fast, or faster, than `std::string` and `folly::fbstring`
