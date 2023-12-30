@@ -369,6 +369,8 @@ branch elimination, tricks to enable `constexpr` even for complex code (like
 `reinterpret_cast`), etc. If you're interested in even more detail in these
 areas, let me know!
 
+You can see the final source of jank's string [here](https://github.com/jank-lang/jank/blob/main/include/cpp/jank/native_persistent_string.hpp).
+
 ## Would you like to join in?
 1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
 2. Join the design discussions or pick up a ticket on [GitHub](https://github.com/jank-lang/jank)
