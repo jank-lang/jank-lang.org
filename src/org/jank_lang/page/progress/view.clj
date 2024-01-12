@@ -71,7 +71,7 @@
                               :done lex-parse-anal-eval-done}
                              {:name "specials/do"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex :parse}}
+                              :done lex-parse-anal-eval-done}
                              {:name "specials/let*"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
@@ -333,7 +333,7 @@
                               :done #{}}
                              {:name "alias"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "all-ns"
                               :tasks [:done :tested]
                               :done #{}}
@@ -354,7 +354,7 @@
                               :done #{}}
                              {:name "and"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "any?"
                               :tasks [:done :tested]
                               :done #{}}
@@ -600,19 +600,19 @@
                               :done #{}}
                              {:name "compile"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "complement"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "completing"
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "concat"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "cond"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "cond->"
                               :tasks [:done :tested]
                               :done #{}}
@@ -639,7 +639,7 @@
                               :done #{}}
                              {:name "contains?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "count"
                               :tasks [:done :tested]
                               :done #{:done}}
@@ -648,7 +648,7 @@
                               :done #{}}
                              {:name "create-ns"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "create-struct"
                               :tasks [:done :tested]
                               :done #{}}
@@ -870,13 +870,13 @@
                               :done #{}}
                              {:name "find"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "find-keyword"
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "find-ns"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "find-protocol-impl"
                               :tasks [:done :tested]
                               :done #{}}
@@ -957,7 +957,7 @@
                               :done #{}}
                              {:name "gensym"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "get"
                               :tasks [:done :tested]
                               :done #{:done}}
@@ -1113,7 +1113,7 @@
                               :done #{}}
                              {:name "keys"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "keyword"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1143,13 +1143,13 @@
                               :done #{:done}}
                              {:name "list*"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "list?"
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "load"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "load-file"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1251,10 +1251,10 @@
                               :done #{}}
                              {:name "name"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "namespace"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "namespace-munge"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1287,7 +1287,7 @@
                               :done #{:done}}
                              {:name "not-any?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "not-empty"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1296,10 +1296,10 @@
                               :done #{}}
                              {:name "not="
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "ns"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "ns-aliases"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1311,13 +1311,13 @@
                               :done #{}}
                              {:name "ns-map"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "ns-name"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "ns-publics"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "ns-refers"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1356,7 +1356,7 @@
                               :done #{}}
                              {:name "or"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "parents"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1596,7 +1596,7 @@
                               :done #{}}
                              {:name "refer"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "refer-clojure"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1611,7 +1611,7 @@
                               :done #{:done}}
                              {:name "remove"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "remove-all-methods"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1620,7 +1620,7 @@
                               :done #{}}
                              {:name "remove-ns"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "remove-tap"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1641,7 +1641,7 @@
                               :done #{}}
                              {:name "require"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "requiring-resolve"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1689,7 +1689,7 @@
                               :done #{:done}}
                              {:name "select-keys"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "send"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1722,7 +1722,7 @@
                               :done #{}}
                              {:name "set"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "set-agent-send-executor!"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1740,7 +1740,7 @@
                               :done #{}}
                              {:name "set?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "short"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1770,7 +1770,7 @@
                               :done #{}}
                              {:name "some"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "some->"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1830,7 +1830,7 @@
                               :done #{}}
                              {:name "subs"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "subseq"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1848,7 +1848,7 @@
                               :done #{}}
                              {:name "symbol"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "symbol?"
                               :tasks [:done :tested]
                               :done #{:done}}
@@ -1881,7 +1881,7 @@
                               :done #{}}
                              {:name "the-ns"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "thread-bound?"
                               :tasks [:done :tested]
                               :done #{}}
@@ -2010,7 +2010,7 @@
                               :done #{}}
                              {:name "use"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "uuid?"
                               :tasks [:done :tested]
                               :done #{}}
@@ -2019,16 +2019,16 @@
                               :done #{}}
                              {:name "vals"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "var-get"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "var-set"
                               :tasks [:done :tested]
                               :done #{}}
                              {:name "var?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "vary-meta"
                               :tasks [:done :tested]
                               :done #{}}
@@ -2037,7 +2037,7 @@
                               :done #{:done}}
                              {:name "vector"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "vector-of"
                               :tasks [:done :tested]
                               :done #{}}
