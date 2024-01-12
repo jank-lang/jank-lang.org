@@ -180,7 +180,7 @@
                               :done #{}}
                              {:name "*compile-files*"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "*compile-path*"
                               :tasks [:done :tested]
                               :done #{}}
@@ -681,7 +681,7 @@
                               :done #{}}
                              {:name "defmacro"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "defmethod"
                               :tasks [:done :tested]
                               :done #{}}
@@ -819,7 +819,7 @@
                               :done #{}}
                              {:name "even?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "every-pred"
                               :tasks [:done :tested]
                               :done #{}}
@@ -963,7 +963,7 @@
                               :done #{:done}}
                              {:name "get-in"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "get-method"
                               :tasks [:done :tested]
                               :done #{}}
@@ -972,7 +972,7 @@
                               :done #{}}
                              {:name "get-thread-bindings"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "get-validator"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1146,7 +1146,7 @@
                               :done #{:done}}
                              {:name "list?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "load"
                               :tasks [:done :tested]
                               :done #{:done}}
@@ -1353,7 +1353,7 @@
                               :done #{}}
                              {:name "odd?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "or"
                               :tasks [:done :tested]
                               :done #{:done}}
@@ -1404,7 +1404,7 @@
                               :done #{}}
                              {:name "pop-thread-bindings"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "pos-int?"
                               :tasks [:done :tested]
                               :done #{}}
@@ -1479,7 +1479,7 @@
                               :done #{}}
                              {:name "push-thread-bindings"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "pvalues"
                               :tasks [:done :tested]
                               :done #{}}
@@ -2043,7 +2043,7 @@
                               :done #{}}
                              {:name "vector?"
                               :tasks [:done :tested]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "volatile!"
                               :tasks [:done :tested]
                               :done #{}}
