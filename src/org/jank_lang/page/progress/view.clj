@@ -2067,7 +2067,7 @@
                               :done #{}}
                              {:name "when-not"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "when-some"
                               :tasks [:done]
                               :done #{}}
@@ -2118,1972 +2118,1972 @@
                               :done #{}}]}
                  {:name "Clojure library tests"
                   :features [{:name "*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*'"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*1"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*2"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*3"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*agent*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*allow-unresolved-vars*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*assert*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*clojure-version*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*command-line-args*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*compile-files*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*compile-path*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*compiler-options*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*data-readers*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*default-data-reader-fn*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*e"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*err*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*file*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*flush-on-newline*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*fn-loader*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*in*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*math-context*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*ns*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*out*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*print-dup*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*print-length*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*print-level*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*print-meta*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*print-namespace-maps*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*print-readably*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*read-eval*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*reader-resolver*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*source-path*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*suppress-read*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*unchecked-math*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "*verbose-defrecords*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "+"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "+'"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "-"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "-'"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "->"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "->>"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "/"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "<"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "<="
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "="
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "=="
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name ">"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name ">="
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "Inst"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "NaN?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "accessor"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "aclone"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "add-classpath"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "add-tap"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "add-watch"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "agent"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "agent-error"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "agent-errors"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "aget"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "alength"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "alias"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "all-ns"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "alter"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "alter-meta!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "alter-var-root"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "amap"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ancestors"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "and"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "any?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "apply"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "areduce"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "array-map"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "as->"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "aset"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "aset-boolean"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "aset-byte"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "aset-char"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "aset-double"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "aset-float"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "aset-int"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "aset-long"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "aset-short"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "assert"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "assoc"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "assoc!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "assoc-in"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "associative?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "atom"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "await"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "await-for"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "await1"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bases"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bean"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bigdec"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bigint"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "biginteger"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "binding"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bit-and"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bit-and-not"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bit-clear"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bit-flip"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bit-not"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bit-or"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bit-set"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bit-shift-left"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bit-shift-right"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bit-test"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bit-xor"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "boolean"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "boolean-array"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "boolean?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "booleans"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bound-fn"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bound-fn*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bound?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bounded-count"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "butlast"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "byte"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "byte-array"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bytes"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "bytes?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "case"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "cast"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "cat"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "char"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "char-array"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "char-escape-string"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "char-name-string"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "char?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "chars"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "chunk"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "chunk-append"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "chunk-buffer"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "chunk-cons"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "chunk-first"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "chunk-next"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "chunk-rest"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "chunked-seq?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "class"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "class?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "clear-agent-errors"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "clojure-version"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "coll?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "comment"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "commute"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "comp"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "comparator"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "compare"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "compare-and-set!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "compile"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "complement"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "completing"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "concat"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "cond"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "cond->"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "cond->>"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "condp"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "conj"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "conj!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "cons"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "constantly"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "construct-proxy"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "contains?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "count"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "counted?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "create-ns"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "create-struct"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "cycle"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "dec"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "dec'"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "decimal?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "declare"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "dedupe"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "default-data-readers"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "definline"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "definterface"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "defmacro"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "defmethod"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "defmulti"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "defn"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "defn-"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "defonce"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "defprotocol"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "defrecord"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "defstruct"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "deftype"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "delay"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "delay?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "deliver"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "denominator"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "deref"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "derive"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "descendants"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "destructure"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "disj"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "disj!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "dissoc"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "dissoc!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "distinct"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "distinct?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "doall"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "dorun"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "doseq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "dosync"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "dotimes"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "doto"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "double"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "double-array"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "double?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "doubles"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "drop"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "drop-last"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "drop-while"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "eduction"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "empty"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "empty?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ensure"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ensure-reduced"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "enumeration-seq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "error-handler"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "error-mode"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "eval"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "even?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "every-pred"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "every?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ex-cause"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ex-data"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ex-info"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ex-message"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "extend"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "extend-protocol"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "extend-type"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "extenders"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "extends?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "false?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ffirst"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "file-seq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "filter"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "filterv"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "find"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "find-keyword"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "find-ns"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "find-protocol-impl"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "find-protocol-method"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "find-var"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "first"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "flatten"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "float"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "float-array"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "float?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "floats"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "flush"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "fn"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "fn?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "fnext"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "fnil"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "for"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "force"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "format"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "frequencies"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "future"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "future-call"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "future-cancel"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "future-cancelled?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "future-done?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "future?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "gen-class"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "gen-interface"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "gensym"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "get"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "get-in"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "get-method"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "get-proxy-class"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "get-thread-bindings"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "get-validator"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "group-by"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "halt-when"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "hash"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "hash-combine"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "hash-map"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "hash-ordered-coll"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "hash-set"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "hash-unordered-coll"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ident?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "identical?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "identity"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "if-let"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "if-not"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "if-some"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ifn?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "import"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "in-ns"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "inc"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "inc'"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "indexed?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "infinite?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "init-proxy"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "inst-ms"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "inst-ms*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "inst?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "instance?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "int"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "int-array"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "int?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "integer?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "interleave"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "intern"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "interpose"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "into"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "into-array"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ints"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "io!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "isa?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "iterate"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "iteration"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "iterator-seq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "juxt"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "keep"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "keep-indexed"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "key"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "keys"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "keyword"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "keyword?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "last"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "lazy-cat"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "lazy-seq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "let"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "letfn"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "line-seq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "list"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "list*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "list?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "load"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "load-file"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "load-reader"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "load-string"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "loaded-libs"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "locking"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "long"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "long-array"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "longs"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "loop"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "macroexpand"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "macroexpand-1"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "make-array"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "make-hierarchy"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "map"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "map-entry?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "map-indexed"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "map?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "mapcat"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "mapv"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "max"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "max-key"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "memfn"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "memoize"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "merge"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "merge-with"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "meta"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "method-sig"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "methods"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "min"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "min-key"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "mix-collection-hash"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "mod"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "munge"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "name"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "namespace"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "namespace-munge"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "nat-int?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "neg-int?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "neg?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "newline"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "next"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "nfirst"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "nil?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "nnext"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "not"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "not-any?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "not-empty"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "not-every?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "not="
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ns"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ns-aliases"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ns-imports"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ns-interns"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ns-map"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ns-name"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ns-publics"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ns-refers"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ns-resolve"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ns-unalias"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ns-unmap"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "nth"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "nthnext"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "nthrest"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "num"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "number?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "numerator"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "object-array"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "odd?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "or"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "parents"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "parse-boolean"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "parse-double"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "parse-long"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "parse-uuid"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "partial"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "partition"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "partition-all"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "partition-by"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "pcalls"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "peek"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "persistent!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "pmap"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "pop"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "pop!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "pop-thread-bindings"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "pos-int?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "pos?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "pr"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "pr-str"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "prefer-method"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "prefers"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "primitives-classnames"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "print"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "print-ctor"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "print-dup"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "print-method"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "print-simple"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "print-str"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "printf"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "println"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "println-str"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "prn"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "prn-str"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "promise"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "proxy"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "proxy-call-with-super"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "proxy-mappings"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "proxy-name"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "proxy-super"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "push-thread-bindings"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "pvalues"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "qualified-ident?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "qualified-keyword?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "qualified-symbol?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "quot"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "rand"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "rand-int"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "rand-nth"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "random-sample"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "random-uuid"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "range"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ratio?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "rational?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "rationalize"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "re-find"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "re-groups"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "re-matcher"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "re-matches"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "re-pattern"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "re-seq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "read"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "read+string"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "read-line"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "read-string"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reader-conditional"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reader-conditional?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "realized?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "record?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reduce"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reduce-kv"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reduced"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reduced?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reductions"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ref"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ref-history-count"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ref-max-history"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ref-min-history"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "ref-set"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "refer"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "refer-clojure"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reify"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "release-pending-sends"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "rem"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "remove"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "remove-all-methods"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "remove-method"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "remove-ns"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "remove-tap"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "remove-watch"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "repeat"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "repeatedly"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "replace"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "replicate"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "require"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "requiring-resolve"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reset!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reset-meta!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reset-vals!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "resolve"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "rest"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "restart-agent"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "resultset-seq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reverse"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "reversible?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "rseq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "rsubseq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "run!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "satisfies?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "second"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "select-keys"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "send"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "send-off"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "send-via"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "seq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "seq-to-map-for-destructuring"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "seq?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "seqable?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "seque"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "sequence"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "sequential?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "set"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "set-agent-send-executor!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "set-agent-send-off-executor!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "set-error-handler!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "set-error-mode!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "set-validator!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "set?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "short"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "short-array"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "shorts"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "shuffle"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "shutdown-agents"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "simple-ident?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "simple-keyword?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "simple-symbol?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "slurp"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "some"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "some->"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "some->>"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "some-fn"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "some?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "sort"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "sort-by"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "sorted-map"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "sorted-map-by"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "sorted-set"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "sorted-set-by"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "sorted?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "special-symbol?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "spit"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "split-at"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "split-with"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "str"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "string?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "struct"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "struct-map"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "subs"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "subseq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "subvec"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "supers"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "swap!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "swap-vals!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "symbol"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "symbol?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "sync"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "tagged-literal"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "tagged-literal?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "take"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "take-last"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "take-nth"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "take-while"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "tap>"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "test"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "the-ns"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "thread-bound?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "time"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "to-array"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "to-array-2d"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "trampoline"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "transduce"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "transient"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "tree-seq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "true?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "type"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-add"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-add-int"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-byte"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-char"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-dec"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-dec-int"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-divide-int"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-double"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-float"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-inc"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-inc-int"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-int"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-long"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-multiply"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-multiply-int"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-negate"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-negate-int"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-remainder-int"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-short"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-subtract"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unchecked-subtract-int"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "underive"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unquote"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unquote-splicing"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unreduced"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "unsigned-bit-shift-right"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "update"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "update-in"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "update-keys"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "update-proxy"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "update-vals"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "uri?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "use"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "uuid?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "val"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "vals"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "var-get"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "var-set"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "var?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "vary-meta"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "vec"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "vector"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "vector-of"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "vector?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "volatile!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "volatile?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "vreset!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "vswap!"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "when"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "when-first"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "when-let"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "when-not"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "when-some"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "while"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "with-bindings"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "with-bindings*"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "with-in-str"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "with-loading-context"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "with-local-vars"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "with-meta"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "with-open"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "with-out-str"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "with-precision"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "with-redefs"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "with-redefs-fn"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "xml-seq"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "zero?"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}
                              {:name "zipmap"
-                              :tasks [:done]
+                              :tasks [:tested]
                               :done #{}}]}
                  {:name "Native runtime"
                   :features [{:name "interop/include headers"
