@@ -20,7 +20,7 @@
 {:drama [:the-weather-man :nightcrawler],
  :comedy [:the-weather-man],
  :crime [:nightcrawler],
- :thriller [:nightcrawler],
+ :thriller [:nightcrawler :the-bourne-identity],
  :action [:the-bourne-identity]}
 
 ; We can look up all movies by genre.
