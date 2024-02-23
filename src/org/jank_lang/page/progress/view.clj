@@ -451,7 +451,7 @@
                               :done #{}}
                              {:name "binding"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "bit-and"
                               :tasks [:done]
                               :done #{}}
@@ -2113,7 +2113,7 @@
                               :done #{}}
                              {:name "with-redefs"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "with-redefs-fn"
                               :tasks [:done]
                               :done #{}}
@@ -2125,7 +2125,7 @@
                               :done #{:done}}
                              {:name "zipmap"
                               :tasks [:done]
-                              :done #{}}]}
+                              :done #{:done}}]}
                  {:name "Clojure library tests"
                   :features [{:name "*"
                               :tasks [:tested]
