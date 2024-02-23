@@ -147,7 +147,8 @@ will only add to the momentum I currently have.
 ## Would you like to join in?
 1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
 2. Join the design discussions or pick up a ticket on [GitHub](https://github.com/jank-lang/jank)
-3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye)
+3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye) ❤️ 
+4. **Hire me full-time to work on jank!**
 
 ## Benchmark sources
 For those readers interested in my benchmark code, both the C++ (jank) and

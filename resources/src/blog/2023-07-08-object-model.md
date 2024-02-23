@@ -581,3 +581,9 @@ namespace loading, class file generating, compilation cache, and class path
 handling. This leads into support for multi-file projects, leiningen
 integration, and AOT compilation, so if you'd like to see this work funded,
 reach out to me!
+
+## Would you like to join in?
+1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
+2. Join the design discussions or pick up a ticket on [GitHub](https://github.com/jank-lang/jank)
+3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye) ❤️ 
+4. **Hire me full-time to work on jank!**

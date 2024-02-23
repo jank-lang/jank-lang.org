@@ -8,7 +8,8 @@
 
 (def lex-parse-anal-eval [:lex :parse :analyze :eval])
 (def lex-parse-anal-eval-done (into #{} lex-parse-anal-eval))
-(def reader-macro [:lex])
+(def reader-macro [:lex :parse])
+(def reader-macro-done (into #{} reader-macro))
 
 ; TODO: EDN file for each of these groups.
 (def milestones [{:name "Clojure syntax parity"
@@ -98,10 +99,10 @@
                               :done #{:lex}}
                              {:name "specials/throw"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
+                              :done lex-parse-anal-eval-done}
                              {:name "specials/try"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
+                              :done lex-parse-anal-eval-done}
                              {:name "specials/monitor-enter"
                               :tasks lex-parse-anal-eval
                               :done #{:lex}}
@@ -109,10 +110,10 @@
                               :tasks lex-parse-anal-eval
                               :done #{:lex}}
                              {:name "bindings/thread-local"
-                              :tasks lex-parse-anal-eval
-                              :done #{}}
+                              :tasks [:done]
+                              :done #{:done}}
                              {:name "bindings/conveyance"
-                              :tasks lex-parse-anal-eval
+                              :tasks [:done]
                               :done #{}}
                              {:name "calls"
                               :tasks lex-parse-anal-eval
@@ -130,8 +131,17 @@
                               :tasks lex-parse-anal-eval
                               :done #{}}
                              {:name "syntax-quoting"
-                              :tasks lex-parse-anal-eval
+                              :tasks reader-macro
                               :done #{}}
+                             {:name "meta hints"
+                              :tasks reader-macro
+                              :done reader-macro-done}
+                             {:name "reader macros/comment"
+                              :tasks reader-macro
+                              :done reader-macro-done}
+                             {:name "reader macros/set"
+                              :tasks reader-macro
+                              :done reader-macro-done}
                              {:name "reader macros/shorthand fns"
                               :tasks reader-macro
                               :done #{}}
@@ -140,13 +150,13 @@
                               :done #{}}
                              {:name "reader-macros/quote"
                               :tasks reader-macro
-                              :done lex-parse-anal-eval-done}
-                             {:name "reader-macros/var"
+                              :done reader-macro-done}
+                             {:name "reader-macros/var quoting"
                               :tasks reader-macro
                               :done #{}}
                              {:name "reader-macros/conditional"
                               :tasks reader-macro
-                              :done #{}}]}
+                              :done reader-macro-done}]}
                  {:name "Clojure library parity"
                   :features [{:name "*"
                               :tasks [:done]
@@ -399,7 +409,7 @@
                               :done #{}}
                              {:name "assert"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "assoc"
                               :tasks [:done]
                               :done #{:done}}
@@ -582,7 +592,7 @@
                               :done #{}}
                              {:name "comment"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "commute"
                               :tasks [:done]
                               :done #{}}
