@@ -54,7 +54,7 @@
                               :done lex-parse-anal-eval-done}
                              {:name "sets"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
+                              :done lex-parse-anal-eval-done}
                              {:name "lists"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
@@ -127,9 +127,6 @@
                              {:name "macros/&env param"
                               :tasks #{:pass :set}
                               :done #{:pass}}
-                             {:name "var-quoting"
-                              :tasks lex-parse-anal-eval
-                              :done #{}}
                              {:name "syntax-quoting"
                               :tasks reader-macro
                               :done #{}}
