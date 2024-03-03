@@ -45,7 +45,7 @@
                               :done lex-parse-anal-eval-done}
                              {:name "keywords/auto-resolved-qualified"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex :parse}}
+                              :done lex-parse-anal-eval-done}
                              {:name "maps"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
