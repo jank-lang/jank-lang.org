@@ -46,6 +46,9 @@
                              {:name "keywords/auto-resolved-qualified"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
+                             {:name "keyword argument maps"
+                              :tasks #{:parse}
+                              :done []}
                              {:name "maps"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
@@ -129,7 +132,10 @@
                               :done #{:pass}}
                              {:name "syntax-quoting"
                               :tasks reader-macro
-                              :done #{}}
+                              :done reader-macro-done}
+                             {:name "syntax-quoting/unquote"
+                              :tasks reader-macro
+                              :done reader-macro-done}
                              {:name "meta hints"
                               :tasks reader-macro
                               :done reader-macro-done}
@@ -1123,7 +1129,7 @@
                               :done #{:done}}
                              {:name "keyword"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "keyword?"
                               :tasks [:done]
                               :done #{:done}}
