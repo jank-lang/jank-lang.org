@@ -315,7 +315,7 @@
                               :tasks [:done]
                               :done #{}}
                              {:name "accessor"
-                              :tasks [:done]
+                              :tasks []
                               :done #{}}
                              {:name "aclone"
                               :tasks [:done]
@@ -663,7 +663,7 @@
                               :tasks [:done]
                               :done #{:done}}
                              {:name "create-struct"
-                              :tasks [:done]
+                              :tasks []
                               :done #{}}
                              {:name "cycle"
                               :tasks [:done]
@@ -717,7 +717,7 @@
                               :tasks [:done]
                               :done #{}}
                              {:name "defstruct"
-                              :tasks [:done]
+                              :tasks []
                               :done #{}}
                              {:name "deftype"
                               :tasks [:done]
@@ -963,10 +963,10 @@
                               :tasks [:done]
                               :done #{}}
                              {:name "gen-class"
-                              :tasks [:done]
+                              :tasks []
                               :done #{}}
                              {:name "gen-interface"
-                              :tasks [:done]
+                              :tasks []
                               :done #{}}
                              {:name "gensym"
                               :tasks [:done]
@@ -1695,7 +1695,7 @@
                               :tasks [:done]
                               :done #{}}
                              {:name "satisfies?"
-                              :tasks [:done]
+                              :tasks []
                               :done #{}}
                              {:name "second"
                               :tasks [:done]
@@ -1836,10 +1836,10 @@
                               :tasks [:done]
                               :done #{:done}}
                              {:name "struct"
-                              :tasks [:done]
+                              :tasks []
                               :done #{}}
                              {:name "struct-map"
-                              :tasks [:done]
+                              :tasks []
                               :done #{}}
                              {:name "subs"
                               :tasks [:done]
@@ -2284,7 +2284,7 @@
                               :tasks [:tested]
                               :done #{}}
                              {:name "accessor"
-                              :tasks [:tested]
+                              :tasks []
                               :done #{}}
                              {:name "aclone"
                               :tasks [:tested]
@@ -2632,7 +2632,7 @@
                               :tasks [:tested]
                               :done #{}}
                              {:name "create-struct"
-                              :tasks [:tested]
+                              :tasks []
                               :done #{}}
                              {:name "cycle"
                               :tasks [:tested]
@@ -2686,7 +2686,7 @@
                               :tasks [:tested]
                               :done #{}}
                              {:name "defstruct"
-                              :tasks [:tested]
+                              :tasks []
                               :done #{}}
                              {:name "deftype"
                               :tasks [:tested]
@@ -2932,10 +2932,10 @@
                               :tasks [:tested]
                               :done #{}}
                              {:name "gen-class"
-                              :tasks [:tested]
+                              :tasks []
                               :done #{}}
                              {:name "gen-interface"
-                              :tasks [:tested]
+                              :tasks []
                               :done #{}}
                              {:name "gensym"
                               :tasks [:tested]
@@ -3664,7 +3664,7 @@
                               :tasks [:tested]
                               :done #{}}
                              {:name "satisfies?"
-                              :tasks [:tested]
+                              :tasks []
                               :done #{}}
                              {:name "second"
                               :tasks [:tested]
@@ -3805,10 +3805,10 @@
                               :tasks [:tested]
                               :done #{}}
                              {:name "struct"
-                              :tasks [:tested]
+                              :tasks []
                               :done #{}}
                              {:name "struct-map"
-                              :tasks [:tested]
+                              :tasks []
                               :done #{}}
                              {:name "subs"
                               :tasks [:tested]
