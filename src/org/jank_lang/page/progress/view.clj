@@ -1900,7 +1900,7 @@
                               :done #{}}
                              {:name "time"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "to-array"
                               :tasks [:done]
                               :done #{}}
