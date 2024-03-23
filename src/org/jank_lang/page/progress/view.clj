@@ -147,7 +147,7 @@
                               :done reader-macro-done}
                              {:name "reader macros/shorthand fns"
                               :tasks reader-macro
-                              :done #{}}
+                              :done reader-macro-done}
                              {:name "reader-macros/regex"
                               :tasks reader-macro
                               :done #{}}
@@ -156,7 +156,7 @@
                               :done reader-macro-done}
                              {:name "reader-macros/var quoting"
                               :tasks reader-macro
-                              :done #{}}
+                              :done reader-macro-done}
                              {:name "reader-macros/conditional"
                               :tasks reader-macro
                               :done reader-macro-done}]}
@@ -418,7 +418,7 @@
                               :done #{:done}}
                              {:name "assoc!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "assoc-in"
                               :tasks [:done]
                               :done #{}}
@@ -640,7 +640,7 @@
                               :done #{:done}}
                              {:name "conj!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "cons"
                               :tasks [:done]
                               :done #{:done}}
@@ -751,13 +751,13 @@
                               :done #{}}
                              {:name "disj!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "dissoc"
                               :tasks [:done]
                               :done #{}}
                              {:name "dissoc!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "distinct"
                               :tasks [:done]
                               :done #{}}
@@ -1414,7 +1414,7 @@
                               :done #{}}
                              {:name "pop!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "pop-thread-bindings"
                               :tasks [:done]
                               :done #{:done}}
@@ -1915,7 +1915,7 @@
                               :done #{}}
                              {:name "transient"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "tree-seq"
                               :tasks [:done]
                               :done #{}}
@@ -1924,7 +1924,7 @@
                               :done #{:done}}
                              {:name "type"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "unchecked-add"
                               :tasks [:done]
                               :done #{}}
