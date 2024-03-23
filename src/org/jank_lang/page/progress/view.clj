@@ -107,11 +107,11 @@
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
                              {:name "specials/monitor-enter"
-                              :tasks #{:n/a}
-                              :done #{:n/a}}
+                              :tasks #{:na}
+                              :done #{:na}}
                              {:name "specials/monitor-exit"
-                              :tasks #{:n/a}
-                              :done #{:n/a}}
+                              :tasks #{:na}
+                              :done #{:na}}
                              {:name "bindings/thread-local"
                               :tasks [:done]
                               :done #{:done}}
