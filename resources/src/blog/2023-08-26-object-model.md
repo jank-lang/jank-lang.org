@@ -4,7 +4,6 @@ Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: The results of a quarter focused on rebuilding jank's object model
              with the goal of being faster.
-Image: https://jank-lang.org/img/logo-dark.png
 
 As summer draws to a close, in the Pacific Northwest, so too does my term of
 sponsored work focused on a faster object model for jank. Thanks so much to

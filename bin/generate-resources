@@ -25,6 +25,9 @@ function resource-type
     svg)
       echo "svg"
       ;;
+    png)
+      echo "png"
+      ;;
     *)
       echo "sh"
   esac
@@ -51,9 +54,9 @@ function render
       ./bin/optimize-resources "${generated_img_dir}/${file_sans_ext}.svg"
       ;;
     # TODO: Keep this? Or put the images elsewhere?
-    svg)
+    svg|png)
       mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
-      cp -f "${file}" "${generated_img_dir}/${file_sans_ext}.svg"
+      cp -f "${file}" "${generated_img_dir}/${file_sans_ext}.${resource_type}"
       ;;
     *)
       mkdir -p "$(dirname "${generated_html_dir}/${file_sans_ext}")"

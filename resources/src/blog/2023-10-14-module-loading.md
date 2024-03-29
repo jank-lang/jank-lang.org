@@ -4,7 +4,6 @@ Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: An update on the past couple of months of building out jank's
              module loading system to meet parity with Clojure JVM.
-Image: https://jank-lang.org/img/logo-dark.png
 
 For the past month and a half, I've been building out jank's support for
 `clojure.core/require`, including everything from class path handling to

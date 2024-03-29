@@ -4,7 +4,6 @@ Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: A deep dive into jank's C++ object model, the cost of polymorphism,
              and how to do better.
-Image: https://jank-lang.org/img/logo-dark.png
 
 This quarter, my work on jank is being sponsored by [Clojurists Together](https://www.clojuriststogether.org/).
 The terms of the work are to research a new object model for jank, with the goal

@@ -4,7 +4,6 @@ Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: jank has a new C++ string class which is smaller and faster than
              std::string and folly::fbstring in benchmarks. How does it work?
-Image: https://jank-lang.org/img/logo-dark.png
 
 One thing I've been meaning to do is build a custom string class for jank. I
 had some time, during the holidays, between wrapping up this quarter's work and

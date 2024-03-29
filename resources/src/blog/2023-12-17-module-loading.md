@@ -5,7 +5,6 @@ Author-Url: https://github.com/jeaye
 Description: jank now supports module loading, class paths, aliases, and
              referred vars. It's a big leap closer to becoming your favorite
              Clojure dialect.
-Image: https://jank-lang.org/img/logo-dark.png
 
 I've been quiet for the past couple of months, finishing up this work on jank's
 module loading, class path handling, aliasing, and var referring. Along the way,

@@ -50,9 +50,11 @@
   (let [md (parse-markdown (slurp (str "resources/src/blog/" post-id ".md")))
         post-title (metadata->str md :title)]
     (page.view/page-root
-      {:title post-title
-       :description (metadata->str md :description)
-       :image (metadata->str md :image)}
+      (merge {:title post-title
+              :description (metadata->str md :description)}
+             (let [image (metadata->str md :image)]
+               (when-not (empty? image)
+                 {:image image})))
       [:div {}
        (page.view/header {:title "jank blog"
                           :title-url "/blog"
