@@ -74,7 +74,7 @@ inline C++ in jank looks like this:
 
 Aside from that, reader macro support has been extended to include shorthand
 `#()` anonymous functions as well as `#'v` var quoting. The only reader macro
-not yet implemented is `#""` for regexes. All of that concludes what I had aimed
+not yet implemented is `#""` for regex. All of that concludes what I had aimed
 to accomplish for my quarter, and then some. It doesn't stop there, though.
 
 ### New logo
