@@ -139,9 +139,9 @@ Cling, called clang-repl. The key benefit here is that we'd no longer need to
 compile our own Cling/Clang/LLVM stack in order to build jank and we can
 distribute jank to use each distro's normal LLVM package, rather than its own.
 On top of that, future work is happening more on clang-repl than on
-Cling, so it has recent support for loading precompiled C++20 modules, for
+Cling, so it has recent support for loading pre-compiled C++20 modules, for
 example. That would greatly improve jank's startup performance, since Cling
-doesn't allow us to load precompiled modules at this point.
+doesn't allow us to load pre-compiled modules at this point.
 
 Work here is ongoing and there are some bugs that I have identified in clang-repl
 which need to be fixed before jank can fully make the switch. I'll keep you
