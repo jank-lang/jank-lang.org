@@ -23,7 +23,7 @@ Oh, hey folks. I was just wrapping up this macro I was writing. One moment.
 ```
 
 *"Does all of that work in jank?"* I hear you asking yourself. Yes! Indeed it
-does. Since my [last update](./2024-02-23-bindings), which added dynamic
+does. Since my [last update](https://jank-lang.org/blog/2024-02-23-bindings/), which added dynamic
 bindings, meta hints, and initial reader macros, I've finished up syntax quoting
 support, including gensym support, unquoting, and unquote splicing. We might as
 well see all of this working in jank's REPL CLI.
