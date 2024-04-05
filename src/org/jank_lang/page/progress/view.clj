@@ -61,9 +61,6 @@
                              {:name "lists"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
-                             {:name "regexes"
-                              :tasks lex-parse-anal-eval
-                              :done #{:lex}}
                              {:name "symbols"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
@@ -94,12 +91,15 @@
                              {:name "specials/fn*/variadic"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
+                             {:name "specials/fn*/recur"
+                              :tasks lex-parse-anal-eval
+                              :done lex-parse-anal-eval-done}
                              {:name "specials/loop*"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
-                             {:name "specials/recur"
+                              :done lex-parse-anal-eval-done}
+                             {:name "specials/loop*/recur"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
+                              :done lex-parse-anal-eval-done}
                              {:name "specials/throw"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
