@@ -20,7 +20,6 @@ pre.shiki
 
 code
 {
-  padding: 0.10em 0.25em !important;
   border: 1px solid;
   border-color: lightgrey;
   border-radius: 7px;
@@ -30,6 +29,7 @@ code
 
 pre.shiki code
 {
+  padding: 0em 0em !important;
   border: none;
 }
 

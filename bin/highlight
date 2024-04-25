@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 
-const shiki = require('shiki');
-const fs = require('fs');
+import { codeToHtml } from 'shiki'
+import { readFileSync } from 'fs'
 
 const file = process.argv[2];
 const file_type = process.argv[3];
 
-shiki.loadTheme(process.cwd() + '/dev-resources/monokai.json')
-.then(theme => shiki.getHighlighter({ theme }))
-.then(highlighter => {
-  console.log(highlighter.codeToHtml(fs.readFileSync(file).toString(), {lang: file_type}));
+const code = readFileSync(file).toString(); // input code
+const html = await codeToHtml(code, {
+  lang: file_type,
+  theme: 'monokai'
 });
+
+console.log(html);

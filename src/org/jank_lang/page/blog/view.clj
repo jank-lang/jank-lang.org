@@ -31,7 +31,7 @@
                   (and (vector? form)
                        (= :pre (first form))
                        (= :pre (-> form (nth 2) first))
-                       (= "shiki" (-> form (nth 2) second :class)))
+                       (clojure.string/includes? (or (-> form (nth 2) second :class) "") "shiki"))
                   (nth form 2)
 
                   :else
@@ -79,6 +79,7 @@
         post-ids (->> (sort files)
                       reverse
                       (map #(clojure.string/replace-first % #"\.md$" "")))
+        ; TODO: Dynamic var to not highlight code.
         post-mds (map #(-> (parse-markdown (slurp (str "resources/src/blog/" % ".md")))
                            (assoc :id %))
                       post-ids)]
