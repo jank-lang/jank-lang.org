@@ -54,7 +54,7 @@ well see all of this working in jank's REPL CLI.
 >
 ```
 
-### New interpolation syntax
+## New interpolation syntax
 Some of the early feedback I had for jank's inline C++ support is that the
 interpolation syntax we use is different from what ClojureScript uses. Turns out
 there's no reason to be different, aside from jank needing some more work, so
@@ -70,14 +70,14 @@ inline C++ in jank looks like this:
                  std::this_thread::sleep_for(duration);")))
 ```
 
-### More reader macros
+## More reader macros
 
 Aside from that, reader macro support has been extended to include shorthand
 `#()` anonymous functions as well as `#'v` var quoting. The only reader macro
 not yet implemented is `#""` for regex. All of that concludes what I had aimed
 to accomplish for my quarter, and then some. It doesn't stop there, though.
 
-### New logo
+## New logo
 I'm wonderfully pleased to announce that jank now has a logo! The logo was
 designed by [jaide](https://github.com/jaidetree), who was graciously patient
 with me and a joy to work with through the various iterations. With this logo, 
@@ -88,7 +88,7 @@ functional core.
   <img src="/img/blog/2024-03-29-syntax-quoting/logo.png" width="50%"></img>
 </figure>
 
-### Transients
+## Transients
 Back to code. In truth, there's more work going on. A lovely man named
 [Saket](https://github.com/Samy-33) has been helping me fill out jank's
 transient functionality, which now includes array maps, vectors, and sets, as
@@ -96,7 +96,7 @@ well as the corresponding `clojure.core` functions. This is not the first time
 I've brought up Saket, since he also implemented the initial lein-jank plugin.
 Let's take a look at that.
 
-### lein-jank
+## lein-jank
 This plugin isn't ready for prime time yet, but it's a good proof of concept
 that jank can work with leiningen's classpaths and it's a good testing ground
 for multi-file projects. jank will be adding AOT compilation soon and this
@@ -133,7 +133,7 @@ var not found
 en_US.UTF-8
 ```
 
-### Migration from Cling to clang-repl
+## Migration from Cling to clang-repl
 Lastly, I've been working on migrating jank to use the upstream LLVM version of
 Cling, called clang-repl. The key benefit here is that we'd no longer need to
 compile our own Cling/Clang/LLVM stack in order to build jank and we can
