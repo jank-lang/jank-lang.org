@@ -56,7 +56,7 @@ pre.shiki
 code
 {
   border: 1px solid;
-  border-color: lightgrey;
+  border-color: transparent;
   border-radius: 7px;
   background-color: #272822 !important;
   color: #A6E22E !important;
