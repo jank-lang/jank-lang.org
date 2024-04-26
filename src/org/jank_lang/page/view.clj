@@ -101,6 +101,8 @@
             :type "image/png"
             :sizes "16x16"
             :href "/img/favicon/16.png"}]
+    [:link {:rel "manifest"
+            :href "/img/favicon/site.webmanifest"}]
 
     [:style css-icons]
 
