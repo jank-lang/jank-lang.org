@@ -101,8 +101,7 @@
                                :style "flex: 1;"}
                          [:div {:class "level-item"
                                 :style "flex: 1; justify-content: left;"}
-                          [:a {:href (str "/blog/" (:id md))
-                               :style "color: black;"}
+                          [:a {:href (str "/blog/" (:id md))}
                            [:h1 {:class "is-size-3 has-text-weight-bold"}
                             (metadata->str md :title)]]]]
                         [:div {:class "level-right"}
