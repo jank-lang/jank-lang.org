@@ -6,10 +6,11 @@ import { readFileSync } from 'fs'
 const file = process.argv[2];
 const file_type = process.argv[3];
 
-const code = readFileSync(file).toString(); // input code
+const monokai = JSON.parse(readFileSync(process.cwd() + '/dev-resources/monokai.json', 'utf8'));
+const code = readFileSync(file).toString();
 const html = await codeToHtml(code, {
   lang: file_type,
-  theme: 'monokai'
+  theme: monokai
 });
 
 console.log(html);
