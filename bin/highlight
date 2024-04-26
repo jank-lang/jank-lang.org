@@ -6,6 +6,7 @@ import { readFileSync } from 'fs'
 const file = process.argv[2];
 const file_type = process.argv[3];
 
+/* We have a custom monokai which disables underlining for types. */
 const monokai = JSON.parse(readFileSync(process.cwd() + '/dev-resources/monokai.json', 'utf8'));
 const code = readFileSync(file).toString();
 const html = await codeToHtml(code, {
