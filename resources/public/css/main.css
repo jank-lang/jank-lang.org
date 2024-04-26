@@ -15,6 +15,7 @@ a:hover
   nav
   {
     background-color: var(--bulma-primary) !important;
+    color: white !important;
   }
 }
 
