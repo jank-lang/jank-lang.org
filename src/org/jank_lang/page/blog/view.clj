@@ -10,6 +10,10 @@
             [org.jank-lang.util :as util])
   (:import org.apache.commons.text.StringEscapeUtils))
 
+; We use this to speed up blog home page and feed generation, since
+; we don't need to highlight all code snippets for those.
+(def ^:dynamic *highlight?* false)
+
 (defn html->hiccup [html]
   (let [hiccup (->> (util/html->hiccup html)
                     (into [:div {:class "content"}]))]
@@ -18,7 +22,8 @@
                 (cond
                   (and (vector? form)
                        (= :code (first form))
-                       (-> form second :class empty? not))
+                       (-> form second :class empty? not)
+                       *highlight?*)
                   (let [file-type (-> form second :class)
                         file (fs/ephemeral-file file-type)]
                     (spit file (-> (nth form 2)
@@ -47,7 +52,8 @@
   (clojure.string/join " " (-> md :metadata kw)))
 
 (defn post-root [post-id]
-  (let [md (parse-markdown (slurp (str "resources/src/blog/" post-id ".md")))
+  (let [md (binding [*highlight?* true]
+             (parse-markdown (slurp (str "resources/src/blog/" post-id ".md"))))
         post-title (metadata->str md :title)]
     (page.view/page-root
       (merge {:title post-title
