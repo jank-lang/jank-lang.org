@@ -5,8 +5,7 @@
             [taoensso.timbre :as timbre]))
 
 (defn header [props]
-  (let [text-color (when (:primary? props)
-                     "has-text-black")]
+  (let [text-color "has-text-white"]
     [:div
      [:nav {:class (str "navbar " (when (:primary? props)
                                     "is-primary"))}
@@ -15,6 +14,8 @@
         [:a {:class (str "navbar-item title " text-color)
              :href (:title-url props "/")
              :style {:font-family "Comfortaa"}}
+         [:img {:src "/img/logo-transparent.png"
+                :style {:margin-right "15px"}}]
          (:title props "jank")]]
 
        [:div {:class "navbar-menu is-active"}
@@ -68,14 +69,13 @@
 (def css-icons (slurp "https://css.gg/css?=home|sync|bulb|list|link|git-fork|info|slack|math-minus|check-o|heart|twitter|comment"))
 
 (defn page-root [props & body]
-  (page/html5
+  (page/html5 {}
     [:meta {:charset "utf-8"}]
     [:meta {:name "viewport"
             :content "width=device-width, initial-scale=1"}]
     [:link {:rel "icon"
             :type "image/svg+xml"
             :href "/img/favicon.svg"}]
-    ; TODO: Configure my own bulma css.
     [:link {:rel "stylesheet"
             :href "/css/main.css"}]
     [:link {:rel "alternate"
@@ -89,6 +89,18 @@
             :content (clojure.string/replace (:description props "") #"\s*\n\s*" " ")}]
     [:meta {:property "og:image"
             :content (:image props "https://jank-lang.org/img/logo-text-dark.png")}]
+
+    [:link {:rel "apple-touch-icon"
+            :sizes "180x180"
+            :href "/img/favicon/apple-touch-icon.png"}]
+    [:link {:rel "icon"
+            :type "image/png"
+            :sizes "32x32"
+            :href "/img/favicon/32.png"}]
+    [:link {:rel "icon"
+            :type "image/png"
+            :sizes "16x16"
+            :href "/img/favicon/16.png"}]
 
     [:style css-icons]
 
@@ -127,7 +139,7 @@
                 [:div [:img {:src "https://img.shields.io/badge/libera%20irc-%23jank-blue"
                              :width "150px"}]]
                 ]
-             [:div {:class "column has-text-centered"}
+             #_[:div {:class "column has-text-centered"}
               [:aside {:class "menu"}
                [:p {:class "menu-label"}
                 "Resources"]
@@ -141,7 +153,7 @@
             [:div {:class "container has-text-centered"}
              [:div {:class "content is-small"}
               [:p
-               "© 2022 Jeaye Wilkerson | All rights reserved."]]]
+               "© 2024 Jeaye Wilkerson | All rights reserved."]]]
             ]])
 
     "<!-- Matomo noscript -->

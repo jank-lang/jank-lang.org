@@ -4209,7 +4209,7 @@
     [:div {}
      (page.view/header {})
 
-     [:section {:class "hero is-info"}
+     [:section {:class "hero is-info has-text-weight-medium"}
       [:div {:class "hero-body"}
        [:div {:class "container"}
         [:div {:class "content"}

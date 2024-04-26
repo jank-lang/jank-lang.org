@@ -14,7 +14,7 @@
     [:div {}
      (page.view/header {})
 
-     [:section {:class "hero is-info"}
+     [:section {:class "hero"}
       [:div {:class "hero-body"}
        [:div {:class "container py-6"}
         [:div {:class "columns"}
