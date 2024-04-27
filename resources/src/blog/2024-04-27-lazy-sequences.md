@@ -94,7 +94,10 @@ jank gets around this by actually just wrapping it in a `let*`. 🙃
 
 This could be done in a macro, but since it's a language-level feature, the
 compiler does it for us. This means you can still use `loop*` even if you're
-running without `clojure.core`.
+running without `clojure.core`. As mentioned, this is potentially slower, in the
+scenario of the loop being in statement position. We can return to this when the
+performance of loops is the most important thing to tackle. Right now, parity
+with Clojure and getting jank onto your machine are most important.
 
 ## Destructuring
 Clojure supports all kinds of fancy destructuring of sequences, maps, and
