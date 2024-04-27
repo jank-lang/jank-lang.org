@@ -104,9 +104,9 @@ Clojure supports all kinds of fancy destructuring of sequences, maps, and
 keyword arguments. We use destructuring in `let`, `defn`, and `loop`, primarily. One
 interesting thing about this destructuring is that there's no compiler support
 for it at all; it's not a language-level feature. It's a library feature, done
-entirely in macros. The amazing thing about this is that, as long as we support
+entirely in macros. The amazing thing about it is that, as long as we support
 all of the core functions required, we can support destructuring. The actual
-`destructure` function is huge, but you can see it
+`destructure` function is huge, but you can see it in Clojure's source
 [here](https://github.com/clojure/clojure/blob/06d450895e2d4028afaa4face17f8e597c772a24/src/clj/clojure/core.clj#L4417-L4511).
 
 This month, I implemented all of the missing functions required for
