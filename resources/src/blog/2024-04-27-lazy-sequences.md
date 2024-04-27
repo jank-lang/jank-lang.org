@@ -21,9 +21,9 @@ since he's covered all three of them very clearly. In short, we have:
 2. Chunked lazy sequences
 3. Buffered lazy sequences
 
-This month, I have implemented the per-element lazy sequences and I have the
-partial support for chunked lazy sequences implemented as well, to be finished
-next month. By implementing even the first type of lazy sequences, so many new
+This month, I have implemented per-element lazy sequences, along with partial
+support for chunked lazy sequences. Chunked lazy sequences will be finished next
+month. By implementing even per-element lazy sequences, so many new
 opportunities open up. I'll show what I mean by that later in this post, so
 don't go anywhere!
 
@@ -159,7 +159,7 @@ jank is much closer to running on Clang's JIT compiler than it was a month ago.
 Some recent patches have landed which partially address a blocking bug with
 pre-compiled header handling in Clang's internal C++ JIT compiler. I have
 identified another small reproduction case for what I hope to be the rest of the
-issues. Part of my work here, this month, involved getting jank running on LLVM
+issues. Part of my work this month involved getting jank running on LLVM
 19 and updating filling out the related CMake system to be able to flexibly
 bring in LLVM on any system.
 
@@ -183,7 +183,8 @@ On a smaller note, the theming of this website has been spruced up. Those of you
 with your browsers set to prefer dark themes may notice that this website now
 respects it. I try to make things look appealing without requiring any JS,
 even for all of the code highlighting and charts across my posts. Your
-feedback on my success here is also welcome. The static site itself is built in Clojure!
+feedback on my success here would also be welcome. The static site itself is
+built in Clojure!
 
 ## Would you like to join in?
 1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
