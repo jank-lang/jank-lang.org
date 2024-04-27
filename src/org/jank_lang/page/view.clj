@@ -103,11 +103,6 @@
 
     [:style css-icons]
 
-    ; TODO: Include this font myself.
-    "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
-    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-    <link href=\"https://fonts.googleapis.com/css2?family=Comfortaa\" rel=\"stylesheet\"> "
-
     "<!-- Matomo -->
     <script>
     var _paq = window._paq = window._paq || [];
