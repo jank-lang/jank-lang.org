@@ -46,9 +46,9 @@ identified and elided by optimizing compilers. It even has its own acronym:
 
 jank, for now anyway, simplifies this by always using the IIFE. It does it in a
 more janky way, though, which is interesting enough that I'll share it with you
-all. Let's take an example `loop*` (note that the special form is actually
-`loop*`, same as in Clojure; `loop` is a macro which provides destructuring on
-top of `loop*` -- now you know):
+all. Let's take an example `loop*` (note that the special form of `loop` is
+actually `loop*`, same as in Clojure; `loop` is a macro which provides
+destructuring on top of `loop*` -- now you know):
 
 ```clojure
 (loop* [x 0]
