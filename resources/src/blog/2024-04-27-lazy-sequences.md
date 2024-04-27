@@ -148,11 +148,11 @@ take a look at the new functions jank now supports.
 | `take-last` |                  `chunk-buffer` |
 | `chunk-append` |                  |
 
-That's 51 new functions! That alone amounts to around 10% of all the functions in
-`clojure.core` jank will be implementing. A few of these will need some updates
-once jank fully supports chunked lazy sequences and transducers, but they're all
-very usable today. You may also note that `for` is in there, which was one of
-the goals this quarter.
+That's 51 new functions/macros! That alone amounts to around 10% of all the
+functions in `clojure.core` jank will be implementing. A few of these will need
+some updates once jank fully supports chunked lazy sequences and transducers,
+but they're all very usable today. You may also note that `for` is in there,
+which was one of the goals this quarter.
 
 ## Migration from Cling to Clang
 jank is much closer to running on Clang's JIT compiler than it was a month ago.
@@ -188,5 +188,5 @@ feedback on my success here is also welcome. The static site itself is built in 
 ## Would you like to join in?
 1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
 2. Join the design discussions or pick up a ticket on [GitHub](https://github.com/jank-lang/jank)
-3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye) <span class="icon mr-1" style="color: rgb(201, 97, 152); vertical-align: center;"> <i class="gg-heart"></i></span>
+3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye) <span class="icon" style="color: rgb(201, 97, 152);"> <i class="gg-heart"></i></span>
 4. **Hire me full-time to work on jank!**
