@@ -146,9 +146,9 @@ take a look at the new functions jank now supports.
 | `split-with` |                 `pop` |
 | `drop-last` |                  `for` |
 | `take-last` |                  `chunk-buffer` |
-| `chunk-append` |                  |
+| `chunk-append` |             `destructure`     |
 
-That's 51 new functions/macros! That alone amounts to around 10% of all the
+That's 52 new functions/macros! That alone amounts to around 10% of all the
 functions in `clojure.core` jank will be implementing. A few of these will need
 some updates once jank fully supports chunked lazy sequences and transducers,
 but they're all very usable today. You may also note that `for` is in there,

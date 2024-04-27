@@ -123,7 +123,7 @@
                               :done lex-parse-anal-eval-done}
                              {:name "destructuring"
                               :tasks lex-parse-anal-eval
-                              :done #{:lex}}
+                              :done lex-parse-anal-eval-done}
                              {:name "macros"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
@@ -283,10 +283,10 @@
                               :done #{}}
                              {:name "->"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "->>"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "/"
                               :tasks [:done]
                               :done #{:done}}
@@ -490,7 +490,7 @@
                               :done #{}}
                              {:name "boolean"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "boolean-array"
                               :tasks [:done]
                               :done #{}}
@@ -514,7 +514,7 @@
                               :done #{}}
                              {:name "butlast"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "byte"
                               :tasks [:done]
                               :done #{}}
@@ -559,10 +559,10 @@
                               :done #{}}
                              {:name "chunk-append"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "chunk-buffer"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "chunk-cons"
                               :tasks [:done]
                               :done #{}}
@@ -628,7 +628,7 @@
                               :done #{:done}}
                              {:name "cond->"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "cond->>"
                               :tasks [:done]
                               :done #{}}
@@ -646,7 +646,7 @@
                               :done #{:done}}
                              {:name "constantly"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "construct-proxy"
                               :tasks [:done]
                               :done #{}}
@@ -667,7 +667,7 @@
                               :done #{}}
                              {:name "cycle"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "dec"
                               :tasks [:done]
                               :done #{:done}}
@@ -745,7 +745,7 @@
                               :done #{}}
                              {:name "destructure"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "disj"
                               :tasks [:done]
                               :done #{}}
@@ -754,7 +754,7 @@
                               :done #{:done}}
                              {:name "dissoc"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "dissoc!"
                               :tasks [:done]
                               :done #{:done}}
@@ -766,10 +766,10 @@
                               :done #{}}
                              {:name "doall"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "dorun"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "doseq"
                               :tasks [:done]
                               :done #{}}
@@ -799,7 +799,7 @@
                               :done #{}}
                              {:name "drop-last"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "drop-while"
                               :tasks [:done]
                               :done #{}}
@@ -880,7 +880,7 @@
                               :done #{}}
                              {:name "filterv"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "find"
                               :tasks [:done]
                               :done #{:done}}
@@ -934,7 +934,7 @@
                               :done #{}}
                              {:name "for"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "force"
                               :tasks [:done]
                               :done #{}}
@@ -1015,13 +1015,13 @@
                               :done #{}}
                              {:name "ident?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "identical?"
                               :tasks [:done]
                               :done #{}}
                              {:name "identity"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "if-let"
                               :tasks [:done]
                               :done #{}}
@@ -1123,7 +1123,7 @@
                               :done #{}}
                              {:name "key"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "keys"
                               :tasks [:done]
                               :done #{:done}}
@@ -1135,7 +1135,7 @@
                               :done #{:done}}
                              {:name "last"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "lazy-cat"
                               :tasks [:done]
                               :done #{}}
@@ -1189,7 +1189,7 @@
                               :done #{}}
                              {:name "loop"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "macroexpand"
                               :tasks [:done]
                               :done #{}}
@@ -1213,13 +1213,13 @@
                               :done #{}}
                              {:name "map?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "mapcat"
                               :tasks [:done]
                               :done #{}}
                              {:name "mapv"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "max"
                               :tasks [:done]
                               :done #{:done}}
@@ -1345,13 +1345,13 @@
                               :done #{}}
                              {:name "nth"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "nthnext"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "nthrest"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "num"
                               :tasks [:done]
                               :done #{}}
@@ -1390,28 +1390,28 @@
                               :done #{}}
                              {:name "partition"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "partition-all"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "partition-by"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "pcalls"
                               :tasks [:done]
                               :done #{}}
                              {:name "peek"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "persistent!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "pmap"
                               :tasks [:done]
                               :done #{}}
                              {:name "pop"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "pop!"
                               :tasks [:done]
                               :done #{:done}}
@@ -1498,7 +1498,7 @@
                               :done #{}}
                              {:name "qualified-ident?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "qualified-keyword?"
                               :tasks [:done]
                               :done #{:done}}
@@ -1579,7 +1579,7 @@
                               :done #{}}
                              {:name "reduce"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "reduce-kv"
                               :tasks [:done]
                               :done #{}}
@@ -1642,7 +1642,7 @@
                               :done #{}}
                              {:name "repeat"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "repeatedly"
                               :tasks [:done]
                               :done #{}}
@@ -1720,7 +1720,7 @@
                               :done #{}}
                              {:name "seq?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "seqable?"
                               :tasks [:done]
                               :done #{}}
@@ -1771,7 +1771,7 @@
                               :done #{}}
                              {:name "simple-ident?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "simple-keyword?"
                               :tasks [:done]
                               :done #{:done}}
@@ -1825,10 +1825,10 @@
                               :done #{}}
                              {:name "split-at"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "split-with"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "str"
                               :tasks [:done]
                               :done #{:done}}
@@ -1879,7 +1879,7 @@
                               :done #{}}
                              {:name "take-last"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "take-nth"
                               :tasks [:done]
                               :done #{}}
@@ -2029,7 +2029,7 @@
                               :done #{}}
                              {:name "val"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "vals"
                               :tasks [:done]
                               :done #{:done}}
@@ -2074,16 +2074,16 @@
                               :done #{:done}}
                              {:name "when-first"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "when-let"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "when-not"
                               :tasks [:done]
                               :done #{:done}}
                              {:name "when-some"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "while"
                               :tasks [:done]
                               :done #{}}
