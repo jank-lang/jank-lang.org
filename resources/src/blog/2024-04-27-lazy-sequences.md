@@ -58,7 +58,7 @@ destructuring on top of `loop*` -- now you know):
 ```
 
 Given this, jank will replace the `loop*` with a `fn*` and just use function
-recusion. Initial loop values just get lifted into parameters. The jank compiler
+recursion. Initial loop values just get lifted into parameters. The jank compiler
 will transform the above code into the following:
 
 ```clojure
