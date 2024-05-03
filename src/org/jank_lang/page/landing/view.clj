@@ -185,7 +185,7 @@
         [:h2 {:class "title"}
          "jank examples"]
         [:h3 {:class "subtitle"}
-         "All of the following examples are valid also Clojure code."]]
+         "All of the following examples are also valid Clojure code."]]
 
        [:div {:class "columns is-vcentered"}
         [:div {:class "column is-6"}
