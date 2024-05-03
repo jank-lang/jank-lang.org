@@ -154,6 +154,9 @@
                              {:name "reader-macros/regex"
                               :tasks reader-macro
                               :done #{}}
+                             {:name "reader-macros/deref"
+                              :tasks reader-macro
+                              :done #{}}
                              {:name "reader-macros/quote"
                               :tasks reader-macro
                               :done reader-macro-done}
