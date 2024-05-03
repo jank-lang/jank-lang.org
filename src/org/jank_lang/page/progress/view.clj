@@ -64,6 +64,9 @@
                              {:name "symbols"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
+                             {:name "ratios"
+                              :tasks lex-parse-anal-eval
+                              :done #{}}
                              {:name "specials/def"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
