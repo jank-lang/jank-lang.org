@@ -1,5 +1,5 @@
 Title: jank development update - New projects!
-Date: Apr 27, 2024
+Date: May 31, 2024
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: jank now has chunked sequences, volatiles, atoms, and so
