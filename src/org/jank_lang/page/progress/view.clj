@@ -388,7 +388,7 @@
                               :done #{}}
                              {:name "as->"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "aset"
                               :tasks [:done]
                               :done #{}}
@@ -427,13 +427,13 @@
                               :done #{:done}}
                              {:name "assoc-in"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "associative?"
                               :tasks [:done]
                               :done #{}}
                              {:name "atom"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "await"
                               :tasks [:done]
                               :done #{}}
@@ -541,7 +541,7 @@
                               :done #{}}
                              {:name "cat"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "char"
                               :tasks [:done]
                               :done #{}}
@@ -562,7 +562,7 @@
                               :done #{}}
                              {:name "chunk"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "chunk-append"
                               :tasks [:done]
                               :done #{:done}}
@@ -571,19 +571,19 @@
                               :done #{:done}}
                              {:name "chunk-cons"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "chunk-first"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "chunk-next"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "chunk-rest"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "chunked-seq?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "class"
                               :tasks [:done]
                               :done #{}}
@@ -607,7 +607,7 @@
                               :done #{}}
                              {:name "comp"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "comparator"
                               :tasks [:done]
                               :done #{}}
@@ -616,7 +616,7 @@
                               :done #{}}
                              {:name "compare-and-set!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "compile"
                               :tasks [:done]
                               :done #{:done}}
@@ -625,7 +625,7 @@
                               :done #{:done}}
                              {:name "completing"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "concat"
                               :tasks [:done]
                               :done #{:done}}
@@ -637,7 +637,7 @@
                               :done #{:done}}
                              {:name "cond->>"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "condp"
                               :tasks [:done]
                               :done #{}}
@@ -688,7 +688,7 @@
                               :done #{}}
                              {:name "dedupe"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "default-data-readers"
                               :tasks [:done]
                               :done #{}}
@@ -742,7 +742,7 @@
                               :done #{}}
                              {:name "deref"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "derive"
                               :tasks [:done]
                               :done #{}}
@@ -766,10 +766,10 @@
                               :done #{:done}}
                              {:name "distinct"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "distinct?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "doall"
                               :tasks [:done]
                               :done #{:done}}
@@ -784,10 +784,10 @@
                               :done #{}}
                              {:name "dotimes"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "doto"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "double"
                               :tasks [:done]
                               :done #{}}
@@ -823,7 +823,7 @@
                               :done #{}}
                              {:name "ensure-reduced"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "enumeration-seq"
                               :tasks [:done]
                               :done #{}}
@@ -841,7 +841,7 @@
                               :done #{:done}}
                              {:name "every-pred"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "every?"
                               :tasks [:done]
                               :done #{}}
@@ -853,7 +853,7 @@
                               :done #{}}
                              {:name "ex-info"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "ex-message"
                               :tasks [:done]
                               :done #{}}
@@ -883,7 +883,7 @@
                               :done #{}}
                              {:name "filter"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "filterv"
                               :tasks [:done]
                               :done #{:done}}
@@ -910,7 +910,7 @@
                               :done #{:done}}
                              {:name "flatten"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "float"
                               :tasks [:done]
                               :done #{:done}}
@@ -937,7 +937,7 @@
                               :done #{}}
                              {:name "fnil"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "for"
                               :tasks [:done]
                               :done #{:done}}
@@ -949,7 +949,7 @@
                               :done #{}}
                              {:name "frequencies"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "future"
                               :tasks [:done]
                               :done #{}}
@@ -997,7 +997,7 @@
                               :done #{}}
                              {:name "group-by"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "halt-when"
                               :tasks [:done]
                               :done #{}}
@@ -1024,7 +1024,7 @@
                               :done #{:done}}
                              {:name "identical?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "identity"
                               :tasks [:done]
                               :done #{:done}}
@@ -1093,7 +1093,7 @@
                               :done #{}}
                              {:name "interpose"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "into"
                               :tasks [:done]
                               :done #{}}
@@ -1120,13 +1120,13 @@
                               :done #{}}
                              {:name "juxt"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "keep"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "keep-indexed"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "key"
                               :tasks [:done]
                               :done #{:done}}
@@ -1210,13 +1210,13 @@
                               :done #{}}
                              {:name "map"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "map-entry?"
                               :tasks [:done]
                               :done #{}}
                              {:name "map-indexed"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "map?"
                               :tasks [:done]
                               :done #{:done}}
@@ -1309,7 +1309,7 @@
                               :done #{:done}}
                              {:name "not-empty"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "not-every?"
                               :tasks [:done]
                               :done #{}}
@@ -1393,7 +1393,7 @@
                               :done #{}}
                              {:name "partial"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "partition"
                               :tasks [:done]
                               :done #{:done}}
@@ -1591,13 +1591,13 @@
                               :done #{}}
                              {:name "reduced"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "reduced?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "reductions"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "ref"
                               :tasks [:done]
                               :done #{}}
@@ -1651,7 +1651,7 @@
                               :done #{:done}}
                              {:name "repeatedly"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "replace"
                               :tasks [:done]
                               :done #{}}
@@ -1666,13 +1666,13 @@
                               :done #{}}
                              {:name "reset!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "reset-meta!"
                               :tasks [:done]
                               :done #{}}
                              {:name "reset-vals!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "resolve"
                               :tasks [:done]
                               :done #{}}
@@ -1699,7 +1699,7 @@
                               :done #{}}
                              {:name "run!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "satisfies?"
                               :tasks []
                               :done #{}}
@@ -1792,13 +1792,13 @@
                               :done #{:done}}
                              {:name "some->"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "some->>"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "some-fn"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "some?"
                               :tasks [:done]
                               :done #{:done}}
@@ -1861,10 +1861,10 @@
                               :done #{}}
                              {:name "swap!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "swap-vals!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "symbol"
                               :tasks [:done]
                               :done #{:done}}
@@ -1918,13 +1918,13 @@
                               :done #{}}
                              {:name "transduce"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "transient"
                               :tasks [:done]
                               :done #{:done}}
                              {:name "tree-seq"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "true?"
                               :tasks [:done]
                               :done #{:done}}
@@ -2005,16 +2005,16 @@
                               :done #{}}
                              {:name "unreduced"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "unsigned-bit-shift-right"
                               :tasks [:done]
                               :done #{}}
                              {:name "update"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "update-in"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "update-keys"
                               :tasks [:done]
                               :done #{}}
@@ -2065,16 +2065,16 @@
                               :done #{:done}}
                              {:name "volatile!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "volatile?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "vreset!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "vswap!"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "when"
                               :tasks [:done]
                               :done #{:done}}
