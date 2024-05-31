@@ -130,7 +130,7 @@ to completing this nREPL server in jank. Let's take a look at some of the things
 I know I'll need for this.
 
 #### Module system
-jank's module loader was implemented two quarters ago, but since there are no
+jank's module system was implemented two quarters ago, but since there are no
 real jank projects, it hasn't seen much battle testing. To start with, I will
 need to work through some issues with this. Already I've found (and fixed) a
 couple of bugs related to module writing and reading while getting started on
@@ -138,7 +138,7 @@ the nREPL server. Further improvements will be needed around how modules are
 cached and timestamped for iterative compilation.
 
 #### Native interop
-Next, jank's native interop support will need to be expanded. I've started that
+Next, jank's native interop support will need to be expanded. I've started on that
 this month by making it possible to now write C++ sources alongside your jank
 sources and actually `require` them from jank! As you may know, jank allows
 for inline C++ code within the special `native/raw` form, but by compiling
@@ -148,7 +148,7 @@ much C++ as inline jank strings.
 
 jank's native interop support can be further improved by declaratively noting
 include paths, implicit includes, link paths, and linked libraries as part of
-the project. This will likely end up necessary for the nREPL server as well.
+the project. This will likely end up necessary for the nREPL server.
 
 #### AOT compilation
 Also required for the nREPL server, I'll need to design and implement jank's AOT
@@ -160,12 +160,12 @@ together and can allow for direct linking, whole-program link time optimizations
 Finally, both jank and the nREPL server will need distribution mechanisms for
 Linux and macOS. For jank, that may mean AppImages or perhaps more integrated
 binaries. Either way, I want this to be easy for you all to use and I'm
-following Rust/cargo as my overall inspiration.
+following Rust/Cargo as my overall inspiration.
 
-I hope I've succeeded in showing how much work will remains for this nREPL
-server to be built and shipped out. However, I think having this sort of goal in
-mind is very powerful and I'm excited that jank is far enough along to where I
-can actually be doing this.
+I hope I've succeeded in showing how much work still remains for this nREPL
+server to be built and shipped out. This will take me several months, I'd
+estimate. However, I think having this sort of goal in mind is very powerful and
+I'm excited that jank is far enough along to where I can actually be doing this.
 
 ## nREPL server progress
 Since I have C++ sources working alongside jank source now, I can use
@@ -176,7 +176,7 @@ write my tests in jank using `clojure.test`, but I haven't implemented
 `clojure.test` yet, so I looked into doing that. It looks like `clojure.test`
 will require me to implement multimethods in jank, which don't yet exist. On top
 of that, I'll need to implement `clojure.template`, which requires
-`clojure.walk`.
+`clojure.walk`, none of which have been started.
 
 I'll continue on with this depth-first search, implementing as needed, and then
 unwind all the way back up to making more progress on the nREPL server. Getting
