@@ -9,7 +9,7 @@ Description: jank now has chunked sequences, volatiles, atoms, and so
 Hey folks! I've been building on last month's addition of lazy sequences,
 `loop*`, destructuring, and more. This month, I've worked on rounding out
 lazy sequences, adding more mutability, better meta support, and some big
-project updates. Shout-out to
+project updates. Much love to
 [Clojurists Together](https://www.clojuriststogether.org/), who are funding my
 work this quarter.
 
@@ -71,12 +71,11 @@ more projects, which I'll cover later in this update.
 
 ## New clojure.core functions
 Following last month's theme, which saw 52 new Clojure functions, I have
-excellent news. We actually beat that this time, adding 56 new Clojure functions
-in the past month! However, I only added 23 of those and the other 33 were added
+excellent news. We actually beat that this month, adding 56 new Clojure functions!
+However, I only added 23 of those and the other 33 were added
 by [madstap](https://github.com/madstap) (Aleksander Madland Stapnes). He did
 this while also adding the transducer arity into pretty much every existing
-sequence function. Volatiles were originally added to support him in writing
-those transducers.
+sequence function. I added volatiles to support him in writing those transducers.
 
 | | |
 |---|---|
@@ -111,8 +110,8 @@ those transducers.
 
 ## New projects
 At this point, I was thinking that jank actually has pretty darn good Clojure
-parity, both in terms of syntax and essential core functions. So how can I best
-take steps toward getting jank onto your computer?
+parity, both in terms of syntax and essential core functions. So how can I 
+take the best steps toward getting jank onto your computer?
 
 Well, I think the most important thing is for me to start writing some actual
 projects in jank. Doing this will require improving the tooling and will help
