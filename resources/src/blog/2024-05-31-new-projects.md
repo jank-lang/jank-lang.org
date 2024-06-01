@@ -62,8 +62,8 @@ There will be many jank projects and I've known for a while that I want them
 all to be in one git [monorepo](https://en.wikipedia.org/wiki/Monorepo).
 This makes code sharing, searching, refactoring, and browsing simpler. It gives
 contributors one place to go in order to get started and one place for all of
-the issues and discussions. I don't care to convince you of this, if you're not
-a fan of monorepos, but jank is now using one. 
+the issues and discussions. It's not my intention to convince you of anything, if
+you're not a fan of monorepos, but jank is now using one. 
 
 This started by bringing in [lein-jank](https://github.com/Samy-33/lein-jank),
 which was initially created by Saket Patel. From there, I've added a couple of
@@ -169,7 +169,7 @@ I'm excited that jank is far enough along to where I can actually be doing this.
 
 ## nREPL server progress
 Since I have C++ sources working alongside jank source now, I can use
-boost::asio to spin up an async TCP server. The data sent over the wire for
+`boost::asio` to spin up an async TCP server. The data sent over the wire for
 nREPL servers is encoded with bencode, so I started on a `jank.data.bencode`
 project and I have the decoding portion of that working. From there, I wanted to
 write my tests in jank using `clojure.test`, but I haven't implemented
