@@ -444,8 +444,8 @@
                               :tasks [:done]
                               :done #{}}
                              {:name "bases"
-                              :tasks [:done]
-                              :done #{}}
+                              :tasks [:na]
+                              :done #{:na}}
                              {:name "bean"
                               :tasks [:done]
                               :done #{}}
@@ -825,8 +825,8 @@
                               :tasks [:done]
                               :done #{:done}}
                              {:name "enumeration-seq"
-                              :tasks [:done]
-                              :done #{}}
+                              :tasks [:na]
+                              :done #{:na}}
                              {:name "error-handler"
                               :tasks [:done]
                               :done #{}}
@@ -1116,8 +1116,8 @@
                               :tasks [:done]
                               :done #{}}
                              {:name "iterator-seq"
-                              :tasks [:done]
-                              :done #{}}
+                              :tasks [:na]
+                              :done #{:na}}
                              {:name "juxt"
                               :tasks [:done]
                               :done #{:done}}
@@ -1683,8 +1683,8 @@
                               :tasks [:done]
                               :done #{}}
                              {:name "resultset-seq"
-                              :tasks [:done]
-                              :done #{}}
+                              :tasks [:na]
+                              :done #{:na}}
                              {:name "reverse"
                               :tasks [:done]
                               :done #{:done}}
@@ -1857,8 +1857,8 @@
                               :tasks [:done]
                               :done #{}}
                              {:name "supers"
-                              :tasks [:done]
-                              :done #{}}
+                              :tasks [:na]
+                              :done #{:na}}
                              {:name "swap!"
                               :tasks [:done]
                               :done #{:done}}
