@@ -46,9 +46,6 @@
                              {:name "keywords/auto-resolved-qualified"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
-                             {:name "keyword argument maps"
-                              :tasks #{:parse}
-                              :done []}
                              {:name "maps"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
@@ -364,13 +361,13 @@
                               :done #{}}
                              {:name "alter-var-root"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "amap"
                               :tasks [:done]
                               :done #{}}
                              {:name "ancestors"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "and"
                               :tasks [:done]
                               :done #{:done}}
@@ -514,7 +511,7 @@
                               :done #{}}
                              {:name "bound?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "bounded-count"
                               :tasks [:done]
                               :done #{}}
@@ -706,7 +703,7 @@
                               :done #{}}
                              {:name "defmulti"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "defn"
                               :tasks [:done]
                               :done #{}}
@@ -745,16 +742,16 @@
                               :done #{:done}}
                              {:name "derive"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "descendants"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "destructure"
                               :tasks [:done]
                               :done #{:done}}
                              {:name "disj"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "disj!"
                               :tasks [:done]
                               :done #{:done}}
@@ -1015,7 +1012,7 @@
                               :done #{}}
                              {:name "hash-set"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "hash-unordered-coll"
                               :tasks [:done]
                               :done #{}}
@@ -1108,7 +1105,7 @@
                               :done #{}}
                              {:name "isa?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "iterate"
                               :tasks [:done]
                               :done #{:done}}
@@ -1207,7 +1204,7 @@
                               :done #{}}
                              {:name "make-hierarchy"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "map"
                               :tasks [:done]
                               :done #{:done}}
@@ -1378,7 +1375,7 @@
                               :done #{:done}}
                              {:name "parents"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "parse-boolean"
                               :tasks [:done]
                               :done #{}}
@@ -1903,7 +1900,7 @@
                               :done #{:done}}
                              {:name "thread-bound?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "time"
                               :tasks [:done]
                               :done #{:done}}
@@ -1996,13 +1993,13 @@
                               :done #{}}
                              {:name "underive"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "unquote"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "unquote-splicing"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "unreduced"
                               :tasks [:done]
                               :done #{:done}}
