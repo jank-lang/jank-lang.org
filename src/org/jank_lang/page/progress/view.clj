@@ -153,7 +153,7 @@
                               :done #{}}
                              {:name "reader-macros/deref"
                               :tasks reader-macro
-                              :done #{}}
+                              :done reader-macro-done}
                              {:name "reader-macros/quote"
                               :tasks reader-macro
                               :done reader-macro-done}
