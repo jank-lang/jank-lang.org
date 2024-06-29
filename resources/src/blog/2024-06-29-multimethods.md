@@ -1,5 +1,5 @@
 Title: jank development update - Multimethods!
-Date: June 29, 2024
+Date: Jun 29, 2024
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: TODO
