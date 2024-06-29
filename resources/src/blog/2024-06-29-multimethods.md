@@ -2,7 +2,9 @@ Title: jank development update - Multimethods!
 Date: Jun 29, 2024
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
-Description: TODO
+Description: Learn some neat multimethod tricks as you read
+             about the latest progress in the upcoming native Clojure dialect on
+             LLVM.
 
 Welcome back to another jank development update! For the past month, I've been
 pushing jank closer to production readiness primarily by working on multimethods
