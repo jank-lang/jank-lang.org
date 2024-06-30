@@ -35,7 +35,7 @@ dispatch function.
 (defmethod sauce-suggestion ::shell [noodle]
   (println "Cheeeeeeeese!"))
 
-(defmethod sauce-suggestion ::flate-white-rice [noodle]
+(defmethod sauce-suggestion ::flat-white-rice [noodle]
   (println "Hor fun gravy."))
 ```
 
