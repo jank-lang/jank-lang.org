@@ -4132,16 +4132,6 @@
                              {:name "interop/create native objects"
                               :tasks [:done]
                               :done #{}}]}
-                 {:name "Gradual typing"
-                  :features [{:name "type annotations"
-                              :tasks [:done]
-                              :done #{}}
-                             {:name "infer left hand type"
-                              :tasks [:done]
-                              :done #{}}
-                             {:name "infer right hand type"
-                              :tasks [:done]
-                              :done #{}}]}
                  {:name "Tooling"
                   :features [{:name "leiningen support"
                               :tasks [:done]
@@ -4207,7 +4197,7 @@
         There is no sales pitch here; just a lot of work and some big
         plans. All development happens on Github, so watch the repo there!"]
     (page.view/page-root
-    {:title "jank programming language - Clojure/LLVM/Gradual Typing"
+    {:title "jank programming language - Clojure/LLVM/C++"
      :description description}
     [:div {}
      (page.view/header {})

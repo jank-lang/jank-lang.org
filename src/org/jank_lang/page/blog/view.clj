@@ -91,7 +91,7 @@
                       post-ids)]
     (page.view/page-root
       {:title "jank - blog"
-       :description "jank is a Clojure dialect on LLVM with gradual typing, a native runtime, and C++ interop."}
+       :description "jank is a Clojure dialect hosted on LLVM with native C++ interop."}
       [:div {}
        (page.view/header {:title "jank blog"
                           :title-url "/blog"
