@@ -487,7 +487,7 @@ size_t sequence_length(object_ptr const s)
   if(s == nullptr)
   { return 0; }
 
-  visit_object
+  return visit_object
   (
     s,
     [](auto const typed_s)
