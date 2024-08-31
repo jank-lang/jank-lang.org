@@ -1,5 +1,6 @@
 (ns org.jank_lang.page.view
   (:require [clojure.string]
+            [clojure.java.io :as io]
             [hiccup.page :as page]
             [stringer.core :refer [strcat]]
             [taoensso.timbre :as timbre]))
@@ -66,7 +67,7 @@
            [:i {:class "gg-twitter"}]]
           "Twitter"]]]]]]))
 
-(def css-icons (slurp "https://css.gg/css?=home|sync|bulb|list|link|git-fork|info|slack|math-minus|check-o|heart|twitter|comment"))
+(def css-icons (slurp (io/resource "public/css/icon.css")))
 
 (defn page-root [props & body]
   (page/html5 {}
