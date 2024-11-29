@@ -79,9 +79,11 @@ function main
     file_sans_ext="${base_file%.*}"
     ext="${base_file#*.}"
     resource_type="$(resource-type "${ext}")"
-    render "${file}" "${resource_type}" "${file_sans_ext}"
 
+    # TODO: If the output is the same timestamp as the input, skip
     printf "\r$(tput el || true)Generating %s …" "${base_file}"
+
+    render "${file}" "${resource_type}" "${file_sans_ext}"
   done
   printf "\r"
 }
