@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg style="background:white" preserveAspectRatio="xMinYMin meet" version="1.2" viewBox="0 0 792.83 550" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style type="text/css"><![CDATA[@font-face{ font-family: 'Comfortaa'; font-style: normal; font-weight: 400; src: url('https://fonts.gstatic.com/s/comfortaa/v40/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMDrMfJQ.ttf') format('truetype'); }
+rect { stroke: none; }
+.bar:hover { filter: brightness(115%); }
+]]></style>
+</defs>
+<g transform="translate(17.324 10)" data-dali-layout-tag="distribute">
+<g data-dali-layout-tag="align">
+<rect width="20" height="166.67" fill="none"/>
+<text transform="translate(0 14.844)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">240</text>
+</g>
+<g transform="translate(0 166.67)" data-dali-layout-tag="align">
+<rect width="20" height="166.67" fill="none"/>
+<text transform="translate(-9.5247 90.612)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">120</text>
+</g>
+<g transform="translate(0 333.33)" data-dali-layout-tag="align">
+<rect width="20" height="166.67" fill="none"/>
+<text transform="translate(0 166.38)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">0</text>
+</g>
+</g>
+<g data-dali-layout-tag="align">
+<rect x="10" y="520" width="20" height="20" fill="none"/>
+<text transform="translate(14.886 535.46)" fill="rgba(0, 0, 0, 0.7)" font-family="Comfortaa" font-size="20" font-style="italic">s</text>
+</g>
+<g transform="translate(50 520)" data-dali-layout-tag="stack">
+<g data-dali-layout-tag="stack">
+<g data-dali-layout-tag="align">
+<rect width="120" height="20" fill="none"/>
+<text transform="translate(36.755 17.279)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">C++</text>
+</g>
+<g transform="translate(0 -35)" data-dali-layout-tag="stack">
+<rect class="bar" width="40" height="25" fill="hsl(204, 86%, 53%)"/>
+<rect class="bar" transform="translate(40 -475)" width="40" height="500" fill="hsl(171, 100%, 41%)"/>
+<rect class="bar" transform="translate(80 24.375)" width="40" height=".625" fill="hsl(348, 100%, 61%)"/>
+</g>
+</g>
+<g transform="translate(200)" data-dali-layout-tag="stack">
+<g data-dali-layout-tag="align">
+<rect width="120" height="20" fill="none"/>
+<text transform="translate(19.618 17.292)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">LLVM IR</text>
+</g>
+<g transform="translate(0 -14.167)" data-dali-layout-tag="stack">
+<rect class="bar" width="40" height="4.1667" fill="hsl(204, 86%, 53%)"/>
+<rect class="bar" transform="translate(40)" width="40" height="4.1667" fill="hsl(171, 100%, 41%)"/>
+<rect class="bar" transform="translate(80 3.8542)" width="40" height=".3125" fill="hsl(348, 100%, 61%)"/>
+</g>
+</g>
+</g>
+<g data-dali-layout-tag="place">
+<g transform="translate(450 195)" data-dali-layout-tag="stack">
+<g transform="translate(0)" data-dali-layout-tag="stack">
+<g data-dali-layout-tag="stack">
+<rect width="40" height="40" fill="hsl(204, 86%, 53%)"/>
+<text transform="translate(43.034 27.454)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Load from source</text>
+</g>
+<g transform="translate(0 60)" data-dali-layout-tag="stack">
+<rect width="40" height="40" fill="hsl(171, 100%, 41%)"/>
+<text transform="translate(43.874 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Compile module</text>
+</g>
+<g transform="translate(0 120)" data-dali-layout-tag="stack">
+<rect width="40" height="40" fill="hsl(348, 100%, 61%)"/>
+<text transform="translate(43.034 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Load from compiled module</text>
+</g>
+</g>
+</g>
+</g>
+</svg>
