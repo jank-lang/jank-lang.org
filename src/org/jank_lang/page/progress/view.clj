@@ -30,7 +30,7 @@
                               :done lex-parse-anal-eval-done}
                              {:name "chars"
                               :tasks lex-parse-anal-eval
-                              :done #{}}
+                              :done lex-parse-anal-eval-done}
                              {:name "strings"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
@@ -63,7 +63,7 @@
                               :done lex-parse-anal-eval-done}
                              {:name "ratios"
                               :tasks lex-parse-anal-eval
-                              :done #{}}
+                              :done lex-parse-anal-eval-done}
                              {:name "specials/def"
                               :tasks lex-parse-anal-eval
                               :done lex-parse-anal-eval-done}
@@ -112,6 +112,12 @@
                              {:name "specials/monitor-exit"
                               :tasks #{:na}
                               :done #{:na}}
+                             {:name "specials/set!"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex :parse}}
+                             {:name "specials/letfn*"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex :parse}}
                              {:name "bindings/thread-local"
                               :tasks [:done]
                               :done #{:done}}
