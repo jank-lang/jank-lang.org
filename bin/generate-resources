@@ -10,7 +10,7 @@ function resource-type
 {
   case "${1}"
   in
-    clj | jank)
+    clj | cljc | jank)
       echo "clojure"
       ;;
     plot.clj)
@@ -22,17 +22,8 @@ function resource-type
     md)
       echo "markdown"
       ;;
-    svg)
-      echo "svg"
-      ;;
-    png)
-      echo "png"
-      ;;
-    css)
-      echo "css"
-      ;;
     *)
-      echo "sh"
+      echo "${1}"
   esac
 }
 
