@@ -28,6 +28,9 @@ function resource-type
     png)
       echo "png"
       ;;
+    css)
+      echo "css"
+      ;;
     *)
       echo "sh"
   esac
@@ -45,6 +48,8 @@ function render
   case "${resource_type}"
   in
     markdown)
+      ;;
+    css)
       ;;
     clojure-plot)
       mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
