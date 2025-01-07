@@ -148,7 +148,7 @@
             [:div {:class "container has-text-centered"}
              [:div {:class "content is-small"}
               [:p
-               "© 2024 Jeaye Wilkerson | All rights reserved."]]]
+               "© 2025 Jeaye Wilkerson | All rights reserved."]]]
             ]])
 
     "<!-- Matomo noscript -->
