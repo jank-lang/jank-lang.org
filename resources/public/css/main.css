@@ -68,6 +68,13 @@ pre.shiki code
   border: none;
 }
 
+.code-image
+{
+  border-radius: 15px;
+  background-color: #272822 !important;
+  margin: 7px;
+}
+
 /* Blog */
 .blog-container
 {
