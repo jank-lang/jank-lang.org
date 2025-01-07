@@ -5,7 +5,6 @@
             [org.jank_lang.page.view :as page.view])
   (:import org.apache.commons.text.StringEscapeUtils))
 
-
 (def lex-parse-anal-eval [:lex :parse :analyze :eval])
 (def lex-parse-anal-eval-done (into #{} lex-parse-anal-eval))
 (def reader-macro [:lex :parse])
@@ -113,6 +112,9 @@
                               :tasks #{:na}
                               :done #{:na}}
                              {:name "specials/set!"
+                              :tasks lex-parse-anal-eval
+                              :done #{:lex :parse}}
+                             {:name "specials/case*"
                               :tasks lex-parse-anal-eval
                               :done #{:lex :parse}}
                              {:name "specials/letfn*"
