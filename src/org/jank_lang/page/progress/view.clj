@@ -603,7 +603,7 @@
                               :done #{}}
                              {:name "coll?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "comment"
                               :tasks [:done]
                               :done #{:done}}
@@ -807,13 +807,13 @@
                               :done #{}}
                              {:name "drop"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "drop-last"
                               :tasks [:done]
                               :done #{:done}}
                              {:name "drop-while"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "eduction"
                               :tasks [:done]
                               :done #{}}
@@ -849,7 +849,7 @@
                               :done #{:done}}
                              {:name "every?"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "ex-cause"
                               :tasks [:done]
                               :done #{}}
@@ -1437,10 +1437,10 @@
                               :done #{:done}}
                              {:name "pr"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "pr-str"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "prefer-method"
                               :tasks [:done]
                               :done #{}}
@@ -1479,7 +1479,7 @@
                               :done #{}}
                              {:name "prn"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "prn-str"
                               :tasks [:done]
                               :done #{}}
@@ -1706,7 +1706,7 @@
                               :tasks [:done]
                               :done #{:done}}
                              {:name "satisfies?"
-                              :tasks []
+                              :tasks [:done]
                               :done #{}}
                              {:name "second"
                               :tasks [:done]
@@ -1725,7 +1725,7 @@
                               :done #{}}
                              {:name "seq"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "seq-to-map-for-destructuring"
                               :tasks [:done]
                               :done #{}}
@@ -1815,13 +1815,13 @@
                               :done #{}}
                              {:name "sorted-map"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "sorted-map-by"
                               :tasks [:done]
                               :done #{}}
                              {:name "sorted-set"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "sorted-set-by"
                               :tasks [:done]
                               :done #{}}
@@ -1887,16 +1887,16 @@
                               :done #{}}
                              {:name "take"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "take-last"
                               :tasks [:done]
                               :done #{:done}}
                              {:name "take-nth"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "take-while"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "tap>"
                               :tasks [:done]
                               :done #{}}
@@ -2130,7 +2130,7 @@
                               :done #{:done}}
                              {:name "with-redefs-fn"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "xml-seq"
                               :tasks [:done]
                               :done #{}}
@@ -3675,7 +3675,7 @@
                               :tasks [:tested]
                               :done #{}}
                              {:name "satisfies?"
-                              :tasks []
+                              :tasks [:tested]
                               :done #{}}
                              {:name "second"
                               :tasks [:tested]
