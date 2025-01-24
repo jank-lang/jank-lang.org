@@ -170,7 +170,10 @@
                               :done reader-macro-done}
                              {:name "reader-macros/conditional"
                               :tasks reader-macro
-                              :done reader-macro-done}]}
+                              :done reader-macro-done}
+                             {:name "reader-macros/tagged-literal"
+                              :tasks reader-macro
+                              :done #{}}]}
                  {:name "Clojure library parity"
                   :features [{:name "*"
                               :tasks [:done]
