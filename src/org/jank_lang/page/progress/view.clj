@@ -378,7 +378,7 @@
                              {:name "distinct?", :tasks [:done], :done #{:done}}
                              {:name "doall", :tasks [:done], :done #{:done}}
                              {:name "dorun", :tasks [:done], :done #{:done}}
-                             {:name "doseq", :tasks [:done], :done #{}}
+                             {:name "doseq", :tasks [:done], :done #{:done}}
                              {:name "dosync", :tasks [:done], :done #{}}
                              {:name "dotimes", :tasks [:done], :done #{:done}}
                              {:name "doto", :tasks [:done], :done #{:done}}
