@@ -355,9 +355,9 @@
                              {:name "defmacro", :tasks [:done], :done #{:done}}
                              {:name "defmethod", :tasks [:done], :done #{}}
                              {:name "defmulti", :tasks [:done], :done #{:done}}
-                             {:name "defn", :tasks [:done], :done #{}}
-                             {:name "defn-", :tasks [:done], :done #{}}
-                             {:name "defonce", :tasks [:done], :done #{}}
+                             {:name "defn", :tasks [:done], :done #{:done}}
+                             {:name "defn-", :tasks [:done], :done #{:done}}
+                             {:name "defonce", :tasks [:done], :done #{:done}}
                              {:name "defprotocol", :tasks [:done], :done #{}}
                              {:name "defrecord", :tasks [:done], :done #{}}
                              {:name "defstruct", :tasks [], :done #{}}
