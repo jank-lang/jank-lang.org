@@ -401,10 +401,10 @@
                              {:name "even?", :tasks [:done], :done #{:done}}
                              {:name "every-pred", :tasks [:done], :done #{:done}}
                              {:name "every?", :tasks [:done], :done #{:done}}
-                             {:name "ex-cause", :tasks [:done], :done #{}}
-                             {:name "ex-data", :tasks [:done], :done #{}}
+                             {:name "ex-cause", :tasks [:done], :done #{:done}}
+                             {:name "ex-data", :tasks [:done], :done #{:done}}
                              {:name "ex-info", :tasks [:done], :done #{:done}}
-                             {:name "ex-message", :tasks [:done], :done #{}}
+                             {:name "ex-message", :tasks [:done], :done #{:done}}
                              {:name "extend", :tasks [:done], :done #{}}
                              {:name "extend-protocol", :tasks [:done], :done #{}}
                              {:name "extend-type", :tasks [:done], :done #{}}
@@ -580,8 +580,8 @@
                              {:name "or", :tasks [:done], :done #{:done}}
                              {:name "parents", :tasks [:done], :done #{:done}}
                              {:name "parse-boolean", :tasks [:done], :done #{:done}}
-                             {:name "parse-double", :tasks [:done], :done #{}}
-                             {:name "parse-long", :tasks [:done], :done #{}}
+                             {:name "parse-double", :tasks [:done], :done #{:done}}
+                             {:name "parse-long", :tasks [:done], :done #{:done}}
                              {:name "parse-uuid", :tasks [:done], :done #{}}
                              {:name "partial", :tasks [:done], :done #{:done}}
                              {:name "partition", :tasks [:done], :done #{:done}}
@@ -726,7 +726,7 @@
                              {:name "sorted-map-by", :tasks [:done], :done #{}}
                              {:name "sorted-set", :tasks [:done], :done #{:done}}
                              {:name "sorted-set-by", :tasks [:done], :done #{:done}}
-                             {:name "sorted?", :tasks [:done], :done #{}}
+                             {:name "sorted?", :tasks [:done], :done #{:done}}
                              {:name "special-symbol?", :tasks [:done], :done #{}}
                              {:name "spit", :tasks [:done], :done #{}}
                              {:name "split-at", :tasks [:done], :done #{:done}}
@@ -817,7 +817,7 @@
                              {:name "when-not", :tasks [:done], :done #{:done}}
                              {:name "when-some", :tasks [:done], :done #{:done}}
                              {:name "while", :tasks [:done], :done #{}}
-                             {:name "with-bindings", :tasks [:done], :done #{}}
+                             {:name "with-bindings", :tasks [:done], :done #{:done}}
                              {:name "with-bindings*", :tasks [:done], :done #{:done}}
                              {:name "with-in-str", :tasks [:done], :done #{}}
                              {:name "with-loading-context", :tasks [:done], :done #{}}
