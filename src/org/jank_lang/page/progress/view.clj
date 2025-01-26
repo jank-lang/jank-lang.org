@@ -355,9 +355,9 @@
                              {:name "defmacro", :tasks [:done], :done #{:done}}
                              {:name "defmethod", :tasks [:done], :done #{}}
                              {:name "defmulti", :tasks [:done], :done #{:done}}
-                             {:name "defn", :tasks [:done], :done #{}}
-                             {:name "defn-", :tasks [:done], :done #{}}
-                             {:name "defonce", :tasks [:done], :done #{}}
+                             {:name "defn", :tasks [:done], :done #{:done}}
+                             {:name "defn-", :tasks [:done], :done #{:done}}
+                             {:name "defonce", :tasks [:done], :done #{:done}}
                              {:name "defprotocol", :tasks [:done], :done #{}}
                              {:name "defrecord", :tasks [:done], :done #{}}
                              {:name "defstruct", :tasks [], :done #{}}
@@ -378,7 +378,7 @@
                              {:name "distinct?", :tasks [:done], :done #{:done}}
                              {:name "doall", :tasks [:done], :done #{:done}}
                              {:name "dorun", :tasks [:done], :done #{:done}}
-                             {:name "doseq", :tasks [:done], :done #{}}
+                             {:name "doseq", :tasks [:done], :done #{:done}}
                              {:name "dosync", :tasks [:done], :done #{}}
                              {:name "dotimes", :tasks [:done], :done #{:done}}
                              {:name "doto", :tasks [:done], :done #{:done}}
