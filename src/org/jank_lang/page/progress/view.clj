@@ -816,7 +816,7 @@
                              {:name "when-let", :tasks [:done], :done #{:done}}
                              {:name "when-not", :tasks [:done], :done #{:done}}
                              {:name "when-some", :tasks [:done], :done #{:done}}
-                             {:name "while", :tasks [:done], :done #{}}
+                             {:name "while", :tasks [:done], :done #{:done}}
                              {:name "with-bindings", :tasks [:done], :done #{:done}}
                              {:name "with-bindings*", :tasks [:done], :done #{:done}}
                              {:name "with-in-str", :tasks [:done], :done #{}}
