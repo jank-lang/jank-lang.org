@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "ansi_up": "^6.0.2",
     "jsdom": "^22.1.0",
     "node-fetch": "^2.6.12",
     "plotly": "^1.0.6",

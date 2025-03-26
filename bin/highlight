@@ -2,13 +2,25 @@
 
 import { createHighlighter } from 'shiki'
 import { readFileSync } from 'fs'
+import { AnsiUp } from 'ansi_up'
+import { execSync } from 'node:child_process';
 
 const file = process.argv[2];
 const file_type = process.argv[3];
 
+const code = readFileSync(file).toString();
+
+if(file_type === 'ansi')
+{
+  const ansi_up = new AnsiUp();
+  ansi_up.escape_html = true;
+  ansi_up.use_classes = true;
+  console.log(ansi_up.ansi_to_html(code));
+  process.exit(0);
+}
+
 /* We have a custom monokai which disables underlining for types. */
 const monokai = JSON.parse(readFileSync(process.cwd() + '/dev-resources/monokai.json', 'utf8'));
-const code = readFileSync(file).toString();
 
 const highlighter = await createHighlighter({
   langs: [],

@@ -1,4 +1,8 @@
 /* General */
+:root {
+  font-size: 1.25rem;
+}
+
 a
 {
   text-decoration: none !important;
@@ -47,6 +51,7 @@ a:hover
 /* Offline code highlighting */
 pre.shiki
 {
+  font-family: Fira Code !important;
   border-radius: 15px;
   font-size: 1em;
   line-height: 1.7em;
@@ -66,6 +71,7 @@ pre.shiki code
 {
   padding: 0em 0em !important;
   border: none;
+  color: #f8f8f2 !important;
 }
 
 .code-image
@@ -74,10 +80,95 @@ pre.shiki code
   background-color: #272822 !important;
 }
 
+.ansi
+{
+  line-height: 1.5em !important;
+}
+
+.ansi-black-fg
+{
+  color: #333333;
+}
+
+.ansi-red-fg
+{
+  color: #C4265E;
+}
+
+.ansi-green-fg
+{
+  color: #86B42B;
+}
+
+.ansi-yellow-fg
+{
+  color: #B3B42B;
+}
+
+.ansi-blue-fg
+{
+  color: #6A7EC8;
+}
+
+.ansi-magenta-fg
+{
+  color: #8C6BC8;
+}
+
+.ansi-cyan-fg
+{
+  color: #56ADBC;
+}
+
+.ansi-white-fg
+{
+  color: #e3e3dd;
+}
+
+.ansi-bright-black-fg
+{
+  color: #666666;
+}
+
+.ansi-bright-red-fg
+{
+  color: #f92672;
+}
+
+.ansi-bright-green-fg
+{
+  color:#A6E22E;
+}
+
+.ansi-bright-yellow-fg
+{
+  color: #e2e22e;
+}
+
+.ansi-bright-blue-fg
+{
+  color: #819aff;
+}
+
+.ansi-bright-magenta-fg
+{
+  color: #AE81FF;
+}
+
+.ansi-bright-cyan-fg
+{
+  color: #66D9EF;
+}
+
+.ansi-bright-white-fg
+{
+  color: #f8f8f2;
+}
+
 /* Blog */
 .blog-container
 {
-  max-width: 64rem !important;
+  max-width: 80rem !important;
 }
 
 figure
@@ -173,6 +264,9 @@ figcaption
 }
 
 /* Custom font */
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
 @font-face
 {
   font-family: 'Comfortaa';

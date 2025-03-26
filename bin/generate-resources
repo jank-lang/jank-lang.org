@@ -45,8 +45,10 @@ function render
   in
     markdown)
       ;;
+
     css)
       ;;
+
     clojure-plot)
       cat >> "${tmp_makefile}" << EOF
 ${generated_img_dir}/${file_sans_ext}.svg:
@@ -56,9 +58,9 @@ ${tab}${here}/plot "${file}" "${generated_img_dir}/${file_sans_ext}.svg" 2>/dev/
 ${tab}# Optimizing generated SVGs readies them for viewing. Without this step,
 ${tab}# they won't render properly.
 ${tab}#${here}/optimize-resources "${generated_img_dir}/${file_sans_ext}.svg"
-
 EOF
       ;;
+
     # TODO: Keep this? Or put the images elsewhere?
     svg|png)
       mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
@@ -70,7 +72,15 @@ ${generated_html_dir}/${file_sans_ext}.html:
 ${tab}echo "  Generating ${file_sans_ext}.html"
 ${tab}mkdir -p "$(dirname "${generated_html_dir}/${file_sans_ext}")"
 ${tab}${here}/highlight "${file}" "${resource_type}" > "${generated_html_dir}/${file_sans_ext}.html"
+EOF
+      ;;
 
+    ansi)
+      cat >> "${tmp_makefile}" << EOF
+${generated_html_dir}/${file_sans_ext}.html:
+${tab}echo "  Generating ${file_sans_ext}.html"
+${tab}mkdir -p "$(dirname "${generated_html_dir}/${file_sans_ext}")"
+${tab}aha -f "${file}" > "${generated_html_dir}/${file_sans_ext}.html"
 EOF
       ;;
 
@@ -89,11 +99,8 @@ function generate_all_target
   cat >> "${tmp_makefile}" << EOF
 all: ${targets//$'\n'/' '}
 ${tab}echo "Done!"
-
 .SILENT:
-
 .PHONY: all
-
 EOF
 }
 

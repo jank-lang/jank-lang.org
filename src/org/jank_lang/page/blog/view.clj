@@ -29,9 +29,13 @@
                     (spit file (-> (nth form 2)
                                    StringEscapeUtils/unescapeHtml3
                                    clojure.string/trim))
-                    (-> (:out (sh "./bin/highlight" (.getPath file) file-type))
-                        util/html->hiccup
-                        first))
+                    (let [r (-> (:out (sh "./bin/highlight" (.getPath file) file-type))
+                                util/html->hiccup)]
+                      (if (= "ansi" file-type)
+                        (into [:pre {:class "shiki monokai ansi"
+                                     :style "background-color:#272822;color:#F8F8F2"}]
+                              r)
+                        (first r))))
 
                   (and (vector? form)
                        (= :pre (first form))
