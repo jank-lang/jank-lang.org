@@ -54,9 +54,13 @@ function render
       mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
       cp -f "${file}" "${generated_img_dir}/${file_sans_ext}.${resource_type}"
       ;;
-    *)
+    clojure | cpp)
       mkdir -p "$(dirname "${generated_html_dir}/${file_sans_ext}")"
       ./bin/highlight "${file}" "${resource_type}" > "${generated_html_dir}/${file_sans_ext}.html"
+      ;;
+
+    *)
+      echo " not rendering resource type ${resource_type}" 1>&2
       ;;
   esac
 }
