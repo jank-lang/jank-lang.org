@@ -2,9 +2,12 @@
 
 set -euo pipefail
 
-generated_dir="resources/generated"
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+generated_dir="${here}/../resources/generated"
 generated_img_dir="${generated_dir}/img"
 generated_html_dir="${generated_dir}/html"
+tab="$(echo -e '\t')"
 
 function resource-type
 {
@@ -30,12 +33,14 @@ function resource-type
 # $1 = file
 # $2 = resource type
 # $3 = file sans extension
+# $4 = makefile
 function render
 {
-  local file resource_type file_sans_ext
+  local file resource_type file_sans_ext tmp_makefile
   file="$1"
   resource_type="$2"
   file_sans_ext="$3"
+  tmp_makefile="$4"
   case "${resource_type}"
   in
     markdown)
@@ -43,26 +48,53 @@ function render
     css)
       ;;
     clojure-plot)
-      mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
-      ./bin/plot "${file}" "${generated_img_dir}/${file_sans_ext}.svg" 2>/dev/null
-      # Optimizing generated SVGs readies them for viewing. Without this step,
-      # they won't render properly.
-      ./bin/optimize-resources "${generated_img_dir}/${file_sans_ext}.svg"
+      cat >> "${tmp_makefile}" << EOF
+${generated_img_dir}/${file_sans_ext}.svg:
+${tab}echo "  Generating ${file_sans_ext}.svg"
+${tab}mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
+${tab}${here}/plot "${file}" "${generated_img_dir}/${file_sans_ext}.svg" 2>/dev/null
+${tab}# Optimizing generated SVGs readies them for viewing. Without this step,
+${tab}# they won't render properly.
+${tab}#${here}/optimize-resources "${generated_img_dir}/${file_sans_ext}.svg"
+
+EOF
       ;;
     # TODO: Keep this? Or put the images elsewhere?
     svg|png)
       mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
       cp -f "${file}" "${generated_img_dir}/${file_sans_ext}.${resource_type}"
       ;;
-    clojure | cpp)
-      mkdir -p "$(dirname "${generated_html_dir}/${file_sans_ext}")"
-      ./bin/highlight "${file}" "${resource_type}" > "${generated_html_dir}/${file_sans_ext}.html"
+    clojure | cpp | sh)
+      cat >> "${tmp_makefile}" << EOF
+${generated_html_dir}/${file_sans_ext}.html:
+${tab}echo "  Generating ${file_sans_ext}.html"
+${tab}mkdir -p "$(dirname "${generated_html_dir}/${file_sans_ext}")"
+${tab}${here}/highlight "${file}" "${resource_type}" > "${generated_html_dir}/${file_sans_ext}.html"
+
+EOF
       ;;
 
     *)
-      echo " not rendering resource type ${resource_type}" 1>&2
+      echo "Not rendering resource type ${resource_type}" 1>&2
       ;;
   esac
+}
+
+# $1 = makefile
+function generate_all_target
+{
+  local targets
+  targets="$(pcregrep -o1 '^(.*):$' "${1}")"
+
+  cat >> "${tmp_makefile}" << EOF
+all: ${targets//$'\n'/' '}
+${tab}echo "Done!"
+
+.SILENT:
+
+.PHONY: all
+
+EOF
 }
 
 function main
@@ -70,8 +102,10 @@ function main
   rm -rf "${generated_dir}"
   mkdir -p "${generated_dir}" "${generated_img_dir}" "${generated_html_dir}"
 
-  local resource_files
-  resource_files="$(find $@ -type f)"
+  local resource_files tmp_makefile cpus
+  resource_files="$(find "$@" -type f)"
+  tmp_makefile="$(mktemp)"
+  cpus=$(nproc)
   for file in ${resource_files};
   do
     local base_file file_sans_ext ext resource_type
@@ -80,11 +114,11 @@ function main
     ext="${base_file#*.}"
     resource_type="$(resource-type "${ext}")"
 
-    # TODO: If the output is the same timestamp as the input, skip
-    printf "\r$(tput el || true)Generating %s …" "${base_file}"
-
-    render "${file}" "${resource_type}" "${file_sans_ext}"
+    render "${file}" "${resource_type}" "${file_sans_ext}" "${tmp_makefile}"
   done
-  printf "\r"
+
+  echo "Building makefile ${tmp_makefile}"
+  generate_all_target "${tmp_makefile}"
+  make -j"${cpus}" -f "${tmp_makefile}" all
 }
-main $@
+main "$@"

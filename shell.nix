@@ -14,6 +14,9 @@ mkShell
     optipng
     jpegoptim
     nodejs
+
+    # Linting
+    shellcheck
   ];
   shellHook =
   ''
