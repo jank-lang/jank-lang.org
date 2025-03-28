@@ -71,9 +71,11 @@ project. It's not meant to be fast; it's a learning tool. However, it was a pure
 Clojure project I had lying around and seemed like a good next goal for jank.
 The scene is mostly random, but generally look like this:
 
-<figure width="50%" max-width="50%">
-  <img src="/img/2023-04-07-big.png"></img>
-</figure>
+<div class="figure">
+  <figure>
+    <img src="/img/2023-04-07-big.png"></img>
+  </figure>
+</div>
 
 The source code for both the jank and the Clojure versions are in this
 [gist](https://gist.github.com/jeaye/77e1d8874c8e76e7335ccf71ef53785c). They
