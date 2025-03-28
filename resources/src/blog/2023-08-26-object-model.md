@@ -40,9 +40,9 @@ with jank clocking in at 36.96ms versus Clojure's 69.44ms. Since jank was only
 marginally faster than Clojure at the end of the last post, this also means the
 improvements in the past quarter have been nearly 2x overall.
 
-<figure>
-  <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/ray-tracing.plot.svg" width="50%">
-    <img src="/img/blog/2023-08-26-object-model/ray-tracing.plot.svg" width="50%"></img>
+<figure width="50%">
+  <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/ray-tracing.plot.svg">
+    <img src="/img/blog/2023-08-26-object-model/ray-tracing.plot.svg"></img>
   </object>
 </figure>
 
@@ -64,9 +64,9 @@ on this, at a later time, by introducing a new GC (via [MMTK](https://www.mmtk.i
 
 Map lookups were already fast, but have been made twice as fast still.
 
-<figure>
-  <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/map.plot.svg" width="50%">
-    <img src="/img/blog/2023-08-26-object-model/map.plot.svg" width="50%"></img>
+<figure width="50%">
+  <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/map.plot.svg">
+    <img src="/img/blog/2023-08-26-object-model/map.plot.svg"></img>
   </object>
 </figure>
 
@@ -87,9 +87,9 @@ constructor closest to what jank is doing (taking in an initializer list).
 Similar to maps, vector lookups were already quick and have nearly doubled in
 speed.
 
-<figure>
-  <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/vector.plot.svg" width="50%">
-    <img src="/img/blog/2023-08-26-object-model/vector.plot.svg" width="50%"></img>
+<figure width="50%">
+  <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/vector.plot.svg">
+    <img src="/img/blog/2023-08-26-object-model/vector.plot.svg"></img>
   </object>
 </figure>
 
@@ -108,9 +108,9 @@ folly's implementation uses a short string optimization which avoids allocations
 stores the string data [in situ](https://en.wikipedia.org/wiki/In_situ). Still,
 it's much slower than Clojure JVM. JVM strings may be magic, but we'll see when I look into it.
 
-<figure>
-  <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/string.plot.svg" width="50%">
-    <img src="/img/blog/2023-08-26-object-model/string.plot.svg" width="50%"></img>
+<figure width="50%">
+  <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/string.plot.svg">
+    <img src="/img/blog/2023-08-26-object-model/string.plot.svg"></img>
   </object>
 </figure>
 
@@ -122,9 +122,9 @@ double, and fully unboxed subtraction. In all cases, jank is now significantly
 faster than Clojure JVM. These wins apply across the board for all binary math
 operations.
 
-<figure>
-  <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/boxed-sub.plot.svg" width="50%">
-    <img src="/img/blog/2023-08-26-object-model/boxed-sub.plot.svg" width="50%"></img>
+<figure width="50%">
+  <object type="image/svg+xml" data="/img/blog/2023-08-26-object-model/boxed-sub.plot.svg">
+    <img src="/img/blog/2023-08-26-object-model/boxed-sub.plot.svg"></img>
   </object>
 </figure>
 

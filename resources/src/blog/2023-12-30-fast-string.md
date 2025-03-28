@@ -303,18 +303,18 @@ that, it packs another word for the cached hash! Finally, the data sharing for
 copy
 construction and substrings leave the other strings in the dust. Take a look!
 
-<figure>
-  <object type="image/svg+xml" data="/img/blog/2023-12-30-fast-string/allocations.plot.svg" width="50%">
-    <img src="/img/blog/2023-12-30-fast-string/allocations.plot.svg" width="50%"></img>
+<figure width="50%">
+  <object type="image/svg+xml" data="/img/blog/2023-12-30-fast-string/allocations.plot.svg">
+    <img src="/img/blog/2023-12-30-fast-string/allocations.plot.svg"></img>
   </object>
   <figcaption>
   jank constructs small strings the fastest and ties with std::string for large strings.
   </figcaption>
 </figure>
 
-<figure>
-  <object type="image/svg+xml" data="/img/blog/2023-12-30-fast-string/copy.plot.svg" width="50%">
-    <img src="/img/blog/2023-12-30-fast-string/copy.plot.svg" width="50%"></img>
+<figure width="50%">
+  <object type="image/svg+xml" data="/img/blog/2023-12-30-fast-string/copy.plot.svg">
+    <img src="/img/blog/2023-12-30-fast-string/copy.plot.svg"></img>
   </object>
   <figcaption>
   jank ties with folly for copying small strings and seriously beats both when
@@ -322,18 +322,18 @@ construction and substrings leave the other strings in the dust. Take a look!
   </figcaption>
 </figure>
 
-<figure>
-  <object type="image/svg+xml" data="/img/blog/2023-12-30-fast-string/find.plot.svg" width="50%">
-    <img src="/img/blog/2023-12-30-fast-string/find.plot.svg" width="50%"></img>
+<figure width="50%">
+  <object type="image/svg+xml" data="/img/blog/2023-12-30-fast-string/find.plot.svg">
+    <img src="/img/blog/2023-12-30-fast-string/find.plot.svg"></img>
   </object>
   <figcaption>
   jank ties with std::string for large and small string searches.
   </figcaption>
 </figure>
 
-<figure>
-  <object type="image/svg+xml" data="/img/blog/2023-12-30-fast-string/substr.plot.svg" width="50%">
-    <img src="/img/blog/2023-12-30-fast-string/substr.plot.svg" width="50%"></img>
+<figure width="50%">
+  <object type="image/svg+xml" data="/img/blog/2023-12-30-fast-string/substr.plot.svg">
+    <img src="/img/blog/2023-12-30-fast-string/substr.plot.svg"></img>
   </object>
   <figcaption>
   jank ties with folly for small substrings and seriously beats both when
