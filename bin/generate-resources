@@ -112,7 +112,7 @@ function main
   local resource_files tmp_makefile cpus
   resource_files="$(find "$@" -type f)"
   tmp_makefile="$(mktemp)"
-  cpus=$(nproc)
+  cpus=${CPUS:-$(nproc)}
   for file in ${resource_files};
   do
     local base_file file_sans_ext ext resource_type
