@@ -71,7 +71,7 @@ project. It's not meant to be fast; it's a learning tool. However, it was a pure
 Clojure project I had lying around and seemed like a good next goal for jank.
 The scene is mostly random, but generally look like this:
 
-<figure width="50%">
+<figure width="50%" max-width="50%">
   <img src="/img/2023-04-07-big.png"></img>
 </figure>
 

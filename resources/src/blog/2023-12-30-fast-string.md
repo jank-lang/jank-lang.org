@@ -303,7 +303,7 @@ that, it packs another word for the cached hash! Finally, the data sharing for
 copy
 construction and substrings leave the other strings in the dust. Take a look!
 
-<figure width="50%">
+<figure width="50%" max-width="50%">
   <object type="image/svg+xml" data="/img/blog/2023-12-30-fast-string/allocations.plot.svg">
     <img src="/img/blog/2023-12-30-fast-string/allocations.plot.svg"></img>
   </object>
@@ -312,7 +312,7 @@ construction and substrings leave the other strings in the dust. Take a look!
   </figcaption>
 </figure>
 
-<figure width="50%">
+<figure width="50%" max-width="50%">
   <object type="image/svg+xml" data="/img/blog/2023-12-30-fast-string/copy.plot.svg">
     <img src="/img/blog/2023-12-30-fast-string/copy.plot.svg"></img>
   </object>
@@ -322,7 +322,7 @@ construction and substrings leave the other strings in the dust. Take a look!
   </figcaption>
 </figure>
 
-<figure width="50%">
+<figure width="50%" max-width="50%">
   <object type="image/svg+xml" data="/img/blog/2023-12-30-fast-string/find.plot.svg">
     <img src="/img/blog/2023-12-30-fast-string/find.plot.svg"></img>
   </object>
@@ -331,7 +331,7 @@ construction and substrings leave the other strings in the dust. Take a look!
   </figcaption>
 </figure>
 
-<figure width="50%">
+<figure width="50%" max-width="50%">
   <object type="image/svg+xml" data="/img/blog/2023-12-30-fast-string/substr.plot.svg">
     <img src="/img/blog/2023-12-30-fast-string/substr.plot.svg"></img>
   </object>

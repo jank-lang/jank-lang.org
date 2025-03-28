@@ -59,7 +59,7 @@ to put these sample types into a file and see the generated class hierarchy
 details. The output of that is long and confusing, though, so I've turned them
 into simpler diagrams. Let's take a look at `jank_string`.
 
-<figure width="300px">
+<figure width="300px" max-width="300px">
   <img src="/img/blog/2023-07-08-object-model/class-1.svg"></img>
 </figure>
 
@@ -92,7 +92,7 @@ So now we add `jank_countable` into the mix and implement that for
 `jank_string`. What has this done to our vtables? Well, `jank_countable` needs
 its own vtable and `jank_string` is going to need a pointer to it.
 
-<figure width="300px">
+<figure width="300px" max-width="300px">
   <img src="/img/blog/2023-07-08-object-model/class-2.svg"></img>
 </figure>
 
@@ -133,7 +133,7 @@ GC integration.
 By benchmarking the creation of non-empty hash maps (`{:a :b}` specifically), we
 can paint a pretty clear picture of the issue I've been describing.
 
-<figure width="33%">
+<figure width="33%" max-width="33%">
   <object type="image/svg+xml" data="/img/blog/2023-07-08-object-model/allocations-initial.plot.svg">
     <img src="/img/blog/2023-07-08-object-model/allocations-initial.plot.svg"></img>
   </object>
@@ -509,7 +509,7 @@ things work. Your feedback on whether or not this is a good level of detail is
 very welcome, so please reach out to me any way you can to let me know your
 thoughts. Now let's celebrate some wins!
 
-<figure width="50%">
+<figure width="50%" max-width="50%">
   <object type="image/svg+xml" data="/img/blog/2023-07-08-object-model/allocations-tagged.plot.svg">
     <img src="/img/blog/2023-07-08-object-model/allocations-tagged.plot.svg"></img>
   </object>
@@ -521,7 +521,7 @@ market, so there's more work to be done here. Still, this is a huge win.
 Remember that jank has been consistently beating Clojure in benchmarks *without*
 these changes, so this is going to set it well ahead.
 
-<figure width="50%">
+<figure width="50%" max-width="50%">
   <object type="image/svg+xml" data="/img/blog/2023-07-08-object-model/extra-benchmarks.plot.svg">
     <img src="/img/blog/2023-07-08-object-model/extra-benchmarks.plot.svg"></img>
   </object>
