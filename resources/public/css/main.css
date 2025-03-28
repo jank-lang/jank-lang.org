@@ -60,7 +60,7 @@ table
 /* Offline code highlighting */
 pre.shiki
 {
-  font-family: "Fira Code", monospace !important;
+  font-family: "Fira Code", monaco, "Lucida Console", "Lucida Sans Typewriter", "Bitstream Vera Sans Mono", monospace !important;
   border-radius: 15px;
   font-size: 1em;
   line-height: 1.7em;
