@@ -180,16 +180,40 @@ pre.shiki code
   max-width: 70rem !important;
 }
 
-.figure
-{
-  max-width: 66%;
-  margin: 0 auto !important;
+@media only screen and (min-width:320px) {
+  .figure {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto !important;
+  }
+  .wide-figure {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto !important;
+  }
+  figure
+  {
+    margin: 0px !important;
+  }
+  figure img
+  {
+    height: auto;
+    width: 100%;
+  }
 }
-.wide-figure
-{
-  max-width: 80%;
-  margin: 0 auto !important;
+@media only screen and (min-width:1025px) {
+  .figure
+  {
+    max-width: 66%;
+    margin: 0 auto !important;
+  }
+  .wide-figure
+  {
+    max-width: 80%;
+    margin: 0 auto !important;
+  }
 }
+
 figure
 {
   border: 1px solid rgba(50, 50, 50, 0.5);
