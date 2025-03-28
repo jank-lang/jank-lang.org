@@ -31,9 +31,9 @@ rect { stroke: none; }
 <text transform="translate(36.755 17.279)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">C++</text>
 </g>
 <g transform="translate(0 -35)" data-dali-layout-tag="stack">
-<rect class="bar" width="40" height="25" fill="hsl(204, 86%, 53%)"/>
-<rect class="bar" transform="translate(40 -475)" width="40" height="500" fill="hsl(171, 100%, 41%)"/>
-<rect class="bar" transform="translate(80 24.375)" width="40" height=".625" fill="hsl(348, 100%, 61%)"/>
+<rect class="bar" width="40" height="25" fill="#f8803f"/>
+<rect class="bar" transform="translate(40 -475)" width="40" height="500" fill="#c96198"/>
+<rect class="bar" transform="translate(80 24.375)" width="40" height=".625" fill="#819aff"/>
 </g>
 </g>
 <g transform="translate(200)" data-dali-layout-tag="stack">
@@ -42,9 +42,9 @@ rect { stroke: none; }
 <text transform="translate(19.618 17.292)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">LLVM IR</text>
 </g>
 <g transform="translate(0 -14.167)" data-dali-layout-tag="stack">
-<rect class="bar" width="40" height="4.1667" fill="hsl(204, 86%, 53%)"/>
-<rect class="bar" transform="translate(40)" width="40" height="4.1667" fill="hsl(171, 100%, 41%)"/>
-<rect class="bar" transform="translate(80 3.8542)" width="40" height=".3125" fill="hsl(348, 100%, 61%)"/>
+<rect class="bar" width="40" height="4.1667" fill="#f8803f"/>
+<rect class="bar" transform="translate(40)" width="40" height="4.1667" fill="#c96198"/>
+<rect class="bar" transform="translate(80 3.8542)" width="40" height=".3125" fill="#819aff"/>
 </g>
 </g>
 </g>
@@ -52,15 +52,15 @@ rect { stroke: none; }
 <g transform="translate(450 195)" data-dali-layout-tag="stack">
 <g transform="translate(0)" data-dali-layout-tag="stack">
 <g data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(204, 86%, 53%)"/>
+<rect width="40" height="40" fill="#f8803f"/>
 <text transform="translate(43.034 27.454)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Load from source</text>
 </g>
 <g transform="translate(0 60)" data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(171, 100%, 41%)"/>
+<rect width="40" height="40" fill="#c96198"/>
 <text transform="translate(43.874 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Compile module</text>
 </g>
 <g transform="translate(0 120)" data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(348, 100%, 61%)"/>
+<rect width="40" height="40" fill="#819aff"/>
 <text transform="translate(43.034 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Load from compiled module</text>
 </g>
 </g>

@@ -31,9 +31,9 @@ rect { stroke: none; }
 <text transform="translate(-21.574 15.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Small string find</text>
 </g>
 <g transform="translate(-20.252 -42.691)" data-dali-layout-tag="stack">
-<rect class="bar" width="40" height="32.691" fill="hsl(204, 86%, 53%)"/>
-<rect class="bar" transform="translate(40 2.2957)" width="40" height="30.395" fill="hsl(171, 100%, 41%)"/>
-<rect class="bar" transform="translate(80 -11.111)" width="40" height="43.802" fill="hsl(348, 100%, 61%)"/>
+<rect class="bar" width="40" height="32.691" fill="#f8803f"/>
+<rect class="bar" transform="translate(40 2.2957)" width="40" height="30.395" fill="#c96198"/>
+<rect class="bar" transform="translate(80 -11.111)" width="40" height="43.802" fill="#819aff"/>
 </g>
 </g>
 <g transform="translate(240.72 -3.8147e-6)" data-dali-layout-tag="stack">
@@ -42,9 +42,9 @@ rect { stroke: none; }
 <text transform="translate(-22.433 15.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Large string find</text>
 </g>
 <g transform="translate(-20.467 -108.07)" data-dali-layout-tag="stack">
-<rect class="bar" width="40" height="98.072" fill="hsl(204, 86%, 53%)"/>
-<rect class="bar" transform="translate(40 1.8366)" width="40" height="96.235" fill="hsl(171, 100%, 41%)"/>
-<rect class="bar" transform="translate(80 -201.93)" width="40" height="300" fill="hsl(348, 100%, 61%)"/>
+<rect class="bar" width="40" height="98.072" fill="#f8803f"/>
+<rect class="bar" transform="translate(40 1.8366)" width="40" height="96.235" fill="#c96198"/>
+<rect class="bar" transform="translate(80 -201.93)" width="40" height="300" fill="#819aff"/>
 </g>
 </g>
 </g>
@@ -52,15 +52,15 @@ rect { stroke: none; }
 <g transform="translate(531.44 95)" data-dali-layout-tag="stack">
 <g transform="translate(0)" data-dali-layout-tag="stack">
 <g data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(204, 86%, 53%)"/>
+<rect width="40" height="40" fill="#f8803f"/>
 <text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank</text>
 </g>
 <g transform="translate(0 60)" data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(171, 100%, 41%)"/>
+<rect width="40" height="40" fill="#c96198"/>
 <text transform="translate(43.112 27.454)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">libstdc++</text>
 </g>
 <g transform="translate(0 120)" data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(348, 100%, 61%)"/>
+<rect width="40" height="40" fill="#819aff"/>
 <text transform="translate(44.538 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">folly</text>
 </g>
 </g>

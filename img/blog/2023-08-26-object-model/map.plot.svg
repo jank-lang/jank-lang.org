@@ -31,9 +31,9 @@ rect { stroke: none; }
 <text transform="translate(12.052 15.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Map alloc</text>
 </g>
 <g transform="translate(0 -164.96)" data-dali-layout-tag="stack">
-<rect class="bar" width="40" height="154.96" fill="hsl(204, 86%, 53%)"/>
-<rect class="bar" transform="translate(40 -145.04)" width="40" height="300" fill="hsl(171, 100%, 41%)"/>
-<rect class="bar" transform="translate(80 -10.305)" width="40" height="165.26" fill="hsl(348, 100%, 61%)"/>
+<rect class="bar" width="40" height="154.96" fill="#f8803f"/>
+<rect class="bar" transform="translate(40 -145.04)" width="40" height="300" fill="#c96198"/>
+<rect class="bar" transform="translate(80 -10.305)" width="40" height="165.26" fill="#819aff"/>
 </g>
 </g>
 <g transform="translate(200)" data-dali-layout-tag="stack">
@@ -42,9 +42,9 @@ rect { stroke: none; }
 <text transform="translate(18.553 15.212)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Map get</text>
 </g>
 <g transform="translate(0 -135.79)" data-dali-layout-tag="stack">
-<rect class="bar" width="40" height="125.79" fill="hsl(204, 86%, 53%)"/>
-<rect class="bar" transform="translate(40 76.021)" width="40" height="49.773" fill="hsl(171, 100%, 41%)"/>
-<rect class="bar" transform="translate(80 99.741)" width="40" height="26.053" fill="hsl(348, 100%, 61%)"/>
+<rect class="bar" width="40" height="125.79" fill="#f8803f"/>
+<rect class="bar" transform="translate(40 76.021)" width="40" height="49.773" fill="#c96198"/>
+<rect class="bar" transform="translate(80 99.741)" width="40" height="26.053" fill="#819aff"/>
 </g>
 </g>
 </g>
@@ -52,15 +52,15 @@ rect { stroke: none; }
 <g transform="translate(450 95)" data-dali-layout-tag="stack">
 <g transform="translate(0)" data-dali-layout-tag="stack">
 <g data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(204, 86%, 53%)"/>
+<rect width="40" height="40" fill="#f8803f"/>
 <text transform="translate(43.874 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Clojure</text>
 </g>
 <g transform="translate(0 60)" data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(171, 100%, 41%)"/>
+<rect width="40" height="40" fill="#c96198"/>
 <text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank before</text>
 </g>
 <g transform="translate(0 120)" data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(348, 100%, 61%)"/>
+<rect width="40" height="40" fill="#819aff"/>
 <text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank after</text>
 </g>
 </g>

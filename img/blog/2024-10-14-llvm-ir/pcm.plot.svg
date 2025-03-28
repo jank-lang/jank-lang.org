@@ -31,10 +31,10 @@ rect { stroke: none; }
 <text transform="translate(16.984 15.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Startup time</text>
 </g>
 <g transform="translate(0 -310)" data-dali-layout-tag="stack">
-<rect class="bar" width="40" height="300" fill="hsl(204, 86%, 53%)"/>
-<rect class="bar" transform="translate(40 283.62)" width="40" height="16.375" fill="hsl(171, 100%, 41%)"/>
-<rect class="bar" transform="translate(80 292.5)" width="40" height="7.5" fill="hsl(348, 100%, 61%)"/>
-<rect class="bar" transform="translate(120 298.75)" width="40" height="1.25" fill="hsl(48, 100%, 67%)"/>
+<rect class="bar" width="40" height="300" fill="#f8803f"/>
+<rect class="bar" transform="translate(40 283.62)" width="40" height="16.375" fill="#c96198"/>
+<rect class="bar" transform="translate(80 292.5)" width="40" height="7.5" fill="#819aff"/>
+<rect class="bar" transform="translate(120 298.75)" width="40" height="1.25" fill="#fb4934"/>
 </g>
 </g>
 </g>
@@ -42,19 +42,19 @@ rect { stroke: none; }
 <g transform="translate(290 65)" data-dali-layout-tag="stack">
 <g transform="translate(0)" data-dali-layout-tag="stack">
 <g data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(204, 86%, 53%)"/>
+<rect width="40" height="40" fill="#f8803f"/>
 <text transform="translate(46.035 25.29)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">JIT</text>
 </g>
 <g transform="translate(0 60)" data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(171, 100%, 41%)"/>
+<rect width="40" height="40" fill="#c96198"/>
 <text transform="translate(43.874 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Clojure</text>
 </g>
 <g transform="translate(0 120)" data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(348, 100%, 61%)"/>
+<rect width="40" height="40" fill="#819aff"/>
 <text transform="translate(43.034 27.279)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">PCM</text>
 </g>
 <g transform="translate(0 180)" data-dali-layout-tag="stack">
-<rect width="40" height="40" fill="hsl(48, 100%, 67%)"/>
+<rect width="40" height="40" fill="#fb4934"/>
 <text transform="translate(44.844 27.279)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">AOT</text>
 </g>
 </g>
