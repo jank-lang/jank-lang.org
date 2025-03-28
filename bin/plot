@@ -26,16 +26,11 @@
             [dali.layout.utils]
             [dali.syntax]))
 
-(def color-order (cycle [; Primary
-                         "hsl(204, 86%, 53%)"
-                         ; Info
-                         "hsl(171, 100%, 41%)"
-                         ; Danger
-                         "hsl(348, 100%, 61%)"
-                         ; Warning
-                         "hsl(48, 100%, 67%)"
-                         ; Success
-                         "hsl(141, 53%, 53%)"]))
+(def color-order (cycle ["#f8803f"
+                         "#c96198"
+                         "#819aff"
+                         "#fb4934"
+                         "#a6e22e"]))
 
 (defn text [{:keys [text font-size font-family fill]
              :as props}]
