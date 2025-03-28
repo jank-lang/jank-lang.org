@@ -277,7 +277,11 @@ figcaption
 }
 
 /* Custom font */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+@supports (font-variation-settings: normal) {
+  code { font-family: 'Fira Code VF', monospace; }
+}
+
 @font-face
 {
   font-family: 'Comfortaa';
