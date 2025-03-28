@@ -185,13 +185,19 @@ pre.shiki code
   max-width: 66%;
   margin: 0 auto !important;
 }
+.wide-figure
+{
+  max-width: 80%;
+  margin: 0 auto !important;
+}
 figure
 {
+  border: 1px solid rgba(50, 50, 50, 0.5);
+  border-radius: 2px;
   text-align: center;
 }
 figure img
 {
-  border: 1px solid rgba(50, 50, 50, 0.5);
   border-radius: 2px;
   padding: 5px;
   background: #fff;
