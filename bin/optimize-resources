@@ -57,7 +57,7 @@ do
     svg)
       output=$(mktemp)
       scour -i "$file" -o "$output" \
-            --enable-viewboxing --enable-id-stripping \
+            --enable-id-stripping \
             --enable-comment-stripping --shorten-ids \
             --indent=none >/dev/null 2>&1
 
