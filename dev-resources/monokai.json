@@ -168,15 +168,16 @@
       "name": "Keyword",
       "scope": "keyword",
       "settings": {
-        "foreground": "#F92672"
+        "fontStyle": "bold",
+        "foreground": "#fb4934"
       }
     },
     {
       "name": "Storage",
-      "scope": "storage",
+      "scope": "storage.control",
       "settings": {
-        "fontStyle": "",
-        "foreground": "#F92672"
+        "fontStyle": "bold",
+        "foreground": "#fb4934"
       }
     },
     {
@@ -462,6 +463,18 @@
     {
       "name": "this.self",
       "scope": "variable.language",
+      "settings": {
+        "foreground": "#FD971F"
+      }
+    },
+    {
+      "scope": "constant.keyword.clojure",
+      "settings": {
+        "foreground": "#819aff"
+      }
+    },
+    {
+      "scope": "punctuation.section",
       "settings": {
         "foreground": "#FD971F"
       }

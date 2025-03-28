@@ -27,7 +27,9 @@ const highlighter = await createHighlighter({
   themes: [monokai]
 })
 
-if(file_type === 'llvm')
+if(file_type === 'clojure')
+{ await highlighter.loadLanguage(JSON.parse(readFileSync('dev-resources/clojure.tmLanguage.json'))) }
+else if(file_type === 'llvm')
 { await highlighter.loadLanguage(JSON.parse(readFileSync('dev-resources/LLVM.tmLanguage.json'))) }
 else
 { await highlighter.loadLanguage(file_type) }

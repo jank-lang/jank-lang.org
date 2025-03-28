@@ -13,13 +13,22 @@ a:hover
   text-decoration: underline !important;
 }
 
-/* Nav bar */
+table
+{
+  margin: auto;
+}
+
 @media (prefers-color-scheme: light)
 {
   nav
   {
     background-color: var(--bulma-primary) !important;
     color: white !important;
+  }
+
+  body
+  {
+    --bulma-body-color: #313745;
   }
 }
 
@@ -168,7 +177,7 @@ pre.shiki code
 /* Blog */
 .blog-container
 {
-  max-width: 80rem !important;
+  max-width: 70rem !important;
 }
 
 figure
