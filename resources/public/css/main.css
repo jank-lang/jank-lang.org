@@ -180,10 +180,15 @@ pre.shiki code
   max-width: 70rem !important;
 }
 
+.figure
+{
+  width: 50% !important;
+  max-width: 50% !important;
+  margin: 0 auto !important;
+}
 figure
 {
   text-align: center;
-  margin: 0 auto;
 }
 figure img
 {
