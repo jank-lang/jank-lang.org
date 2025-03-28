@@ -17,6 +17,9 @@ mkShell
 
     # Linting
     shellcheck
+
+    # Utils
+    pcre
   ];
   shellHook =
   ''
