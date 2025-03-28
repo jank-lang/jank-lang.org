@@ -80,6 +80,13 @@
             :type "application/atom+xml"
             :href "/blog/feed.xml"
             :title "RSS Feed"}]
+    [:link {:rel "preconnect"
+            :href "https://fonts.googleapis.com"}]
+    [:link {:rel "preconnect"
+            :href "https://fonts.gstatic.com"
+            :crossorigin true}]
+    [:link {:rel "stylesheet"
+            :href "https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"}]
     [:title (:title props)]
     [:meta {:property "og:title"
             :content (:title props)}]
