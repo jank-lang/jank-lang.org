@@ -8,11 +8,11 @@ Description: It's become clear that jank is a terrible name. Rigorous research
              GRADY
 
 Hey folks. I've been working on jank for some years now. With every new blog post that goes out, I see
-people provide feedback on the name. It's been clear to me that the
+people provide feedback on the name. This always perplexed me. It's been clear to me that the
 name jank doesn't land well with people, but I've struggled to understand why.
-Recently, this has been explained to me and so I quickly began searching for
-replacements. Happily, I can now announce that I've found a suitable replacement. From here on
-out, jank will be renamed to GRADY. For those who don't understand why this is
+What's wrong with it? Well, recently, this has been explained to me. Afterward, I quickly began
+searching for a better name. Happily, I can now announce that I've found a suitable replacement.
+From here on out, jank will be renamed to GRADY. For those who don't understand why this is
 important, let me explain.
 
 ## jank is bad?
@@ -20,12 +20,13 @@ Before we talk about the new name, I need to lay bare my chest here.
 This is my fault. I had never realized that jank meant something negative.
 However, as an astute reader contributes [here](https://news.ycombinator.com/item?id=32498703),
 "jank describes undesirable, problematic, glitchy UX." Who would name a language
-after that?! I feel foolish.
+after that?! I feel foolish. I didn't know what it meant, but I liked the sound
+of it.
 
-Historically, [multiple people](https://www.reddit.com/r/ProgrammingLanguages/comments/1h2ubog/comment/lzm7t02)
+I should've realized this sooner. Historically, [multiple people](https://www.reddit.com/r/ProgrammingLanguages/comments/1h2ubog/comment/lzm7t02)
 have called the name jank
 [unfortunate](https://news.ycombinator.com/item?id=32493883), but it wasn't
-clear to me why. Well, the egg is on my face and now I know.
+clear to me why. Well, better late than never.
 
 ## GRADY
 I'd like to explain the new name side by side with the old name, to underline how
