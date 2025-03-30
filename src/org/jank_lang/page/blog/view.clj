@@ -90,9 +90,10 @@
                       reverse
                       (map #(clojure.string/replace-first % #"\.md$" "")))
         ; TODO: Dynamic var to not highlight code.
-        post-mds (map #(-> (parse-markdown (slurp (str "resources/src/blog/" % ".md")))
-                           (assoc :id %))
-                      post-ids)]
+        post-mds (->> (map #(-> (parse-markdown (slurp (str "resources/src/blog/" % ".md")))
+                                (assoc :id %))
+                           post-ids)
+                      (remove #(contains? (:metadata %) :draft)))]
     (page.view/page-root
       {:title "jank - blog"
        :description "jank is a Clojure dialect hosted on LLVM with native C++ interop."}
@@ -130,9 +131,10 @@
         post-ids (->> (sort files)
                       reverse
                       (map #(clojure.string/replace-first % #"\.md$" "")))
-        post-mds (map #(-> (parse-markdown (slurp (str "resources/src/blog/" % ".md")))
-                           (assoc :id %))
-                      post-ids)]
+        post-mds (->> (map #(-> (parse-markdown (slurp (str "resources/src/blog/" % ".md")))
+                                (assoc :id %))
+                           post-ids)
+                      (remove #(contains? (:metadata %) :draft)))]
     {:status 200
      :header {"Content-Type" "application/atom+xml"}
      :body (->> (into [:feed {:xmlns "http://www.w3.org/2005/Atom"}
