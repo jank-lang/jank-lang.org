@@ -97,7 +97,7 @@ delicious", according to [Urban Dictionary](https://www.urbandictionary.com/defi
 
 ## Other benefits
 So, in terms of practical differences, the file extension of GRADY sources
-will change from `.jank` to `.grr`. This will help keep GRADY code lean and mean.
+will change from `.jank` to `.GRR`. This will help keep GRADY code lean and mean.
 
 While I hadn't yet publicized how jank users would be called, I was originally
 thinking janksters or maybe jankies. None of that matters, now, since we'll all
