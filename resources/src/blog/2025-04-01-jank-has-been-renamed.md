@@ -104,12 +104,12 @@ be part of the GRADY bunch. That's how we became the GRADY bunch.
 
 ## Thanks for leading us here
 I appreciate you all for pointing this out to me. jank was an awful name.
-jank **might as well have been named folly**, for how bad it was. Well, if
+jank might as well have been named **folly**, for how bad it was. Well, if
 that weren't already the name of
 [one of the most popular C++ libraries](https://github.com/facebook/folly)
 in the world, anyway.
 
-At least now we've solved this problem, we can get to more pressing matters, like a new logo.
+At least now that we've solved this problem, we can get to more pressing matters, like a new logo.
 
 ## Would you like to help out?
 1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
