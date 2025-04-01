@@ -2,7 +2,6 @@ Title: jank has been renamed to GRADY
 Date: Apr 01, 2025
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
-Draft: true
 Description: It's become clear that jank is a terrible name. Rigorous research
              has been done, with A/B testing, and a new name has been chosen:
              GRADY
