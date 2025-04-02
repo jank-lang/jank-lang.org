@@ -6,6 +6,8 @@ Description: It's become clear that jank is a terrible name. Rigorous research
              has been done, with A/B testing, and a new name has been chosen:
              GRADY
 
+This was an April Fools post. It's no longer April Fools, so the post gets a
+very clear disclaimer at the top.
 Hey folks. I've been working on jank for some years now. With every new blog post that goes out, I see
 people provide feedback on the name. This always perplexed me. It's been clear to me that the
 name jank doesn't land well with people, but I've struggled to understand why.
