@@ -2,7 +2,6 @@ Title: Starting on seamless interop in jank
 Date: Mar 28, 2025
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
-Draft: true
 Description: jank is the first Lisp to be able to seamlessly reach into C++.
              Check it out!
 
