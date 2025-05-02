@@ -15,7 +15,7 @@ Clojure's interop with Java isn't sold as being "seamless", but it really is.
 Using Clojure's existing syntax, we can create Java objects, access their
 members, call their methods, and there's no ceremony involved. This is a super
 power of Clojure and I think it's critical that each Clojure dialect reproduces
-it for its host. In fact, we've how this can impact the user experience, in
+it for its host. In fact, we've seen how this can impact the user experience, in
 earlier ClojureScript days. For jank, I want to do this right from the
 beginning.
 
