@@ -1,4 +1,4 @@
-Title: Starting on seamless interop in jank
+Title: Starting on seamless C++ interop in jank
 Date: Mar 28, 2025
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
