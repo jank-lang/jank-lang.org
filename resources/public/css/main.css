@@ -248,6 +248,18 @@ figcaption
   }
 }
 
+/* Subscribe form. */
+.subscribe-button
+{
+  border: 2px solid rgb(248, 128, 63);
+  padding: 0.5em;
+  cursor: pointer;
+}
+.subscribe-button:hover
+{
+  color: rgb(248, 128, 63);
+  text-decoration: underline;
+}
 
 /* Collapsible sections. */
 .collapsible

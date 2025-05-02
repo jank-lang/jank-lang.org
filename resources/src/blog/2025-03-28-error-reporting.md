@@ -248,6 +248,22 @@ that, though, I need to prove it's viable for me alone to do this full-time.
 If you love what I'm building, please chip in $10/m to help make this dream possible.
 This year, we're going to release the first alpha for jank.
 
+<div style="margin: auto; text-align: center;">
+  <form method="post" target="blank_" action="https://listmonk.jank-lang.org/subscription/form" class="listmonk-form">
+    <div>
+      <h3>Subscribe</h3>
+      <p>Please consider subscribing to the jank mailing list so you can stay up to
+      date on jank's releases.</p>
+      <input type="hidden" name="nonce" />
+      <p><input type="email" name="email" required placeholder="E-mail" /></p>
+      <p><input type="hidden" name="name" placeholder="Name (optional)" /></p>
+      <p><input id="a132c" type="hidden" name="l" value="a132cb7d-6dc0-450c-8789-41d4fd880548" /></p>
+      <p><button type="submit" class="subscribe-button">Subscribe</button></p>
+    </div>
+  </form>
+</div>
+
+
 Thank you! Back to the post. 🙂
 
 ## Macros

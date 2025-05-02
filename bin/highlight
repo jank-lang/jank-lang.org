@@ -15,7 +15,13 @@ if(file_type === 'ansi')
   const ansi_up = new AnsiUp();
   ansi_up.escape_html = true;
   ansi_up.use_classes = true;
-  console.log(ansi_up.ansi_to_html(code));
+  const html = ansi_up.ansi_to_html(code.trim());
+  const last_span = html.lastIndexOf("</span>");
+  if(last_span === -1) {
+    console.log(html);
+  } else {
+    console.log(html.slice(0, last_span + 7));
+  }
   process.exit(0);
 }
 

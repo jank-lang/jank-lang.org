@@ -4,6 +4,7 @@
     "ansi_up": "^6.0.2",
     "jsdom": "^22.1.0",
     "node-fetch": "^2.6.12",
+    "node-html-to-image": "^5.0.0",
     "plotly": "^1.0.6",
     "shiki": "^1.22.0",
     "uuid": "^9.0.0",
