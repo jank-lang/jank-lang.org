@@ -146,6 +146,21 @@ This year, there's a ton of work to do. Here are the top ten items.
 I likely won't be able to finish all of these in 2025, but I will get enough
 done on them to get jank released.
 
+<div style="margin: auto; text-align: center;">
+  <form method="post" target="blank_" action="https://listmonk.jank-lang.org/subscription/form" class="listmonk-form">
+    <div>
+      <h3>Subscribe</h3>
+      <p>Please consider subscribing to the jank mailing list so you can stay up to
+      date on jank's releases.</p>
+      <input type="hidden" name="nonce" />
+      <p><input type="email" name="email" required placeholder="E-mail" /></p>
+      <p><input type="hidden" name="name" placeholder="Name (optional)" /></p>
+      <p><input id="a132c" type="hidden" name="l" value="a132cb7d-6dc0-450c-8789-41d4fd880548" /></p>
+      <p><button type="submit" class="subscribe-button">Subscribe</button></p>
+    </div>
+  </form>
+</div>
+
 ## Beyond Clojure
 I mentioned that a native Clojure is the first step toward my dream language.
 Indeed, it doesn't stop there. jank will always be a Clojure dialect, but it
