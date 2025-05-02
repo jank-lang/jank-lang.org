@@ -45,7 +45,8 @@ cpp/std.string.npos
 The [npos](https://en.cppreference.com/w/cpp/string/basic_string/npos) of C++'s
 string is used to represent the index of something which isn't present. Its
 value is `-1`, but since it's in an unsigned type, we get the largest possible
-value (all bits are `1`).
+value (all bits are `1`). However, jank's integral type is an `i64`, so we end
+up keeping the signage.
 
 Now, in order to access this from jank, we need to first include the C++
 standard `<string>` header. We use `cpp/raw` for this, which allows us to
@@ -73,7 +74,7 @@ specialized.
 When the jank compiler sees we're trying to return a `size_t`, it'll try to
 JIT instantiate the `jank::runtime::convert<size_t>` template, to see if we have
 a valid conversion trait. If that instantiation fails, we get a compiler error.
-For example:
+For example, there is no conversion for this `foo` type:
 
 <!--
 (cpp/raw "struct foo{}; foo f;")
@@ -91,8 +92,8 @@ is easier in Clojure, since both Clojure and Java share the same base `Object`.
 Since every class instance is an `Object`, we can freely pass any Java value through
 any Clojure function or store it in a Clojure data structure. In the native
 world, we don't have such niceties. Each top-level type is concretely separate.
-This means that, in order to cross function boundaries, conversions or boxing must be
-done.
+This means that, in order to cross function boundaries, conversions or
+type-erasure must be done.
 
 ## Constructors
 In jank, we can now construct stack-allocated C++ objects directly. There is
@@ -142,13 +143,13 @@ ambiguity and jank will fail. However, if we can narrow down a matching
 overload, jank will choose that and automatically do the conversions for us.
 
 ## Casting
-Finally, we can explicitly cast a value to another type. This works both as the
-equivalent of a C++ `static_cast` and also as a way of opting into jank's
-conversion trait. A helpful trick here is to cast in order to disambiguate an
-overloaded call. Let's consider this example. Note that I haven't actually built
-out the error messages for these yet, so it shows as an internal analysis error
-and the message itself is lacking helpful details. It's sufficient for me to
-know that the right error has been triggered, though.
+Finally, I've implemented casting so we can explicitly cast a value to another type.
+This works both as the equivalent of a C++ `static_cast` and also as a way of
+opting into jank's conversion trait. A helpful trick here is to cast in order to
+disambiguate an overloaded call. Let's consider this example. Note that I
+haven't actually built out the error messages for these yet, so it shows as an
+internal analysis error and the message itself is lacking helpful details. It's
+sufficient for me to know that the right error has been triggered, though.
 
 <!--
 (cpp/raw "struct bar{ bar(float f){ } bar(size_t s){ } };")
@@ -179,7 +180,7 @@ we can clear up this ambiguity.
   </figure>
 </div>
 
-### Subscribe
+## Interlude
 Before I go into exactly how we're stitching together JIT compiled C++ code with
 jank's LLVM IR, please consider subscribing to jank's mailing list. This is
 going to be the best way to make sure you stay up to date with jank's releases,
@@ -205,7 +206,7 @@ immediately invoked.
 [IIFE](https://en.wikipedia.org/wiki/Immediately_invoked_function_expression) is
 the term for this. Since our C++ value is wrapped in a function, we end up with
 the implicit conversion being required, since the function is going to return
-our value. So, the function needs to:
+our value. The function needs to:
 
 1. Look up the value from C++ land
 2. Convert the value into a jank object
@@ -221,6 +222,7 @@ some C++ code at run-time and give it to Clang to JIT compile. To get our value,
 the C++ code will look _something_ like this:
 
 ```cpp
+extern "C"
 inline void jank_generated_helper_0(void *, int, void **, void *ret)
 { new (ret) size_t{ std::string::npos }; }
 ```
@@ -269,16 +271,18 @@ entry:
   call void @jank_generated_helper_0(ptr null, i32 0, ptr null, ptr %0)
 ```
 
-This is a good start. After this, we'll have `-1` in the memory allocated.
+### Converting our value
+This is a good start. After this, we'll have `-1` in the allocated memory.
 Now, however, we need to convert this into a jank object. In order to do that,
 we'll generate another C++ helper. This one will do the necessary conversion
 using jank's trait. It'll look something like this:
 
 ```cpp
+extern "C"
 inline void jank_generated_helper_1(void *, int, void **args, void *ret)
 {
-  auto const arg1{ *(size_t*)args[0] };
-  new (ret) obj::integer_ref{ convert<size_t>::into_object(arg1) };
+  auto const arg0{ *(size_t*)args[0] };
+  new (ret) obj::integer_ref{ convert<size_t>::into_object(arg0) };
 }
 ```
 
@@ -311,12 +315,13 @@ We can see here that we generate the args array for our call, we store `%0` (our
 `size_t` which we read earlier) into the zeroth spot of the array, we allocate
 enough space for the return value, and then we call our second helper. 
 
+### Returning our value
 There's one last catch, though. The `convert<size_t>::into_object` function
 returns a typed jank object, which is `obj::integer_ref`. This is great for
 taking advantage of type information, but we're crossing jank function
 boundaries here, so everything needs to be a type-erased `object_ref`. We can do
-this by just shifting the pointer based on the correct offset to the base from
-`obj::integer`. Fortunately, jank will do for us automatically when it detects
+this by just shifting the pointer, if we know the offset to the base from
+`obj::integer`. Fortunately, jank will do this for us automatically when it detects
 that we need a type-erased object and we have a typed object. Our final IR function
 looks like this:
 
@@ -341,7 +346,7 @@ entry:
 }
 ```
 
-This ends up being a lot of work for one line of jank code, but there's a great
+This ends up being a lot of work for seemingly one line of jank code, but there's a great
 deal of magic going on behind the scenes. What's amazing, though, is that all of
 this gets completely optimized away. With `-O2` settings on our IR
 optimizations, LLVM will turn our function into this:
@@ -364,8 +369,13 @@ We're one month into the quarter and I'm pleased with the progress so far.
 However, there's a lot remaining work to do. I still need to tackle free/static
 function calls, member access, member function calls, operators, dynamic
 allocations, complex type support, and automatic destructors for locals with the
-same guarantees C++ provides. This will definitely keep me busy for the quarter!
+same guarantees C++ provides. On top of that, I need to make sure we can process
+C++ headers in a portable way. This will definitely keep me busy for the quarter!
 Stay tuned for my next update in a month.
+
+Lastly, shout out to [CppInterOp](https://github.com/compiler-research/CppInterOp) for
+shining light on how this sort of thing can be done and making it easier for me
+to do so.
 
 ## Would you like to help out?
 1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
