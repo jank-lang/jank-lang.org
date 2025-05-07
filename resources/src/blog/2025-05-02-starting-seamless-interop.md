@@ -24,7 +24,7 @@ which have seamless C++ interop? Only
 [Swift](https://www.swift.org/documentation/cxx-interop/) comes to mind.
 Even worse, doing this from a dynamically
 typed and JIT compiled language? This is new ground we're treading, alongside
-[cpppy](https://cppyy.readthedocs.io/en/latest/). I'll
+[cppyy](https://cppyy.readthedocs.io/en/latest/). I'll
 confidently say jank is the first Lisp to ever do this. So, one month in, what
 can jank do?
 
