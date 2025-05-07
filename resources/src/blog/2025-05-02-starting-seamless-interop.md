@@ -19,10 +19,12 @@ it for its host. In fact, we've seen how this can impact the user experience, in
 earlier ClojureScript days. For jank, I want to do this right from the
 beginning.
 
-However, jank's host is C++. How many languages can you name which have seamless
-C++ interop? Only [Swift](https://www.swift.org/documentation/cxx-interop/) comes to mind.
+However, jank's host is C++. How many statically typed languages can you name
+which have seamless C++ interop? Only
+[Swift](https://www.swift.org/documentation/cxx-interop/) comes to mind.
 Even worse, doing this from a dynamically
-typed and JIT compiled language? This is new ground we're treading. I'll
+typed and JIT compiled language? This is new ground we're treading, alongside
+[cpppy](https://cppyy.readthedocs.io/en/latest/). I'll
 confidently say jank is the first Lisp to ever do this. So, one month in, what
 can jank do?
 
