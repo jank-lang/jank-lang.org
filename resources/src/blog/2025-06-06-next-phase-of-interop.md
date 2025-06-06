@@ -3,7 +3,6 @@ Date: Jun 06, 2025
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: C++! Clojure! Magic! Dragons! Read all about it!
-Draft: true
 
 Two months into seamless C++ interop in jank, what sort of magic can we do now?
 Sit tight and I'll show you. This quarter's work is being sponsored
