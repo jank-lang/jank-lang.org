@@ -20,6 +20,7 @@ mkShell
 
     # Utils
     pcre
+    expect
   ];
   shellHook =
   ''
