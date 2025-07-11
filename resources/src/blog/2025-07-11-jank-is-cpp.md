@@ -160,7 +160,7 @@ use cases.
 ### JSON pretty printer
 Ok, cranking up the complexity a bit, let's bring in a third party library.
 [JSON for Modern C++](https://github.com/nlohmann/json) is likely the most
-popular C++ library there is. It's header-only, so if we just download the
+popular C++ JSON library there is. It's header-only, so if we just download the
 standalone header, we can JIT include it. To turn this into a full program,
 we can also reach into `std::ifstream` for file reading. This program will take a
 JSON file as an argument, parse it, and then output the pretty printed JSON to
