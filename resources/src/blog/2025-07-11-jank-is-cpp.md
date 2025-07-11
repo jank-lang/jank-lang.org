@@ -265,14 +265,14 @@ time to tackle automatic destructor calls for stack allocated C++ objects. I
 have one of my mentees, [Jianling](https://github.com/jianlingzhong), helping
 out on the work here, to ensure that we can get it done soon.
 
-On top of that, and much to my frustration, the largest issue comes from Clang
-and LLVM directly. One of the indicators of jank's seamless interop being
-unprecedented is all of the bugs and missing features I'm finding in Clang and
-LLVM. These are generally quite slow to address, since I'm relying on the
-volunteer time of the experts in those areas to help me out. There are still
-cases where some interop code can trigger a crash in Clang and we'll have to
-tackle them as they come up. However, one of the best ways to speed this along
-is more funding, so that I can pay these Clang and LLVM experts for their time.
+On top of that, the largest issues comes from Clang and LLVM directly. One of
+the indicators of jank's seamless interop being unprecedented is the bugs
+and missing features I'm finding in Clang and LLVM. These are generally quite
+slow to address, since I'm relying on the volunteer time of the experts in those
+areas to help me out. jank would not exist without them. There are still cases
+where some interop code can trigger a crash in Clang and we'll have to tackle
+them as they come up. However, one of the best ways to speed this along is more
+funding, so that I can pay these Clang and LLVM experts for their time.
 Please consider becoming a [Github Sponsor](https://github.com/sponsors/jeaye) <span class="icon mr-1" style="color: rgb(201, 97, 152);"> <i class="gg-heart"></i></span> to make this more feasible.
 
 Looking forward to the new quarter, the main focus will be packaging and
