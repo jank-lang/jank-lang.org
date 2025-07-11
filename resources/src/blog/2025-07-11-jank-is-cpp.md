@@ -9,7 +9,10 @@ quarter, you're about to find out. In April, jank was unable to reach into C++
 at all. Toward the end of this post, I'll show some real world examples of what
 works today. Before that, though, I want to say thank you for the sponsorship this
 quarter, not only by all of my individual Github sponsors, but also by
-Clojurists Together. Let's keep it going!
+Clojurists Together. I also want to say thank you to
+[Vassil Vassilev](https://vassil.vassilev.info/) and [Lang Hames](https://github.com/lhames)
+for building the necessary tech in Clang and LLVM for jank to actually do all of
+  this magic. Let's get into it!
 
 ### Memory management
 In the past month, I have implemented manual memory management via `cpp/new` and `cpp/delete`. This
