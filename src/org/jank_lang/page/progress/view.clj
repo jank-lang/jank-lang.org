@@ -2800,7 +2800,7 @@
                              {:name "zipmap"
                               :tasks [:tested]
                               :done #{}}]}
-                 {:name "Native runtime"
+                 {:name "C++ interop"
                   :features [{:name "interop/include headers"
                               :tasks [:done]
                               :done #{:done}}
