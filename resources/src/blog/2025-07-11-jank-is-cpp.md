@@ -253,9 +253,9 @@ The OG in the C++ Lisp space is
 Schafmeister. Clasp also integrates with LLVM and it uses MPS for a GC. Though
 jank and Clasp differ greatly, both in that Clasp is Common Lisp and jank is
 Clojure as well in how they approach C++ interop, they are two bold attempts to
-bridge two otherwise distant languages. I reached out to Christian several years
-ago, when I started on jank, to discuss C++ and Lisps. His work has been a big
-inspiration for jank.
+bridge two otherwise distant languages. I reached out to Dr. Schafmeister several years
+ago, when I started on jank, and we discussed C++ and Lisps. His work has been a
+big inspiration for jank.
 
 ### What's next?
 Phew. I've accomplished a ton this quarter and I'm extremely pleased with what jank
