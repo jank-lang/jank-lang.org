@@ -2803,34 +2803,34 @@
                  {:name "Native runtime"
                   :features [{:name "interop/include headers"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "interop/link libraries"
                               :tasks [:done]
                               :done #{:done}}
                              {:name "interop/represent native objects"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "interop/call native functions"
                               :tasks [:done]
                               :done #{:done}}
                              {:name "interop/explicitly box unbox native objects"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "interop/refer to native globals"
                               :tasks [:done]
                               :done #{:done}}
                              {:name "interop/access native members"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "interop/extract native value from jank object"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "interop/convert native value to jank object"
                               :tasks [:done]
-                              :done #{}}
+                              :done #{:done}}
                              {:name "interop/create native objects"
                               :tasks [:done]
-                              :done #{}}]}
+                              :done #{:done}}]}
                  {:name "Tooling"
                   :features [{:name "leiningen support"
                               :tasks [:done]
