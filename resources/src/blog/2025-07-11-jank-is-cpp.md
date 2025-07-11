@@ -2,8 +2,7 @@ Title: jank is C++
 Date: Jul 11, 2025
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
-Description: jank is Clojure. jank is C++. The combination is crazy.
-Draft: true
+Description: jank is Clojure. jank is C++. The combination is amazing.
 
 If you've wondered how much a solo dev can build for seamless C++ interop on a
 quarter, you're about to find out. In April, jank was unable to reach into C++
