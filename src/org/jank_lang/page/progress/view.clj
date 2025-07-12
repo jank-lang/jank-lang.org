@@ -2835,6 +2835,9 @@
                   :features [{:name "leiningen support"
                               :tasks [:done]
                               :done #{}}
+                             {:name "deps.edn"
+                              :tasks [:done]
+                              :done #{}}
                              {:name "nrepl support"
                               :tasks [:done]
                               :done #{}}
