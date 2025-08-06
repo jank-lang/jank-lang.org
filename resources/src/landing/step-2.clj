@@ -1,10 +1,10 @@
 (defn create-vertex-shader! []
-  (c++/glCreateShader c++/GL_VERTEX_SHADER))
+  (cpp/glCreateShader cpp/GL_VERTEX_SHADER))
 
 (defn set-shader-source! [shader source]
-  (let [shader (int shader)
+  (let [shader (cpp/int shader)
         source (str source)]
-    (c++/glShaderSource shader 1 source c++/nullptr)))
+    (cpp/glShaderSource shader 1 source cpp/nullptr)))
 
 (defn compile-shader! [shader]
-  (c++/glCompileShader (int shader)))
+  (cpp/glCompileShader (cpp/int shader)))
