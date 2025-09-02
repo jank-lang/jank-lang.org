@@ -582,7 +582,7 @@
                              {:name "parse-boolean", :tasks [:done], :done #{:done}}
                              {:name "parse-double", :tasks [:done], :done #{:done}}
                              {:name "parse-long", :tasks [:done], :done #{:done}}
-                             {:name "parse-uuid", :tasks [:done], :done #{}}
+                             {:name "parse-uuid", :tasks [:done], :done #{:done}}
                              {:name "partial", :tasks [:done], :done #{:done}}
                              {:name "partition", :tasks [:done], :done #{:done}}
                              {:name "partition-all", :tasks [:done], :done #{:done}}
@@ -628,7 +628,7 @@
                              {:name "rand-int", :tasks [:done], :done #{:done}}
                              {:name "rand-nth", :tasks [:done], :done #{:done}}
                              {:name "random-sample", :tasks [:done], :done #{:done}}
-                             {:name "random-uuid", :tasks [:done], :done #{}}
+                             {:name "random-uuid", :tasks [:done], :done #{:done}}
                              {:name "range", :tasks [:done], :done #{:done}}
                              {:name "ratio?", :tasks [:done], :done #{:done}}
                              {:name "rational?", :tasks [:done], :done #{:done}}
@@ -796,7 +796,7 @@
                              {:name "update-vals", :tasks [:done], :done #{:done}}
                              {:name "uri?", :tasks [:done], :done #{}}
                              {:name "use", :tasks [:done], :done #{:done}}
-                             {:name "uuid?", :tasks [:done], :done #{}}
+                             {:name "uuid?", :tasks [:done], :done #{:done}}
                              {:name "val", :tasks [:done], :done #{:done}}
                              {:name "vals", :tasks [:done], :done #{:done}}
                              {:name "var-get", :tasks [:done], :done #{:done}}
