@@ -6,6 +6,7 @@ here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 generated_dir="${here}/../resources/generated"
 generated_img_dir="${generated_dir}/img"
+generated_video_dir="${generated_dir}/video"
 generated_html_dir="${generated_dir}/html"
 tab="$(echo -e '\t')"
 
@@ -61,11 +62,16 @@ ${tab}#${here}/optimize-resources "${generated_img_dir}/${file_sans_ext}.svg"
 EOF
       ;;
 
-    # TODO: Keep this? Or put the images elsewhere?
+    # TODO: Keep this? Or put the images/videos elsewhere?
     svg|png)
       mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
       cp -f "${file}" "${generated_img_dir}/${file_sans_ext}.${resource_type}"
       ;;
+    mp4)
+      mkdir -p "$(dirname "${generated_video_dir}/${file_sans_ext}")"
+      cp -f "${file}" "${generated_video_dir}/${file_sans_ext}.${resource_type}"
+      ;;
+
     clojure | cpp | sh)
       cat >> "${tmp_makefile}" << EOF
 ${generated_html_dir}/${file_sans_ext}.html:
