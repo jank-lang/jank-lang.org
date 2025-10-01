@@ -1,5 +1,5 @@
 Title: The jank community has stepped up!
-Date: Sep 28, 2025
+Date: Oct 01, 2025
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: Clojure, LLVM, and C++ walk into a bar. jank is born. Don't think about it too much.
