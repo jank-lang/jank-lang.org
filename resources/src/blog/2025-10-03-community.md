@@ -74,7 +74,7 @@ demonstrated a video showing interactive GUI dev in an OpenGL window, right from
 Emacs. I've included that video below.
 
 <p align="center">
-  <video controls src="/video/blog/2025-09-27-community/nrepl+imgui.mp4" type="video/mp4"></video>
+  <video controls src="/video/blog/2025-10-03-community/nrepl+imgui.mp4" type="video/mp4"></video>
 </p>
 
 We can definitely make a flashier demo, but this is hot off the press, in
