@@ -40,6 +40,7 @@ mkShell
     jank-generate-resources resources/src
     lein trampoline run build
     rsync -ra resources/generated/img/ build/img/
+    rsync -ra resources/generated/video/ build/video/
     jank-optimize-resources build
   }
   export -f jank-build
