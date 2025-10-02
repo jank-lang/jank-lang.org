@@ -84,8 +84,8 @@ pre-alpha jank. Yet people are making it work!
 The community has also been helping with some smaller C++ interop changes. [Chris Badahdah](https://github.com/djblue)
 has been helping us port the rest of jank's `clojure.core` to use C++ interop
 wherever possible. He's also implemented `#cpp` for string literals, which
-provides a C string rather thank a jank object. This alleviates the need for casting
-or other heavier implicit conversions for jank to do. Let's compare a couple
+provides a C string rather than a jank object. This alleviates the need for casting
+or other heavier implicit conversions which jank can do. Let's compare a couple
 examples.
 
 ```clojure
@@ -98,7 +98,7 @@ argument. When we pass `"USER"`, we're passing a jank object which is a
 `persistent_string`. During analysis, jank will see that the function
 expects a `char const*` and will generate code to use a builtin conversion from
 jank object to `char const*`, which involves checking if the object is a
-`persistent_string` and then pulling out the underlying data. The IR for this
+`persistent_string` and then pulling out the underlying data. The optimized IR for this
 looks like so:
 
 ```llvm
@@ -123,7 +123,8 @@ conversion and use the C string directly.
   )
 ```
 
-The IR is now much more efficient.
+The IR is now much more efficient and there's no need to allocate the `"USER"`
+jank object.
 
 ```llvm
 define ptr @clojure_core_let_24072_0(ptr %this) {
@@ -135,6 +136,11 @@ entry:
   ret ptr %1
 }
 ```
+
+The `#cpp` prefix for strings operates not only as an optimization, but also as
+an explicit type hint, which can allow you to easily select the correct C++
+overload you want. The jank compiler will know that `#cpp "USER"` has the type
+`char const[5]` (the last byte is a null terminator) and it will act accordingly.
 
 We'll be adding `#cpp` support for numbers as well, so we can avoid conversions
 and just put the literals right into the IR when possible. Ideally, going
@@ -193,16 +199,16 @@ EOF
 jeaye
 ```
 
-This is perhaps the most overkill `whoami` you've ever seen. Not only does it
-call `getenv`, but it also links in the entire jank compiler/runtime, as well as
+This is perhaps the most overkill `whoami` you've ever seen. On top of calling
+`getenv`, it also links in the entire jank compiler/runtime, as well as
 Clang/LLVM. This is because the program still has full interactive capabilities,
 so you can still REPL into it, redefine anything, and grow it by adding more
 code on the fly. This is basically the same as a Clojure uberjar.
 
 Going forward, jank will also support the option to build AOT binaries without
 all of that interactive functionality. Those binaries will be much lighter and
-they won't depend on jank or Clang/LLVM for distribution. This approach would
-basically be the same as a Graal native image.
+they won't depend on jank or Clang/LLVM for distribution. This approach will
+basically be the same as a Graal native image, but even lighter.
 
 ### AUR packages: `jank-git` and `jank-bin`
 [Flinner Yuu](https://github.com/Flinner) has authored AUR packages for jank, so users can now either
@@ -222,20 +228,20 @@ enabling our cache. You can find the details
 ### clojure-test-suite
 As part of testing jank, we have been writing a suite of unit tests for
 `clojure.core`, `clojure.string`, and so on. Thanks to recent work by [David Miller](https://github.com/dmiller) (Clojure CLR)
-and [borkdude](https://github.com/borkdude) (bb), this test suite is continuously
+and [borkdude](https://github.com/borkdude) (bb), this test suite is now continuously
 testing Clojure JVM, ClojureScript, Clojure CLR, and babashka.
 
 On top of that, [Dave Liepmann](https://github.com/daveliepmann) and
 [Emma Griffin](https://github.com/E-A-Griffin), among others, have been chipping away at filling in
-the test suite. We need more help on this! Anyone who knows Clojure can help,
-just check out the guide
+the test suite. We need more help on this, since we're only 27% done! Anyone who
+knows Clojure can help, just check out the guide
 [here](https://github.com/jank-lang/clojure-test-suite/issues/1).
 
-## Next month
+## What's next?
 There's plenty more work to do for smoothing out the C++ interop, but I will
 also be implementing C++ destructor support for local values, adding a binary
-Homebrew formula, fixing some GC issues jank has, and in general getting jank
-ready for the **alpha release in December**.
+Homebrew formula, fixing some GC issues jank has, improving LLVM IR generation, and
+in general getting jank ready for the **alpha release in December**.
 
 I hope that the jank community keeps up the incredible work of tackling
 everything else I can't get my hands on. The momentum gain recently has been
