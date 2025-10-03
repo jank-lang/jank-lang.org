@@ -3,7 +3,6 @@ Date: Oct 03, 2025
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: Clojure, LLVM, and C++ walk into a bar. jank is born. Don't think about it too much.
-Draft: true
 
 The past two months have been incredibly busy and the jank community has been
 playing and ever larger role in moving jank toward its alpha release. I want to
