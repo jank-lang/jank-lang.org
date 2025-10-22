@@ -19,3 +19,7 @@ To build and deploy, use the following.
 ```bash
 $ jank-deploy
 ```
+
+# Reporting issues
+If you run into any issues with this website, please report them on the main
+jank repo here: https://github.com/jank-lang/jank
