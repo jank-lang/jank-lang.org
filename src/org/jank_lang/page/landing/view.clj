@@ -209,7 +209,7 @@
                                  and `merge-with` help create an index from genre to
                                  movie id with ease. No lenses are required for
                                  working with nested data.")]]
-       [:div {:class "column is-8"}
+       [:div {:class "column is-6 fluid-text-size-container"}
         (html->hiccup {} (util/slurp-html! "landing/example/movies.html"))]]
 
       [:div {:class "columns is-vcentered"}
@@ -221,7 +221,7 @@
                                  a powerful `loop` macro for more imperative-style
                                  loops while still being purely functional. Each `loop` has one or more
                                  corresponding `recur` usages which must be in tail position.")]]
-       [:div {:class "column is-8"}
+       [:div {:class "column is-6 fluid-text-size-container"}
         (html->hiccup {} (util/slurp-html! "landing/example/size-human-readable.html"))]]
 
       [:div {:class "columns is-vcentered"}
@@ -232,7 +232,7 @@
          (util/markdown->hiccup "jank's strings, as well as most of its other data structures, are
                                  immutable. However, jank provides such powerful tools for working
                                  with data that mutability is very rarely a concern.")]]
-       [:div {:class "column is-8"}
+       [:div {:class "column is-6 fluid-text-size-container"}
         (html->hiccup {} (util/slurp-html! "landing/example/truncate-string.html"))]]
 
       [:div {:class "columns is-vcentered"}
@@ -245,5 +245,5 @@
                                  contain different values. `with-redefs` redefines a var within its
                                  body's scope, which is very useful for removing side effects from
                                  test cases or forcing functions to return specific values.")]]
-       [:div {:class "column is-8"}
+       [:div {:class "column is-6 fluid-text-size-container"}
         (html->hiccup {} (util/slurp-html! "landing/example/with-redefs.html"))]]]]]))
