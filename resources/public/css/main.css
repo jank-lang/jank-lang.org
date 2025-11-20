@@ -318,6 +318,14 @@ figcaption
   -webkit-transform: rotate(45deg);
 }
 
+.fluid-text-size-container {
+  container-type: inline-size;
+}
+
+.fluid-text-size-container pre {
+  font-size: clamp(0.5rem, 2.5cqi, 2rem) !important;
+}
+
 /* Custom font */
 @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
 @supports (font-variation-settings: normal) {
