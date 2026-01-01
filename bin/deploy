@@ -2,6 +2,7 @@
 
 set -xeuo pipefail
 
+git checkout -- package-lock.json
 git fetch
 git checkout gh-pages
 git merge origin/gh-pages
