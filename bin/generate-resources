@@ -58,7 +58,8 @@ ${tab}mkdir -p "$(dirname "${generated_img_dir}/${file_sans_ext}")"
 ${tab}${here}/plot "${file}" "${generated_img_dir}/${file_sans_ext}.svg" 2>/dev/null
 ${tab}# Optimizing generated SVGs readies them for viewing. Without this step,
 ${tab}# they won't render properly.
-${tab}#${here}/optimize-resources "${generated_img_dir}/${file_sans_ext}.svg"
+${tab}${here}/optimize-resources "${generated_img_dir}/${file_sans_ext}.svg"
+
 EOF
       ;;
 
@@ -78,6 +79,7 @@ ${generated_html_dir}/${file_sans_ext}.html:
 ${tab}echo "  Generating ${file_sans_ext}.html"
 ${tab}mkdir -p "$(dirname "${generated_html_dir}/${file_sans_ext}")"
 ${tab}${here}/highlight "${file}" "${resource_type}" > "${generated_html_dir}/${file_sans_ext}.html"
+
 EOF
       ;;
 
@@ -100,10 +102,11 @@ EOF
 function generate_all_target
 {
   local targets
-  targets="$(pcregrep -o1 '^(.*):$' "${1}")"
+  targets="$(pcregrep -o1 '^(.*):$' "${1}" | tr '\n' ' ')"
 
   cat >> "${tmp_makefile}" << EOF
-all: ${targets//$'\n'/' '}
+
+all: ${targets}
 ${tab}echo "Done!"
 .SILENT:
 .PHONY: all
@@ -118,7 +121,7 @@ function main
   local resource_files tmp_makefile cpus
   resource_files="$(find "$@" -type f)"
   tmp_makefile="$(mktemp)"
-  cpus=${CPUS:-$(nproc)}
+  cpus=${CPUS:-$(nproc || sysctl -n hw.logicalcpu)}
   for file in ${resource_files};
   do
     local base_file file_sans_ext ext resource_type
