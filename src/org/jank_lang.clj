@@ -8,7 +8,6 @@
             [ring.adapter.jetty :as jetty]
             [me.raynes.fs :as fs]
             [org.jank_lang.page.landing.view :as landing.view]
-            [org.jank_lang.page.progress.view :as progress.view]
             [org.jank_lang.page.blog.view :as blog.view]
             [org.jank-lang.util :as util])
   (:import [org.eclipse.jetty.server Server])
@@ -17,8 +16,6 @@
 (defroutes app-handler
   (GET "/" [] (fn [_]
                 (landing.view/root)))
-  (GET "/progress" [] (fn [_]
-                        (progress.view/root)))
   (GET "/blog" [] (fn [_]
                     (blog.view/root)))
   (GET "/blog/feed.xml" [] (fn [_]
@@ -56,7 +53,6 @@
   (binding [util/*building?* true]
     (let [output-dir "build"
           pages {"index.html" landing.view/root
-                 "progress/index.html" progress.view/root
                  "blog/index.html" blog.view/root
                  "blog/feed.xml" (comp :body blog.view/feed-root)}]
       (fs/delete-dir output-dir)

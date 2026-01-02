@@ -49,11 +49,6 @@
                                    ensure **clean and correct multi-threaded designs**.")]]
          [:div {:class "has-text-centered"}
           [:a {:class "button mt-6 ml-4"
-               :href "/progress"}
-           [:span {:class "icon"}
-            [:i {:class "gg-list"}]]
-           [:strong "Current progress"]]
-          [:a {:class "button mt-6 ml-4"
                :href "https://github.com/jank-lang/jank"}
            [:span {:class "icon"}
             [:i {:class "gg-git-fork"}]]

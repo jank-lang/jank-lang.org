@@ -69,8 +69,7 @@
        (page.view/header {:title "jank blog"
                           :title-url "/blog"
                           :primary? true
-                          :sponsor? true
-                          :progress? false})
+                          :sponsor? true})
        [:section {:class "section"}
         [:div {:class "container blog-container"}
          [:span {:class "is-size-1"}
@@ -101,8 +100,7 @@
        (page.view/header {:title "jank blog"
                           :title-url "/blog"
                           :primary? true
-                          :sponsor? true
-                          :progress? false})
+                          :sponsor? true})
        (into [:div {:class "container blog-container"}]
              (map (fn [md]
                     (when (or (empty? (metadata->str md :draft)) (not util/*building?*))

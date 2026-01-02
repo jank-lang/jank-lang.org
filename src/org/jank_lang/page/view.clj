@@ -46,12 +46,6 @@
                     :style "color: rgb(201, 97, 152);"}
              [:i {:class "gg-heart"}]]
             [:strong "Sponsor"]])
-         (when (:progress? props true)
-           [:a {:class (str "navbar-item " text-color)
-                :href "/progress"}
-            [:span {:class "icon mr-1"}
-             [:i {:class "gg-list"}]]
-            [:strong "Progress"]])
          [:a {:class (str "navbar-item " text-color)
               :href "https://github.com/jank-lang/jank"}
           [:span {:class "icon mr-1"}
