@@ -146,7 +146,7 @@ However, for some C/C++ APIs, unsafe casting is necessary. To accomplish this,
 jank now has `cpp/unsafe-cast`, which does the equivalent of a C-style cast.
 
 ```clojure
-(let [vga-memory (cpp/unsafe-cast uint16_t* #cpp 0xB8000)]
+(let [vga-memory (cpp/unsafe-cast (:* uint16_t) #cpp 0xB8000)]
   )
 ```
 
