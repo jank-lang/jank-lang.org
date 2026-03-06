@@ -4,7 +4,6 @@ Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: Learn about the jank alpha, LLVM bugs, nREPL support, the latest
              C++ interop enhancements, and what's upcoming for jank.
-Draft: true
 
 Hey folks! We're two months into the year and I'd like to cover all of the
 progress that's been made on jank so far. Before I do that, I want to say thank you to
