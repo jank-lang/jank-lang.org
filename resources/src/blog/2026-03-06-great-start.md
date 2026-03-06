@@ -27,6 +27,9 @@ My goals for this book include:
 5. Show how to troubleshoot jank and its programs, as well as where to get help
 6. Provide a reference for error messages
 
+As the name and technology choice implies, the jank book is heavily inspired by
+the [Rust book](https://doc.rust-lang.org/stable/book/).
+
 ## Alpha status
 jank's switch to alpha in January was quiet. There were a few announcements made
 by others, who saw the commits come through, or who found the jank book before I
@@ -40,9 +43,9 @@ test suite.
 
 ## LLVM 22
 On the tail of the garbage collection marathon, the eagerly awaited LLVM 22
-release happened. We have been waiting for LLVM 22 to ship for several months,
-since it will be the first LLVM version which will have all of jank's required
-changes upstreamed. The goal is that this would allow us to stop vendoring our
+release happened. We had been waiting for LLVM 22 to ship for several months,
+since it would be the first LLVM version which would have all of jank's required
+changes upstreamed. The goal was that this would allow us to stop vendoring our
 own Clang/LLVM with jank and instead rely on getting it from package managers.
 This would make jank easier to distribute and, crucially, make jank-compiled AOT
 programs easier to distribute. You can likely tell from my wording that this
@@ -73,7 +76,7 @@ That's a tough pill to swallow, so I took a week or so to
 [rework](https://github.com/jank-lang/jank/pull/702) the way we do
 codegen and JIT compilation. I've not only optimized our approach, but I've also
 specifically crafted our codegen to avoid these slower parts of LLVM. This
-brings us not only back to previous speeds, it makes jank faster than it was
+not only brings us back to previous speeds, it makes jank faster than it was
 before. Once LLVM 23 lands, the fixes for those issues will optimize things
 further.
 
@@ -100,8 +103,8 @@ beautiful. Here's a quote from an early jank nREPL adopter, Matthew Perry:
 > debuggers that it feels disorienting (in a good way!)
 
 A huge shout out to Kyle Cesare, who originally wrote jank's nREPL server back
-in August 2025. Thank you for your pioneering! There's still so much to explore
-in this space, so if you're interested, jump on in.
+in August 2025. Thank you for your pioneering! If you're interested in helping
+out in this space, there's still so much to explore, so jump on in.
 
 ## C++ interop improvements
 Most of my other work on jank has been related to improving C++ interop.
@@ -133,6 +136,9 @@ with C++ iterators, for example.
     (cpp/++ i)
     (recur (cpp/++ i))))]
 ```
+
+There's more work to be done to automatically use unboxed values and use native
+operators, when possible. For now it's opt-in only.
 
 ## Unsafe casting
 jank had the equivalent of C++'s `static_cast`, in the form of `cpp/cast`.
@@ -338,7 +344,10 @@ costs of C++'s runtime type information (RTTI). This is worthy of its own post
 entirely, which I will likely do once the transition is complete. For now, we
 have most of our code still using the old model while some of it is using the
 new model. This is great, though, since it allows us to port piece by piece
-while keeping everything in `main`.
+while keeping everything in `main`. The main outcome of opening up the object
+model is that jank users can define their own jank objects which integrate well
+into the system, can be stored within jank data structures, and used with jank
+functions.
 
 Finally, to better support nREPL, jank added support for `clojure.core/future`.
 This required an audit of all synchronization across the jank compiler and
