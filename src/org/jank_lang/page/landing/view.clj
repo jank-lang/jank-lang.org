@@ -12,7 +12,7 @@
    {:title "jank programming language - Clojure/LLVM/C++"
     :description "jank is a Clojure dialect on LLVM with a native runtime and C++ interop."}
    [:div {}
-    (page.view/header {})
+    (page.view/header {:home? false})
 
     [:section {:class "hero"}
      [:div {:class "hero-body"}

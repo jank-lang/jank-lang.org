@@ -51,17 +51,17 @@
           [:span {:class "icon mr-1"}
            [:i {:class "gg-git-fork"}]]
           [:strong "Github"]]
-         #_[:a {:class (str "navbar-item " text-color)
-                :href "#"}
-            [:span {:class "icon mr-1"}
-             [:i {:class "gg-info"}]]
-            "User Manual"]
          [:a {:class (str "navbar-item " text-color)
               :href "https://clojurians.slack.com/archives/C03SRH97FDK"}
           [:span {:class "icon mr-1"}
            [:i {:class "gg-slack"}]]
           "Slack"]
          [:a {:class (str "navbar-item " text-color)
+              :href "https://discord.gg/7sSMfKDBU3"}
+          [:span {:class "icon mr-1"}
+           [:i {:class "gg-discord"}]]
+          "Discord"]
+         #_[:a {:class (str "navbar-item " text-color)
               :href "https://twitter.com/jeayewilkerson"}
           [:span {:class "icon mr-1"}
            [:i {:class "gg-twitter"}]]
