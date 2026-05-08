@@ -186,6 +186,11 @@ pre.shiki code
     max-width: 100%;
     margin: 0 auto !important;
   }
+  .small-figure {
+    width: 50vw;
+    max-width: 100%;
+    margin: 0 auto !important;
+  }
   .wide-figure {
     width: 100%;
     max-width: 100%;
@@ -205,6 +210,11 @@ pre.shiki code
   .figure
   {
     max-width: 66%;
+    margin: 0 auto !important;
+  }
+  .small-figure {
+    width: 25vw;
+    max-width: 100%;
     margin: 0 auto !important;
   }
   .wide-figure

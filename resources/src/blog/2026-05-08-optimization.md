@@ -271,11 +271,9 @@ initial numbers.
 jank clocks in at 5,522 milliseconds. That's... not fast. Not compared to the
 JVM's 200 milliseconds.
 
-<div class="figure">
+<div class="small-figure">
   <figure>
-    <object type="image/svg+xml" data="/img/blog/2026-05-08-optimization/jank-1.plot.svg">
-      <img src="/img/blog/2026-05-08-optimization/jank-1.plot.svg"></img>
-    </object>
+    <img src="/img/blog/2026-05-08-optimization/jank-1.plot.svg"></img>
   </figure>
 </div>
 
@@ -331,11 +329,9 @@ After adding inline support to jank's analyzer and updating the metadata for all
 arithmetic functions, we can check our new benchmark results. This drops us from 
 5,522 milliseconds to 2,309 milliseconds. It's nice to start with a huge win.
 
-<div class="figure">
+<div class="small-figure">
   <figure>
-    <object type="image/svg+xml" data="/img/blog/2026-05-08-optimization/jank-2.plot.svg">
-      <img src="/img/blog/2026-05-08-optimization/jank-2.plot.svg"></img>
-    </object>
+    <img src="/img/blog/2026-05-08-optimization/jank-2.plot.svg"></img>
   </figure>
 </div>
 
@@ -440,11 +436,9 @@ any extraneous instructions in it, though.
                 {:name v15 :op :ret :value v14 :type "jank::runtime::object_ref"}]}
 ```
 
-<div class="figure">
+<div class="small-figure">
   <figure>
-    <object type="image/svg+xml" data="/img/blog/2026-05-08-optimization/jank-3.plot.svg">
-      <img src="/img/blog/2026-05-08-optimization/jank-3.plot.svg"></img>
-    </object>
+    <img src="/img/blog/2026-05-08-optimization/jank-3.plot.svg"></img>
   </figure>
 </div>
 
@@ -489,11 +483,9 @@ instead of a function.
 
 This brings us from 2,247 milliseconds to 1,400 milliseconds!
 
-<div class="figure">
+<div class="small-figure">
   <figure>
-    <object type="image/svg+xml" data="/img/blog/2026-05-08-optimization/jank-4.plot.svg">
-      <img src="/img/blog/2026-05-08-optimization/jank-4.plot.svg"></img>
-    </object>
+    <img src="/img/blog/2026-05-08-optimization/jank-4.plot.svg"></img>
   </figure>
 </div>
 
@@ -586,11 +578,9 @@ milliseconds to 282 milliseconds. As I said, we were basically spending all of
 our time allocating integers. Even better, this puts us within reach of Clojure's
 200 milliseconds.
 
-<div class="figure">
+<div class="small-figure">
   <figure>
-    <object type="image/svg+xml" data="/img/blog/2026-05-08-optimization/jank-5.plot.svg">
-      <img src="/img/blog/2026-05-08-optimization/jank-5.plot.svg"></img>
-    </object>
+    <img src="/img/blog/2026-05-08-optimization/jank-5.plot.svg"></img>
   </figure>
 </div>
 
@@ -627,11 +617,9 @@ relief, this drops jank from 282 milliseconds to 114 milliseconds. We're nearly
 twice as fast as Clojure JVM! Better yet, we're gone from taking 5,522
 milliseconds to taking 114 milliseconds and we're effectively doing the same work.
 
-<div class="figure">
+<div class="small-figure">
   <figure>
-    <object type="image/svg+xml" data="/img/blog/2026-05-08-optimization/jank-6.plot.svg">
-      <img src="/img/blog/2026-05-08-optimization/jank-6.plot.svg"></img>
-    </object>
+    <img src="/img/blog/2026-05-08-optimization/jank-6.plot.svg"></img>
   </figure>
 </div>
 
