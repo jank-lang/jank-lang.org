@@ -221,7 +221,7 @@ Note that all numbers in this post are measured on my five year old x86_64
 desktop with an AMD Ryzen Threadripper 2950X on NixOS with OpenJDK 21. When I
 say "JVM" in this post, I mean OpenJDK 21.
 
-```bash
+```clojure
 ❯ clojure -Sdeps '{:deps {criterium/criterium {:mvn/version "0.4.6"}}}'
 Clojure 1.12.4
 user=> (require '[criterium.core :refer [quick-bench]])
