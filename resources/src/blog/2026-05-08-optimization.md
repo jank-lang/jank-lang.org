@@ -4,7 +4,6 @@ Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: The jank compiler has a new super power. With that, we push
              jank to the limits to see who has the fastest fibonacci in the west.
-Draft: true
 
 Good news, everyone! jank has a new custom intermediate representation (IR) and we're
 using it to optimize jank to compete with the JVM. We'll dive into more of that
