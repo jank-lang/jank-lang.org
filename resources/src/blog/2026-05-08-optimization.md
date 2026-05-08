@@ -642,7 +642,10 @@ figuring out how to not do everything else.
 One benchmark down, many more to go. Next, I will be revisiting a ray tracer I
 wrote in Clojure a couple of years ago and we will utilize our new IR and
 optimized runtime to see how fast we can push jank. This post, and this first
-benchmark, is just the start.
+benchmark, is just the start. I will be spending the next couple of months
+tackling more and more benchmarks, of varying sizes, to ensure jank is
+reasonably fast in every practical sense. This is all building up to jank's beta
+release.
 
 ## A note about the JVM versus native
 Many folks who use jank for the first time end up saying something along the
@@ -661,16 +664,17 @@ In the native world, we don't currently have JIT optimization. It could exist,
 but LLVM doesn't have any implementation for it and neither does any major C or
 C++ compiler. Furthermore, the entire native ecosystem is not designed for it,
 whereas it's truly taken for granted in the JVM space. This means that JVM
-programs get faster and faster, the more you use them. However, if jank is faster than
-Clojure, **it's because it started that fast and stayed that fast**.
+programs get faster and faster, the more you use them, up to a certain point.
+However, if jank is faster than Clojure, **it's because it started that fast and
+stayed that fast**.
 
 Finally, just because jank is written in C++ doesn't mean that we can escape
 Clojure's semantics. Clojure is dynamically typed, garbage collected, and
-polymorphic as all get out. Regardless of the language used for the runtime, all
-of these semantics need to be preserved for a true Clojure dialect. If we were
-to rewrite this benchmark in actual idiomatic C++, there would be no contest
-between it and Clojure. C++ would just win, since it's statically typed, uses
-primitive arithmetic, has almost no runtime, and Clang, in particular, has
+polymorphic as all get out. Regardless of the language used for the compiler and
+runtime, all of these semantics need to be preserved for a true Clojure dialect.
+If we were to rewrite this benchmark in actual idiomatic C++, there would be no
+contest between it and Clojure. C++ would just win, since it's statically typed,
+uses primitive arithmetic, has almost no runtime, and Clang, in particular, has
 world-class AOT optimization. This applies even if you type-hint the Clojure
 code. Try it, if you don't believe me. I did, when writing this. :)
 
