@@ -665,8 +665,7 @@ but LLVM doesn't have any implementation for it and neither does any major C or
 C++ compiler. Furthermore, the entire native ecosystem is not designed for it,
 whereas it's truly taken for granted in the JVM space. This means that JVM
 programs get faster and faster, the more you use them, up to a certain point.
-However, if jank is faster than Clojure, **it's because it started that fast and
-stayed that fast**.
+However, if jank is faster than Clojure, **it's because it started that fast and stayed that fast**.
 
 Finally, just because jank is written in C++ doesn't mean that we can escape
 Clojure's semantics. Clojure is dynamically typed, garbage collected, and
