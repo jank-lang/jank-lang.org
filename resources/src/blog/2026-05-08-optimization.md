@@ -142,10 +142,10 @@ user_greet_19_1(jank::runtime::object_ref const greet, jank::runtime::object_ref
 }
 ```
 
-If you compare the C++ to the IR, you can immediately see that correlation. The
+If you compare the C++ to the IR, you can immediately see the correlation. The
 C++ variables are named to match the IR variables. A var dereference just
 becomes a call to `->deref()` on the var. A dynamic call just becomes a
-`jank::runtime::dynamic_call`.
+`jank::runtime::dynamic_call`. This is intentional.
 
 ## Optimizing the IR
 It took about six weeks to design and implement the IR, including reworking our
@@ -209,6 +209,9 @@ covers some essential aspects of the compiler and runtime.
 4. **In general, the ability for the language runtime to get out of the way.**
    If we're trying to calculate fibonacci numbers, we don't want anything
    showing up in the profiler which is unrelated to fibonacci numbers.
+
+As we optimize, throughout this post, consider these four categories and how
+each optimization we do can be categorized.
 
 ### Baseline fibonacci timing
 We're going to use Clojure JVM to get our baseline benchmark numbers and then
@@ -311,7 +314,8 @@ Here, we have `clojure.core/max`, which defines some metadata containing two
 keys: `:inline` and `:inline-arities`. The latter is a set of arities to
 inline. Here, we only care about the `[l r]` arity. The value of `:inline` is
 an actual function to call to get the body for that arity. In the case of `max`,
-we just want to inline a C++ call to `jank::runtime::max`.
+we just want to inline a C++ call to `jank::runtime::max`. Later on, we'll tell
+Clang to even inline that call.
 
 The inlining is done during analysis, rather than in an IR pass. When we
 find a function call through a var, we check the var's metadata and call the
@@ -367,7 +371,7 @@ jank compiler sees the code.
                                        {:name v17 :op :ret :value v16 :type "jank::runtime::object_ref"}]}]}]}
 ```
 
-So we have three blocks in our function. We start at the `entry` block, we grab
+So we have three blocks in our function. We start at the `entry` block. We grab
 our parameter `n` and the literal `1` and we do our `<=` check, which has been
 inlined as a `cpp/call` instruction which returns `bool`.
 
@@ -390,9 +394,9 @@ This can be optimized away, since the result of our `<=` check (`v4`) was alread
 `bool`. We turned it into an object just so we can turn it back into a `bool`.
 Ideally, the branch condition can just be `v4` instead.
 
-Before that, let's finish examining our IR. We either branch to `if0`, which just returns our
-result, or to `else`, which then needs to do the recursion. Our `else` branch
-happens in three steps.
+Before optimizing that, let's finish examining our IR. We either branch to
+`if0`, which just returns our result, or to `else1`, which then needs to do the
+recursion. Our `else1` branch happens in three steps.
 
 ```clojure
 ; 1. Recur with `(- n 1)`.
@@ -410,11 +414,13 @@ happens in three steps.
 {:name v17 :op :ret :value v16 :type "jank::runtime::object_ref"}
 ```
 
-So let's eliminate those extra `:cpp/into-object` and `:truthy` instructions and
-add support to our IR generation for just using `bool` values directly. The
-results are that we drop from 2,309 milliseconds to 2,247 milliseconds. That's
-quite marginal, given our overall magnitude. It's nice that the IR no longer has
-any extraneous instructions in it, though.
+That's everything! So let's eliminate those extra `:cpp/into-object` and
+`:truthy` instructions and add support to our IR generation for just using
+`bool` values directly. The results are that we drop from 2,309 milliseconds to
+2,247 milliseconds. That's quite marginal, given our overall magnitude. It's
+nice that the IR no longer has any extraneous work in it, though. We could
+lift those two `:literal` instructions for `1` so there's just one of them, but
+that's not going to affect our performance, so I'll leave it for now.
 
 ```clojure
 {:name entry
