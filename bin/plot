@@ -44,7 +44,7 @@
                   :or {min 0}}]
   (let [bar-width 40
         bar-max (apply max (map :value (mapcat :values groups)))
-        y-axis-guides [{:value (int (Math/ceil bar-max))
+        y-axis-guides [{:value (int bar-max)
                         :axis :top}
                        {:value (int (+ min (/ (- bar-max min) 2)))
                         :axis :center}
@@ -106,7 +106,7 @@
                      [:rect {:fill color} :_ [bar-width bar-width]]
                      (text {:text label})])
                   colors)]
-            ; Extra padding to the right of the legend; for some reason, with this,
+            ; Extra padding to the right of the legend; for some reason, without this,
             ; the last character of the legend text can be cut off. Maybe due to the different
             ; font used.
             [:dali/ghost {} :_ [10 1]]]])))

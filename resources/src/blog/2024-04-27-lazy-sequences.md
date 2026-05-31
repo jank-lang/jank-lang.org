@@ -190,7 +190,7 @@ feedback on my success here would also be welcome. The static site itself is
 built in Clojure!
 
 ## Would you like to join in?
-1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
+1. Join the community on [Slack](https://clojurians.net)
 2. Join the design discussions or pick up a ticket on [GitHub](https://github.com/jank-lang/jank)
 3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye) <span class="icon" style="color: rgb(201, 97, 152);"> <i class="gg-heart"></i></span>
 4. **Hire me full-time to work on jank!**

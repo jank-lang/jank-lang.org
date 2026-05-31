@@ -472,7 +472,7 @@ it did before.
 
 ## Wrapping up
 That was quite the tour of Clojure's error reporting! I think we've clearly
-identified several ways Clojure can improved. We've also highlighted a couple of
+identified several ways Clojure can be improved. We've also highlighted a couple of
 areas where jank is still lacking. I want jank to be world-class and I'll keep
 addressing each of these weaker areas as they're identified. When I started this
 quarter, I knew I'd be able to match Clojure, but I didn't think I'd be able to
@@ -488,7 +488,7 @@ with C++, from a lisp, will be unprecedented. Hang tight for some more updates
 in the coming weeks!
 
 ## Would you like to help out?
-1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
+1. Join the community on [Slack](https://clojurians.net)
 2. Join the design discussions or pick up a ticket on [GitHub](https://github.com/jank-lang/jank)
 3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye) <span class="icon mr-1" style="color: rgb(201, 97, 152);"> <i class="gg-heart"></i></span>
 4. **Better yet, reach out to discuss corporate sponsorship!**

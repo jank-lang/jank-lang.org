@@ -286,7 +286,7 @@ rest of the year will be spent on bug fixes, tooling, and documentation. After
 that, we'll have the alpha launch!
 
 ## Would you like to help out?
-1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
+1. Join the community on [Slack](https://clojurians.net)
 2. Join the design discussions or pick up a ticket on [GitHub](https://github.com/jank-lang/jank)
 3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye) <span class="icon mr-1" style="color: rgb(201, 97, 152);"> <i class="gg-heart"></i></span>
 4. **Better yet, reach out to discuss corporate sponsorship!**

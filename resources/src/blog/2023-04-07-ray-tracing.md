@@ -674,6 +674,6 @@ the culture of stability which Clojure has. Future posts will also be focusing
 on these metrics.
 
 ## Would you like to join in?
-1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
+1. Join the community on [Slack](https://clojurians.net)
 2. Join the design discussions on [GitHub](https://github.com/jank-lang/jank/discussions)
 3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye)

@@ -6,7 +6,7 @@ Description: A new development update for the jank programming language.
 
 
 I was previously giving updates only in the
-[#jank](https://clojurians.slack.com/archives/C03SRH97FDK) Slack channel, but
+[#jank](https://clojurians.net) Slack channel, but
 some of these are getting large enough to warrant more prose. Thus, happily, I
 can announce that jank has a new blog and I have a _lot_ of new progress to
 report! Let's get into the details.
@@ -137,6 +137,6 @@ analogous abstractions for functionality like `clojure.lang.Associative`, as wel
 implementing fns like `assoc`, `map`, `filter`, `reduce`, etc.
 
 ## Would you like to join in?
-1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
+1. Join the community on [Slack](https://clojurians.net)
 2. Join the design discussions on [Github](https://github.com/jank-lang/jank/discussions)
 3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye)

@@ -600,6 +600,6 @@ than Clojure for anything but this micro benchmark.
 That is, until I make larger benchmarks and spend weeks optimizing those.
 
 ## Would you like to join in?
-1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
+1. Join the community on [Slack](https://clojurians.net)
 2. Join the design discussions on [Github](https://github.com/jank-lang/jank/discussions)
 3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye)

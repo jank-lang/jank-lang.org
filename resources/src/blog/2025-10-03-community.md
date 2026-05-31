@@ -60,7 +60,7 @@ improvements to the code. These months have unsurprisingly been the most active
 for support requests, questions, and suggestions.
 
 ### nREPL server + imgui wrapper
-[Kyle Cesare](https://github.com/kylc) dropped a few surprises into jank's [Slack channel](https://clojurians.slack.com/archives/C03SRH97FDK)
+[Kyle Cesare](https://github.com/kylc) dropped a few surprises into jank's [Slack channel](https://clojurians.net)
 recently. Firstly, he demonstrated using jank with glfw, OpenGL, and imgui, as
 shown [here](https://github.com/kylc/jank-imgui). This was impressive, to say
 the least, and it was the first time someone had really used jank's C++ interop
@@ -247,7 +247,7 @@ everything else I can't get my hands on. The momentum gain recently has been
 amazing and I'm so appreciative of all the help.
 
 ## Would you like to join in?
-1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK)
+1. Join the community on [Slack](https://clojurians.net)
 2. Join the design discussions or pick up a ticket on [GitHub](https://github.com/jank-lang/jank)
 3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye) <span class="icon mr-1" style="color: rgb(201, 97, 152);"> <i class="gg-heart"></i></span>
 4. **Hire me full-time to work on jank!**

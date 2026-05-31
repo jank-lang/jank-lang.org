@@ -678,7 +678,7 @@ world-class AOT optimization. This applies even if you type-hint the Clojure
 code. Try it, if you don't believe me. I did, when writing this. :)
 
 ## Would you like to join in?
-1. Join the community on [Slack](https://clojurians.slack.com/archives/C03SRH97FDK) or [Discord](https://discord.gg/7sSMfKDBU3)
+1. Join the community on [Slack](https://clojurians.net) or [Discord](https://discord.gg/7sSMfKDBU3)
 2. Join the design discussions or pick up a ticket on [GitHub](https://github.com/jank-lang/jank)
 3. Considering becoming a [Sponsor](https://github.com/sponsors/jeaye) <span class="icon mr-1" style="color: rgb(201, 97, 152);"> <i class="gg-heart"></i></span>
 4. **Hire me full-time to work on jank!**
