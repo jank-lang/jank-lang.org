@@ -9,7 +9,7 @@ rect { stroke: none; }
 <g transform="translate(10.962 10)" data-dali-layout-tag="distribute">
 <g data-dali-layout-tag="align">
 <rect width="20" height="100" fill="none"/>
-<text transform="translate(0 14.844)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">65</text>
+<text transform="translate(0 14.844)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">64</text>
 </g>
 <g transform="translate(0 100)" data-dali-layout-tag="align">
 <rect width="20" height="100" fill="none"/>

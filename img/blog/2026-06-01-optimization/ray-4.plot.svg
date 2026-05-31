@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="427.54" height="350" style="background:white" preserveAspectRatio="xMinYMin meet" version="1.2" xmlns="http://www.w3.org/2000/svg">
+<svg width="448.77" height="350" style="background:white" preserveAspectRatio="xMinYMin meet" version="1.2" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <style type="text/css"><![CDATA[@font-face{ font-family: 'Comfortaa'; font-style: normal; font-weight: 400; src: url('https://fonts.gstatic.com/s/comfortaa/v40/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMDrMfJQ.ttf') format('truetype'); }
 rect { stroke: none; }
 .bar:hover { filter: brightness(115%); }
 ]]></style>
 </defs>
-<g transform="translate(11.401 10)" data-dali-layout-tag="distribute">
+<g transform="translate(10 10)" data-dali-layout-tag="distribute">
 <g data-dali-layout-tag="align">
 <rect width="20" height="100" fill="none"/>
-<text transform="translate(0 14.844)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">69</text>
+<text transform="translate(0 14.844)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">3</text>
 </g>
 <g transform="translate(0 100)" data-dali-layout-tag="align">
 <rect width="20" height="100" fill="none"/>
-<text transform="translate(-2.9248 57.279)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">34</text>
+<text transform="translate(3.4603 57.292)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">1</text>
 </g>
 <g transform="translate(0 200)" data-dali-layout-tag="align">
 <rect width="20" height="100" fill="none"/>
@@ -22,18 +22,18 @@ rect { stroke: none; }
 </g>
 <g data-dali-layout-tag="align">
 <rect x="10" y="320" width="20" height="20" fill="none"/>
-<text transform="translate(4.9072 335.46)" fill="rgba(0, 0, 0, 0.7)" font-family="Comfortaa" font-size="20" font-style="italic">ms</text>
+<text transform="translate(14.886 335.46)" fill="rgba(0, 0, 0, 0.7)" font-family="Comfortaa" font-size="20" font-style="italic">s</text>
 </g>
 <g transform="translate(50 320)" data-dali-layout-tag="stack">
 <g data-dali-layout-tag="stack">
 <g data-dali-layout-tag="align">
 <rect width="120" height="20" fill="none"/>
-<text transform="translate(2.6302 15.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">Ray tracing</text>
+<text transform="translate(43.231 13.522)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">ray</text>
 </g>
-<g transform="translate(0 -310)" data-dali-layout-tag="stack">
-<rect class="bar" width="40" height="300" fill="#f8803f"/>
-<rect class="bar" transform="translate(40 1.9009)" width="40" height="298.1" fill="#c96198"/>
-<rect class="bar" transform="translate(80 140.32)" width="40" height="159.68" fill="#819aff"/>
+<g transform="translate(0 -261.32)" data-dali-layout-tag="stack">
+<rect class="bar" width="40" height="251.32" fill="#f8803f"/>
+<rect class="bar" transform="translate(40 -48.675)" width="40" height="300" fill="#c96198"/>
+<rect class="bar" transform="translate(80 15.894)" width="40" height="235.43" fill="#819aff"/>
 </g>
 </g>
 </g>
@@ -46,11 +46,11 @@ rect { stroke: none; }
 </g>
 <g transform="translate(0 60)" data-dali-layout-tag="stack">
 <rect width="40" height="40" fill="#c96198"/>
-<text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank before</text>
+<text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank previous</text>
 </g>
 <g transform="translate(0 120)" data-dali-layout-tag="stack">
 <rect width="40" height="40" fill="#819aff"/>
-<text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank after</text>
+<text transform="translate(45.365 25.518)" fill="hsl(0, 0%, 21%)" font-family="Comfortaa" font-size="20">jank current</text>
 </g>
 </g>
 </g>
