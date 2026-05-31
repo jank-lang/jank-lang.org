@@ -72,7 +72,7 @@ time.
 **On the jank side, we start our benchmark time at 8.10 seconds.** That's
 roughly 3.2x slower than Clojure, to start with. I do look forward to starting
 on benchmarks and having jank already be faster than Clojure, but we're not
-quite there yet. Here's a chart. Did you know [these are written in Clojure?](https://github.com/jank-lang/jank-lang.org/blob/TODO/resources/src/blog/2026-06-01-optimization/ray-1.plot.clj)
+quite there yet. Here's a chart. Did you know [these are written in Clojure?](https://github.com/jank-lang/jank-lang.org/blob/c15e3123b6ce741c68c22bd6a4b02d9cc38e0e72/resources/src/blog/2026-06-01-optimization/ray-1.plot.clj)
 
 <div class="small-figure">
   <figure>
