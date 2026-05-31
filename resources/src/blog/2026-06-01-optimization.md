@@ -4,6 +4,7 @@ Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
 Description: Pew! Pew! jank is getting faster and faster. Check out the new ray
              tracing optimization adventure!
+Image: https://jank-lang.org/img/blog/2026-06-01-optimization/ray.png
 Draft: true
 
 I've continued my optimization work through May and today I'll be reporting the
