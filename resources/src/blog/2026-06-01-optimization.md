@@ -33,7 +33,10 @@ up the visuals a bit. Here's the image we're going to be building.
 ### The code
 You can find the full ray tracer source code
 [here](https://gist.github.com/jeaye/6312e8f951c9564866a246fdd4dca835). Note
-that Clojure JVM and jank are using the same source file.
+that Clojure JVM and jank are using the same source file. This particular ray
+tracing code is not optimized to be fast. It's written to just be naíve Clojure
+code, as though we had no care in the world. What we're optimizing is how well
+jank can handle this code, compared to Clojure.
 
 The main thing to keep in mind, for the ray tracer, is that we generate a
 "scene" of spheres, each with a particular material. We then cast a bunch of
