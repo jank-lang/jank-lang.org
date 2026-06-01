@@ -62,7 +62,7 @@ ray, and basically all math is done one the components of these rays and spheres
 
 ## Baseline numbers
 For this blog post, we're generating a 100x60 version of the above image. Using
-OpenJDK 21 (default on my distro), **Clojure JVM on my x86_64 Linux machine takes 2.53 seconds.**
+OpenJDK 21 (default on my distro), **Clojure 1.12.4 on my x86_64 Linux machine takes 2.53 seconds.**
 By using a relatively large image size here, and a longer benchmark, we're spending
 more time generating garbage and triggering more GC collections. Overall, this
 gives us a better impression of not only how quickly Clojure/jank can render this
