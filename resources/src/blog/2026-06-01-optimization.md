@@ -36,7 +36,8 @@ You can find the full ray tracer source code
 that Clojure JVM and jank are using the same source file. This particular ray
 tracing code is not optimized to be fast. It's written to just be naíve Clojure
 code, as though we had no care in the world. What we're optimizing is how well
-jank can handle this code, compared to Clojure.
+jank can handle this code, compared to Clojure. If someone wanted to write a CPU
+ray tracer in Clojure and have it be fast, the code would look quite different.
 
 The main thing to keep in mind, for the ray tracer, is that we generate a
 "scene" of spheres, each with a particular material. We then cast a bunch of
@@ -379,7 +380,7 @@ for implementing jank's nREPL server, in jank. More recently, he contributed two
 items which aid in my benchmarking work.
 
 Firstly, Kyle created a continuous benchmarking suite, which you can find
-[here](https://kylc.github.io/is-jank-fast-yet/). It's call is-jank-fast-yet.
+[here](https://kylc.github.io/is-jank-fast-yet/). It's called is-jank-fast-yet.
 You can see the progress there, from my recent benchmarking work. Just note that
 it may lag a bit behind jank, but it runs from `main` every night.
 
