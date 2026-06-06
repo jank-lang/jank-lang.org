@@ -23,6 +23,7 @@ table
   nav
   {
     background-color: var(--bulma-primary) !important;
+    color: white !important;
   }
   .navbar-menu
   {
