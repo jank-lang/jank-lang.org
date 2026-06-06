@@ -23,7 +23,10 @@ table
   nav
   {
     background-color: var(--bulma-primary) !important;
-    color: white !important;
+  }
+  .navbar-menu
+  {
+    background-color: var(--bulma-primary) !important;
   }
 
   body
@@ -35,6 +38,11 @@ table
 @media (prefers-color-scheme: dark)
 {
   nav
+  {
+    /*background-color: var(--bulma-background) !important;*/
+    background-color: #1a1818 !important;
+  }
+  .navbar-menu
   {
     /*background-color: var(--bulma-background) !important;*/
     background-color: #1a1818 !important;

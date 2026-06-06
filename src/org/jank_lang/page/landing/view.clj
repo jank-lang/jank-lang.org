@@ -16,9 +16,9 @@
 
     [:section {:class "hero"}
      [:div {:class "hero-body"}
-      [:div {:class "container py-6"}
+      [:div {:class "container"}
        [:div {:class "columns"}
-        [:div {:class "column mt-6 is-offset-2 is-8"}
+        [:div {:class "column is-offset-2 is-8"}
          [:p {:class "title"}
           "The jank programming language"]
          [:p {:class "content is-size-5"}

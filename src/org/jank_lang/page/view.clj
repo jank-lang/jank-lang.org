@@ -59,7 +59,8 @@
          [:a {:class (str "navbar-item " text-color)
               :href "https://discord.gg/7sSMfKDBU3"}
           [:span {:class "icon mr-1"}
-           [:i {:class "gg-discord"}]]
+           [:img {:src "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e3d7f4ef6498ac018f2c55_Symbol.svg"
+                  :style {:width "75%"}}]]
           "Discord"]
          #_[:a {:class (str "navbar-item " text-color)
               :href "https://twitter.com/jeayewilkerson"}
