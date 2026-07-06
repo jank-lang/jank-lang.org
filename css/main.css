@@ -1,8 +1,4 @@
 /* General */
-:root {
-  font-size: 1.25rem;
-}
-
 a
 {
   text-decoration: none !important;
@@ -28,6 +24,10 @@ table
   .navbar-menu
   {
     background-color: var(--bulma-primary) !important;
+  }
+  .navbar-item:hover
+  {
+    background-color: #272822 !important;
   }
 
   body
