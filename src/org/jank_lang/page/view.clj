@@ -32,7 +32,7 @@
                 :href "https://book.jank-lang.org/"}
             [:span {:class "icon mr-1"}
              [:i {:class "gg-file-document"}]]
-            [:strong "Documentation"]])
+            [:strong "Docs"]])
          (when (:blog? props true)
            [:a {:class (str "navbar-item " text-color)
                 :href "/blog"}

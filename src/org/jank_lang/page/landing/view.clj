@@ -88,7 +88,7 @@
 
       [:div {:class "columns is-vcentered"}
        [:div {:class "column is-5"}
-        [:h3 {:class "title"}
+        [:h3 {:class "title has-text-left"}
          "The native Clojure dialect with seamless C++ interop"]
         [:p {:class "content has-text-left"}
          [:b "jank is Clojure on top of C++. "]
