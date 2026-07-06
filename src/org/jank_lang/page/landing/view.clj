@@ -35,9 +35,9 @@
           "The jank programming language"]
          [:p {:class "content is-size-5"}
           [:p {:class "content is-size-5"}
-           (util/markdown->hiccup "jank is a unique dialect of both Clojure and C++. It bridges the gap between the functional programming world and the systems programming world. jank allows for interactive REPL-driven development and includes a full Clang-based C++ JIT compiler.")]
+           (util/markdown->hiccup "jank is a unique dialect of both **Clojure and C++**. It bridges the gap between the functional programming world and the systems programming world. jank allows for interactive REPL-driven development and includes a full Clang-based C++ JIT compiler.")]
           [:p {:class "content is-size-5"}
-           (util/markdown->hiccup "jank has world-class C++ interop, unlike any other language. Templates, virtual functions, exceptions, overload resolution, and RAII all work in jank just as in C++. No function, type, or value registration is required. Just include your headers and go!")]]
+           (util/markdown->hiccup "jank has **world-class C++ interop**, unlike any other language. Templates, virtual functions, exceptions, overload resolution, and RAII all work in jank just as in C++. No function, type, or value registration is required. Just include your headers and go!")]]
          [:div {:class "has-text-centered"}
           [:a {:class "button mt-6 ml-4"
                :href "https://book.jank-lang.org/"
@@ -209,7 +209,7 @@
        [:h3 {:class "subtitle"}
         "You've made it this far. Why not dive in?"]
        [:div {:class "has-text-centered"}
-        [:a {:class "button mt-4"
+        [:a {:class "button mt-4 mb-4"
              :href "https://book.jank-lang.org/"}
          [:span {:class "icon"}
           [:i {:class "gg-file-document"}]]
