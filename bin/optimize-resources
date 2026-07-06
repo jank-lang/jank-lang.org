@@ -77,11 +77,11 @@ do
       optimize_html "$file"
       continue
       ;;
-    css)
-      # TODO: JS
-      optimize_css "$file"
-      continue
-      ;;
+    #css)
+    #  # TODO: JS
+    #  optimize_css "$file"
+    #  continue
+    #  ;;
     # TODO: JSON
     *)
       ;;
