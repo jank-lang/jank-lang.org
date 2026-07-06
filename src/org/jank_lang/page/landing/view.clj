@@ -7,15 +7,27 @@
   (->> (util/html->hiccup html)
        (into [:div (util/merge-attrs {:class "content has-text-left"} props)])))
 
+; C++ interop
+;   boost file size example
+;   RAII
+;   DSL
+; Native build system
+; nrepl
+; aot compilation
+; embedding
+; clojure compatibility
+; performance
+; error reporting
+
 (defn root []
   (page.view/page-root
    {:title "jank programming language - Clojure/LLVM/C++"
-    :description "jank is a Clojure dialect on LLVM with a native runtime and C++ interop."}
+    :description "jank is the native Clojure dialect with seamless C++ interop."}
    [:div {}
     (page.view/header {:home? false})
 
     [:section {:class "hero"}
-     [:div {:class "hero-body"}
+     [:div {:class "hero-body pb-0"}
       [:div {:class "container"}
        [:div {:class "columns"}
         [:div {:class "column is-offset-2 is-8"}
@@ -23,42 +35,16 @@
           "The jank programming language"]
          [:p {:class "content is-size-5"}
           [:p {:class "content is-size-5"}
-           (util/markdown->hiccup "jank is a **general-purpose programming language**
-                                   which embraces the **interactive, value-oriented**
-                                   nature of Clojure as well as the desire for **native
-                                   compilation and minimal runtimes**. jank is **strongly
-                                   compatible with Clojure** and considers itself a dialect
-                                   of Clojure. Please note that jank is under heavy development;
-                                   assume all features are planned or incomplete.")]
-
+           (util/markdown->hiccup "jank is a unique dialect of both Clojure and C++. It bridges the gap between the functional programming world and the systems programming world. jank allows for interactive REPL-driven development and includes a full Clang-based C++ JIT compiler.")]
           [:p {:class "content is-size-5"}
-           (util/markdown->hiccup "Where jank differs from Clojure JVM is that its host
-                                   is C++ on top of an **LLVM-based JIT**. This allows jank
-                                   to offer the same benefits of **REPL-based
-                                   development** while being able to **seamlessly reach into
-                                   the native world** and compete seriously with JVM's performance.")]
-
-          [:p {:class "content is-size-5"}
-           (util/markdown->hiccup "Still, jank is a Clojure dialect and thus includes
-                                   its **code-as-data philosophy and powerful macro
-                                   system**. jank remains a functional-first language
-                                   which builds upon Clojure's rich set of
-                                   **persistent, immutable data structures**. When
-                                   mutability is needed, jank offers a software
-                                   transaction memory and reactive agent system to
-                                   ensure **clean and correct multi-threaded designs**.")]]
+           (util/markdown->hiccup "jank has world-class C++ interop, unlike any other language. Templates, virtual functions, exceptions, overload resolution, and RAII all work in jank just as in C++. No function, type, or value registration is required. Just include your headers and go!")]]
          [:div {:class "has-text-centered"}
           [:a {:class "button mt-6 ml-4"
-               :href "https://github.com/jank-lang/jank"}
+               :href "https://book.jank-lang.org/"
+               :target "_blank"}
            [:span {:class "icon"}
-            [:i {:class "gg-git-fork"}]]
-           [:strong "Github"]]
-          [:a {:class "button mt-6 ml-4"
-               :href "https://github.com/sponsors/jeaye"}
-           [:span {:class "icon"
-                   :style "color: rgb(201, 97, 152);"}
-            [:i {:class "gg-heart"}]]
-           [:strong "Sponsor"]]]]
+            [:i {:class "gg-file-document"}]]
+           [:strong "Read the jank book!"]]]]
         #_[:div {:class "column is-2"
                  :style {:margin "auto"}}
            [:div [:img {:src "https://img.shields.io/github/stars/jeaye/jank"
@@ -75,62 +61,18 @@
      [:div {:class "container has-text-centered"}
       [:div {:class "section-header mb-6"}
        [:h2 {:class "title"}
-        "Wide spectrum dynamics"]
+        "Unprecedented C++ interop"]
        [:h3 {:class "subtitle"}
-        "Enjoy both REPL iteration with JIT compilation and static AOT
-         compilation to native executables."]]
+        "jank completely blurs the line between Clojure and C++."]]
 
       [:div {:class "columns is-vcentered"}
-       [:div {:class "column is-6"}
-        [:span {:class "is-size-1"}
-         "01"]
+       [:div {:class "column is-5"}
         [:h3 {:class "title"}
-         "Iterate like you would with Clojure"]
+         "Include any C++ library"]
         [:p {:class "has-text-left"}
-         "Iterate in the REPL and build your program from the ground up without leaving your editor."]]
-       [:div {:class "column is-6"}
-        (html->hiccup {} (util/slurp-html! "landing/step-1.html"))]]
-
-      [:div {:class "columns is-vcentered"}
-       [:div {:class "column is-6"}
-        [:span {:class "is-size-1"}
-         "02"]
-        [:h3 {:class "title"}
-         "Reach into the native world"]
-        [:p {:class "has-text-left"}
-         "Seamlessly switch to inline C++ within your Clojure source, while still having access
-          to your Clojure code using interpolation."]]
-       [:div {:class "column is-6"}
-        (html->hiccup {} (util/slurp-html! "landing/step-2.html"))]]
-
-      [:div {:class "columns is-vcentered"}
-       [:div {:class "column is-6"}
-        [:span {:class "is-size-1"}
-         "03"]
-        [:h3 {:class "title"}
-         "Compile to machine code"]
-        [:p {:class "has-text-left"}
-         "jank is built on an LLVM-based JIT. With AOT enabled, both
-          statically and dynamically linked executables can be generated. The
-          jank compiler itself has very speedy start times and low memory
-          usage."]]
-       [:div {:class "column is-6"}
-        (html->hiccup {} (util/slurp-html! "landing/step-3-jank.html"))
-        (html->hiccup {:class "mt-4"} (util/slurp-html! "landing/step-3-clj.html"))]]
-
-      [:div {:class "columns is-vcentered"}
-       [:div {:class "column is-6"}
-        [:span {:class "is-size-1"}
-         "04"]
-        [:h3 {:class "title"}
-         "World-class errors"]
-        [:p {:class "has-text-left"}
-         "jank stands in its own category among lisps for its error reporting quality. No bloated JVM stack traces, opaque errors, or lack of context."]]
-       [:div {:class "column is-6"}
-        [:div {:class "code-image"}
-         [:img {:style "padding: 5px; border-radius: 7px;"
-                :width "100%"
-                :src "/img/landing/step-4.png"}]]]]
+         "jank can seamlessly blend between statically typed C++ interop and dynamically typed Clojure code. Bring in any C++ library you'd like and then wrap it in immutable data."]]
+       [:div {:class "column is-7"}
+        (html->hiccup {} (util/slurp-html! "landing/boost-file-size.html"))]]
       ]]
 
     [:section {:id "features"
@@ -138,9 +80,9 @@
      [:div {:class "container"}
       [:div {:class "section-header has-text-centered mb-6"}
        [:h2 {:class "title has-text-white"}
-        "jank builds upon Clojure."]
+        "jank builds upon Clojure"]
        [:h3 {:class "subtitle has-text-white"}
-        "Keep your existing code; gain more confidence and more speed."]]
+        "Keep your existing code; unlock the native world."]]
 
       [:div {:class "columns is-centered"}
        [:div {:class "column is-9"}
@@ -150,95 +92,128 @@
            [:span {:class "icon"}
             [:i {:class "gg-bulb"}]]
            [:h3 {:class "title is-4 has-text-white"}
-            "Strongly compatible with Clojure"]]
+            "jank is Clojure"]]
           [:p
-           (util/markdown->hiccup "If it works with Clojure JVM and it works with ClojureScript, it should work with jank. There's a `:jank` reader conditional for when you need it.")]]
+           (util/markdown->hiccup "jank is a full-on Clojure dialect, with C++ interop instead of Java interop. There's a `:jank` reader conditional for when you need it.")]]
+
+         [:div {:class "column is-6"}
+          [:div {:class "icon-text mb-4"}
+           [:span {:class "icon"}
+            [:i {:class "gg-list"}]]
+           [:h3 {:class "title is-4 has-text-white"}
+            "jank is C++"]]
+          [:p
+           "jank can include any C++ source, link to any C or C++ library, and it uses the C++ type system. jank even compiles to C++!"]]]
+
+        [:div {:class "columns"}
+         [:div {:class "column is-6"}
+          [:div {:class "icon-text mb-4"}
+           [:span {:class "icon"}
+            [:i {:class "gg-link"}]]
+           [:h3 {:class "title is-4 has-text-white"}
+            "Robust project management"]]
+          [:p
+           "jank uses Leiningen-based project management and has a rich native build system. It's easy to add C and C++ dependencies to your project."]]
 
          [:div {:class "column is-6"}
           [:div {:class "icon-text mb-4"}
            [:span {:class "icon"}
             [:i {:class "gg-sync"}]]
            [:h3 {:class "title is-4 has-text-white"}
-            "REPL and native JIT"]]
+            "REPL and native JIT compiler"]]
           [:p
-           "Use your favorite nREPL editor plugin. jank uses an LLVM-based JIT to compile machine code on the fly."]]]
+           "Use your favorite nREPL editor plugin. jank contains an LLVM-based JIT runtime to compile C++ code on the fly."]]]]]]]
 
-        [:div {:class "columns"}
-         [:div {:class "column is-6"}
-          [:div {:class "icon-text mb-4"}
-           [:span {:class "icon"}
-            [:i {:class "gg-list"}]]
-           [:h3 {:class "title is-4 has-text-white"}
-            "Go native"]]
-          [:p
-           "Reach into native libraries or interact directly with your native code base. Seamlessly write both C++ and Clojure in the same file."]]
-
-         [:div {:class "column is-6"}
-          [:div {:class "icon-text mb-4"}
-           [:span {:class "icon"}
-            [:i {:class "gg-link"}]]
-           [:h3 {:class "title is-4 has-text-white"}
-            "Tooling friendly"]]
-          [:p
-           "Leiningen, LSP, nREPL planned from the start. jank's compiler is also written with tooling in mind, so it can be used for lexing, parsing, and analysis."]]]]]]]
-
-; TODO: Interop
-     ; TODO: Macros
-    [:section {:id "examples"
+    [:section {:id "how-it-works"
                :class "section"}
      [:div {:class "container has-text-centered"}
       [:div {:class "section-header mb-6"}
        [:h2 {:class "title"}
-        "jank examples"]
+        "Native dependencies made easy"]
        [:h3 {:class "subtitle"}
-        "All of the following examples are also valid Clojure code."]]
+        "jank brings a Cargo-inspired UX to C++ and Clojure."]]
+
+      [:div {:class "columns is-vcentered"}
+       [:div {:class "column is-5"}
+        [:h3 {:class "title"}
+         "Easy project management"]
+        [:p {:class "has-text-left"}
+         "jank's native build system can find your installed native dependencies or build them from source. Adding a new dependency is a one line change."]]
+       [:div {:class "column is-7 fluid-text-size-container"}
+        (html->hiccup {} (util/slurp-html! "landing/imgui-project.html"))]]
+
+      [:div {:class "columns is-vcentered"}
+       [:div {:class "column is-5"}
+        [:h3 {:class "title"}
+         "jank is great for game dev"]
+        [:p {:class "has-text-left"}
+         "jank brings functional, immutable data and REPL-driven development to your game development workflow. With jank, you can reach into C++ whenever you want the extra performance. No bridges, no function/type registration, no marshalling, no callbacks."]]
+       [:div {:class "column is-7 fluid-text-size-container"}
+         (html->hiccup {} (util/slurp-html! "landing/imgui.html"))]]]]
+
+    [:section {:id "features"
+               :class "section has-background-primary has-text-white"}
+     [:div {:class "container"}
+      [:div {:class "section-header has-text-centered mb-6"}
+       [:h2 {:class "title has-text-white"}
+        "Delightful AOT compilation"]
+       [:h3 {:class "subtitle has-text-white"}
+        "Tinker all you want, but generate a compact binary when you're ready."]
+       [:h3 {:class "subtitle has-text-white"}
+        "Startup will be instantaneous."]]
+
+      [:div {:class "columns is-centered"}
+       [:div {:class "container"}
+        [:div {:class "has-text-centered"}
+         [:img {:src "/img/landing/lein-compile.png"
+                :style "border-radius: 7px;"
+                :width "75%"}]]]]]]
+
+    [:section {:id "sponsors"
+               :class "section"}
+     [:div {:class "container has-text-centered"}
+      [:div {:class "section-header mb-6"}
+       [:h2 {:class "title"}
+        "jank's sponsors"]
+       [:h3 {:class "subtitle"}
+        "These organizations are investing in jank's future. You can help out, too! See "
+        [:a {:href "https://github.com/sponsors/jeaye"
+             :target "_blank"}
+         "here"]
+        "."]]
 
       [:div {:class "columns is-vcentered"}
        [:div {:class "column is-6"}
-        [:h3 {:class "title"}
-         "Generate a movie index"]
-        [:p {:class "has-text-left"}
-         (util/markdown->hiccup "jank has very powerful capabilities for
-                                 representing and transforming arbitrary data. Here,
-                                 idiomatic usages of `reduce`, `zipmap`, `repeat`,
-                                 and `merge-with` help create an index from genre to
-                                 movie id with ease. No lenses are required for
-                                 working with nested data.")]]
-       [:div {:class "column is-6 fluid-text-size-container"}
-        (html->hiccup {} (util/slurp-html! "landing/example/movies.html"))]]
+        ; Clojurists Together
+        [:a {:href "https://www.clojuriststogether.org/"
+             :target "_blank"}
+         [:img {:src "https://camo.githubusercontent.com/d557ab5a5618687a92c60df84db7bbc5037300701f1a18ac66db166b18e846aa/68747470733a2f2f7777772e636c6f6a757269737473746f6765746865722e6f72672f6865616465722d6c6f676f2e737667"
+                :style "border-radius: 7px;"
+                :width "75%"}]]]
 
-      [:div {:class "columns is-vcentered"}
        [:div {:class "column is-6"}
-        [:h3 {:class "title"}
-         "Convert bytes to human readable format"]
-        [:p {:class "has-text-left"}
-         (util/markdown->hiccup "Beyond the traditional `map`, `filter`, and `reduce`, jank provides
-                                 a powerful `loop` macro for more imperative-style
-                                 loops while still being purely functional. Each `loop` has one or more
-                                 corresponding `recur` usages which must be in tail position.")]]
-       [:div {:class "column is-6 fluid-text-size-container"}
-        (html->hiccup {} (util/slurp-html! "landing/example/size-human-readable.html"))]]
+        ; Nubank
+        [:a {:href "https://nubank.com.br/"
+             :target "_blank"}
+         [:img {:src "https://camo.githubusercontent.com/deacb1f05446ff6797e488b7a41405e0624601fc6f688012d9e78d99ee0666ae/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f662f66372f4e7562616e6b5f6c6f676f5f323032312e737667"
+                :style "border-radius: 7px;"
+                :width "75%"}]]]
+       ]]]
 
-      [:div {:class "columns is-vcentered"}
-       [:div {:class "column is-6"}
-        [:h3 {:class "title"}
-         "Truncate a string to a max length"]
-        [:p {:class "has-text-left"}
-         (util/markdown->hiccup "jank's strings, as well as most of its other data structures, are
-                                 immutable. However, jank provides such powerful tools for working
-                                 with data that mutability is very rarely a concern.")]]
-       [:div {:class "column is-6 fluid-text-size-container"}
-        (html->hiccup {} (util/slurp-html! "landing/example/truncate-string.html"))]]
+    [:section {:id "final-cta"
+               :class "section has-background-primary has-text-white pb-0"}
+     [:div {:class "container"}
+      [:div {:class "section-header has-text-centered"}
+       [:h2 {:class "title has-text-white"}
+        "Try jank today!"]
+       [:h3 {:class "subtitle"}
+        "You've made it this far. Why not dive in?"]
+       [:div {:class "has-text-centered"}
+        [:a {:class "button mt-4"
+             :href "https://book.jank-lang.org/"}
+         [:span {:class "icon"}
+          [:i {:class "gg-file-document"}]]
+         [:strong "Read the jank book!"]]]]
+      ]]
 
-      [:div {:class "columns is-vcentered"}
-       [:div {:class "column is-6"}
-        [:h3 {:class "title"}
-         "Redefine any var"]
-        [:p {:class "has-text-left"}
-         (util/markdown->hiccup "Every `def` or `defn` exists within a var, which is a stable,
-                                 namespace-level container for values. Vars can be redefined to
-                                 contain different values. `with-redefs` redefines a var within its
-                                 body's scope, which is very useful for removing side effects from
-                                 test cases or forcing functions to return specific values.")]]
-       [:div {:class "column is-6 fluid-text-size-container"}
-        (html->hiccup {} (util/slurp-html! "landing/example/with-redefs.html"))]]]]]))
+    ]))

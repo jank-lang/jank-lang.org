@@ -73,6 +73,11 @@ EOF
       cp -f "${file}" "${generated_video_dir}/${file_sans_ext}.${resource_type}"
       ;;
 
+    html)
+      mkdir -p "$(dirname "${generated_html_dir}/${file_sans_ext}")"
+      cp -f "${file}" "${generated_html_dir}/${file_sans_ext}.${resource_type}"
+      ;;
+
     clojure | cpp | sh)
       cat >> "${tmp_makefile}" << EOF
 ${generated_html_dir}/${file_sans_ext}.html:

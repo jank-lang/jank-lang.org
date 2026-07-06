@@ -16,12 +16,13 @@ if(file_type === 'ansi')
   ansi_up.escape_html = true;
   ansi_up.use_classes = true;
   const html = ansi_up.ansi_to_html(code.trim());
-  const last_span = html.lastIndexOf("</span>");
-  if(last_span === -1) {
-    console.log(html);
-  } else {
-    console.log(html.slice(0, last_span + 7));
-  }
+  console.log(html);
+  //const last_span = html.lastIndexOf("</span>");
+  //if(last_span === -1) {
+  //  console.log(html);
+  //} else {
+  //  console.log(html.slice(0, last_span + 7));
+  //}
   process.exit(0);
 }
 
