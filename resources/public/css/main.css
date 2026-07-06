@@ -32,7 +32,13 @@ table
 
   body
   {
-    --bulma-body-color: #313745;
+    --bulma-body-color:#313745;
+  }
+
+  .odd-section
+  {
+    background-color: #272822;
+    color: #F8F8F2;
   }
 }
 
@@ -63,6 +69,12 @@ table
   footer
   {
     background-color: #1a1818 !important;
+  }
+
+  .odd-section
+  {
+    background-color: rgb(27, 24, 24);
+    color: #F8F8F2;
   }
 }
 

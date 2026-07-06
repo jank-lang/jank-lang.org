@@ -19,6 +19,19 @@
 ; performance
 ; error reporting
 
+; Feedback
+;   mention these
+;     Fast startup time, lower CPU and memory usage, standalone binaries, reach new platforms, and embedding clojure in non JVM applications.
+;   maybe remove the imgui example and link to examples
+;   [done] intro is left aligned; feels off balance
+;   [done] intro can deliver more bang per word
+;   [done] "the jank programming language" header is wasted real estate
+;     some sort of tag line
+;   [done] change "read the jank book" to something more engaging
+;   [done] trim down intro and bring features + code up higher
+;   [done] better term for "robust project management"
+;     "native dependencies made easy" lands well
+
 (defn root []
   (page.view/page-root
    {:title "jank programming language - Clojure/LLVM/C++"
@@ -26,14 +39,16 @@
    [:div {}
     (page.view/header {:home? false})
 
-    [:section {:class "hero"}
+    #_[:section {:class "hero"}
      [:div {:class "hero-body pb-0"}
-      [:div {:class "container"}
+      [:div {:class "container has-text-centered"}
+       [:p {:class "title"}
+        "Delightful functional coding with seamless C++ access."]
        [:div {:class "columns"}
         [:div {:class "column is-offset-2 is-8"}
-         [:p {:class "title"}
+         #_[:p {:class "title"}
           "The jank programming language"]
-         [:p {:class "content is-size-5"}
+         #_[:p {:class "content is-size-5"}
           [:p {:class "content is-size-5"}
            (util/markdown->hiccup "jank is a unique dialect of both **Clojure and C++**. It bridges the gap between the functional programming world and the systems programming world. jank allows for interactive REPL-driven development and includes a full Clang-based C++ JIT compiler.")]
           [:p {:class "content is-size-5"}
@@ -44,7 +59,13 @@
                :target "_blank"}
            [:span {:class "icon"}
             [:i {:class "gg-file-document"}]]
-           [:strong "Read the jank book!"]]]]
+           [:strong "Install jank"]]
+          [:a {:class "button mt-6 ml-4"
+               :href "https://book.jank-lang.org/"
+               :target "_blank"}
+           [:span {:class "icon"}
+            [:i {:class "gg-file-document"}]]
+           [:strong "Learn jank!"]]]]
         #_[:div {:class "column is-2"
                  :style {:margin "auto"}}
            [:div [:img {:src "https://img.shields.io/github/stars/jeaye/jank"
@@ -59,7 +80,7 @@
     [:section {:id "how-it-works"
                :class "section"}
      [:div {:class "container has-text-centered"}
-      [:div {:class "section-header mb-6"}
+      #_[:div {:class "section-header mb-6"}
        [:h2 {:class "title"}
         "Unprecedented C++ interop"]
        [:h3 {:class "subtitle"}
@@ -68,15 +89,36 @@
       [:div {:class "columns is-vcentered"}
        [:div {:class "column is-5"}
         [:h3 {:class "title"}
-         "Include any C++ library"]
-        [:p {:class "has-text-left"}
-         "jank can seamlessly blend between statically typed C++ interop and dynamically typed Clojure code. Bring in any C++ library you'd like and then wrap it in immutable data."]]
+         "The native Clojure dialect with seamless C++ interop"]
+        [:p {:class "content has-text-left"}
+         [:b "jank is Clojure on top of C++. "]
+         "It has C++ interop unlike any other language. Templates, virtual functions, exceptions, overload resolution, and RAII all just work in jank. No boilerplate necessary. Just include your headers and go!"]
+        [:p {:class "content has-text-left"}
+         [:b "jank is a robust Clojure dialect. "]
+         "It offers interactive REPL-driven development powered by a Clang-based C++ JIT compiler."]
+
+      [:div {:class "has-text-centered"}
+       [:a {:class "button is-link mt-6 ml-4"
+            :href "https://book.jank-lang.org/getting-started/01-installation.html"
+            :target "_blank"}
+        [:span {:class "icon"}
+         [:i {:class "gg-file-document"}]]
+        [:strong "Install jank"]]
+       [:a {:class "button mt-6 ml-4"
+            :href "https://book.jank-lang.org/"
+            :target "_blank"}
+        [:span {:class "icon"}
+         [:i {:class "gg-file-document"}]]
+        [:strong "Learn jank"]]]
+        ]
        [:div {:class "column is-7"}
-        (html->hiccup {} (util/slurp-html! "landing/boost-file-size.html"))]]
+        (html->hiccup {} (util/slurp-html! "landing/boost-file-size.html"))]
+       ]
+
       ]]
 
     [:section {:id "features"
-               :class "section has-background-primary has-text-white"}
+               :class "section odd-section"}
      [:div {:class "container"}
       [:div {:class "section-header has-text-centered mb-6"}
        [:h2 {:class "title has-text-white"}
@@ -111,7 +153,7 @@
            [:span {:class "icon"}
             [:i {:class "gg-link"}]]
            [:h3 {:class "title is-4 has-text-white"}
-            "Robust project management"]]
+            "Cargo-inspired tooling"]]
           [:p
            "jank uses Leiningen-based project management and has a rich native build system. It's easy to add C and C++ dependencies to your project."]]
 
@@ -152,7 +194,7 @@
          (html->hiccup {} (util/slurp-html! "landing/imgui.html"))]]]]
 
     [:section {:id "features"
-               :class "section has-background-primary has-text-white"}
+               :class "section odd-section"}
      [:div {:class "container"}
       [:div {:class "section-header has-text-centered mb-6"}
        [:h2 {:class "title has-text-white"}
@@ -160,7 +202,7 @@
        [:h3 {:class "subtitle has-text-white"}
         "Tinker all you want, but generate a compact binary when you're ready."]
        [:h3 {:class "subtitle has-text-white"}
-        "Startup will be instantaneous."]]
+        "Startup is instantaneous."]]
 
       [:div {:class "columns is-centered"}
        [:div {:class "container"}
@@ -201,19 +243,27 @@
        ]]]
 
     [:section {:id "final-cta"
-               :class "section has-background-primary has-text-white pb-0"}
+               :class "section odd-section pb-0"}
      [:div {:class "container"}
       [:div {:class "section-header has-text-centered"}
        [:h2 {:class "title has-text-white"}
         "Try jank today!"]
-       [:h3 {:class "subtitle"}
+       [:h3 {:class "subtitle has-text-white"}
         "You've made it this far. Why not dive in?"]
-       [:div {:class "has-text-centered"}
-        [:a {:class "button mt-4 mb-4"
-             :href "https://book.jank-lang.org/"}
+       [:div {:class "has-text-centered pb-6"}
+        [:a {:class "button is-link ml-4"
+             :href "https://book.jank-lang.org/getting-started/01-installation.html"
+             :target "_blank"}
          [:span {:class "icon"}
           [:i {:class "gg-file-document"}]]
-         [:strong "Read the jank book!"]]]]
+         [:strong "Install jank"]]
+        [:a {:class "button ml-4"
+             :href "https://book.jank-lang.org/"
+             :target "_blank"}
+         [:span {:class "icon"}
+          [:i {:class "gg-file-document"}]]
+         [:strong "Learn jank"]]]
+       ]
       ]]
 
     ]))
