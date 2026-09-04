@@ -134,8 +134,8 @@ understandable. It's partly a compiler nerd thing, since effective error
 reporting can be quite tricky. However, it's also partly a huge usability win
 over not only Clojure JVM, not only Clang and GCC, but also the status quo in a
 lot of developer tooling. I am trying to build a language, and tooling
-ecosystem, that I would actually want to use. I want to entice others to try it
-by dedicating this time to usability, too.
+ecosystem, that is the best it can be. That's the language I want to use. I want
+to entice others to try it by dedicating this time to usability, too.
 
 To me, this is incredibly important.
 
