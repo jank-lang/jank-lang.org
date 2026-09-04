@@ -1,4 +1,4 @@
-Title: jank reimagines C++ errors and gets and official native package repo
+Title: jank reimagines C++ errors and gets an official native package repo
 Date: Sep 04, 2026
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
