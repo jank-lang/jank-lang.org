@@ -1,9 +1,9 @@
-Title: jank is getting better and better
+Title: jank reimagines C++ errors and gets and official native package repo
 Date: Sep 04, 2026
 Author: Jeaye Wilkerson
 Author-Url: https://github.com/jeaye
-Description: TODO
-Draft: true
+Description: jank's errors are slick, but did you know you can start a new
+             raylib app in jank with one command?
 
 Welcome back! It's been three months since my last post and the amount of
 improvements to jank are staggering. Let me tell you all about it! Before
@@ -13,9 +13,10 @@ sponsoring me this whole year. Thank you!
 
 # Error reporting
 Last year, I [published a post](/blog/2025-03-28-error-reporting) showcasing how
-jank has reimagined Clojure errors. In every way, compiler errors in jank are
-more helpful, provide more context, and are more visually appealing than the
-Clojure JVM counterpart. Even in complex scenarios involving macros, jank excels.
+jank has reimagined Clojure errors. In every way, I aim for jank compiler errors
+to be more helpful, provide more context, and are more visually appealing than
+the Clojure JVM counterpart. Even in complex scenarios involving macros, jank
+excels.
 
 <div class="wide-figure">
   <figure>
