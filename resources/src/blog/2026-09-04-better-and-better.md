@@ -222,11 +222,11 @@ the Conj. After the Conj, and for the remainder of the year, I'll be focused on
 much of the same.
 
 It's my goal to get jank into your hands, dear reader. For many of you, I think
-that jank is already ready for you to being your tinkering. With the addition of
-the jank commons, starting a new raylib game in jank is as easy as `lein run`.
-Getting a distributable binary is as easy as `lein compile`. What follows is
-just polishing up all of the rough edges so that developing your games and
-applications is a breeze.
+that jank is already capable enough for you to begin your tinkering. With the
+addition of the jank commons, starting a new raylib game in jank is as easy as
+`lein run`. Getting a distributable binary is as easy as `lein compile`. What
+follows is just polishing up all of the rough edges so that developing your
+games and applications is a breeze.
 
 If you've been waiting to try jank, give it a go! If there's something you need
 which jank is missing, let me know! I'll make sure it's noted down and
