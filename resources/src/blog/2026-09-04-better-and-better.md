@@ -60,7 +60,7 @@ three separate places:
    `user/foo` function was compiled.
 
 After my recent efforts, jank now weaves all of these together seamlessly to
-provide you a lovely error message. This works reliably on macOS and on Linux.
+provide you a lovely error report. This works reliably on macOS and on Linux.
 
 ## Error pages
 Building on the error output above, you may also notice the URL that's tucked
@@ -89,17 +89,6 @@ C++ error messages? Well, I gave it my best shot. Take a look. :)
     <img src="/img/blog/2026-09-04-better-and-better/implicit-ambiguous.png"></img>
   </figure>
 </div>
-
-The source for the above error is here:
-
-```clojure
-(cpp/raw "void bar(int a, long b)
-          { }
-          void bar(int a, short b)
-          { }")
-(defn foo []
-  (cpp/bar 1 2))
-```
 
 The call is ambiguous because the second argument is an `int`, which directly
 matches neither `long` nor `short` but can implicitly be converted to either of
