@@ -31,8 +31,9 @@ runtime exceptions and C++ interop errors.
 In today's modern C++ compilers, there's no standard, portable way to get a
 stack trace. Coming from the JVM, this may sound surprising, but it's par for
 course in the native world. Even worse, jank is JIT compiling C++ code and we
-want to get accurate stack traces which include those frames as well. So, in order
-to get beautiful, accurate stack traces for jank's uncaught runtime exceptions,
+want to get accurate stack traces which include those frames as well. Even
+worse, we need to map some of that C++ back to actual jank code. So, in order to
+get beautiful, accurate stack traces for jank's uncaught runtime exceptions,
 there was a lot of work to be done. Check out the results!
 
 <div class="wide-figure">
