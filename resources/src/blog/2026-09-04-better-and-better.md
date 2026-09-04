@@ -14,7 +14,7 @@ sponsoring me this whole year. Thank you!
 # Error reporting
 Last year, I [published a post](/blog/2025-03-28-error-reporting) showcasing how
 jank has reimagined Clojure errors. In every way, I aim for jank compiler errors
-to be more helpful, provide more context, and are more visually appealing than
+to be more helpful, provide more context, and be more visually appealing than
 the Clojure JVM counterpart. Even in complex scenarios involving macros, jank
 excels.
 
