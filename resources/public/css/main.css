@@ -9,6 +9,36 @@ a:hover
   text-decoration: underline !important;
 }
 
+.tiles
+{
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.use-case-tile
+{
+  height: 4em !important;
+  width: 100%;
+}
+
+.error-message-tile
+{
+  display: block;
+  max-width: 40vw;
+  height: auto;
+  width: auto;
+}
+
+@media screen and (max-width: 768px)
+{
+  .use-case-tiles
+  {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
 table
 {
   margin: auto;

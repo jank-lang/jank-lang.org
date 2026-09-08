@@ -9,6 +9,7 @@
             [me.raynes.fs :as fs]
             [org.jank_lang.page.landing.view :as landing.view]
             [org.jank_lang.page.blog.view :as blog.view]
+            [org.jank_lang.page.use-case.view :as use-case.view]
             [org.jank-lang.util :as util])
   (:import [org.eclipse.jetty.server Server])
   (:gen-class))
@@ -16,6 +17,12 @@
 (defroutes app-handler
   (GET "/" [] (fn [_]
                 (landing.view/root)))
+  (GET "/use-case/game-development" [] (fn [_]
+                                         (use-case.view/game-development-root)))
+  (GET "/use-case/desktop-gui" [] (fn [_]
+                                    (use-case.view/desktop-gui-root)))
+  (GET "/use-case/desktop-tui" [] (fn [_]
+                                    (use-case.view/desktop-tui-root)))
   (GET "/blog" [] (fn [_]
                     (blog.view/root)))
   (GET "/blog/feed.xml" [] (fn [_]
@@ -53,6 +60,9 @@
   (binding [util/*building?* true]
     (let [output-dir "build"
           pages {"index.html" landing.view/root
+                 "use-case/game-development/index.html" use-case.view/game-development-root
+                 "use-case/desktop-gui/index.html" use-case.view/desktop-gui-root
+                 "use-case/desktop-tui/index.html" use-case.view/desktop-tui-root
                  "blog/index.html" blog.view/root
                  "blog/feed.xml" (comp :body blog.view/feed-root)}]
       (fs/delete-dir output-dir)

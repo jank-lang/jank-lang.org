@@ -166,81 +166,92 @@
           [:p
            "Use your favorite nREPL editor plugin. jank contains an LLVM-based JIT runtime to compile C++ code on the fly."]]]]]]]
 
-    [:section {:id "how-it-works"
+    [:section {:id "use-cases"
                :class "section"}
      [:div {:class "container has-text-centered"}
       [:div {:class "section-header mb-6"}
        [:h2 {:class "title"}
-        "Native dependencies made easy"]
+        "jank is perfect for"]
        [:h3 {:class "subtitle"}
-        "jank brings a Cargo-inspired UX to C++ and Clojure."]]
+        "Click into the tiles to explore jank's ideal use cases."]
 
-      [:div {:class "columns is-vcentered"}
-       [:div {:class "column is-5"}
-        [:h3 {:class "title"}
-         "Easy project management"]
-        [:p {:class "has-text-left"}
-         "jank's native build system can find your installed native dependencies or build them from source. Adding a new dependency is a one line change."]]
-       [:div {:class "column is-7 fluid-text-size-container"}
-        (html->hiccup {} (util/slurp-html! "landing/imgui-project.html"))]]
+      [:div {:class "tiles"}
+       [:a {:class "button tile"
+            :href "/use-case/game-development"}
+        [:span {:class "icon ml-1 mr-4"}
+         [:i {:class "gg-games"}]]
+        [:strong "Game development"]]
+       [:a {:class "button tile"
+            :href "/use-case/desktop-gui"}
+        [:span {:class "icon mr-4"}
+         [:i {:class "gg-desktop"}]]
+        [:strong "Desktop GUIs"]]
+       [:a {:class "button tile"
+            :href "/use-case/desktop-tui"}
+        [:span {:class "icon mr-4"}
+         [:i {:class "gg-desktop"}]]
+        [:strong "Desktop TUIs"]]]]]]
 
-      [:div {:class "columns is-vcentered"}
-       [:div {:class "column is-5"}
-        [:h3 {:class "title"}
-         "jank is great for game dev"]
-        [:p {:class "has-text-left"}
-         "jank brings functional, immutable data and REPL-driven development to your game development workflow. With jank, you can reach into C++ whenever you want the extra performance. No bridges, no function/type registration, no marshalling, no callbacks."]]
-       [:div {:class "column is-7 fluid-text-size-container"}
-         (html->hiccup {} (util/slurp-html! "landing/imgui.html"))]]]]
-
-    [:section {:id "features"
+    [:section {:id "error-messages"
                :class "section odd-section"}
-     [:div {:class "container"}
-      [:div {:class "section-header has-text-centered mb-6"}
-       [:h2 {:class "title has-text-white"}
-        "Delightful AOT compilation"]
-       [:h3 {:class "subtitle has-text-white"}
-        "Tinker all you want, but generate a compact binary when you're ready."]
-       [:h3 {:class "subtitle has-text-white"}
-        "Startup is instantaneous."]]
-
-      [:div {:class "columns is-centered"}
-       [:div {:class "container"}
-        [:div {:class "has-text-centered"}
-         [:img {:src "/img/landing/lein-compile.png"
-                :style "border-radius: 7px;"
-                :width "75%"}]]]]]]
-
-    [:section {:id "sponsors"
-               :class "section"}
      [:div {:class "container has-text-centered"}
       [:div {:class "section-header mb-6"}
        [:h2 {:class "title"}
-        "jank's sponsors"]
+        "jank's error messages are beautiful"]
        [:h3 {:class "subtitle"}
-        "These organizations are investing in jank's future. You can help out, too! See "
-        [:a {:href "https://github.com/sponsors/jeaye"
-             :target "_blank"}
-         "here"]
-        "."]]
+        "Find your mistakes more easily and look good while doing it."]]
 
       [:div {:class "columns is-vcentered"}
-       [:div {:class "column is-6"}
-        ; Clojurists Together
-        [:a {:href "https://www.clojuriststogether.org/"
-             :target "_blank"}
-         [:img {:src "https://camo.githubusercontent.com/d557ab5a5618687a92c60df84db7bbc5037300701f1a18ac66db166b18e846aa/68747470733a2f2f7777772e636c6f6a757269737473746f6765746865722e6f72672f6865616465722d6c6f676f2e737667"
-                :style "border-radius: 7px;"
-                :width "75%"}]]]
+       [:div {:class "column is-5"}
+        [:h3 {:class "title"}
+         "Trace your code through macros"]
+        [:p {:class "has-text-left"}
+         "jank's compiler will provide macro usage context and can re-trace source information to ensure you always get the best error possible."]]
+       [:div {:class "column is-7 fluid-text-size-container"}
+        [:img {:src "/img/blog/2026-09-04-better-and-better/def.png"
+               :style "border-radius: 7px;"}]]]
 
-       [:div {:class "column is-6"}
-        ; Nubank
-        [:a {:href "https://nubank.com.br/"
-             :target "_blank"}
-         [:img {:src "https://camo.githubusercontent.com/deacb1f05446ff6797e488b7a41405e0624601fc6f688012d9e78d99ee0666ae/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f662f66372f4e7562616e6b5f6c6f676f5f323032312e737667"
-                :style "border-radius: 7px;"
-                :width "75%"}]]]
-       ]]]
+      [:div {:class "columns is-vcentered"}
+       [:div {:class "column is-5"}
+        [:h3 {:class "title"}
+         "Reimagined C++ errors"]
+        [:p {:class "has-text-left"}
+         "jank improves upon traditional Clang/GCC error messages for C++ interop, so writing C++ from jank feels even better than just writing normal C++."]]
+       [:div {:class "column is-7 fluid-text-size-container"}
+        [:img {:src "/img/blog/2026-09-04-better-and-better/rank.png"
+               :style "border-radius: 7px;"}]
+]]]]
+
+     [:section {:id "sponsors"
+       :class "section"}
+      [:div {:class "container has-text-centered"}
+       [:div {:class "section-header mb-6"}
+        [:h2 {:class "title"}
+         "jank is sponsored"]
+        [:h3 {:class "subtitle"}
+         "These organizations are investing in jank's future. You can help out, too! See "
+         [:a {:href "https://github.com/sponsors/jeaye"
+              :target "_blank"}
+          "here"]
+         "."]]
+
+       [:div {:class "columns is-vcentered"}
+        [:div {:class "column is-6"}
+         ; Clojurists Together
+         [:a {:href "https://www.clojuriststogether.org/"
+              :target "_blank"}
+          [:img {:src "https://camo.githubusercontent.com/d557ab5a5618687a92c60df84db7bbc5037300701f1a18ac66db166b18e846aa/68747470733a2f2f7777772e636c6f6a757269737473746f6765746865722e6f72672f6865616465722d6c6f676f2e737667"
+                 :style "border-radius: 7px;"
+                 :width "75%"}]]]
+
+        [:div {:class "column is-6"}
+         ; Nubank
+         [:a {:href "https://nubank.com.br/"
+              :target "_blank"}
+          [:img {:src "https://camo.githubusercontent.com/deacb1f05446ff6797e488b7a41405e0624601fc6f688012d9e78d99ee0666ae/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f662f66372f4e7562616e6b5f6c6f676f5f323032312e737667"
+                 :style "border-radius: 7px;"
+                 :width "75%"}]]]
+        ]]]
 
     [:section {:id "final-cta"
                :class "section odd-section pb-0"}

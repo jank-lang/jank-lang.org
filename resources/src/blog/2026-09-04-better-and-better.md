@@ -20,7 +20,7 @@ excels.
 
 <div class="wide-figure">
   <figure>
-    <img src="/img/blog/2025-03-28-error-reporting/jank-macro-def-2.png"></img>
+    <img src="/img/blog/2026-09-04-better-and-better/def.png"></img>
   </figure>
 </div>
 
