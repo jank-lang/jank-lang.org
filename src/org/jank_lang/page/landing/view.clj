@@ -89,7 +89,11 @@
       [:div {:class "columns is-vcentered"}
        [:div {:class "column is-5"}
         [:h3 {:class "title has-text-left"}
-         "The native Clojure dialect with seamless C++ interop"]
+         [:i {:class "has-text-info"} "Native"] " Clojure"]
+        [:h3 {:class "title has-text-left"}
+         [:i {:class "has-text-warning"} "Hand-crafted"] " compiler"]
+        [:h3 {:class "title has-text-left"}
+         [:i {:class "has-text-link"} "Unprecedented "] " C++ interop"]
         [:p {:class "content has-text-left"}
          [:b "jank is Clojure on top of C++. "]
          "It has C++ interop unlike any other language. Templates, virtual functions, exceptions, overload resolution, and RAII all just work in jank. No boilerplate necessary. Just include your headers and go!"]
@@ -176,34 +180,46 @@
         "Click into the tiles to explore jank's ideal use cases."]
 
       [:div {:class "tiles"}
-       [:a {:class "button tile"
+       [:a {:class "button use-case-tile is-flex is-flex-direction-column"
+            :style "gap: 0.5em;"
             :href "/use-case/game-development"}
-        [:span {:class "icon ml-1 mr-4"}
-         [:i {:class "gg-games"}]]
-        [:strong "Game development"]]
-       [:a {:class "button tile"
+        [:div
+         [:span {:class "icon mr-4"}
+          [:i {:class "gg-games"}]]
+         [:strong "Game development"]]
+        [:h2 {:class "subtitle is-size-7"}
+         "jank provides easy access to Raylib, SDL, Box3D, and more."]]
+       [:a {:class "button use-case-tile is-flex is-flex-direction-column"
+            :style "gap: 0.5em;"
             :href "/use-case/desktop-gui"}
-        [:span {:class "icon mr-4"}
-         [:i {:class "gg-desktop"}]]
-        [:strong "Desktop GUIs"]]
-       [:a {:class "button tile"
+        [:div {:class "icon-text is-align-items-center"}
+         [:span {:class "icon mr-4"}
+          [:i {:class "gg-desktop"}]]
+         [:strong "Desktop GUIs"]]
+        [:h2 {:class "subtitle is-size-7"}
+         "Take advantage of GUI frameworks like GTK, Slint, or even RayGUI."]]
+       [:a {:class "button use-case-tile is-flex is-flex-direction-column"
+            :style "gap: 0.5em;"
             :href "/use-case/desktop-tui"}
-        [:span {:class "icon mr-4"}
-         [:i {:class "gg-desktop"}]]
-        [:strong "Desktop TUIs"]]]]]]
+        [:div {:class "icon-text is-align-items-center"}
+         [:span {:class "icon mr-4"}
+          [:i {:class "gg-desktop"}]]
+         [:strong "Desktop TUIs"]]
+        [:h2 {:class "subtitle is-size-7"}
+         "jank AOT compiles to easy-to-distribute binaries."]]]]]]
 
     [:section {:id "error-messages"
                :class "section odd-section"}
      [:div {:class "container has-text-centered"}
       [:div {:class "section-header mb-6"}
-       [:h2 {:class "title"}
+       [:h2 {:class "title has-text-white"}
         "jank's error messages are beautiful"]
-       [:h3 {:class "subtitle"}
+       [:h3 {:class "subtitle has-text-white"}
         "Find your mistakes more easily and look good while doing it."]]
 
       [:div {:class "columns is-vcentered"}
        [:div {:class "column is-5"}
-        [:h3 {:class "title"}
+        [:h3 {:class "title has-text-white"}
          "Trace your code through macros"]
         [:p {:class "has-text-left"}
          "jank's compiler will provide macro usage context and can re-trace source information to ensure you always get the best error possible."]]
@@ -213,7 +229,7 @@
 
       [:div {:class "columns is-vcentered"}
        [:div {:class "column is-5"}
-        [:h3 {:class "title"}
+        [:h3 {:class "title has-text-white"}
          "Reimagined C++ errors"]
         [:p {:class "has-text-left"}
          "jank improves upon traditional Clang/GCC error messages for C++ interop, so writing C++ from jank feels even better than just writing normal C++."]]
