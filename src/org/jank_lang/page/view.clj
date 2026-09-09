@@ -12,14 +12,24 @@
                                     "is-primary"))}
       [:div {:class "container"}
        [:div {:class "navbar-brand"}
-        [:a {:class (str "navbar-item title " text-color)
+        [:a {:class (str "navbar-item title mb-0 " text-color)
              :href (:title-url props "/")
              :style {:font-family "Comfortaa"}}
          [:img {:src "/img/logo-transparent.png"
                 :style {:margin-right "15px"}}]
-         (:title props "jank")]]
+         (:title props "jank")]
+        [:a {:role "button"
+             :class "navbar-burger"
+             :data-target "navMenu"
+             :aria-label "menu"
+             :aria-expanded "false"}
+         [:span {:aria-hidden "true"}]
+         [:span {:aria-hidden "true"}]
+         [:span {:aria-hidden "true"}]
+         [:span {:aria-hidden "true"}]]]
 
-       [:div {:class "navbar-menu is-active"}
+       [:div {:class "navbar-menu"
+              :id "navMenu"}
         [:div {:class "navbar-end has-text-weight-semibold"}
          (when (:home? props true)
            [:a {:class (str "navbar-item " text-color)
@@ -155,6 +165,24 @@
     "<!-- Matomo noscript -->
     <noscript><p><img src=\"//matomo.jeaye.com/matomo.php?idsite=1&amp;rec=1\" style=\"border:0;\" alt=\"\" /></p></noscript>
     <!-- End matomo noscript -->"
+
+    "<!-- Mobile navbar burger. -->
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+    });
+  });
+});
+    </script>
+<!-- Mobile navbar burger. -->"
 
     "<!-- Collapsible tables -->
     <script>

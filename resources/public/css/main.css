@@ -18,8 +18,11 @@ a:hover
 
 .use-case-tile
 {
-  height: 6em !important;
-  width: 100%;
+  flex: 1 1 18rem;
+  min-width: 0;
+  min-height: 6em;
+  height: auto !important;
+  white-space: normal !important;
 }
 
 .error-message-tile
@@ -32,10 +35,16 @@ a:hover
 
 @media screen and (max-width: 768px)
 {
-  .use-case-tiles
+  .tiles
   {
-    align-items: center;
+    align-items: stretch;
     flex-direction: column;
+  }
+
+  .use-case-tile
+  {
+    max-width: 100%;
+    width: 100%;
   }
 }
 

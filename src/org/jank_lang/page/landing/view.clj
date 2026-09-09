@@ -179,7 +179,7 @@
        [:h3 {:class "subtitle"}
         "Click into the tiles to explore jank's ideal use cases."]
 
-      [:div {:class "tiles"}
+      [:div {:class "tiles is-flex-wrap-wrap"}
        [:a {:class "button use-case-tile is-flex is-flex-direction-column"
             :style "gap: 0.5em;"
             :href "/use-case/game-development"}
