@@ -118,6 +118,23 @@ ${tab}echo "Done!"
 EOF
 }
 
+function ncpus()
+{
+  if [[ "${CPUS:-0}" -gt 0 ]];
+  then
+    echo "${CPUS}"
+    return
+  fi
+
+  local ret
+  ret=$(nproc 2>/dev/null ||
+  getconf _NPROCESSORS_ONLN 2>/dev/null ||
+  sysctl -n hw.logicalcpu 2>/dev/null ||
+  echo 4)
+
+  echo $((ret / 2))
+}
+
 function main
 {
   rm -rf "${generated_dir}"
@@ -126,7 +143,7 @@ function main
   local resource_files tmp_makefile cpus
   resource_files="$(find "$@" -type f)"
   tmp_makefile="$(mktemp)"
-  cpus=$((${CPUS:-$(nproc || sysctl -n hw.logicalcpu)} / 2))
+  cpus=$(ncpus)
   for file in ${resource_files};
   do
     local base_file file_sans_ext ext resource_type
@@ -140,6 +157,6 @@ function main
 
   echo "Building makefile ${tmp_makefile}"
   generate_all_target "${tmp_makefile}"
-  make -j${cpus:-2} -f "${tmp_makefile}" all
+  make -j"${cpus}" -f "${tmp_makefile}" all
 }
 main "$@"
