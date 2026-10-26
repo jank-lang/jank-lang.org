@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -exuo pipefail
+set -euo pipefail
 
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -140,6 +140,6 @@ function main
 
   echo "Building makefile ${tmp_makefile}"
   generate_all_target "${tmp_makefile}"
-  make -j"${cpus:-2}" -f "${tmp_makefile}" all
+  make -j${cpus:-2} -f "${tmp_makefile}" all
 }
 main "$@"
