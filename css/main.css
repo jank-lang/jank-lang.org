@@ -9,6 +9,56 @@ a:hover
   text-decoration: underline !important;
 }
 
+.tiles
+{
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.use-case-tile
+{
+  flex: 1 1 18rem;
+  min-width: 0;
+  min-height: 6em;
+  height: auto !important;
+  white-space: normal !important;
+}
+
+.library-image
+{
+  height: 5vw;
+}
+
+.error-message-tile
+{
+  display: block;
+  max-width: 40vw;
+  height: auto;
+  width: auto;
+}
+
+@media screen and (max-width: 768px)
+{
+  .tiles
+  {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .use-case-tile
+  {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .library-image
+  {
+    height: 100%;
+    width: 100%;
+  }
+}
+
 table
 {
   margin: auto;
