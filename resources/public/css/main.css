@@ -25,6 +25,11 @@ a:hover
   white-space: normal !important;
 }
 
+.library-image
+{
+  height: 5vw;
+}
+
 .error-message-tile
 {
   display: block;
@@ -44,6 +49,12 @@ a:hover
   .use-case-tile
   {
     max-width: 100%;
+    width: 100%;
+  }
+
+  .library-image
+  {
+    height: 100%;
     width: 100%;
   }
 }

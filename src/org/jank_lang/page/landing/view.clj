@@ -170,7 +170,7 @@
           [:p
            "Use your favorite nREPL editor plugin. jank contains an LLVM-based JIT runtime to compile C++ code on the fly."]]]]]]]
 
-    [:section {:id "use-cases"
+    #_[:section {:id "use-cases"
                :class "section"}
      [:div {:class "container has-text-centered"}
       [:div {:class "section-header mb-6"}
@@ -209,7 +209,7 @@
          "jank AOT compiles to easy-to-distribute binaries."]]]]]]
 
     [:section {:id "error-messages"
-               :class "section odd-section"}
+               :class "section"}
      [:div {:class "container has-text-centered"}
       [:div {:class "section-header mb-6"}
        [:h2 {:class "title has-text-white"}
@@ -239,11 +239,11 @@
 ]]]]
 
      [:section {:id "sponsors"
-       :class "section"}
+       :class "section odd-section"}
       [:div {:class "container has-text-centered"}
        [:div {:class "section-header mb-6"}
         [:h2 {:class "title"}
-         "jank is sponsored"]
+         "jank's sponsors"]
         [:h3 {:class "subtitle"}
          "These organizations are investing in jank's future. You can help out, too! See "
          [:a {:href "https://github.com/sponsors/jeaye"
