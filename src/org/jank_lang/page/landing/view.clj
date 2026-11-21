@@ -242,9 +242,9 @@
        :class "section odd-section"}
       [:div {:class "container has-text-centered"}
        [:div {:class "section-header mb-6"}
-        [:h2 {:class "title"}
+        [:h2 {:class "title has-text-white"}
          "jank's sponsors"]
-        [:h3 {:class "subtitle"}
+        [:h3 {:class "subtitle has-text-white"}
          "These organizations are investing in jank's future. You can help out, too! See "
          [:a {:href "https://github.com/sponsors/jeaye"
               :target "_blank"}
@@ -256,7 +256,7 @@
          ; Clojurists Together
          [:a {:href "https://www.clojuriststogether.org/"
               :target "_blank"}
-          [:img {:src "https://camo.githubusercontent.com/d557ab5a5618687a92c60df84db7bbc5037300701f1a18ac66db166b18e846aa/68747470733a2f2f7777772e636c6f6a757269737473746f6765746865722e6f72672f6865616465722d6c6f676f2e737667"
+          [:img {:src "/img/clojurists-together.svg"
                  :style "border-radius: 7px;"
                  :width "75%"}]]]
 
@@ -264,7 +264,7 @@
          ; Nubank
          [:a {:href "https://nubank.com.br/"
               :target "_blank"}
-          [:img {:src "https://camo.githubusercontent.com/deacb1f05446ff6797e488b7a41405e0624601fc6f688012d9e78d99ee0666ae/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f662f66372f4e7562616e6b5f6c6f676f5f323032312e737667"
+          [:img {:src "/img/nubank.png"
                  :style "border-radius: 7px;"
                  :width "75%"}]]]
         ]]]
