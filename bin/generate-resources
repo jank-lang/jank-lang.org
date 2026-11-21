@@ -107,7 +107,7 @@ EOF
 function generate_all_target
 {
   local targets
-  targets="$(pcregrep -o1 '^(.*):$' "${1}" | tr '\n' ' ')"
+  targets="$(pcre2grep -o1 '^(.*):$' "${1}" | tr '\n' ' ')"
 
   cat >> "${tmp_makefile}" << EOF
 

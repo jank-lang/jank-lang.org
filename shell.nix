@@ -19,7 +19,7 @@ mkShell
     shellcheck
 
     # Utils
-    pcre
+    pcre2
     expect
   ];
   shellHook =
